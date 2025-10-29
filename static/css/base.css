@@ -1,0 +1,267 @@
+/* jds*/
+
+@charset "UTF-8";
+
+
+@font-face {
+    font-family: 'Univers';
+    src: url('https://cdn.shopify.com/s/files/1/0501/6384/3265/files/Univers.woff2?v=1702275506');
+}
+@font-face {
+    font-family: 'JDS';
+    src: url('https://cdn.shopify.com/s/files/1/0501/6384/3265/files/Sans.woff2?v=1736999745');
+}
+
+@font-face {
+    font-family: 'Albertus';
+    src: url('https://cdn.shopify.com/s/files/1/0501/6384/3265/files/AlbertusNova-Regular.woff2?v=1752405712');
+  /*src: url('https://cdn.shopify.com/s/files/1/0501/6384/3265/files/AlbertusNova-Light.woff2?v=1745112962');*/
+}
+
+:root {
+    --padding: 7.5vw;
+    --productPadding: 11.5vw;
+    --pcPadding: 2.5vw;
+    --backgroundColor: #fff;
+    --textColor: #313953;
+    --footerColor: #e9e7e6;
+    --buttonColor: #001FA2;
+    --accentColor: #b44400;
+    --accentColor: #b83602;
+  
+    --linkBlue:#3154E6;
+    --soldRed: #C90000;
+}
+
+
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {font-size: 62.5%;}
+html, body {
+    width: 100vw;
+    background-color: var(--backgroundColor);
+}
+html, body {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;  /* ← これだけでOK */
+    height: auto !important;
+    min-height: 100% !important;
+  }
+
+
+div, h1, h2, h3, h4, h5, h6, p, a, span, input, button, tspan, tr, td,th {
+    font-family: 'Univers', TsukuGoPro-D, TsukuGoPr5-M, TsukuGoPro-M, "FOT-筑紫ゴシック Pro",sans-serif;
+    font-weight: 400;
+    color: var(--textColor);
+    font-display: swap;
+    font-feature-settings: "palt";
+    letter-spacing: 0.05em;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+}
+
+
+:lang(en){
+    font-family: 'Univers', sans-serif;
+    letter-spacing: 0.01em;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+.serif,.serif * {
+  font-family: Optima-Medium, TsukuGoPr5-B, TsukuGoPro-E, sans-serif;
+}
+.sans {
+    font-family: 'Univers', TsukuGoPr5-D, TsukuGoPro-D, sans-serif;
+    letter-spacing: -0.005em;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+.bold {
+  font-family: 'JDS', TsukuGoPr5-B, TsukuGoPro-B,"FOT-筑紫ゴシック Pro", sans-serif;
+}
+.jp.bold {
+  font-family: TsukuGoPr5-B, TsukuGoPro-B, sans-serif;
+}
+
+
+
+svg, svg path, svg g {fill: var(--textColor);}
+
+.h0 {font-size: 2.8rem;}
+h1, .h1 {font-size: 2.8rem;}
+h2, .h2 {font-size: 2.2rem;}
+h3, .h3 {font-size: 2.0rem;}
+h4, .h4 {font-size: 1.6rem;}
+h5, .h5 {font-size: 1.4rem;}
+h6, .h6 {font-size: 1.2rem;}
+.h7 {font-size: 1.1rem;}
+.h8 {font-size: .975rem;}
+
+.h0.heading {font-size: 3.8rem;}
+.h1.heading {font-size: 3.2rem;}
+.heading {
+  line-height: 1.3;
+  letter-spacing: 0;
+}
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4 {line-height: 1.4;}
+
+.sp {display: block;}
+.pc {display: none;}
+
+p, .p {
+    font-weight: 400;
+    line-height: 1.65;
+    font-size: 1.3rem;
+    text-align: justify;
+    word-wrap: break-word;
+    hyphens: auto;
+    word-break: break-all;
+}
+li {
+    text-decoration: none;
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    display: inline-block;
+    transition: .75s ease-in-out;
+}
+a:hover {opacity: .65;}
+
+section {
+    padding-left: var(--padding);
+    padding-right: var(--padding);
+}
+section.shopify-section--main-list-collections {padding:0;}
+img {
+    width: 100%;
+    object-fit: cover;
+    object-position: 50%;
+}
+
+input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+input::placeholder {
+    color: var(--textColor);
+    opacity: .25;
+}
+button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+ul li {text-decoration: none;list-style: none;}
+.flex {display: flex; justify-content: center; align-items: center;}
+
+.w100 {
+    width: 100vw;
+    margin-left: calc(-1 * var(--padding));
+}
+
+.white {color: white;}
+main {margin: auto;}
+
+
+
+
+
+
+
+
+#HomeCompany .underline,
+#HomeCompany .underline span {color: white;}
+#HomeCompany .underline svg path {fill: white;}
+
+
+
+
+@media screen and (min-width: 720px) {
+    html {font-size: 62.5%;}
+    .h0 {font-size: 4.2rem;}
+h1, .h1 {font-size: 3.2rem;}
+h2, .h2 {font-size: 2.4rem;}
+h3, .h3 {font-size: 2.0rem;}
+h4, .h4 {font-size: 1.8rem;}
+h5, .h5 {font-size: 1.5rem;}
+h6, .h6 {font-size: 1.3rem;}
+.h7 {font-size: 1.1rem;}
+.h8 {font-size: .975rem;}
+p, .p {
+    font-size: 1.35rem;
+    line-height: 2.0;
+    text-align: left;
+}
+.sp {display: none;}
+.pc {display: block;}
+
+
+section {
+    padding-left: var(--pcPadding);
+    padding-right: var(--pcPadding);
+}
+
+
+.w100 {
+    width: 100vw;
+    margin-left: calc(-1 * var(--pcPadding));
+}
+
+.pcflex{display: flex; justify-content: space-between; align-items: center;}
+
+
+}
+
+@media only screen and (min-width: 481px) and (max-width: 720px) {
+    html {font-size: 50%;}
+}
+  
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+        /* For portrait layouts only */
+}
+
+
+/* jds */
+  
+footer svg path {fill:#FFF;}
+
+
+.uppercase {text-transform: uppercase;}
+.link {
+    text-transform: uppercase;
+    position: relative;
+}
+.link::after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: auto;
+    bottom: -.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: .8px;
+    background-color: var(--textColor);
+}
+.center {text-align: center;}
+.half {opacity: .55;}
+
+
+
+
+
+
+
