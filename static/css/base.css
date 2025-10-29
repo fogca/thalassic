@@ -73,8 +73,13 @@ div, h1, h2, h3, h4, h5, h6, p, a, span, input, button, tspan, tr, td,th {
     -webkit-font-smoothing: antialiased;
 }
 
+:lang(zh) {
+    font-family: FZFW-ZhuZiHeiS-B--GB1;
+    font-family: FZFW-ZhuZiHeiS-M--GB1;
+}
+
 .serif,.serif * {
-  font-family: Optima-Medium, TsukuGoPr5-B, TsukuGoPro-E, sans-serif;
+  font-family: OptimaNovaLTPro-Medium, Optima-Medium, TsukuGoPr5-B, TsukuGoPro-E, sans-serif;
 }
 .sans {
     font-family: 'Univers', TsukuGoPr5-D, TsukuGoPro-D, sans-serif;

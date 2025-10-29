@@ -28,7 +28,11 @@
             
         </div>
 
-        <div class="right">
+        <img src="../image/header_career.png" alt="" class="" loading="eager" decoding="async" />
+
+        <div class="right pc">
+            
+            
             <div
             class="h3 bold menu"
             class:clicked={clicked} 
@@ -87,6 +91,12 @@ header .left {
     width: auto;
     opacity: 1;
 }
+
+header img {
+    width: 100px;
+    margin-right: -10px;   
+}
+
 
 
 
