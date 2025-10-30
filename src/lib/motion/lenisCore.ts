@@ -24,3 +24,12 @@ export function initMotionLenis(opts: any = { lerp: 0.08, smoothWheel: true }) {
 
 export function motionRaf(t: number) { _lenis?.raf(t); }
 export function getMotionLenis() { return _lenis; }
+
+
+
+
+let lenis: any;
+
+export function getLenisInstance() {
+  return lenis;
+}

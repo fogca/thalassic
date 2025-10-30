@@ -1,6 +1,7 @@
-<script>
+<script lang="ts">
 	import Link from "../../components/Link.svelte"
 </script>
+
 
 <section class="" id="HomeBusiness">
 
@@ -12,21 +13,21 @@
     <div class="wrapper">
 
         <div class="container">
-            <img src="../../image/TC_home_business1.jpg" alt="" loading="eager" decoding="async" />
+            <img class="pz" src="../../image/TC_business_international.jpg" alt="" loading="eager" decoding="async" />
             <h3 class="h3 serif uppercase" lang="en">Real Estate</h3>
             <h4 class="h6">不動産売買・賃貸管理・不動産仲介</h4>
             <a href="/business"><Link /></a>
         </div>
 
         <div class="container">
-            <img src="../../image/TC_home_business1.jpg" alt="" loading="eager" decoding="async" />
+            <img class="pz" src="../../image/TC_business_international_1.jpg" alt="" loading="eager" decoding="async" />
             <h3 class="h3 serif uppercase" lang="en">International</h3>
             <h4 class="h6">オーストラリアを中心に海外展開を推進</h4>
             <a href="/business"><Link /></a>
         </div>
 
         <div class="container">
-            <img src="../../image/TC_home_business1.jpg" alt="" loading="eager" decoding="async" />
+            <img class="pz" src="../../image/TC_business_service.jpg" alt="" loading="eager" decoding="async" />
             <h3 class="h3 serif uppercase" lang="en">Service</h3>
             <h4 class="h6">宿泊事業やその他の活動</h4>
             <a href="/business"><Link /></a>
@@ -40,6 +41,13 @@
 
 
 <style>
+    .panel { height: 50vh; }
+    .panzoom { position: relative; overflow: hidden; height: 40vh; }
+    .panzoom img {
+      width: 100%; height: 100%; object-fit: cover;
+      transform: scale(1.15) translateY(-10%); /* 初期ズーム & 上からスタート */
+      will-change: transform;
+    }
 
 #HomeBusiness {margin-top: 100px;}
 

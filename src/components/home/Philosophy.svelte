@@ -22,17 +22,37 @@
         <a href="/about"><Link /></a>
     </div>
 
-    <img src="../../image/TC_top@sp.png" alt="" class="pc" loading="eager" decoding="async" />
+    <img src="../../image/TC_top@sp.png" alt="" class="pc pz" loading="eager" decoding="async" />
 
 </section>
 
 
 <style>
 #HomePhilosophy {
-    margin: 80px 0 100px;
+    padding: 80px var(--padding) 100px;
 }
 
 #HomePhilosophy .heading-header {margin-bottom: 30px;}
 #HomePhilosophy .wrapper h3 {margin: 25px 0 30px;}
+
+
+
+
+@media (min-width: 960px){
+
+    #HomePhilosophy {
+        width: 100%;
+        padding: 180px calc(2 * var(--pcPadding)) 200px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #HomePhilosophy img {
+        width: 40vw;
+        height: 30vw;
+    }
+
+}
 
 </style>

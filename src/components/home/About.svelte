@@ -23,7 +23,6 @@
         <a href="/about"><Link /></a>
     </div>
 
-    <img src="../../image/TC_top@sp.png" alt="" class="pc" loading="eager" decoding="async" />
 
 </section>
 
@@ -39,5 +38,15 @@
     background-color: #232a40;
 }
 #HomeCompany * {color: white;}
+
+
+@media (min-width: 960px){
+
+    #HomeCompany {
+        padding-top: 180px;
+        padding-bottom: 180px;
+    }
+
+}
 
 </style>
