@@ -4,6 +4,7 @@ import Lenis from '@studio-freight/lenis';
 export function initLenis() {
   const lenis = new Lenis({
     smoothWheel: true,
+    syncTouch: false,
     lerp: 0.1,          // 慣性（0〜1、低いほどねっとり）
     wheelMultiplier: 1, // スクロール感度
   });
