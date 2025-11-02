@@ -1,8 +1,8 @@
 <script>
-	import Arrow from "../../components/Arrow.svelte"
+	import Link from "../../components/Link.svelte"
 </script>
 
-<section class="" id="HomeTop" lang="jp">
+<section class="topLayout" id="HomeTop" lang="jp">
     <!-- モバイル用：テキストブロック -->
     <div class="texts-container">
       <div>
@@ -11,10 +11,7 @@
       <p class="h7 half"lang="en">Building futures together<br>
         with THALASSIC CAPITAL</p>
   
-      <a href="#" class="h5 serif underline" lang="en">
-        <span lang="en">Discover More</span>
-        <Arrow />
-      </a>
+        <a href="/about"><Link /></a>
       </div>
     </div>
   
@@ -25,7 +22,7 @@
       <!-- PC時のみ有効化されるオーバーレイ -->
       <div class="hero__overlay" aria-hidden="true"></div>
     </div>
-  </section>
+</section>
 
 
 

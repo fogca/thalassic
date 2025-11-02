@@ -1,14 +1,16 @@
 <ul class="wrapper">
     <li class="container">
-        <a href="/" class="h3 serif uppercase" lang="en">Home</a>
+        <a href="/">
+        <span class="h3 serif uppercase" lang="en">Home</span>
         <span class="h8">トップページ</span>
+        </a>
     </li>
     <li class="container">
         <span class="h3 serif uppercase" lang="en">Business</span>
         <span class="h8">事業内容</span>
         <div class="links">
-            <a href="/business" class="h6">ー 不動産事業</a>
-            <a href="/business" class="h6">ー グローバル事業</a>
+            <a href="/real-estate" class="h6">ー 不動産事業</a>
+            <a href="/international" class="h6">ー グローバル事業</a>
             <a href="/business" class="h6">ー サービス事業</a>
         </div>
     </li>
@@ -17,7 +19,7 @@
         <span class="h8">サラシックとは</span>
         <div class="links">
             <a href="/about" class="h6">ー 事業内容と哲学</a>
-            <a href="/aboout#AboutCompany" class="h6">ー 会社概要</a>
+            <a href="/about#AboutCompany" class="h6">ー 会社概要</a>
         </div>
     </li>
     <li class="container">
@@ -30,8 +32,10 @@
         </div>
     </li>
     <li class="container">
-        <a href="/contact" class="h3 serif uppercase" lang="en">Contact</a>
+        <a href="/contact">
+        <span class="h3 serif uppercase" lang="en">Contact</span>
         <span class="h8">お問い合わせ</span>
+        </a>
     </li>
 </ul>
 
