@@ -27,7 +27,7 @@
     
     
     <div class="image-container w100">
-      <img class="pz" src="../../image/TC_business_international_1.jpg" alt="" loading="eager" decoding="async" />
+      <img class="pz" src="../../image/TC_business_international_1.webp" alt="" loading="eager" decoding="async" />
       <!-- PC時のみ有効化されるオーバーレイ -->
       <div class="hero__overlay" aria-hidden="true"></div>
     </div>
@@ -41,7 +41,7 @@
         <h4 class="h6 half "lang="en">Australia</h4>
         <p>新たな分野を切り拓く戦略的投資（海外事業）として、グローバル化の進展を事業拡大の好機と捉え、オーストラリアを中心に海外展開を推進しています。<br><br>
           オーストラリアは南半球に位置する広大な国で、豊かな自然環境と多文化社会が特徴です。国土は世界第6位の広さを誇り、乾燥地帯から熱帯雨林、サンゴ礁まで多様な自然を有します。主要都市はシドニー、メルボルン、ブリスベン、パースなどで、移民を積極的に受け入れることで多様な文化が共存。鉱業や農業、教育、観光、不動産など幅広い産業が発展しており、安定した政治・経済基盤を背景に高い生活水準を実現しています。</p>
-        <img class="pz" src="../../image/TC_business_international_1.jpg" alt="" loading="eager" decoding="async" />
+        <img class="pz" src="../../image/TC_business_international_1.webp" alt="" loading="eager" decoding="async" />
       </div>
 
 

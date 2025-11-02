@@ -17,8 +17,8 @@
   
     
     <div class="image-container w100">
-      <img class="pz sp" src="../../image/TC_top@sp.png" alt="" loading="eager" decoding="async" />
-      <img class="pz pc" src="../../image/TC_top@pc.png" alt="" loading="eager" decoding="async" />
+      <img class="pz sp" src="../../image/TC_top@sp.webp" alt="" loading="eager" decoding="async" />
+      <img class="pz pc" src="../../image/TC_top@pc.webp" alt="" loading="eager" decoding="async" />
       <!-- PC時のみ有効化されるオーバーレイ -->
       <div class="hero__overlay" aria-hidden="true"></div>
     </div>

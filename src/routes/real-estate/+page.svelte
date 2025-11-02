@@ -28,8 +28,8 @@
     
     
     <div class="image-container w100">
-      <img class="pz sp" src="../../image/TC_business_international.jpg" alt="" loading="eager" decoding="async" />
-      <img class="pz pc" src="../../image/TC_top@pc.png" alt="" loading="eager" decoding="async" />
+      <img class="pz sp" src="../../image/TC_business_international.webp" alt="" loading="eager" decoding="async" />
+      <img class="pz pc" src="../../image/TC_top@pc.webp" alt="" loading="eager" decoding="async" />
       <!-- PC時のみ有効化されるオーバーレイ -->
       <div class="hero__overlay" aria-hidden="true"></div>
     </div>
@@ -42,7 +42,7 @@
         <h3 class="h2 bold">不動産売買</h3>
         <h4 class="h6 half "lang="en">Real Estate Sales</h4>
         <p>当社では、収益不動産を主とした買取事業を行っています。お客様の大切な不動産を当社が直接購入し、リノベーションなどで価値を高めた後、不動産クラウドファンディング商品として運用したり、新たに購入を希望される方へ販売いたします。当社では、収益不動産を主とした買取事業を行っています。お客様の大切な不動産を当社が直接購入し、リノベーションなどで価値を高めた後、不動産クラウドファンディング商品として運用したり、新たに購入を希望される方へ販売いたします。</p>
-        <img class="pz" src="../../image/TC_business_international.jpg" alt="" loading="eager" decoding="async" />
+        <img class="pz" src="../../image/TC_business_international.webp" alt="" loading="eager" decoding="async" />
       </div>
 
       <div class="container">
@@ -50,7 +50,7 @@
         <h3 class="h2 bold">賃貸管理</h3>
         <h4 class="h6 half "lang="en">Rental Management</h4>
         <p>当社は収益最大化を目指し、物件管理から事業承継に至るまでをワンストップでサポートいたします。収益物件の安定した運営を実現するため、中長期的な視点からご提案を行います。オーナー様にとって大きな課題である「資産価値の維持・向上」や「空室対策」についても、競合物件や周辺環境の変化を専門的に調査し、収益向上を支援するとともに、次世代への円滑な承継を実現します。</p>
-        <img class="pz" src="../../image/TC_business_international.jpg" alt="" loading="eager" decoding="async" />
+        <img class="pz" src="../../image/TC_business_international.webp" alt="" loading="eager" decoding="async" />
         </div>
       </div>
 
@@ -59,7 +59,7 @@
         <h3 class="h2 bold">不動産仲介</h3>
         <h4 class="h6 half "lang="en">Real Estate Brokerage</h4>
         <p>当社は収益不動産や事業用不動産を中心に仲介を行っており、特に収益性不動産と高級住宅の仲介サービスに注力しています。売主様と買主様の橋渡し役として、経験豊かなスタッフが、ご相談から物件のご紹介や調査、条件の調整、契約、引渡しまでを一貫してサポートし、安心・円滑な不動産取引を実現いたします。</p>
-        <img class="pz" src="../../image/TC_business_international.jpg" alt="" loading="eager" decoding="async" />
+        <img class="pz" src="../../image/TC_business_international.webp" alt="" loading="eager" decoding="async" />
       </div>
       </div>
 
@@ -68,7 +68,7 @@
         <h4 class="h6 half "lang="en">B&B Business</h4>
         <p>名古屋という都市を、文化と感性で再発見する。
           名古屋という都市が持つ、独自のリズムや文化に触れるための滞在を提案しています。歴史ある街並みと現代的な感性が混ざり合う地域で、Airbnbを中心に複数の宿泊拠点を展開。そこでは、観光では見えない“名古屋の日常”を、食・建築・人との関わりを通じて体感できます。滞在のかたちは多様でも、どの拠点にも共通するのは「その土地の空気を感じる」という価値です。</p>
-        <img class="pz" src="../../image/TC_business_international.jpg" alt="" loading="eager" decoding="async" />
+        <img class="pz" src="../../image/TC_business_international.webp" alt="" loading="eager" decoding="async" />
       </div>
 
     </div>

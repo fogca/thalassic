@@ -22,7 +22,7 @@
         <a href="/about"><Link /></a>
     </div>
 
-    <img src="../../image/TC_top@sp.png" alt="" class="pc pz" loading="eager" decoding="async" />
+    <img src="../../image/TC_top@sp.webp" alt="" class="pc pz" loading="eager" decoding="async" />
 
 </section>
 

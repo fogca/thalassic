@@ -17,7 +17,7 @@
     #HomeRecruit .wrapper {
     height: 70vh;
     background-size: cover;
-    background-image: url('/image/TC_career1.png');
+    background-image: url('/image/TC_career1.webp');
     display: flex;
     flex-direction: column;
     align-items: center;
