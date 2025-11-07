@@ -1,3 +1,4 @@
+<!--
 <script lang="ts">
     import { onMount } from 'svelte';
     import GUI from 'lil-gui';
@@ -80,3 +81,6 @@
       .grid { grid-template-columns: 1fr; }
     }
   </style>
+
+
+  -->
