@@ -23,16 +23,31 @@
             
         </div>
 
-        <img src="../image/header_career.png" alt="" class="" loading="eager" decoding="async" />
+        
 
-        <div class="right pc">
+        <div class="right">
+
+            <nav class="pc">
+                <ul>
+                    <li><a class="h5 serif uppercase" href="/real-estate">Real Estate</a></li>
+                    <li><a class="h5 serif uppercase" href="/international">International</a></li>
+                    <li><a class="h5 serif uppercase" href="/service">Service</a></li>
+                    <li><a class="h5 serif uppercase" href="/about">About</a></li>
+                    <li><a class="h5 serif uppercase" href="/recruit">Recruitment</a></li>
+                    <li><a class="h5 serif uppercase" href="/">Contact</a></li>
+                </ul>
+            </nav>
+
+            <img src="../image/header_career.png" alt="" class="" loading="eager" decoding="async" />
             
+            <button class="menu-btn sp" on:click={toggle} aria-label="menu">
+                <span class:open={open}></span>
+                <span class:open={open}></span>
+            </button>
+
         </div>
         
-        <button class="menu-btn" on:click={toggle} aria-label="menu">
-            <span class:open={open}></span>
-            <span class:open={open}></span>
-        </button>
+        
     
         <!-- オーバーレイメニュー -->
         <div class="overlay" class:open={open} on:click={toggle}>
@@ -41,7 +56,7 @@
             </nav>
         </div>
 
-
+        
 
 
 
@@ -76,13 +91,19 @@ header .left {
 }
 
 header img {
-    width: 100px;
-    margin-right: -10px;   
+    width: auto;
+    height: 45px;
+    margin-right: 8px;   
 }
 
 
 header, header * {transition: all 1000ms cubic-bezier(0.19, 1, 0.22, 1);}
 
+
+header .right {
+    display: flex;
+    align-items: center;
+}
 .menu-btn {
 	position: relative;
 	width: 25px;
@@ -161,8 +182,23 @@ header, header * {transition: all 1000ms cubic-bezier(0.19, 1, 0.22, 1);}
 
     
     header {
-        padding: 2.5rem var(--pcPadding) 1.8rem;
+        height: 60px;
+        padding: 2.5rem 50px 1.8rem;
     }
+
+    header .right nav li {
+        display: inline;
+        margin: 0 .5rem;
+    }
+
+    header img {
+        height: 55px;
+        margin-right: -15px;
+        margin-left: 15px;
+    }
+    header .logo {margin-left: 10px;}
+
+    .menu-btn.sp {display: none;}
 
 
 }

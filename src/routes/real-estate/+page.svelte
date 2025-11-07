@@ -8,15 +8,14 @@
 
 <main>
 
-  <section class="topLayout" id="" lang="jp">
+  <section class="topLayout topLayoutPages" id="" lang="jp">
     <!-- モバイル用：テキストブロック -->
     <div class="texts-container">
       <div>
       <h2 class="hero__title bold">
         サラシック不動産<br>
         地域の風土に根ざし、<br>
-        未来を形づくる<br>
-        不動産部門  
+        未来を形づくる不動産部門
       </h2>
       <p class="h7 half"lang="en">
         THALASSIC Real Estate — <br>
@@ -28,8 +27,8 @@
     
     
     <div class="image-container w100">
-      <img class="pz sp" src="../../image/TC_business_international.webp" alt="" loading="eager" decoding="async" />
-      <img class="pz pc" src="../../image/TC_top@pc.webp" alt="" loading="eager" decoding="async" />
+      
+      <img class="" src="../../image/TC_top.webp" alt="" loading="eager" decoding="async" />
       <!-- PC時のみ有効化されるオーバーレイ -->
       <div class="hero__overlay" aria-hidden="true"></div>
     </div>
@@ -175,43 +174,10 @@
 
   .business-wrapper .container:nth-of-type(2) img,
   .business-wrapper .container:nth-of-type(3) img {width: 100%;}
+  
 
 
 
-
-
-
-
-  .topLayout .texts-container{
-    position: absolute;
-    top: auto;
-    bottom: 90px;
-    left: 90px;
-    z-index: 1;
-    height: auto;
-  }
-  .topLayout .texts-container * {color: white;fill:white;}
-
-
-  .topLayout .image-container {
-    width: calc(100vw - 60px);
-    height: calc(100vh - 65px - 60px);
-    height: calc(100dvh - 65px - 60px);
-    margin-left: 0;
-    position: absolute;
-    top: auto;
-    bottom: 30px;
-    left: 50%;
-    transform: translate(-50%, 0%);
-  }
-
-
-  .topLayout .image-container .hero__overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(0deg, var(--overlay-from) 0%, var(--overlay-to) 55%);
-    pointer-events: none;
-  }
 
 
 }

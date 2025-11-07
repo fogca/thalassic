@@ -75,6 +75,8 @@
         gap: 30px;
     }
 
+    #HomeBusiness .wrapper img {height: 18vw;}
+
 }
 
 </style>

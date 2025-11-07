@@ -8,7 +8,7 @@
 
 <main>
 
-  <section class="topLayout" id="" lang="jp">
+  <section class="topLayout topLayoutPages" id="" lang="jp">
     <!-- モバイル用：テキストブロック -->
     <div class="texts-container">
       <div>

@@ -227,6 +227,15 @@ section {
 
 .pcflex{display: flex; justify-content: space-between; align-items: center;}
 
+#HomeTop .underline * {
+    color:white;
+    fill: white;
+}
+#HomeTop .underline::after {background-color: white;}
+
+
+
+
 
 }
 

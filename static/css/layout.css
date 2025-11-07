@@ -1,0 +1,54 @@
+
+@media screen and (min-width:960px) {
+    
+.topLayout .texts-container{
+    position: absolute;
+    top: auto;
+    bottom: 90px;
+    left: 90px;
+    z-index: 1;
+    height: auto;
+  }
+  .topLayout .texts-container * {color: white;fill:white;}
+
+
+  .topLayout .image-container {
+    width: calc(100vw - 60px);
+    height: calc(100vh - 65px - 60px);
+    height: calc(100dvh - 65px - 60px);
+    margin-left: 0;
+    position: absolute;
+    top: auto;
+    bottom: 30px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+  }
+
+
+  .topLayout .image-container .hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, var(--overlay-from) 0%, var(--overlay-to) 55%);
+    pointer-events: none;
+  }
+
+  
+
+  .topLayout.topLayoutPages .image-container {
+    width: 50vw;
+    left: auto;
+    right: 30px;
+    transform: translateX(0);
+  }
+
+  .topLayout.topLayoutPages .texts-container {
+    margin-top: 0;
+    top: 55%;
+    bottom: auto;
+    transform: translateY(-50%);
+    left: 70px;
+  }
+  .topLayout.topLayoutPages .texts-container * {color: var(--textColor);fill:var(--textColor);}
+
+
+}
