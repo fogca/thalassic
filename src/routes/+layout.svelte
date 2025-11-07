@@ -23,7 +23,7 @@
 	<link rel="icon" href={favicon} />
 	<link rel="stylesheet" href="../css/base.css?var=1.02">
 	<link rel="stylesheet" href="../css/layout.css?var=1.00">
-	<script src="https://webfont.fontplus.jp/accessor/script/fontplus.js?kqbwQX--jVA%3D&box=2bQkUFfZnEc%3D&aa=1&ab=2"></script>
+	
 	<link rel="stylesheet" href="https://use.typekit.net/vps5ddr.css">
 </svelte:head>
 
