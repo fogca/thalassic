@@ -3,38 +3,14 @@
 	import favicon from '$lib/assets/favicon.svg';
 	import { onMount, onDestroy } from 'svelte';
 
-	import { initMotionLenis, motionRaf, getLenisInstance } from '$lib/motion/lenisCore';
+	import Lenis from '@studio-freight/lenis';
 	import { initParallaxZoom } from '$lib/motion/pz';
-
-	let destroyPZ: () => void;
-	let raf = 0;
+	
 
 	onMount(() => {
-	  // --- Lenis 初期化 ---
-	  initMotionLenis({ lerp: 0.09, smoothWheel: true });
-
-	  // --- LenisのrequestAnimationFrameループ ---
-	  const loop = (t: number) => {
-	    raf = requestAnimationFrame(loop);
-	    motionRaf(t);
-	  };
-	  loop(0);
-
-	  // --- ScrollTrigger と同期 ---
-	  import('gsap/ScrollTrigger').then(({ ScrollTrigger }) => {
-	    const lenis = getLenisInstance?.(); // ← lenisCore 側でexportしておくと便利
-	    lenis?.on('scroll', () => ScrollTrigger.update());
-	  });
-
-	  // --- Parallax Zoom 初期化 ---
-	  destroyPZ = initParallaxZoom({
-	    // optional: defaultY: [-6, 6], defaultScale: [1.1, 1.0],
-	  });
-
-	  return () => {
-	    cancelAnimationFrame(raf);
-	    destroyPZ?.();
-	  };
+		const lenis = new Lenis({ smoothWheel: true, syncTouch: true });
+		requestAnimationFrame(function raf(t){ lenis.raf(t); requestAnimationFrame(raf); });
+		const stop = initParallaxZoom({ selector: '.pz', lenis });
 	});
 
 

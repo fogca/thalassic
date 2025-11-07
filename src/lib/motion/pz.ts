@@ -6,15 +6,15 @@ type Opts = {
   end?: string;
   defaultY?: [number, number];
   defaultScale?: [number, number];
+  /** Lenis を外で作っているなら渡す。未指定なら window を使う */
+  lenis?: any;
 };
 
-function parseAspect(s: string) {
-  // "16/9" or "1.777..." → number
+function parseAspect(s: string | null | undefined) {
   if (!s) return null;
   if (s.includes('/')) {
     const [w, h] = s.split('/').map(Number);
-    if (w > 0 && h > 0) return w / h;
-    return null;
+    return w > 0 && h > 0 ? w / h : null;
   }
   const n = Number(s);
   return isFinite(n) && n > 0 ? n : null;
@@ -27,88 +27,93 @@ export function initParallaxZoom(opts: Opts = {}) {
     start = 'top bottom',
     end = 'bottom top',
     defaultY = [-4, 10],
-    defaultScale = [1.25, 1.1]
+    defaultScale = [1.25, 1.1],
+    lenis
   } = opts;
 
   let ctx: any;
+  let gsap: any;
   let ScrollTrigger: any;
+  // scroller は Lenis があれば <html>、なければ window
+  const scrollerEl: HTMLElement | Window = lenis ? document.documentElement : window;
 
   const setup = async () => {
-    // GSAP動的読み込み（SSR回避）
-    const { default: gsap } = await import('gsap');
-    const mod = await import('gsap/ScrollTrigger');
-    ScrollTrigger = mod.ScrollTrigger;
+    ({ default: gsap } = await import('gsap'));
+    ({ ScrollTrigger } = await import('gsap/ScrollTrigger'));
     gsap.registerPlugin(ScrollTrigger);
 
-    // レデュースモーション対応
-    const mm = gsap.matchMedia();
-    mm.add('(prefers-reduced-motion: reduce)', () => {
-      ScrollTrigger?.getAll().forEach((st: any) => st.disable());
-      return () => {};
-    });
+    // ✅ Lenis 併用時の scrollerProxy（これが無いと詰まる）
+    if (lenis) {
+      ScrollTrigger.scrollerProxy(scrollerEl, {
+        scrollTop(value?: number) {
+          if (arguments.length) {
+            lenis.scrollTo(value!, { immediate: true });
+          }
+          return lenis.scroll;
+        },
+        getBoundingClientRect() {
+          return {
+            top: 0, left: 0,
+            width: window.innerWidth,
+            height: window.innerHeight
+          };
+        },
+        // iOS などで transform pin と競合しないように
+        pinType: 'transform'
+      });
+      // Lenis が動いたら ST 更新
+      lenis.on('scroll', () => ScrollTrigger.update());
+    }
 
-    // スコープ
     ctx = gsap.context(async () => {
       const imgs = Array.from(document.querySelectorAll<HTMLImageElement>(selector));
 
-      // 画像毎に処理
       for (const img of imgs) {
-        // まだラップされていなければラップ作成
+        // ラップが無ければ作る
         if (!img.closest('.pz-wrap')) {
-          try { await img.decode?.(); } catch { /* noop */ }
+          try { await img.decode?.(); } catch {}
 
-          // 現在の表示サイズを取得
           const rect = img.getBoundingClientRect();
-          const curW = rect.width;
-          const curH = rect.height;
+          let frameW = rect.width;
+          let frameH = rect.height;
 
-          // フレームサイズ決定ロジック
-          const frameHAttr = img.dataset.frameH ? Number(img.dataset.frameH) : null;
+          const aspect = parseAspect(img.dataset.aspect);
           const frameWAttr = img.dataset.frameW ? Number(img.dataset.frameW) : null;
-          const aspect = img.dataset.aspect ? parseAspect(img.dataset.aspect) : null;
-
-          let frameW = curW;
-          let frameH = curH;
+          const frameHAttr = img.dataset.frameH ? Number(img.dataset.frameH) : null;
 
           if (frameWAttr && frameHAttr) {
-            frameW = frameWAttr;
-            frameH = frameHAttr;
+            frameW = frameWAttr; frameH = frameHAttr;
           } else if (frameWAttr && (aspect || img.naturalWidth)) {
             const ar = aspect ?? (img.naturalWidth / img.naturalHeight);
-            frameW = frameWAttr;
-            frameH = Math.round(frameW / ar);
+            frameW = frameWAttr; frameH = Math.round(frameW / ar);
           } else if (frameHAttr && (aspect || img.naturalWidth)) {
             const ar = aspect ?? (img.naturalWidth / img.naturalHeight);
-            frameH = frameHAttr;
-            frameW = Math.round(frameH * ar);
+            frameH = frameHAttr; frameW = Math.round(frameH * ar);
           } else if (aspect) {
-            // 現在の幅を尊重しつつ比率で高さ算出
-            frameW = curW;
+            frameW = rect.width;
             frameH = Math.round(frameW / aspect);
-          } else {
-            // 既存表示をそのままロック
-            frameW = curW;
-            frameH = curH;
           }
 
-          // ラッパDOM作成
           const wrap = document.createElement('div');
           wrap.className = 'pz-wrap';
-          // フレーム固定（pxロック）
           wrap.style.position = 'relative';
           wrap.style.overflow = 'hidden';
-          wrap.style.width = `${frameW}px`;
-          wrap.style.height = `${frameH}px`;
           wrap.style.display = 'block';
-          // レイアウト/ペイントの分離で微最適化
-          wrap.style.contain = 'layout paint size';
+          // 幅はレイアウト任せ。高さは aspect があればそちら優先
+          wrap.style.width = '100%';
+          if (aspect) {
+            (wrap.style as any).aspectRatio = String(aspect);
+            wrap.style.height = 'auto';
+          } else {
+            wrap.style.height = `${frameH}px`;
+          }
+          wrap.style.contain = 'paint';
 
-          // DOM入れ替え
           const parent = img.parentElement!;
           parent.insertBefore(wrap, img);
           wrap.appendChild(img);
 
-          // 画像のスタイル（フレーム内でオブジェクトカバー＋絶対配置）
+          // 画像スタイル
           img.style.position = 'absolute';
           img.style.inset = '0';
           img.style.width = '100%';
@@ -118,17 +123,14 @@ export function initParallaxZoom(opts: Opts = {}) {
           img.style.transformOrigin = 'center center';
         }
 
-        // アニメーション設定
         const y = (img.dataset.y ?? `${defaultY[0]},${defaultY[1]}`)
           .split(',').map((n) => Number(n.trim())) as [number, number];
 
         const sc = (img.dataset.scale ?? `${defaultScale[0]},${defaultScale[1]}`)
           .split(',').map((n) => Number(n.trim())) as [number, number];
 
-        // 初期transform
         img.style.transform = `scale(${sc[0]}) translateY(${y[0]}%)`;
 
-        // ScrollTriggerでパン＋ズーム
         gsap.fromTo(
           img,
           { yPercent: y[0], scale: sc[0] },
@@ -137,28 +139,31 @@ export function initParallaxZoom(opts: Opts = {}) {
             scale: sc[1],
             ease: 'none',
             scrollTrigger: {
-              trigger: img.closest('.pz-wrap')!, // フレーム基準で発火
-              start,
-              end,
-              scrub: true
+              trigger: img.closest('.pz-wrap')!,
+              start, end, scrub: true,
+              scroller: scrollerEl,              // ✅ 重要
+              invalidateOnRefresh: true,
+              fastScrollEnd: true
             }
           }
         );
       }
     });
 
-    // レイアウト確定後に再計測
-    queueMicrotask(() => ScrollTrigger.refresh());
+    ScrollTrigger.refresh();
   };
 
   setup();
 
   // 破棄
   return () => {
-    try {
-      const { ScrollTrigger } = (globalThis as any).gsap?.plugins ?? {};
-      ScrollTrigger?.killAll?.();
-    } catch {}
     ctx?.revert?.();
+    if (ScrollTrigger) {
+      // この機能が作った分だけ消す（サイト全消しはしない）
+      ScrollTrigger.getAll().forEach((st: any) => {
+        if ((st.vars?.trigger as Element)?.classList?.contains('pz-wrap')) st.kill();
+      });
+      ScrollTrigger.refresh();
+    }
   };
 }

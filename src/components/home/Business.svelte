@@ -13,21 +13,21 @@
     <div class="wrapper">
 
         <div class="container">
-            <img class="pz" src="../../image/TC_business_international.webp" alt="" loading="eager" decoding="async" />
+            <img class="pz" src="../../image/TC_business_international.webp" alt="" loading="eager" decoding="async" data-aspect="3/2" />
             <h3 class="h3 serif uppercase" lang="en">Real Estate</h3>
             <h4 class="h6">不動産売買・賃貸管理・不動産仲介</h4>
             <a href="/real-estate"><Link /></a>
         </div>
 
         <div class="container">
-            <img class="pz" src="../../image/TC_business_international_1.webp" alt="" loading="eager" decoding="async" />
+            <img class="pz" src="../../image/TC_business_international_1.webp" alt="" loading="eager" decoding="async" data-aspect="3/2" />
             <h3 class="h3 serif uppercase" lang="en">International</h3>
             <h4 class="h6">オーストラリアを中心に海外展開を推進</h4>
             <a href="/international"><Link /></a>
         </div>
 
         <div class="container">
-            <img class="pz" src="../../image/TC_business_service.webp" alt="" loading="eager" decoding="async" />
+            <img class="pz" src="../../image/TC_business_service.webp" alt="" loading="eager" decoding="async" data-aspect="3/2" />
             <h3 class="h3 serif uppercase" lang="en">Service</h3>
             <h4 class="h6">宿泊事業やその他の活動</h4>
             <a href="/business"><Link /></a>
