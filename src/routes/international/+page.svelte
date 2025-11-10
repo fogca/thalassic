@@ -98,31 +98,7 @@
 
 
 
-.topLayout {
-  height: 100vh;
-  height: 100dvh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
 
-.topLayout .texts-container {
-    margin-top: 50px;
-  height: 50vh;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.topLayout .texts-container p {margin: 8px 0 20px;}
-
-.topLayout .image-container {
-  width: 100vw;
-  height: 50vh;
-  height: 50svh;
-}
-
-.topLayout .image-container img {height: 100%;}
 
 
 
@@ -156,36 +132,6 @@
 
 
 
-  .topLayout .texts-container{
-    position: absolute;
-    top: auto;
-    bottom: 90px;
-    left: 90px;
-    z-index: 1;
-    height: auto;
-  }
-  .topLayout .texts-container * {color: white;fill:white;}
-
-
-  .topLayout .image-container {
-    width: calc(100vw - 60px);
-    height: calc(100vh - 65px - 60px);
-    height: calc(100dvh - 65px - 60px);
-    margin-left: 0;
-    position: absolute;
-    top: auto;
-    bottom: 30px;
-    left: 50%;
-    transform: translate(-50%, 0%);
-  }
-
-
-  .topLayout .image-container .hero__overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(0deg, var(--overlay-from) 0%, var(--overlay-to) 55%);
-    pointer-events: none;
-  }
 
 
 }

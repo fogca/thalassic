@@ -8,12 +8,18 @@
 
 	import { afterNavigate } from '$app/navigation';
     import { fontplusInit, fontplusRefresh } from '$lib/utils/fontplus';
+
+	import { detectLang, lang as langStore } from '$lib/lang';
+
   	
 	//fontplus
 	let off: (() => void) | null = null;
 	
 
 	onMount(() => {
+
+		// 初回のみ。SPA遷移後は localStorage / ?lang が効く
+		langStore.set(detectLang());
 
 		//lenis
 		const lenis = new Lenis({ smoothWheel: true, syncTouch: true });
@@ -50,8 +56,8 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
-	<link rel="stylesheet" href="../css/base.css?var=1.02">
-	<link rel="stylesheet" href="../css/layout.css?var=1.00">
+	<link rel="stylesheet" href="../css/base.css?var=1.03">
+	<link rel="stylesheet" href="../css/layout.css?var=1.01">
 	
 	<link rel="stylesheet" href="https://use.typekit.net/vps5ddr.css">
 </svelte:head>

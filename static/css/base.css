@@ -65,35 +65,16 @@ div, h1, h2, h3, h4, h5, h6, p, a, span, input, button, tspan, tr, td,th {
     line-height: 1.6;
 }
 
-
-:lang(en){
-    font-family: 'Univers', sans-serif;
-    letter-spacing: 0.01em;
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-}
-
-:lang(zh) {
-    font-family: FZFW-ZhuZiHeiS-B--GB1;
-    font-family: FZFW-ZhuZiHeiS-M--GB1;
-}
-
-.serif,.serif * {
-  font-family: OptimaNovaLTPro-Medium, Optima-Medium, TsukuGoPr5-B, TsukuGoPro-E, sans-serif;
-}
-.sans {
-    font-family: 'Univers', TsukuGoPr5-D, TsukuGoPro-D, sans-serif;
-    letter-spacing: -0.005em;
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-}
+.serif,.serif * {font-family: OptimaNovaLTPro-Medium, Optima-Medium, TsukuGoPr5-B, sans-serif;}
+.sans {font-family: 'Univers', TsukuGoPr5-D, TsukuGoPro-D, sans-serif;}
 
 .bold {
-  font-family: 'JDS', TsukuGoPr5-B, TsukuGoPro-B,"FOT-筑紫ゴシック Pro", sans-serif;
+    font-family: OptimaNovaLTPro-Medium, "Optima", TsukuGoPr5-B, TsukuGoPro-B, "FOT-筑紫ゴシック Pro", FZFW-ZhuZiHeiS-B--GB1, sans-serif;
+    text-transform: uppercase;
 }
-.jp.bold {
-  font-family: TsukuGoPr5-B, TsukuGoPro-B, sans-serif;
-}
+  
+
+
 
 
 

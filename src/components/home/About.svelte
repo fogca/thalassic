@@ -2,24 +2,22 @@
     import { parallax } from '$lib/motion/parallax';
     import { reveal } from '$lib/motion/reveal';
 	import Link from "../../components/Link.svelte"
+
+    import { lang } from '$lib/lang';
+    import { t } from './About.dict';
 </script>
 
 <section class="" id="HomeCompany">
 
     <div class="wrapper">
         <div class="heading-header">
-            <p class="h7 bold">会社概要</p>
+            <p class="h7 bold">{@html t('subheading', $lang)}</p>
             <h2 class="h1 uppercase serif" lang="en">About Company</h2> 
         </div>
 
-        <p>サラシックキャピタルは、日本、中国、<br>
-            オーストラリアを中心に、パートナー企業と<br>
-            世界各地をつなぐ架け橋を築きます。
-        </p>
-        <h3 class="h2 bold">
-            世界をつなぐ架け橋を<br>
-            築く会社。
-        </h3>
+        <p>{@html t('paragraph', $lang)}</p>
+        <h3 class="h2 bold">{@html t('heading', $lang)}</h3>
+
         <a href="/about"><Link /></a>
     </div>
 

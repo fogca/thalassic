@@ -1,17 +1,18 @@
-<script>
+<script lang="ts">
 	import Link from "../../components/Link.svelte"
+
+  import { lang } from '$lib/lang';
+  import { t } from './Top.dict';
+
 </script>
 
 <section class="topLayout" id="HomeTop" lang="jp">
     <!-- モバイル用：テキストブロック -->
     <div class="texts-container">
       <div>
-      <h2 class="hero__title bold">出会いを大切に、<br>
-        広がる未来を共に築く。</h2>
-      <p class="h7 half"lang="en">Building futures together<br>
-        with THALASSIC CAPITAL</p>
-  
-        <a href="/about"><Link /></a>
+      <h2 class="hero__title bold">{@html t('heading', $lang)}</h2>
+      <p class="h7 half"lang="en">Building futures together<br>with THALASSIC CAPITAL</p>
+      <a href="/about"><Link /></a>
       </div>
     </div>
   

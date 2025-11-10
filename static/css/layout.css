@@ -1,5 +1,65 @@
 
+.topLayout {
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.topLayout .texts-container {
+    margin-top: 50px;
+  height: 50vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.topLayout .texts-container p {margin: 8px 0 20px;}
+
+.topLayout .image-container {
+  width: 100vw;
+  height: 50vh;
+  height: 50svh;
+}
+
+.topLayout .image-container img {height: 100%;}
+
+
+
 @media screen and (min-width:960px) {
+
+
+  .topLayout .texts-container{
+    position: absolute;
+    top: auto;
+    bottom: 90px;
+    left: 90px;
+    z-index: 1;
+    height: auto;
+  }
+  .topLayout .texts-container * {color: white;fill:white;}
+
+
+  .topLayout .image-container {
+    width: calc(100vw - 60px);
+    height: calc(100vh - 65px - 60px);
+    height: calc(100dvh - 65px - 60px);
+    margin-left: 0;
+    position: absolute;
+    top: auto;
+    bottom: 30px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+  }
+
+
+  .topLayout .image-container .hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, var(--overlay-from) 0%, var(--overlay-to) 55%);
+    pointer-events: none;
+  }
     
 .topLayout .texts-container{
     position: absolute;
@@ -34,18 +94,22 @@
 
   
 
+
+
   .topLayout.topLayoutPages .image-container {
-    width: 50vw;
-    left: auto;
-    right: 30px;
+    width: 100vw;
+    height: 50vh;
+    top: auto;
+    bottom: 0;
+    left: 0;
     transform: translateX(0);
   }
 
   .topLayout.topLayoutPages .texts-container {
     margin-top: 0;
-    top: 55%;
+    top: 18%;
     bottom: auto;
-    transform: translateY(-50%);
+    transform: translateY(0);
     left: 70px;
   }
   .topLayout.topLayoutPages .texts-container * {color: var(--textColor);fill:var(--textColor);}

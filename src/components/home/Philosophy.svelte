@@ -1,24 +1,20 @@
-<script>
+<script lang="ts">
 	import Link from "../../components/Link.svelte"
+
+    import { lang } from '$lib/lang';
+    import { t } from './Philosophy.dict';
 </script>
 
 <section class="" id="HomePhilosophy">
 
     <div class="wrapper">
         <div class="heading-header">
-            <p class="h7 bold">ビジネスフィロソフィー</p>
+            <p class="h7 bold">{@html t('subheading', $lang)}</p>
             <h2 class="h1 uppercase serif" lang="en">Philosophy</h2> 
         </div>
 
-        <p>サラシックキャピタルは、日本、中国、<br>
-            オーストラリアを中心に、パートナー企業と<br>
-            世界各地をつなぐ架け橋を築きます。
-        </p>
-        <h3 class="h2 bold">
-            お客様とのひとつひとつの<br>
-            出会いを大切にし、<br>
-            常にお客様と共に。
-        </h3>
+        <p>{@html t('paragraph', $lang)}</p>
+        <h3 class="h2 bold">{@html t('heading', $lang)}</h3>
         <a href="/about"><Link /></a>
     </div>
 

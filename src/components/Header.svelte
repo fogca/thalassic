@@ -1,16 +1,23 @@
-<script>
+<script lang="ts">
     import Logo from "./Logo.svelte";
     import { slide } from 'svelte/transition';
 	import { onMount } from 'svelte';
     import { page } from '$app/stores'; 
     import { browser } from '$app/environment';
     import Links from "./pageLinks.svelte";
-
+    import { lang } from '$lib/lang';
     let y
 
 
     let open = false;
 	const toggle = () => (open = !open);
+
+    //lang
+    let opens = false;
+    function select(l: 'ja' | 'zh' | 'en') {
+      lang.set(l);
+      opens = false;
+    }
 
 </script>
     
@@ -31,10 +38,26 @@
                 <ul>
                     <li><a class="h5 serif uppercase" href="/real-estate">Real Estate</a></li>
                     <li><a class="h5 serif uppercase" href="/international">International</a></li>
-                    <li><a class="h5 serif uppercase" href="/service">Service</a></li>
                     <li><a class="h5 serif uppercase" href="/about">About</a></li>
                     <li><a class="h5 serif uppercase" href="/recruit">Recruitment</a></li>
                     <li><a class="h5 serif uppercase" href="/">Contact</a></li>
+                    <li>
+                        <div class="lang-switch">
+                            <!-- toggle button -->
+                            <button class="current" on:click={() => (opens = !opens)}>
+                              <span>{$lang.toUpperCase()}</span>
+                              <span class="arrow" class:open={opens}>▾</span>
+                            </button>
+                          
+                            {#if opens}
+                              <div class="dropdown">
+                                <button class="item" on:click={() => select('ja')}>JP</button>
+                                <button class="item" on:click={() => select('zh')}>ZH</button>
+                                <button class="item" on:click={() => select('en')}>EN</button>
+                              </div>
+                            {/if}
+                          </div>
+                    </li>
                 </ul>
             </nav>
 
@@ -175,7 +198,55 @@ header .right {
 }
 
 
+  .lang-switch {
+    position: relative;
+    display: inline-block;
+    user-select: none;
+    font-size: 14px;
+  }
 
+  button {
+    all: unset;
+    cursor: pointer;
+  }
+
+  .current {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 10px;
+    border-radius: 4px;
+    background: #f3f3f3;
+  }
+
+  .arrow {
+    transition: transform 0.2s;
+    display: inline-block;
+  }
+  .arrow.open {
+    transform: rotate(180deg);
+  }
+
+  .dropdown {
+    position: absolute;
+    top: 110%;
+    right: 0;
+    background: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border-radius: 4px;
+    padding: 4px 0;
+    width: 80px;
+    z-index: 10;
+  }
+
+  .item {
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+  .item:hover {
+    background: #f0f0f0;
+  }
 
 
 @media screen and (min-width: 720px) {
@@ -188,7 +259,7 @@ header .right {
 
     header .right nav li {
         display: inline;
-        margin: 0 .5rem;
+        margin: 0 1rem;
     }
 
     header img {

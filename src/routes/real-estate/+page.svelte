@@ -28,7 +28,7 @@
     
     <div class="image-container w100">
       
-      <img class="" src="../../image/TC_top.webp" alt="" loading="eager" decoding="async" />
+      <img class="pz" src="../../image/TC_top.webp" alt="" loading="eager" decoding="async" />
       <!-- PC時のみ有効化されるオーバーレイ -->
       <div class="hero__overlay" aria-hidden="true"></div>
     </div>
@@ -123,31 +123,7 @@
 
 
 
-.topLayout {
-  height: 100vh;
-  height: 100dvh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
 
-.topLayout .texts-container {
-    margin-top: 50px;
-  height: 50vh;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.topLayout .texts-container p {margin: 8px 0 20px;}
-
-.topLayout .image-container {
-  width: 100vw;
-  height: 50vh;
-  height: 50svh;
-}
-
-.topLayout .image-container img {height: 100%;}
 
 
 
@@ -159,17 +135,24 @@
 /* --------- PC：画像全面・左下にオーバーレイ＋テキスト重ね --------- */
 @media (min-width: 960px){
 
+  .business-wrapper {margin-top: 15rem;}
 
   .business-wrapper .container {
     padding-left: calc(2 * var(--pcPadding));
     padding-right: calc(2 * var(--pcPadding));
   }
 
+  .business-wrapper .container:nth-of-type(2) div,
+  .business-wrapper .container:nth-of-type(3) div,
+  .business-wrapper .container:nth-of-type(4) div {transform: translateY(12rem);}
+  .business-wrapper .container:nth-of-type(3),
+  .business-wrapper .container:nth-of-type(4) {padding-top: 12rem;}
+
   .business-wrapper .container:nth-of-type(2),
   .business-wrapper .container:nth-of-type(3) {
     margin-left: calc(-1 * (var(--pcPadding)));
-    padding-left: calc(2.5 * var(--pcPadding));
-    padding-right: calc(2.5 * var(--pcPadding));
+    padding-left: calc(3 * var(--pcPadding));
+    padding-right: calc(3 * var(--pcPadding));
   }
 
   .business-wrapper .container:nth-of-type(2) img,
