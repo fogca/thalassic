@@ -3,6 +3,9 @@
   import Footer from "../../components/Footer.svelte"
   import Link from "../../components/Link.svelte"
 
+  import { t } from './international.dict';
+  import { lang } from '$lib/lang';
+
 </script>
 
 
@@ -13,9 +16,7 @@
     <div class="texts-container">
       <div>
       <h2 class="hero__title bold">
-        新たな分野を切り拓く<br>
-        戦略的投資として、<br>
-        グローバル事業の推進を図る。
+        {@html t('heading', $lang)}
       </h2>
       <p class="h7 half"lang="en">
         Global business <br>
@@ -37,10 +38,13 @@
     <div class="wrapper">
 
       <div class="container">
-        <h3 class="h2 bold">オーストラリア</h3>
-        <h4 class="h6 half "lang="en">Australia</h4>
-        <p>新たな分野を切り拓く戦略的投資（海外事業）として、グローバル化の進展を事業拡大の好機と捉え、オーストラリアを中心に海外展開を推進しています。<br><br>
-          オーストラリアは南半球に位置する広大な国で、豊かな自然環境と多文化社会が特徴です。国土は世界第6位の広さを誇り、乾燥地帯から熱帯雨林、サンゴ礁まで多様な自然を有します。主要都市はシドニー、メルボルン、ブリスベン、パースなどで、移民を積極的に受け入れることで多様な文化が共存。鉱業や農業、教育、観光、不動産など幅広い産業が発展しており、安定した政治・経済基盤を背景に高い生活水準を実現しています。</p>
+        <h3 class="h2 bold">
+          {@html t('int1h', $lang)}
+        </h3>
+        <h4 class="h6 half "lang="en"></h4>
+        <p>
+          {@html t('int1p', $lang)}
+        </p>
         <img class="pz" src="../../image/TC_business_international_1.webp" alt="" loading="eager" decoding="async" />
       </div>
 
@@ -54,87 +58,3 @@
 
 
 
-<style>
-
-
-.business-wrapper {
-  margin-top: 8rem;
-  
-}
-.business-wrapper .container {
-  padding-left: calc(1 * var(--padding));
-  margin-bottom: 8rem;
-}
-
-.business-wrapper .container p {
-  margin: 1rem 0 3rem;
-  opacity: .9;
-}
-.business-wrapper .container img {width: calc(100% + var(--padding));}
-
-
-.business-wrapper .container:nth-of-type(2),
-.business-wrapper .container:nth-of-type(3) {
-  width: 100vw;
-  margin-left: calc(-1*(var(--padding)));
-  background-color: var(--textColor);
-  padding-left: calc(2 * var(--padding));
-  padding-right: var(--padding);
-  position: relative;
-}
-.business-wrapper .container:nth-of-type(2) div,
-.business-wrapper .container:nth-of-type(3) div {transform: translateY(8rem);}
-.business-wrapper .container:nth-of-type(2) * {color: white;}
-
-.business-wrapper .container:nth-of-type(2) {margin-bottom: 0;position: relative;z-index: 1;}
-
-.business-wrapper .container:nth-of-type(3) {
-  padding-top: 8rem;
-  background-color: #eee;
-}
-
-.business-wrapper .container:nth-of-type(4) {transform: translateY(8rem);}
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* --------- PC：画像全面・左下にオーバーレイ＋テキスト重ね --------- */
-@media (min-width: 960px){
-
-
-  .business-wrapper .container {
-    padding-left: calc(2 * var(--pcPadding));
-    padding-right: calc(2 * var(--pcPadding));
-  }
-
-  .business-wrapper .container:nth-of-type(2),
-  .business-wrapper .container:nth-of-type(3) {
-    margin-left: calc(-1 * (var(--pcPadding)));
-    padding-left: calc(2.5 * var(--pcPadding));
-    padding-right: calc(2.5 * var(--pcPadding));
-  }
-
-  .business-wrapper .container:nth-of-type(2) img,
-  .business-wrapper .container:nth-of-type(3) img {width: 100%;}
-
-
-
-
-
-
-
-
-
-}
-
-
-</style>

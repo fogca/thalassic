@@ -28,7 +28,7 @@
   <div class="card"><Philosophy /></div>
   <div class="card"><About /></div>
   <div class="card"><Recruit /></div>
-  <div class="card"><Footer /></div>
+  
 </div>
   
   

@@ -116,3 +116,95 @@
 
 
 }
+
+
+
+
+
+.business-wrapper {
+  margin-top: 8rem;
+  
+}
+.business-wrapper .container {
+  padding-left: calc(1.5 * var(--padding));
+  margin-bottom: 8rem;
+}
+
+.business-wrapper .container p {
+  margin: 1rem 0 3rem;
+  opacity: .9;
+}
+.business-wrapper .container img {width: calc(100% + var(--padding));}
+
+
+.business-wrapper .container:nth-of-type(2),
+.business-wrapper .container:nth-of-type(3) {
+  width: 100vw;
+  margin-left: calc(-1*(var(--padding)));
+  background-color: var(--textColor);
+  padding-left: calc(2.5 * var(--padding));
+  padding-right: var(--padding);
+  position: relative;
+}
+.business-wrapper .container:nth-of-type(2) div,
+.business-wrapper .container:nth-of-type(3) div {transform: translateY(8rem);}
+.business-wrapper .container:nth-of-type(2) * {color: white;}
+
+.business-wrapper .container:nth-of-type(2) {margin-bottom: 0;position: relative;z-index: 1;}
+
+.business-wrapper .container:nth-of-type(3) {
+  padding-top: 8rem;
+  background-color: #eee;
+}
+
+.business-wrapper .container:nth-of-type(4) {transform: translateY(8rem);}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --------- PC：画像全面・左下にオーバーレイ＋テキスト重ね --------- */
+@media (min-width: 960px){
+
+  .business-wrapper {margin-top: 15rem;}
+
+  .business-wrapper .container {
+    padding-left: calc(2 * var(--pcPadding));
+    padding-right: calc(2 * var(--pcPadding));
+  }
+
+  .business-wrapper .container:nth-of-type(2) div,
+  .business-wrapper .container:nth-of-type(3) div,
+  .business-wrapper .container:nth-of-type(4) div {transform: translateY(12rem);}
+  .business-wrapper .container:nth-of-type(3),
+  .business-wrapper .container:nth-of-type(4) {padding-top: 12rem;}
+
+  .business-wrapper .container:nth-of-type(2),
+  .business-wrapper .container:nth-of-type(3) {
+    margin-left: calc(-1 * (var(--pcPadding)));
+    padding-left: calc(3 * var(--pcPadding));
+    padding-right: calc(3 * var(--pcPadding));
+  }
+
+  .business-wrapper .container:nth-of-type(2) img,
+  .business-wrapper .container:nth-of-type(3) img {width: 100%;}
+
+}
+
+
+@media (min-width: 1640px){
+
+  .business-wrapper .container {
+    padding-left: calc(2.5 * var(--pcPadding));
+    padding-right: calc(2.5 * var(--pcPadding));
+  }
+
+}

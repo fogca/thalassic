@@ -1,11 +1,14 @@
-<script>
+<script lang="ts">
 	import Link from "../../components/Link.svelte"
+
+    import { lang } from '$lib/lang';
+    import { t } from './Recruit.dict';
 </script>
 
 <section class="" id="HomeRecruit">
 
     <div class="wrapper center w100 white">
-        <p class="h7 bold center white">キャリア・採用に関して</p>
+        <p class="h7 bold center white">{@html t('subheading', $lang)}</p>
         <h2 class="h1 uppercase serif white" lang="en">Recruitment</h2> 
         <a href="/career" class=""><Link /></a>
     </div>

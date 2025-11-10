@@ -2,6 +2,10 @@
   import { onMount} from 'svelte';
   import Footer from "../../components/Footer.svelte"
 
+  import { t } from './about.dict';
+  import { lang } from '$lib/lang';
+  
+
 </script>
 
 
@@ -15,6 +19,7 @@
       <h1 class="h1 serif uppercase" lang="en">About Us</h1>
       <div class="h6 half" lang="en">Building futures together</div>
       <p>
+        {@html t('heading', $lang)}
         THALASSIC CAPITALは、名古屋を拠点に不動産売買・賃貸管理・不動産仲介を手掛けるプロフェッショナルチームです。<br><br>
         私たちは「土地に根ざす」ことを価値の源泉とし、地域文化や感性を再発見することで、
         人と都市がともに未来へ進むための新しい不動産のかたちを探求しています。

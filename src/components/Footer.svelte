@@ -39,9 +39,9 @@
 <style>
 
     footer {
+        position: relative;
         width: 100vw;
         background-color: #f5f5f5;
-        background-color: #fff;
         height: calc(100vh - 48px);
         height: calc(100dvh - 48px);
         display: flex;
