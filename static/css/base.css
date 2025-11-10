@@ -7,16 +7,7 @@
     font-family: 'Univers';
     src: url('https://cdn.shopify.com/s/files/1/0501/6384/3265/files/Univers.woff2?v=1702275506');
 }
-@font-face {
-    font-family: 'JDS';
-    src: url('https://cdn.shopify.com/s/files/1/0501/6384/3265/files/Sans.woff2?v=1736999745');
-}
 
-@font-face {
-    font-family: 'Albertus';
-    src: url('https://cdn.shopify.com/s/files/1/0501/6384/3265/files/AlbertusNova-Regular.woff2?v=1752405712');
-  /*src: url('https://cdn.shopify.com/s/files/1/0501/6384/3265/files/AlbertusNova-Light.woff2?v=1745112962');*/
-}
 
 :root {
     --padding: 7.5vw;
@@ -31,8 +22,23 @@
   
     --linkBlue:#3154E6;
     --soldRed: #C90000;
+
+    --heading-font: system-ui, sans-serif;
+    --text-font: system-ui, sans-serif;
 }
 
+:lang(en) {
+    --heading-font: OptimaNovaLTPro-Medium, "Optima", system-ui, sans-serif;
+    --text-font: 'Univers', TsukuGoPr5-M, "FOT-筑紫ゴシック Pro M", system-ui, sans-serif;
+  }
+  :lang(ja) {
+    --heading-font: TsukuGoPr5-B, "FOT-筑紫ゴシック Pro B", system-ui, sans-serif;
+    --text-font: TsukuGoPr5-M, "FOT-筑紫ゴシック Pro M", system-ui, sans-serif;
+  }
+  :lang(zh) {
+    --heading-font: FZFW-ZhuZiHeiS-B--GB1, TsukuGoPr5-B, "FOT-筑紫ゴシック Pro B", system-ui, sans-serif;
+    --text-font: FZFW-ZhuZiHeiS-M--GB1, TsukuGoPr5-M, "FOT-筑紫ゴシック Pro M", system-ui, sans-serif;
+  }
 
 
 * {
@@ -55,7 +61,8 @@ html, body {
 
 
 div, h1, h2, h3, h4, h5, h6, p, a, span, input, button, tspan, tr, td,th {
-    font-family: 'Univers', TsukuGoPro-D, TsukuGoPr5-M, TsukuGoPro-M, "FOT-筑紫ゴシック Pro",sans-serif;
+    font-family: 'Univers', FZFW-ZhuZiHeiS-M--GB1, TsukuGoPro-M, "FOT-筑紫ゴシック Pro",sans-serif;
+    font-family: var(--text-font);
     font-weight: 400;
     color: var(--textColor);
     font-display: swap;
@@ -65,13 +72,18 @@ div, h1, h2, h3, h4, h5, h6, p, a, span, input, button, tspan, tr, td,th {
     line-height: 1.6;
 }
 
+
+
 .serif,.serif * {font-family: OptimaNovaLTPro-Medium, Optima-Medium, TsukuGoPr5-B, sans-serif;}
 .sans {font-family: 'Univers', TsukuGoPr5-D, TsukuGoPro-D, sans-serif;}
 
 .bold {
-    font-family: OptimaNovaLTPro-Medium, "Optima", TsukuGoPr5-B, TsukuGoPro-B, "FOT-筑紫ゴシック Pro", FZFW-ZhuZiHeiS-B--GB1, sans-serif;
+    font-family: OptimaNovaLTPro-Medium, "Optima", FZFW-ZhuZiHeiS-B--GB1, TsukuGoPr5-B, TsukuGoPro-B, "FOT-筑紫ゴシック Pro", sans-serif;
+    font-family: var(--heading-font);
     text-transform: uppercase;
 }
+
+
   
 
 

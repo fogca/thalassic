@@ -11,6 +11,7 @@
     import { fontplusInit, fontplusRefresh } from '$lib/utils/fontplus';
 
 	import { detectLang, lang as langStore } from '$lib/lang';
+	import { lang } from '$lib/lang';
 
   	
 	//fontplus
@@ -21,6 +22,11 @@
 
 		// 初回のみ。SPA遷移後は localStorage / ?lang が効く
 		langStore.set(detectLang());
+
+		const unsub = lang.subscribe(v => {
+    		document.documentElement.setAttribute('lang', v); // 'ja' | 'zh' | 'en'
+  		});
+  		return () => unsub();
 
 		//lenis
 		const lenis = new Lenis({ smoothWheel: true, syncTouch: true });
@@ -57,7 +63,7 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
-	<link rel="stylesheet" href="../css/base.css?var=1.04">
+	<link rel="stylesheet" href="../css/base.css?var=1.05">
 	<link rel="stylesheet" href="../css/layout.css?var=1.02">
 	
 	<link rel="stylesheet" href="https://use.typekit.net/vps5ddr.css">
