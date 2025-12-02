@@ -11,7 +11,7 @@
     <div class="texts-container">
       <div>
       <h2 class="hero__title bold">{@html t('heading', $lang)}</h2>
-      <p class="h7 half"lang="en">Building futures together<br>with THALASSIC CAPITAL</p>
+      <p class="h7 half"lang="en">BUILDING FUTURE TOGETHER<br>with THALASSIC CAPITAL</p>
       <a href="/about"><Link /></a>
       </div>
     </div>

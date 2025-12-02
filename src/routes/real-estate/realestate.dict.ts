@@ -2,7 +2,12 @@ import type { Lang } from '$lib/lang';
 
 export const dict = {
   heading: {
-    ja: 'サラシック不動産<br>地域の風土に根ざし、<br>未来を形づくる不動産部門',
+    ja: 'サラシック不動産ー<br>風土を読み解き、地域とともに<br>未来へ続く価値を育んでいく。',
+    zh: 'Thalassic Real Estate：<br>一家植根于当地文化并塑造未来的房地产公司。',
+    en: 'Thalassic Real Estate: <br>A real estate division rooted <br>in the local culture and shaping the future'
+  },
+  sub: {
+    ja: '国内外の不動産業',
     zh: 'Thalassic Real Estate：<br>一家植根于当地文化并塑造未来的房地产公司。',
     en: 'Thalassic Real Estate: <br>A real estate division rooted <br>in the local culture and shaping the future'
   },

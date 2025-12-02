@@ -37,7 +37,7 @@
             <nav class="pc">
                 <ul>
                     <li><a class="h5 serif uppercase" href="/real-estate">Real Estate</a></li>
-                    <li><a class="h5 serif uppercase" href="/international">International</a></li>
+                    <li><a class="h5 serif uppercase" href="/services">Services</a></li>
                     <li><a class="h5 serif uppercase" href="/about">About</a></li>
                     <li><a class="h5 serif uppercase" href="/recruit">Recruitment</a></li>
                     <li><a class="h5 serif uppercase" href="/">Contact</a></li>

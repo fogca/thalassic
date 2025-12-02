@@ -10,27 +10,20 @@
 
 <main>
 
-  <section class="topLayout topLayoutPages" id="" lang="jp">
-    <!-- モバイル用：テキストブロック -->
+  <section class="topLayout topLayoutPages" id="">
     <div class="texts-container">
+      <div></div>
       <div>
-      <h2 class="hero__title bold">{@html t('heading', $lang)}</h2>
-      <p class="h7 half"lang="en">
-        THALASSIC Real Estate — <br>
-        Specialists Rooted in Place.
-      </p>
-  
+        <h1 class="h4"lang="en">Real estate</h1>
+        <h2 class="h1 hero__title bold">{@html t('heading', $lang)}</h2>
       </div>
+      <div class="h6 half">{@html t('sub', $lang)}</div>
     </div>
-    
-    
     <div class="image-container w100">
-      
       <img class="pz" src="../../image/TC_top.webp" alt="" loading="eager" decoding="async" />
-      <!-- PC時のみ有効化されるオーバーレイ -->
-      <div class="hero__overlay" aria-hidden="true"></div>
     </div>
   </section>
+
 
   <section class="business-wrapper">
     <div class="wrapper">

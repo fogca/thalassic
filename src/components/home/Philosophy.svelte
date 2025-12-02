@@ -13,9 +13,11 @@
             <h2 class="h1 uppercase serif" lang="en">Philosophy</h2> 
         </div>
 
-        <p>{@html t('paragraph', $lang)}</p>
+        <!--
+        <p>{@html t('paragraph', $lang)}</p>-->
+        英語にする
         <h3 class="h2 bold">{@html t('heading', $lang)}</h3>
-        <a href="/about"><Link /></a>
+        
     </div>
 
     <img src="../../image/TC_top@sp.webp" alt="" class="pc pz" loading="eager" decoding="async" />

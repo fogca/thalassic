@@ -2,17 +2,17 @@ import type { Lang } from '$lib/lang';
 
 export const dict = {
   heading: {
-    ja: 'サラシック不動産<br>地域の風土に根ざし、<br>未来を形づくる不動産部門',
+    ja: '土地の可能性を読み解き、<br>暮らしと文化を未来へ<br>つなぐ会社。',
     zh: 'Thalassic Real Estate：<br>一家植根于当地文化并塑造未来的房地产公司。',
     en: 'Thalassic Real Estate: <br>A real estate division rooted <br>in the local culture and shaping the future'
   },
-  real1h: {
-    ja: '不動産売買',
+  sub: {
+    ja: '会社概要とアイデンティティ',
     zh: '房地产销售',
     en: 'Real estate sales'
   },
-  real1p: {
-    ja: '当社では、収益不動産を中心とした買取事業を展開しています。お客様が所有される大切な不動産を、仲介を介さず当社が直接購入し、市場価値や立地特性を丁寧に分析した上で、適切なリノベーションやバリューアップを施します。再生後の不動産は、当社が手掛ける不動産クラウドファンディング商品として運用するほか、新たに購入を希望される個人・法人のお客様へ販売し、次のオーナーへ価値ある資産として引き継いでいきます。買取から再生、運用、販売まで一貫して行うことで、スピード感のある取引と透明性の高い運用を実現し、不動産の新たな可能性を創出しています。',
+  about: {
+    ja: 'サラシックキャピタルは、<br class="sp">日本とオーストラリアを拠点に、<br class="sp">不動産事業と宿泊事業を展開する企業です。<br class="sp"><br class="sp">私たちは「土地の本質を読み解くこと」を<br class="sp">事業の起点とし、地域に根ざした価値を、<br class="sp">未来へ続く形で設計することを目指しています。<br class="sp"><br class="sp">不動産部門では、売買・賃貸管理・仲介を<br class="sp">中心に、地域の特性と暮らしの実感に<br class="sp">寄り添った事業を行っています。<br class="sp"><br class="sp">宿泊事業では、名古屋を中心に「木石」の<br class="sp">思想を取り入れ、素材の静けさと土地の空気を<br class="sp">そのまま体験できる滞在をつくっています。<br class="sp"><br class="sp">多様な文化圏のプロフェッショナルが集う<br class="sp">チームとして、私たちは “土地が語る価値” を<br class="sp">丁寧に汲み取り、その地域の未来につながる<br class="sp">新しい形の不動産・宿泊体験を<br class="sp">創造していきます。',
     zh: '本公司主要从事收益型不动产的收购业务。<br>我们直接向业主购买物业，无需中介，并在深入分析市场价值、区位特性及潜在提升空间后，针对性地进行改造和价值提升。<br><br>完成再生后的物业将作为本公司的不动产众筹产品进行运营，或出售给寻求优质资产的个人或法人客户。通过集“收购—改造—运营—销售”于一体的一站式流程，我们实现快速而透明的交易流程，为不动产创造新的价值与可能性。',
     en: 'Our company specializes in acquiring income-producing real estate. We purchase properties directly from owners, then enhance their value through tailored renovations and strategic improvements.<br><br>After revitalization, these properties are either managed as part of our real estate crowdfunding products or sold to new individual and corporate buyers.<br>By handling acquisition, renovation, management, and resale in a unified process, we deliver efficient transactions and create new opportunities for real-estate value growth.'
   },

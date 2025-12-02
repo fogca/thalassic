@@ -9,58 +9,101 @@
 </script>
 
 
-<main>
+<main id="About">
 
-<section class="About">
-
-  <div class="wrapper">
-
-    <div class="container">
-      <h1 class="h1 serif uppercase" lang="en">About Us</h1>
-      <div class="h6 half" lang="en">Building futures together</div>
-      <p>
-        {@html t('heading', $lang)}
-        THALASSIC CAPITALは、名古屋を拠点に不動産売買・賃貸管理・不動産仲介を手掛けるプロフェッショナルチームです。<br><br>
-        私たちは「土地に根ざす」ことを価値の源泉とし、地域文化や感性を再発見することで、
-        人と都市がともに未来へ進むための新しい不動産のかたちを探求しています。
-        <br><br>
-        不動産の枠を越え、宿泊事業や海外展開（主にオーストラリア）など、
-        多様な分野で「場所の可能性」を開いていく。
-        それがTHALASSIC CAPITALのビジネスの中核です。
-      </p>
+  <section class="topLayout topLayoutPages" id="">
+    <div class="texts-container">
+      <div></div>
+      <div>
+        <h1 class="h4"lang="en">Recruitment</h1>
+        <h2 class="h1 hero__title bold">{@html t('heading', $lang)}</h2>
+      </div>
+      <div class="h6 half">{@html t('sub', $lang)}</div>
     </div>
-
-    <div class="container">
-      <h1 class="h1 serif uppercase" lang="en">Philosophy</h1>
-      <div class="h6 half" lang="en">Building futures together</div>
-      <p>
-        THALASSIC CAPITALは、名古屋を拠点に不動産売買・賃貸管理・不動産仲介を手掛けるプロフェッショナルチームです。<br><br>
-        私たちは「土地に根ざす」ことを価値の源泉とし、地域文化や感性を再発見することで、
-        人と都市がともに未来へ進むための新しい不動産のかたちを探求しています。
-      </p>
+    <div class="image-container w100">
+      <img class="pz" src="../../image/TC_top.webp" alt="" loading="eager" decoding="async" />
     </div>
+  </section>
 
-    <div class="container" id="AboutCompany">
-      <h1 class="h1 serif uppercase" lang="en">Company</h1>
-      <div class="h6 half" lang="en">Building futures together</div>
-      <p>
-        住所<br>
-        Level 4, 524 Hay st, Perth, WA 6000
-        <br><br>
-        TEL<br>
-        +61 426285325
-        <br><br>
-        設立<br>
-        2022年8月
 
-      </p>
+  <section class="bodyLayout">
+
+    <h3 class="h1" lang="en">About Us</h3>
+    <div class="wrapper">
+      <p>{@html t('about', $lang)}</p>
     </div>
+    
+
+  </section>
 
 
+  <section class="bodyLayout aboutValue aboutList">
 
-  </div>
+    <h3 class="h1" lang="en">Value</h3>
+    <div class="wrapper">
 
-</section>
+      <div class="container">
+        <div class="h4" lang="en">01</div>
+        <div class="box">
+          <div class="h2" lang="en">Local Insight</div>
+          <div class="h6 half">その地域の個性を読み解き、<br>土地の持つポテンシャルを最大限引き出します。</div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="h4" lang="en">02</div>
+        <div class="box">
+          <div class="h2" lang="en">Cross-Cultural Perspective</div>
+          <div class="h6 half">日本やオーストラリア、中国など様々なバックグラウンドを持つプロフェッショナルが集まり、<br class="pc">多様で国際的な視点が新たな価値をつくリます。</div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="h4" lang="en">03</div>
+        <div class="box">
+          <div class="h2" lang="en">Long-Term Value</div>
+          <div class="h6 half">短期的な利益ではなく、土地に根ざす持続的な価値を優先します。</div>
+        </div>
+      </div>
+
+    </div>
+    
+  </section>
+
+  <section class="bodyLayout aboutCompany aboutList">
+
+    <h3 class="h1" lang="en">Company</h3>
+    <div class="wrapper">
+
+      <div class="container">
+        <div class="h6" lang="en">Firm</div>
+        <div class="h4">THALASSIC CAPITAL株式会社</div>
+      </div>
+
+      <div class="container">
+        <div class="h6" lang="en">Established</div>
+        <div class="h4">2021年</div>
+      </div>
+
+      <div class="container">
+        <div class="h6" lang="en">Capital</div>
+        <div class="h4">30,000,000円</div>
+      </div>
+
+      <div class="container">
+        <div class="h6" lang="en">Head Office</div>
+        <div class="h4">451-0034 愛知県名古屋市西区樋の口町1-15</div>
+      </div>
+
+      <div class="container">
+        <div class="h6" lang="en">Subsidiary</div>
+        <div class="h4" lang="en">THALASSIC  CAPITAL Ltd, Pty.  / Australia</div>
+      </div>
+
+    </div>
+    
+  </section>
+
 
 </main>
 
@@ -68,24 +111,46 @@
 
 <style>
 
-.About .wrapper {
-  margin-top: 30vh;
-  width: 85%;
+  #About {padding-bottom: 8rem;}
+
+.aboutValue .wrapper,
+.aboutCompany .wrapper {width: 100%;margin-left: 0;}
+.aboutValue .container {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1.5rem 0 1.3rem;
 }
-.About .wrapper .container {margin-bottom: 12rem;}
-.About .wrapper p {margin-top: 1.5rem;}
+.aboutValue .container .box {margin-left: 3rem;}
 
 
-@media screen and (min-width:720px) {
-
-  .About {}
-  .About .wrapper {
-  margin-top: 30vh;
-  width: 65%;
-  margin-left: auto;
-  /*padding-left: calc(3 * var(--pcPadding));*/
+.aboutList .container {position: relative;}
+.aboutList .container::before,
+.aboutValue .container:nth-of-type(3)::after,
+.aboutCompany .container:nth-of-type(5)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: .5px;
+  background-color: #ccc;
 }
-}
 
+.aboutList .container::before {top: 0;}
+.aboutList .container::after {top: auto;bottom:0;}
+
+.aboutCompany .container {padding: 1.3rem 0 1.2rem;}
+
+
+@media screen and (min-width: 960px) {
+
+  .aboutValue .wrapper,
+  .aboutCompany .wrapper {
+    width: 60%;
+    margin-left: auto;
+  }
+
+}
 
 </style>
