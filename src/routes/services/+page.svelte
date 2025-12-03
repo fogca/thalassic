@@ -33,32 +33,81 @@
       <p>{@html t('concept', $lang)}</p>
     </div>
     
+    <img class="pz w100 mar" src="../../image/TC_top.webp" alt="" loading="eager" decoding="async" />
 
   </section>
 
 
-  
-  <section class="business-wrapper">
-    <div class="wrapper">
 
-      <div class="container">
-        <h3 class="h2 bold">
-          
-        </h3>
-        <h4 class="h6 half "lang="en"></h4>
-        <p>
-          
-        </p>
-        <img class="pz" src="../../image/TC_business_international_1.webp" alt="" loading="eager" decoding="async" />
-      </div>
+  <section class="serviceAcc mar">
 
+    <h3 class="h1" lang="en">Accommodation</h3>
+    <p>{@html t('accommodation', $lang)}</p>
+    
+    <div class="wrapper w100 grid">
 
+      <a href="/" class="container">
+        <img class="pz" src="../../image/TC_services_acc1.webp" alt="" loading="eager" decoding="async" />
+        <div class="box">
+          <h4 class="white h3" lang="en">Mokuseki Nagoya</h4>
+        </div>
+      </a>
+      <a href="/" class="container">
+        <img class="pz" src="../../image/TC_services_acc2.webp" alt="" loading="eager" decoding="async" />
+        <div class="box">
+          <h4 class="white h3" lang="en">Nagoya Castle I</h4>
+        </div>
+      </a>
+      <a href="/" class="container">
+        <img class="pz" src="../../image/TC_top.webp" alt="" loading="eager" decoding="async" />
+        <div class="box">
+          <h4 class="white h3" lang="en">Mokuseki Nagoya</h4>
+        </div>
+      </a>
+      
     </div>
-  </section>
-  
+    
+    
 
+  </section>
 
 </main>
+
+
+<style>
+
+
+.serviceAcc .wrapper {margin-top: 2rem;}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2px;
+}
+
+.serviceAcc .container {position: relative;}
+.serviceAcc .container .box {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  padding-left: var(--padding);
+}
+
+@media screen and (min-width:720px) {
+
+  .serviceAcc .w100 {width: 100%;}
+
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+  }
+
+}
+
+</style>
 
 
 

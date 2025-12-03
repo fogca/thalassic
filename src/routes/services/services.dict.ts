@@ -16,8 +16,8 @@ export const dict = {
     zh: '作为开拓新领域的战略性海外投资，本公司将全球化的推进视为业务扩张的重要契机，重点布局澳大利亚市场。<br>澳大利亚以稳定的政治与经济基础、多元文化的城市结构及成熟的房地产市场著称，为长期投资与发展提供了良好环境。<br><br>我们的海外团队由曾在澳大利亚学习或工作的成员组成，凭借扎根当地的经验与人脉网络，使我们能够更深入地理解市场，并积极推进房地产收购、开发及多种合作机会。<br><br>未来，我们将继续强化在澳大利亚的布局，通过战略性的全球扩展，为客户与投资者创造更高价值。',
     en: 'As a strategic investment into new global markets, we are expanding our overseas business with a focus on Australia.<br>Australia’s stable economy, multicultural cities, and strong real-estate market provide an ideal foundation for long-term growth.<br><br>Our international team was originally formed in Australia, where many of us studied or worked. This shared background gives us deep local insight and trusted networks, enabling us to actively pursue property acquisitions, development opportunities, and partnerships across the country.<br><br>We will continue strengthening our presence in Australia while creating new value through strategic global expansion.'
   },
-  int2h: {
-    ja: '賃貸管理',
+  accommodation: {
+    ja: '運営する宿泊施設',
     zh: '租赁管理',
     en: 'Rental Management'
   },

@@ -11,6 +11,15 @@
 
 <main id="About">
 
+  <div class="fixedGrad">
+    <div class="gradation">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+
   <section class="topLayout topLayoutPages" id="">
     <div class="texts-container">
       <div></div>
@@ -20,15 +29,16 @@
       </div>
       <div class="h6 half">{@html t('sub', $lang)}</div>
     </div>
-    <div class="image-container w100">
+    <div class="image-container w100" style="display: none;">
       <img class="pz" src="../../image/TC_top.webp" alt="" loading="eager" decoding="async" />
     </div>
+    
   </section>
 
 
-  <section class="bodyLayout">
+  <section class="bodyLayout aboutBody">
 
-    <h3 class="h1" lang="en">About Us</h3>
+    
     <div class="wrapper">
       <p>{@html t('about', $lang)}</p>
     </div>
@@ -113,6 +123,9 @@
 
   #About {padding-bottom: 8rem;}
 
+.aboutBody {margin-top: -60vh;}
+
+
 .aboutValue .wrapper,
 .aboutCompany .wrapper {width: 100%;margin-left: 0;}
 .aboutValue .container {
@@ -151,6 +164,95 @@
     margin-left: auto;
   }
 
+  #About .texts-container {margin-top: 10vh;}
+  #About .texts-container h2 {font-size: 3.6rem;}
+}
+
+
+
+#About * {color: white;}
+#About section {position: relative; z-index: 1;}
+
+#About .aboutList .container::before,
+#About .aboutValue .container:nth-of-type(3)::after,
+#About .aboutCompany .container:nth-of-type(5)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: .5px;
+  background-color: white;
+}
+
+.fixedGrad {
+  position: fixed;
+  z-index: 0;
+}
+.gradation {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+
+.gradation div {
+    position: absolute;
+    border-radius: 50%;
+    animation: gradient 4s infinite;
+}
+
+@keyframes gradient {
+    70% {
+        transform: scale(1.5) translate(60px);
+    }
+}
+
+.gradation div:nth-child(1) {
+    height: 90%;
+    width: 80%;
+    background-color: #ced1c8;
+    left: -29%;
+    top: -10%;
+}
+
+.gradation div:nth-child(2) {
+    height: 80%;
+    width: 70%;
+    background-color: #73bdda;
+    top: -12%;
+    right: -12%;
+    animation-delay: .8s;
+}
+
+.gradation div:nth-child(3) {
+    height: 65%;
+    width: 80%;
+    background-color: #0664a3;
+    bottom: -15%;
+    right: -20%;
+    animation-delay: 0.3s;
+}
+
+.gradation div:nth-child(4) {
+    height: 50%;
+    width: 75%;
+    background-color: #d3aea3;
+    bottom: -10%;
+    left: -18%;
+    animation-delay: 1.2s;
+}
+
+.gradation::after {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(80px);
 }
 
 </style>

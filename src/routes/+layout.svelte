@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Header from "../components/Header.svelte";
+	import OpAnimation from "../components/OpAnimation.svelte";
 	import Footer from "../components/Footer.svelte";
 	import favicon from '$lib/assets/favicon.svg';
 	import { onMount, onDestroy } from 'svelte';
@@ -13,6 +14,7 @@
 	import { detectLang, lang as langStore } from '$lib/lang';
 	import { lang } from '$lib/lang';
 
+	import { opFinished } from '$lib/op';
   	
 	//fontplus
 	let off: (() => void) | null = null;
@@ -57,20 +59,36 @@
 
 
 	let { children } = $props();
+
+
+	
+
 </script>
 
 
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
-	<link rel="stylesheet" href="../css/base.css?var=1.06">
-	<link rel="stylesheet" href="../css/layout.css?var=1.03">
+	<link rel="stylesheet" href="../css/base.css?var=1.07">
+	<link rel="stylesheet" href="../css/layout.css?var=1.04">
 	
 	<link rel="stylesheet" href="https://use.typekit.net/vps5ddr.css">
 </svelte:head>
 
-<div>
+
+
+
+
+
+ 
+<div class="main">
 <Header />
 {@render children?.()}
 <Footer />
 </div>
+
+
+
+<style>
+
+</style>
