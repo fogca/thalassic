@@ -26,7 +26,7 @@
   </section>
 
 
-  <section class="bodyLayout">
+  <section class="bodyLayout serviceBody">
 
     <h3 class="h1" lang="en">Concept</h3>
     <div class="wrapper">
@@ -76,7 +76,7 @@
 
 <style>
 
-
+.serviceBody.bodyLayout .wrapper {width: fit-content;}
 .serviceAcc .wrapper {margin-top: 2rem;}
 .grid {
   display: grid;
@@ -98,7 +98,28 @@
 
 @media screen and (min-width:720px) {
 
-  .serviceAcc .w100 {width: 100%;}
+  .serviceAcc .w100,
+  .serviceBody .w100{
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .serviceBody {margin-top: 4rem;}
+  .serviceBody.bodyLayout .wrapper {width: 100%;}
+  .serviceBody * {text-align: center;}
+  .serviceBody img {
+    margin-top: 12rem;
+    height: 60vh;
+    border-radius: 1rem;
+  }
+
+  .serviceAcc {margin: 12rem 0 16rem;}
+  .serviceAcc img {
+    height: calc(85vw / 3 / 3 * 2);
+    border-radius: 1rem;
+    filter: brightness(.85) contrast(1.2);
+  }
+  .serviceAcc .container .box {justify-content: center;padding-left: 0;}
 
   .grid {
     grid-template-columns: 1fr 1fr 1fr;

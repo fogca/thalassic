@@ -13,7 +13,7 @@
 
 <main>
 
-  <section class="topLayout topLayoutPages" id="">
+  <section class="topLayout topLayoutPages recruitTop" id="">
     <div class="texts-container">
       <div></div>
       <div>
@@ -23,7 +23,15 @@
       <div class="h6 half">{@html t('sub', $lang)}</div>
     </div>
     <div class="image-container w100">
-      <img class="pz" src="../../image/TC_top.webp" alt="" loading="eager" decoding="async" />
+      <!--<img class="pz" src="../../image/TC_top.webp" alt="" loading="eager" decoding="async" />-->
+      
+        <div class="gradation">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      
     </div>
   </section>
 
@@ -63,7 +71,7 @@
     
     <div class="container" id="career1" bind:this={sectionEl}>
         
-      <div class="recruitGrad">
+      <div class="recruitGrad" style="display: none;">
         <div class="gradation">
           <div></div>
           <div></div>
@@ -92,7 +100,7 @@
 
   <div class="container" id="career1" bind:this={sectionEl}>
         
-    <div class="recruitGrad">
+    <div class="recruitGrad" style="display: none;">
       <div class="gradation">
         <div></div>
         <div></div>
@@ -121,7 +129,7 @@
 
 <div class="container" id="career1" bind:this={sectionEl}>
         
-  <div class="recruitGrad">
+  <div class="recruitGrad" style="display: none;">
     <div class="gradation">
       <div></div>
       <div></div>
@@ -288,6 +296,79 @@
 
 
 }
+
+
+
+
+
+.recruitTop .gradation {
+    width: 100vw;
+    height: 100%;
+    position: relative;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+    border-radius: 0;
+}
+
+.recruitTop .gradation div {
+    position: absolute;
+    border-radius: 50%;
+    animation: gradient 4s infinite;
+}
+
+@keyframes gradient {
+    70% {
+        transform: scale(2) translate(30px,100px);
+    }
+}
+
+.recruitTop .gradation div:nth-child(1) {
+    height: 90%;
+    width: 80%;
+    background-color: #ced1c8;
+    left: -29%;
+    top: -10%;
+}
+
+.recruitTop .gradation div:nth-child(2) {
+    height: 80%;
+    width: 70%;
+    background-color: #73bdda;
+    top: -12%;
+    right: -12%;
+    animation-delay: .8s;
+}
+
+.recruitTop .gradation div:nth-child(3) {
+    height: 65%;
+    width: 80%;
+    background-color: #0664a3;
+    bottom: -15%;
+    right: -20%;
+    animation-delay: 0.3s;
+}
+
+.recruitTop .gradation div:nth-child(4) {
+    height: 50%;
+    width: 75%;
+    background-color: #d3aea3;
+    bottom: -10%;
+    left: -30%;
+    animation-delay: 1.2s;
+}
+
+.recruitTop .gradation::after {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(80px);
+}
+
 
 
 </style>

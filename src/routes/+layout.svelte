@@ -2,6 +2,7 @@
 	import Header from "../components/Header.svelte";
 	import OpAnimation from "../components/OpAnimation.svelte";
 	import Footer from "../components/Footer.svelte";
+	import Cursor from "../components/Cursor.svelte";
 	import favicon from '$lib/assets/favicon.svg';
 	import { onMount, onDestroy } from 'svelte';
 
@@ -57,20 +58,15 @@
     	off?.();
   	});
 
-
 	let { children } = $props();
-
-
-	
 
 </script>
 
 
-
 <svelte:head>
 	<link rel="icon" href={favicon} />
-	<link rel="stylesheet" href="../css/base.css?var=1.07">
-	<link rel="stylesheet" href="../css/layout.css?var=1.04">
+	<link rel="stylesheet" href="../css/base.css?var=1.08">
+	<link rel="stylesheet" href="../css/layout.css?var=1.05">
 	
 	<link rel="stylesheet" href="https://use.typekit.net/vps5ddr.css">
 </svelte:head>
@@ -78,10 +74,10 @@
 
 
 
-
-
- 
 <div class="main">
+
+	<!--<Cursor />-->
+
 <Header />
 {@render children?.()}
 <Footer />
@@ -90,5 +86,6 @@
 
 
 <style>
+
 
 </style>

@@ -36,11 +36,11 @@
 
             <nav class="pc">
                 <ul>
-                    <li><a class="h5 serif uppercase" href="/real-estate">Real Estate</a></li>
-                    <li><a class="h5 serif uppercase" href="/services">Services</a></li>
-                    <li><a class="h5 serif uppercase" href="/about">About</a></li>
-                    <li><a class="h5 serif uppercase" href="/recruit">Recruitment</a></li>
-                    <li><a class="h5 serif uppercase" href="/">Contact</a></li>
+                    <li><a class="h5 serif" href="/real-estate">Real Estate</a></li>
+                    <li><a class="h5 serif" href="/services">Services</a></li>
+                    <li><a class="h5 serif" href="/about">About</a></li>
+                    <li><a class="h5 serif" href="/recruit">Recruitment</a></li>
+                    <li><a class="h5 serif" href="/">Contact</a></li>
                     <li>
                         <div class="lang-switch">
                             <!-- toggle button -->
@@ -254,7 +254,9 @@ header .right {
     
     header {
         height: 60px;
-        padding: 2.5rem 50px 1.8rem;
+        padding: 2.8rem 25px 2rem;
+        background-color: transparent;
+        border-bottom: 0;
     }
 
     header .right nav li {

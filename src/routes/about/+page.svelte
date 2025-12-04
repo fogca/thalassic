@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount} from 'svelte';
   import Footer from "../../components/Footer.svelte"
+  import Bannar from "../../components/RecruitBannar.svelte"
 
   import { t } from './about.dict';
   import { lang } from '$lib/lang';
@@ -10,6 +11,8 @@
 
 
 <main id="About">
+
+  <div>
 
   <div class="fixedGrad">
     <div class="gradation">
@@ -113,16 +116,35 @@
     </div>
     
   </section>
+  </div>
 
+  <div class="bannar">
+
+    <Bannar />
+  
+  </div>
 
 </main>
 
 
 
+
+
+
+
 <style>
+  .bannar {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background-color: white;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+  }
 
-  #About {padding-bottom: 8rem;}
 
+#About section:nth-last-of-type(1) {padding-bottom: 10rem;}
 .aboutBody {margin-top: -60vh;}
 
 
@@ -165,7 +187,7 @@
   }
 
   #About .texts-container {margin-top: 10vh;}
-  #About .texts-container h2 {font-size: 3.6rem;}
+  #About .texts-container h2 {font-size: 4rem;line-height: 1.4;}
 }
 
 
@@ -243,7 +265,7 @@
     width: 75%;
     background-color: #d3aea3;
     bottom: -10%;
-    left: -18%;
+    left: -30%;
     animation-delay: 1.2s;
 }
 

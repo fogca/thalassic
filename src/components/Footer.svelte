@@ -84,7 +84,6 @@
         margin-top: 10rem;
         */
         position: relative;
-        margin-top: 8rem;
     }
 
     footer .footer {

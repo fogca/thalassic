@@ -81,7 +81,7 @@ div, h1, h2, h3, h4, h5, h6, p, a, span, input, button, tspan, tr, td,th {
     text-transform: uppercase;
 }
 
-svg, svg path, svg g {fill: var(--mainColor);}
+
 .color {color: var(--mainColor);}
 
 .h0 {font-size: 2.4rem;}
