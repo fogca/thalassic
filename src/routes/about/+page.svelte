@@ -52,6 +52,7 @@
 
   <section class="bodyLayout aboutValue aboutList">
 
+    <hr>
     <h3 class="h1" lang="en">Value</h3>
     <div class="wrapper">
 
@@ -85,32 +86,43 @@
 
   <section class="bodyLayout aboutCompany aboutList">
 
+    <hr>
     <h3 class="h1" lang="en">Company</h3>
     <div class="wrapper">
 
       <div class="container">
-        <div class="h6" lang="en">Firm</div>
-        <div class="h4">THALASSIC CAPITAL株式会社</div>
+        <div class="h6">商号</div>
+        <div class="h5">THALASSIC CAPITAL株式会社</div>
       </div>
 
       <div class="container">
-        <div class="h6" lang="en">Established</div>
-        <div class="h4">2021年</div>
+        <div class="h6">所在地</div>
+        <div class="h5">451-0034<br>愛知県名古屋市西区樋の口町1-15</div>
       </div>
 
       <div class="container">
-        <div class="h6" lang="en">Capital</div>
-        <div class="h4">30,000,000円</div>
+        <div class="h6">設立</div>
+        <div class="h5">2021年</div>
       </div>
 
       <div class="container">
-        <div class="h6" lang="en">Head Office</div>
-        <div class="h4">451-0034 愛知県名古屋市西区樋の口町1-15</div>
+        <div class="h6">資本金</div>
+        <div class="h5">30,000,000円</div>
       </div>
 
       <div class="container">
-        <div class="h6" lang="en">Subsidiary</div>
-        <div class="h4" lang="en">THALASSIC  CAPITAL Ltd, Pty.  / Australia</div>
+        <div class="h6">代表</div>
+        <div class="h5">J Wang</div>
+      </div>
+
+      <div class="container">
+        <div class="h6">子会社</div>
+        <div class="h5" lang="en">THALASSIC  CAPITAL Ltd, Pty.  / Australia</div>
+      </div>
+
+      <div class="container">
+        <div class="h6">子会社所在地</div>
+        <div class="h5" lang="en">Level 4, 524 Hay St. Perth, WA 6000</div>
       </div>
 
     </div>
@@ -162,8 +174,8 @@
 
 .aboutList .container {position: relative;}
 .aboutList .container::before,
-.aboutValue .container:nth-of-type(3)::after,
-.aboutCompany .container:nth-of-type(5)::after {
+.aboutValue .container:last-of-type(1)::after,
+.aboutCompany .container:last-of-type(1)::after {
   content: "";
   position: absolute;
   left: 0;
@@ -172,22 +184,42 @@
   background-color: #ccc;
 }
 
+.aboutCompany .container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1.8rem 0 1.5rem;
+}
+.aboutCompany .container div:nth-of-type(1) {width: 30%;}
+.aboutCompany .container div:nth-of-type(2) {width: 70%;}
+
 .aboutList .container::before {top: 0;}
 .aboutList .container::after {top: auto;bottom:0;}
 
-.aboutCompany .container {padding: 1.3rem 0 1.2rem;}
-
+.aboutValue .wrapper {margin-top: 3rem;}
 
 @media screen and (min-width: 960px) {
 
   .aboutValue .wrapper,
   .aboutCompany .wrapper {
-    width: 60%;
+    width: 45%;
     margin-left: auto;
   }
+  .aboutCompany .container div:nth-of-type(1) {width: 15%;}
+.aboutCompany .container div:nth-of-type(2) {width: 85%;}
 
   #About .texts-container {margin-top: 10vh;}
   #About .texts-container h2 {font-size: 4rem;line-height: 1.4;}
+
+  .aboutBody {
+    margin-top: -42.5vh;
+    margin-bottom: 3rem;
+  }
+  #About section:nth-last-of-type(1) {padding-bottom: 15rem;}
+
+  .aboutValue .wrapper {margin-top: 6rem;}
+  .aboutValue .container {padding: 2.5rem 0 2.5rem;}
+
 }
 
 
@@ -196,14 +228,14 @@
 #About section {position: relative; z-index: 1;}
 
 #About .aboutList .container::before,
-#About .aboutValue .container:nth-of-type(3)::after,
-#About .aboutCompany .container:nth-of-type(5)::after {
+#About .aboutValue .container:last-of-type::after,
+#About .aboutCompany .container:last-of-type::after {
   content: "";
   position: absolute;
   left: 0;
   width: 100%;
   height: .5px;
-  background-color: white;
+  background-color: rgba(255, 255, 255, .3);
 }
 
 .fixedGrad {
