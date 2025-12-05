@@ -39,7 +39,7 @@
                     <li><a class="h5 serif" href="/real-estate">Real Estate</a></li>
                     <li><a class="h5 serif" href="/services">Services</a></li>
                     <li><a class="h5 serif" href="/about">About</a></li>
-                    <li><a class="h5 serif" href="/recruit">Recruitment</a></li>
+                    <li><a class="h5 serif" href="/about#Recruitment">Recruitment</a></li>
                     <li><a class="h5 serif" href="/">Contact</a></li>
                     <li>
                         <div class="lang-switch">

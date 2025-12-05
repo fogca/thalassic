@@ -16,6 +16,9 @@ export const dict = {
     zh: '本公司主要从事收益型不动产的收购业务。<br>我们直接向业主购买物业，无需中介，并在深入分析市场价值、区位特性及潜在提升空间后，针对性地进行改造和价值提升。<br><br>完成再生后的物业将作为本公司的不动产众筹产品进行运营，或出售给寻求优质资产的个人或法人客户。通过集“收购—改造—运营—销售”于一体的一站式流程，我们实现快速而透明的交易流程，为不动产创造新的价值与可能性。',
     en: 'Our company specializes in acquiring income-producing real estate. We purchase properties directly from owners, then enhance their value through tailored renovations and strategic improvements.<br><br>After revitalization, these properties are either managed as part of our real estate crowdfunding products or sold to new individual and corporate buyers.<br>By handling acquisition, renovation, management, and resale in a unified process, we deliver efficient transactions and create new opportunities for real-estate value growth.'
   },
+  recruit: {
+    ja:'不動産と宿泊の両軸から、地域の価値をともに創出する会社です。柔軟な発想や誠実さを大切にし、長く続く価値を一緒に生み出すメンバーを募集しています。<br class="sp"><br class="sp">詳しい募集キャリアは以下をご覧ください',
+  },
   real2h: {
     ja: '賃貸管理',
     zh: '租赁管理',

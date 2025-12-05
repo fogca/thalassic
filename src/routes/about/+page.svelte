@@ -5,6 +5,7 @@
 
   import { t } from './about.dict';
   import { lang } from '$lib/lang';
+    import { materialRoughness } from 'three/tsl';
   
 
 </script>
@@ -27,10 +28,10 @@
     <div class="texts-container">
       <div></div>
       <div>
-        <h1 class="h4"lang="en">Recruitment</h1>
+        <h1 class="h4"lang="en">About Us</h1>
         <h2 class="h1 hero__title bold">{@html t('heading', $lang)}</h2>
       </div>
-      <div class="h6 half">{@html t('sub', $lang)}</div>
+      <div class="h6 half" style="opacity:0;">{@html t('sub', $lang)}</div>
     </div>
     <div class="image-container w100" style="display: none;">
       <img class="pz" src="../../image/TC_top.webp" alt="" loading="eager" decoding="async" />
@@ -87,7 +88,7 @@
   <section class="bodyLayout aboutCompany aboutList">
 
     <hr>
-    <h3 class="h1" lang="en">Company</h3>
+    <h3 class="h1" lang="en">Company Profile</h3>
     <div class="wrapper">
 
       <div class="container">
@@ -128,6 +129,93 @@
     </div>
     
   </section>
+
+  <section class="bodyLayout aboutRecruit" id="Recruitment">
+    <hr>
+    <h3 class="h1" lang="en">Recruitment</h3>
+    <div class="wrap">
+      <h4 class="h0" lang="en">Join Our Team!</h4>
+      <p>{@html t('recruit', $lang)}</p>
+    </div>
+      
+    <div class="container aboutList">
+      
+      <h5 class="h3">募集要項</h5>
+      <div class="container">
+        <div class="h6 half"><br>募集人材</div>
+        <div class="h5">不動産営業<br>不動産管理<br>SNS・コンテンツクリエイター</div>
+      </div>
+
+      <div class="container">
+        <div class="h6 half">勤務体系</div>
+        <div class="h5">フルフレックス（コアタイムなし）<br>1日の標準労働時間は実働8時間、休憩1時間（時短勤務も相談可）</div>
+      </div>
+
+      <div class="container">
+        <div class="h6 half">給与</div>
+        <div class="h5">経験・能力を考慮し、当社規定によって決定いたします</div>
+      </div>
+
+      <div class="container">
+        <div class="h6 half">福利厚生</div>
+        <div class="h5">各種保険完備 / 健康診断補助 / 交通費手当：10,000円／月</div>
+      </div>
+
+      <div class="container">
+        <div class="h6 half">休日休暇</div>
+        <div class="h5">土日、祝日、特別休暇、有給休暇（初年度13日）</div>
+      </div>
+  
+    </div>
+
+    <div class="container aboutList">
+      <h5 class="h3">01. 不動産営業</h5>
+      <div class="container">
+        <p><br>不動産営業職<br>
+          投資用・居住用不動産の売買仲介および販売戦略の立案・実行、顧客への提案書作成、プレゼンテーション、交渉、契約業務、物件調査、価格査定、販売資料の作成、契約後フォロー
+          <br><br>
+          必須要件<br>不動産売買仲介または営業経験（年数不問）<br>顧客ニーズに合わせた提案力とコミュニケーション能力<br>普通自動車免許（AT限定可）
+          <br><br>
+          好ましい資格・技能<br>宅地建物取引士資格<br>英語・中国語
+        </p>
+      </div>
+    </div>
+
+    <div class="container aboutList">
+      <h5 class="h3">02. 不動産管理</h5>
+      <div class="container">
+        <p><br>不動産営業職<br>
+          投資用・居住用不動産の売買仲介および販売戦略の立案・実行、顧客への提案書作成、プレゼンテーション、交渉、契約業務、物件調査、価格査定、販売資料の作成、契約後フォロー
+          <br><br>
+          必須要件<br>不動産売買仲介または営業経験（年数不問）<br>顧客ニーズに合わせた提案力とコミュニケーション能力<br>普通自動車免許（AT限定可）
+          <br><br>
+          好ましい資格・技能<br>宅地建物取引士資格<br>英語・中国語
+        </p>
+      </div>
+    </div>
+
+    <div class="container aboutList">
+      <h5 class="h3">03. SNS・コンテンツクリエイター</h5>
+      <div class="container">
+        <p><br>不動産営業職<br>
+          投資用・居住用不動産の売買仲介および販売戦略の立案・実行、顧客への提案書作成、プレゼンテーション、交渉、契約業務、物件調査、価格査定、販売資料の作成、契約後フォロー
+          <br><br>
+          必須要件<br>不動産売買仲介または営業経験（年数不問）<br>顧客ニーズに合わせた提案力とコミュニケーション能力<br>普通自動車免許（AT限定可）
+          <br><br>
+          好ましい資格・技能<br>宅地建物取引士資格<br>英語・中国語
+        </p>
+      </div>
+    </div>
+
+    
+
+    <style>
+      
+    </style>
+    
+
+  </section>
+
   </div>
 
   <div class="bannar">
@@ -157,7 +245,7 @@
 
 
 #About section:nth-last-of-type(1) {padding-bottom: 10rem;}
-.aboutBody {margin-top: -60vh;}
+.aboutBody {margin-top: -75vh;}
 
 
 .aboutValue .wrapper,
@@ -196,7 +284,14 @@
 .aboutList .container::before {top: 0;}
 .aboutList .container::after {top: auto;bottom:0;}
 
-.aboutValue .wrapper {margin-top: 3rem;}
+.aboutValue .wrapper {margin-top: 12rem;}
+
+.aboutCompany .wrapper {margin-top: 12rem;}
+.aboutRecruit .wrap {margin-top: 12rem;}
+.aboutRecruit .wrap .h0 {font-size: 4.2rem;}
+
+.aboutRecruit .aboutList {margin-top: 8rem;}
+.aboutRecruit .aboutList h5 {margin-bottom: 2rem;}
 
 @media screen and (min-width: 960px) {
 
@@ -205,9 +300,9 @@
     width: 45%;
     margin-left: auto;
   }
-  .aboutCompany .container div:nth-of-type(1) {width: 15%;}
-.aboutCompany .container div:nth-of-type(2) {width: 85%;}
-
+  .aboutCompany .container div:nth-of-type(1) {width: 20%;}
+  .aboutCompany .container div:nth-of-type(2) {width: 80%;}
+  .aboutCompany .container {padding: 2.5rem 0 2rem;}
   #About .texts-container {margin-top: 10vh;}
   #About .texts-container h2 {font-size: 4rem;line-height: 1.4;}
 
@@ -219,6 +314,43 @@
 
   .aboutValue .wrapper {margin-top: 6rem;}
   .aboutValue .container {padding: 2.5rem 0 2.5rem;}
+
+
+  .aboutCompany .wrapper {margin-top: 12rem;}
+  .aboutRecruit .wrap {
+    padding-left: 25%;
+    margin-top: 12rem;
+  }
+  .aboutRecruit .wrap .h0 {font-size: 6.4rem;}
+  .aboutRecruit .wrap p {
+    width: 60.000285%;
+    margin-left: auto;
+    margin-top: 3rem;
+  } 
+  .aboutRecruit .aboutList {margin-top: 6rem;}
+  .aboutRecruit .aboutList h5 {padding-left: 25%;margin-bottom: -4rem;}
+  .aboutRecruit .aboutList .container {width: 45%;margin-left: auto;}
+  .aboutRecruit .aboutList .container:nth-of-type(1) {width: 75%;}
+  .aboutRecruit .aboutList .container:nth-of-type(1) * {width: 60%;margin-left:auto;}
+  
+
+  .aboutCompany .wrapper {margin-top: 12rem;}
+.aboutRecruit .wrap {
+  padding-left: 25%;
+  margin-top: 12rem;
+}
+.aboutRecruit .wrap .h0 {font-size: 6.4rem;}
+.aboutRecruit .wrap p {
+  width: 60%;
+  margin-left: auto;
+  margin-top: 3rem;
+} 
+.aboutRecruit .aboutList {margin-top: 6rem;}
+.aboutRecruit .aboutList h5 {padding-left: 25%;margin-bottom: -4rem;}
+.aboutRecruit .aboutList .container {width: 45%;margin-left: auto;}
+.aboutRecruit .aboutList .container:nth-of-type(1) {width: 75%;}
+.aboutRecruit .aboutList .container:nth-of-type(1) * {width: 60%;margin-left:auto;}
+    
 
 }
 
@@ -270,14 +402,14 @@
     height: 90%;
     width: 80%;
     background-color: #ced1c8;
-    left: -29%;
+    left: -40%;
     top: -10%;
 }
 
 .gradation div:nth-child(2) {
     height: 80%;
     width: 70%;
-    background-color: #73bdda;
+    background-color: #8ac5db;
     top: -12%;
     right: -12%;
     animation-delay: .8s;
@@ -286,7 +418,7 @@
 .gradation div:nth-child(3) {
     height: 65%;
     width: 80%;
-    background-color: #0664a3;
+    background-color: #005d9b;
     bottom: -15%;
     right: -20%;
     animation-delay: 0.3s;
@@ -295,9 +427,9 @@
 .gradation div:nth-child(4) {
     height: 50%;
     width: 75%;
-    background-color: #d3aea3;
+    background-color: #ddab9c;
     bottom: -10%;
-    left: -30%;
+    left: -50%;
     animation-delay: 1.2s;
 }
 
