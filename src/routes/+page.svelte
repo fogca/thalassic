@@ -8,6 +8,11 @@
   import About from "../components/home/About.svelte"
   import Recruit from "../components/home/Recruit.svelte"
   import Footer from "../components/Footer.svelte"
+
+  import TransitionLink from '../components/PageTransition.svelte';
+
+
+
   
   let destroyStack: () => void;
   onMount(async () => {
@@ -20,8 +25,9 @@
 
 
 <main>
-
+  
 <Top />
+
 <Business />
 
 <div class="stack">
@@ -32,7 +38,7 @@
 </div>
   
   
-  
+
 
 
 </main>

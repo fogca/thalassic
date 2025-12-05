@@ -394,7 +394,7 @@
 
 @keyframes gradient {
     70% {
-        transform: scale(1.5) translate(60px);
+        transform: scale(1.5) translate(80px);
     }
 }
 
@@ -402,23 +402,23 @@
     height: 90%;
     width: 80%;
     background-color: #ced1c8;
-    left: -40%;
+    left: -30%;
     top: -10%;
 }
 
 .gradation div:nth-child(2) {
     height: 80%;
-    width: 70%;
+    width: 60%;
     background-color: #8ac5db;
-    top: -12%;
-    right: -12%;
+    top: -10%;
+    right: 0%;
     animation-delay: .8s;
 }
 
 .gradation div:nth-child(3) {
     height: 65%;
     width: 80%;
-    background-color: #005d9b;
+    background-color: #005fac;
     bottom: -15%;
     right: -20%;
     animation-delay: 0.3s;
@@ -427,7 +427,7 @@
 .gradation div:nth-child(4) {
     height: 50%;
     width: 75%;
-    background-color: #ddab9c;
+    background-color: #f1af9b;
     bottom: -10%;
     left: -50%;
     animation-delay: 1.2s;
@@ -438,7 +438,7 @@
     content: "";
     height: 100%;
     width: 100%;
-    backdrop-filter: blur(80px);
+    backdrop-filter: blur(120px);
 }
 
 </style>

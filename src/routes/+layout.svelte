@@ -1,21 +1,24 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import Header from "../components/Header.svelte";
-	import OpAnimation from "../components/OpAnimation.svelte";
 	import Footer from "../components/Footer.svelte";
-	import Cursor from "../components/Cursor.svelte";
 	import favicon from '$lib/assets/favicon.svg';
 	import { onMount, onDestroy } from 'svelte';
-
 	import Lenis from '@studio-freight/lenis';
+	
 	import { initParallaxZoom } from '$lib/motion/pz';
-
 	import { afterNavigate } from '$app/navigation';
     import { fontplusInit, fontplusRefresh } from '$lib/utils/fontplus';
-
 	import { detectLang, lang as langStore } from '$lib/lang';
 	import { lang } from '$lib/lang';
+  
+	import PageTransition from '../components/PageTransition.svelte';
+	import ScrollAnimations from '../components/ScrollAnimations.svelte';
+	import CustomCursor from '../components/CustomCursor.svelte';
+	import OpeningAnimation from '../components/OpeningAnimation.svelte';
+	import Leave from '../components/Leave.svelte';
 
-	import { opFinished } from '$lib/op';
+
   	
 	//fontplus
 	let off: (() => void) | null = null;
@@ -60,13 +63,16 @@
 
 	let { children } = $props();
 
+	
+	
+
 </script>
 
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
 	<link rel="stylesheet" href="../css/base.css?var=1.09">
-	<link rel="stylesheet" href="../css/layout.css?var=1.06">
+	<link rel="stylesheet" href="../css/layout.css?var=1.07">
 	
 	<link rel="stylesheet" href="https://use.typekit.net/vps5ddr.css">
 </svelte:head>
@@ -76,11 +82,16 @@
 
 <div class="main">
 
-	<!--<Cursor />-->
+<OpeningAnimation />
+<PageTransition />
+<ScrollAnimations />
+<CustomCursor />
+<Leave />
 
 <Header />
 {@render children?.()}
 <Footer />
+
 </div>
 
 
