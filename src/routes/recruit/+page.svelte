@@ -4,7 +4,7 @@
   import Grad from "../../components/RecruitGrad.svelte"
 
   import { t } from './recruit.dict';
-  import { lang } from '$lib/lang';
+  import { lang } from '$lib/utils/lang';
 
 
   let sectionEl: HTMLElement;

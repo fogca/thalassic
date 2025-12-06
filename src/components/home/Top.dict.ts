@@ -1,4 +1,4 @@
-import type { Lang } from '$lib/lang';
+import type { Lang } from '$lib/utils/lang';
 
 export const dict = {
   heading: {

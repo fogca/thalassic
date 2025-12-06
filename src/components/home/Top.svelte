@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Link from "../../components/Link.svelte"
 
-  import { lang } from '$lib/lang';
+  import { lang } from '$lib/utils/lang';
   import { t } from './Top.dict';
 
 </script>

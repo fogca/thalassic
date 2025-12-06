@@ -4,7 +4,7 @@
   import Bannar from "../../components/RecruitBannar.svelte"
 
   import { t } from './about.dict';
-  import { lang } from '$lib/lang';
+  import { lang } from '$lib/utils/lang';
     import { materialRoughness } from 'three/tsl';
   
 

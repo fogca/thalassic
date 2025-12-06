@@ -1,6 +1,5 @@
 <script lang="ts">
   import { onMount, onDestroy } from 'svelte';
-  import { initScrollSystem, initStackCards } from '$lib/motion/scroll';
 
 	import Top from "../components/home/Top.svelte"
   import Business from "../components/home/Business.svelte"
@@ -9,17 +8,6 @@
   import Recruit from "../components/home/Recruit.svelte"
   import Footer from "../components/Footer.svelte"
 
-  import TransitionLink from '../components/PageTransition.svelte';
-
-
-
-  
-  let destroyStack: () => void;
-  onMount(async () => {
-    const { ScrollTrigger } = await initScrollSystem();
-    destroyStack = initStackCards({ headerOffset: 50, overlapRatio: 0.12 });
-  });
-  onDestroy(() => destroyStack?.());
 
 </script>
 

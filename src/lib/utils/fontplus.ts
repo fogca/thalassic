@@ -1,47 +1,144 @@
-// Fontplus の型ガード
-function getFP(): any | null {
-    // @ts-ignore
-    return typeof window !== 'undefined' && (window as any).FONTPLUS ? (window as any).FONTPLUS : null;
+// src/lib/utils/fontplus.ts
+
+declare global {
+  interface Window {
+    FONTPLUS?: {
+      reload: (callback?: () => void) => void;
+      attachCompleteEvent: (callback: () => void) => void;
+      targetSelector: (selector: string) => void;
+      async: () => void;
+      start: () => void;
+      load: (fontData: any[], callback?: () => void, tagId?: string) => void;
+      isloading?: () => boolean;
+      setFonts: (families: string[]) => void;
+    };
   }
-  
-  /** 初期化（1回だけ） */
-  export function fontplusInit(options?: {
-    selector?: string;             // 例: 'body'（未指定ならbody）
-    families?: string[];           // 例: ['YourJP', 'YourJP Bold']
-    async?: boolean;               // trueなら非同期モード
-  }) {
-    const FP = getFP();
-    if (!FP) return;
-  
-    // 対象DOM（遷移で内容が変わるので広めに）
-    FP.targetSelector(options?.selector ?? 'body');
-  
-    if (options?.async) {
-      FP.async();   // 非同期モードON
-    } else {
-      FP.start();   // 同期（非async）を明示
+}
+
+export type Lang = 'ja' | 'zh' | 'en';
+
+// Font families per language
+const FONT_FAMILIES: Record<Lang, string[]> = {
+  ja: [
+    'TazuganeGothicStdN-Medium',
+    'TazuganeGothicStdN-Book',
+    'TsukuGoPr5-B',
+    'TsukuGoPr5-M'
+  ],
+  zh: [
+    'FZFW-ZhuZiHeiS-B--GB1',
+    'FZFW-ZhuZiHeiS-M--GB1',
+    'TsukuGoPr5-B',
+    'TsukuGoPr5-M'
+  ],
+  en: [] // English uses system fonts
+};
+
+interface FontPlusOptions {
+  selector?: string;
+  lang?: Lang;
+  async?: boolean;
+}
+
+/**
+ * Initialize FONTPLUS with language-specific fonts
+ */
+export function fontplusInit(options: FontPlusOptions = {}): Promise<void> {
+  const {
+    selector = 'body, h1, h2, h3, h4, h5, h6, p, a, span, div, li, button, label, input, textarea, select, td, th',
+    lang = 'en',
+    async = true
+  } = options;
+
+  return new Promise((resolve) => {
+    const families = FONT_FAMILIES[lang];
+    
+    // No fonts needed for English
+    if (families.length === 0) {
+      resolve();
+      return;
     }
-  
-    if (options?.families?.length) {
-      FP.setFonts(options.families);
+
+    // Wait for FONTPLUS to be available
+    const checkInterval = setInterval(() => {
+      if (window.FONTPLUS) {
+        clearInterval(checkInterval);
+        
+        try {
+          // Configure FONTPLUS
+          if (async) {
+            window.FONTPLUS.async();
+          }
+          
+          window.FONTPLUS.targetSelector(selector);
+          window.FONTPLUS.setFonts(families);
+          
+          // Complete callback
+          window.FONTPLUS.attachCompleteEvent(() => {
+            console.log(`[FONTPLUS] Fonts loaded for ${lang}`);
+            resolve();
+          });
+          
+          // Start loading
+          window.FONTPLUS.start();
+        } catch (error) {
+          console.error('[FONTPLUS] Initialization error:', error);
+          resolve(); // Resolve anyway to not block
+        }
+      }
+    }, 50);
+
+    // Timeout fallback
+    setTimeout(() => {
+      clearInterval(checkInterval);
+      resolve();
+    }, 5000);
+  });
+}
+
+/**
+ * Refresh FONTPLUS after DOM changes or navigation
+ */
+export function fontplusRefresh(lang?: Lang): void {
+  if (!window.FONTPLUS) {
+    console.warn('[FONTPLUS] Not available');
+    return;
+  }
+
+  // Check if already loading
+  if (window.FONTPLUS.isloading?.()) {
+    console.log('[FONTPLUS] Already loading, skipping refresh');
+    return;
+  }
+
+  try {
+    // Update fonts if language specified
+    if (lang) {
+      const families = FONT_FAMILIES[lang];
+      if (families.length > 0) {
+        window.FONTPLUS.setFonts(families);
+      }
     }
-  
-    // 完了イベント（任意・デバッグ用）
-    FP.attachCompleteEvent?.(() => {
-      // console.log('FONTPLUS complete');
+
+    // Reload fonts
+    window.FONTPLUS.reload(() => {
+      console.log('[FONTPLUS] Fonts refreshed');
     });
+  } catch (error) {
+    console.error('[FONTPLUS] Refresh error:', error);
   }
-  
-  /** ページ遷移/DOM更新後に実行：再スキャン＆適用 */
-  export function fontplusRefresh() {
-    const FP = getFP();
-    if (!FP) return;
-  
-    // 最も簡単＆確実：現在の設定で再ロード
-    FP.reload?.();           // 引数なしで直近設定を再適用
-  
-    // 必要に応じて、明示的に対象を広げたいとき（任意）:
-    // FP.targetSelector('body');
-    // FP.start(); // async解除したいとき
-    // FP.load([...], callback, tagid) // 指定ロードしたいとき
-  }
+}
+
+/**
+ * Check if FONTPLUS is ready
+ */
+export function isFontPlusReady(): boolean {
+  return typeof window !== 'undefined' && !!window.FONTPLUS;
+}
+
+/**
+ * Get font families for a language
+ */
+export function getFontFamilies(lang: Lang): string[] {
+  return FONT_FAMILIES[lang];
+}

@@ -5,19 +5,21 @@
     import { page } from '$app/stores'; 
     import { browser } from '$app/environment';
     import Links from "./pageLinks.svelte";
-    import { lang } from '$lib/lang';
+   
     let y
 
+    import { lang } from '$lib/utils/lang'; // NEW path, not '$lib/lang'
+  
+  let opens = false;
+  
+  function select(newLang) {
+    lang.set(newLang); // This saves to localStorage
+    opens = false;
+  }
 
-    let open = false;
+
+  let open = false;
 	const toggle = () => (open = !open);
-
-    //lang
-    let opens = false;
-    function select(l: 'ja' | 'zh' | 'en') {
-      lang.set(l);
-      opens = false;
-    }
 
 </script>
     

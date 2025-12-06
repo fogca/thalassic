@@ -1,9 +1,8 @@
 <script lang="ts">
-    import { parallax } from '$lib/motion/parallax';
-    import { reveal } from '$lib/motion/reveal';
+    
 	import Link from "../../components/Link.svelte"
 
-    import { lang } from '$lib/lang';
+    import { lang } from '$lib/utils/lang';
     import { t } from './About.dict';
 </script>
 

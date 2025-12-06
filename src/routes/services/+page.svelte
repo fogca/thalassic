@@ -4,7 +4,7 @@
   import Link from "../../components/Link.svelte"
 
   import { t } from './services.dict';
-  import { lang } from '$lib/lang';
+  import { lang } from '$lib/utils/lang';
 
 </script>
 

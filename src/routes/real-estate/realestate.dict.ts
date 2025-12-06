@@ -1,4 +1,4 @@
-import type { Lang } from '$lib/lang';
+import type { Lang } from '$lib/utils/lang';
 
 export const dict = {
   heading: {
@@ -51,11 +51,6 @@ export const dict = {
     zh: '以文化与感性重新发现名古屋。<br>我们提供的住宿体验，旨在让您触碰这座城市独特的节奏与文化纹理。在多处以Airbnb为中心的住宿据点中，历史街景与现代美学交织的区域，让您通过饮食、建筑、人们的生活往来，感受那些观光无法看见的“名古屋的日常”。无论住宿形式如何变化，所有据点都拥有同一价值：感受这片土地的空气。',
     en: 'Rediscover Nagoya through culture and sensibility.<br>We offer stays designed to connect you with the city’s unique rhythm and cultural layers.<br>Across several Airbnb-based locations, set within neighborhoods where historic streets blend with contemporary aesthetics, guests can experience an authentic “everyday Nagoya” that typical sightseeing cannot reveal—through food, architecture, and encounters with local people.<br>No matter the style of stay, each location shares a single value: to feel the atmosphere of the place itself.'
   },
-
-
-  
-
-
 
   
 };
