@@ -40,10 +40,6 @@
        --text-font: FZFW-ZhuZiHeiS-D--GB1, TsukuGoPr5-D, "FOT-筑紫ゴシック Pro D", system-ui, sans-serif;
   }
 
-  .serif,.serif * {
-    font-family: "Neue Haas Unica W1G", TazuganeGothicStdN-Medium, "MT たづがね角ゴシック StdN Medium", sans-serif;
-    font-weight: 400;
-}
 
 * {
 	margin: 0;
@@ -76,7 +72,6 @@ div, h1, h2, h3, h4, h5, h6, p, a, span, input, button, tspan, tr, td,th {
 }
 
 .bold {
-    font-family: "Neue Haas Unica W1G", FZFW-ZhuZiHeiS-B--GB1, TsukuGoPr5-B, TsukuGoPro-B, "FOT-筑紫ゴシック Pro", sans-serif;
     font-family: var(--heading-font);
     text-transform: uppercase;
 }

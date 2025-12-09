@@ -46,14 +46,19 @@
     });
     cleanup.push(unsubLang);
 
-    // Reload and restart after navigation
+    // Reload and restart after navigation (for 1000 glyph limit)
     const unsubNav = afterNavigate(() => {
       if (window.FONTPLUS) {
+        // During page transition, reload fonts for new page content
         setTimeout(() => {
+          if (fonts[currentLang].length > 0) {
+            window.FONTPLUS.setFonts(fonts[currentLang]);
+          }
           window.FONTPLUS.reload(() => {
+            // Start font loading for new page glyphs
             window.FONTPLUS.start();
           });
-        }, 800);
+        }, 100); // Small delay to ensure DOM is ready
       }
     });
     cleanup.push(unsubNav);
