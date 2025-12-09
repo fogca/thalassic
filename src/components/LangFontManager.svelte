@@ -40,13 +40,16 @@
         currentLang = newLang;
         document.documentElement.setAttribute('lang', newLang);
         
-        // Update fonts and restart
+        // Update fonts immediately
         if (window.FONTPLUS && fonts[newLang].length > 0) {
           console.log('[FONTPLUS] setFonts on lang change:', fonts[newLang]);
           window.FONTPLUS.setFonts(fonts[newLang]);
-          console.log('[FONTPLUS] reload() on lang change');
-          window.FONTPLUS.reload(() => {
-            console.log('[FONTPLUS] start() after lang change');
+          
+          // Force immediate reload and start
+          requestAnimationFrame(() => {
+            console.log('[FONTPLUS] reload() on lang change');
+            window.FONTPLUS.reload();
+            console.log('[FONTPLUS] start() on lang change');
             window.FONTPLUS.start();
           });
         }

@@ -18,7 +18,7 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
-	<link rel="stylesheet" href="../css/base.css?var=1.13">
+	<link rel="stylesheet" href="../css/base.css?var=1.14">
 	<link rel="stylesheet" href="../css/layout.css?var=1.08">
 	<!--<link rel="stylesheet" href="https://use.typekit.net/vps5ddr.css">-->
 </svelte:head>
