@@ -36,8 +36,10 @@
       async: true
     }).then(() => {
       console.log(`[LangFontManager] FONTPLUS initialized with lang: ${currentLang}`);
-      // Initial refresh after first render
+      // Multiple refresh attempts to ensure fonts load
       requestAnimationFrame(() => fontplusRefresh(currentLang));
+      setTimeout(() => fontplusRefresh(currentLang), 500);
+      setTimeout(() => fontplusRefresh(currentLang), 1000);
     });
 
     // Refresh fonts after navigation

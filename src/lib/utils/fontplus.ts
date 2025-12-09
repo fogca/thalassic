@@ -21,9 +21,7 @@ export type Lang = 'ja' | 'zh' | 'en';
 const FONT_FAMILIES: Record<Lang, string[]> = {
   ja: [
     'TazuganeGothicStdN-Medium',
-    'TazuganeGothicStdN-Book',
-    'TsukuGoPr5-B',
-    'TsukuGoPr5-M'
+    'TazuganeGothicStdN-Regular'
   ],
   zh: [
     'FZFW-ZhuZiHeiS-B--GB1',
@@ -45,7 +43,7 @@ interface FontPlusOptions {
  */
 export function fontplusInit(options: FontPlusOptions = {}): Promise<void> {
   const {
-    selector = 'body, h1, h2, h3, h4, h5, h6, p, a, span, div, li, button, label, input, textarea, select, td, th',
+    selector = '*',  // Target ALL elements
     lang = 'en',
     async = true
   } = options;
@@ -70,12 +68,15 @@ export function fontplusInit(options: FontPlusOptions = {}): Promise<void> {
             window.FONTPLUS.async();
           }
           
+          // Target ALL elements
           window.FONTPLUS.targetSelector(selector);
           window.FONTPLUS.setFonts(families);
           
           // Complete callback
           window.FONTPLUS.attachCompleteEvent(() => {
             console.log(`[FONTPLUS] Fonts loaded for ${lang}`);
+            // Force re-render
+            document.body.style.fontFamily = 'inherit';
             resolve();
           });
           
@@ -107,7 +108,9 @@ export function fontplusRefresh(lang?: Lang): void {
 
   // Check if already loading
   if (window.FONTPLUS.isloading?.()) {
-    console.log('[FONTPLUS] Already loading, skipping refresh');
+    console.log('[FONTPLUS] Already loading, waiting...');
+    // Wait and try again
+    setTimeout(() => fontplusRefresh(lang), 200);
     return;
   }
 
@@ -123,6 +126,11 @@ export function fontplusRefresh(lang?: Lang): void {
     // Reload fonts
     window.FONTPLUS.reload(() => {
       console.log('[FONTPLUS] Fonts refreshed');
+      // Force browser to re-render text
+      document.body.style.fontFamily = 'inherit';
+      setTimeout(() => {
+        document.body.style.fontFamily = '';
+      }, 10);
     });
   } catch (error) {
     console.error('[FONTPLUS] Refresh error:', error);

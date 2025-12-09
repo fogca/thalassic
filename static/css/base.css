@@ -31,8 +31,8 @@
     letter-spacing: 0em;
   }
   :lang(ja) {
-    --heading-font: "Neue Haas Unica W1G",TazuganeGothicStdN-Medium, "MT たづがね角ゴシック StdN Medium", TsukuGoPr5-B, "FOT-筑紫ゴシック Pro B", system-ui, sans-serif;
-    --text-font: "Neue Haas Unica W1G",TazuganeGothicStdN-Book, "MT たづがね角ゴシック StdN Book", TsukuGoPr5-M, "FOT-筑紫ゴシック Pro M", system-ui, sans-serif;
+    --heading-font: "Neue Haas Unica W1G",TazuganeGothicStdN-Medium, "MT たづがね角ゴシック StdN Medium", system-ui, sans-serif;
+    --text-font: "Neue Haas Unica W1G",TazuganeGothicStdN-Regular, "MT たづがね角ゴシック StdN Regular", system-ui, sans-serif;
     letter-spacing: 0.01em;
   }
   :lang(zh) {
