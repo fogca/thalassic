@@ -42,7 +42,16 @@
 			stagger: 0.08
 		  })
 		  .call(() => {
-			goto(navigation.to.url.pathname);
+			goto(navigation.to.url.pathname).then(() => {
+			  // Fire FONTPLUS after navigation
+			  if (window.FONTPLUS) {
+				console.log('[PageTransition] Firing FONTPLUS after navigation');
+				requestAnimationFrame(() => {
+				  window.FONTPLUS.reload();
+				  window.FONTPLUS.start();
+				});
+			  }
+			});
 		  });
 		});
 	  });
