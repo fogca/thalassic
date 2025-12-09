@@ -2,51 +2,43 @@
   import { onMount, onDestroy } from 'svelte';
   import { afterNavigate } from '$app/navigation';
   import { lang } from '$lib/utils/lang';
-  import { fontplusInit, fontplusRefresh } from '$lib/utils/fontplus';
 
   let cleanup = [];
   let currentLang = 'en';
 
   onMount(() => {
-    // Initialize language FIRST (auto-detect or use stored)
+    // Initialize language
     currentLang = lang.init();
     console.log('[LangFontManager] Detected language:', currentLang);
     
     // Set HTML lang attribute immediately
     document.documentElement.setAttribute('lang', currentLang);
     
-    // Then subscribe to future changes
+    // Subscribe to language changes
     const unsubLang = lang.subscribe(newLang => {
       console.log('[LangFontManager] Language changed to:', newLang);
       if (newLang !== currentLang) {
         currentLang = newLang;
         document.documentElement.setAttribute('lang', newLang);
         
-        // Refresh fonts when language changes
-        requestAnimationFrame(() => {
-          fontplusRefresh(newLang);
-        });
+        // Reload FONTPLUS when language changes
+        if (window.FONTPLUS) {
+          setTimeout(() => {
+            window.FONTPLUS.reload();
+          }, 100);
+        }
       }
     });
     cleanup.push(unsubLang);
 
-    // Initialize FONTPLUS for current language
-    fontplusInit({
-      lang: currentLang,
-      async: true
-    }).then(() => {
-      console.log(`[LangFontManager] FONTPLUS initialized with lang: ${currentLang}`);
-      // Multiple refresh attempts to ensure fonts load
-      requestAnimationFrame(() => fontplusRefresh(currentLang));
-      setTimeout(() => fontplusRefresh(currentLang), 500);
-      setTimeout(() => fontplusRefresh(currentLang), 1000);
-    });
-
-    // Refresh fonts after navigation
+    // Reload FONTPLUS after navigation (during transition)
     const unsubNav = afterNavigate(() => {
-      requestAnimationFrame(() => {
-        fontplusRefresh(currentLang);
-      });
+      if (window.FONTPLUS) {
+        // Wait for transition to cover screen, then reload
+        setTimeout(() => {
+          window.FONTPLUS.reload();
+        }, 800); // During your page transition
+      }
     });
     cleanup.push(unsubNav);
   });
