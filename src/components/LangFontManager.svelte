@@ -17,13 +17,17 @@
     // Initialize language
     currentLang = lang.init();
     document.documentElement.setAttribute('lang', currentLang);
+    console.log('[LangFontManager] Initial lang:', currentLang);
     
     // Set fonts when FONTPLUS is ready
     const checkFontPlus = setInterval(() => {
       if (window.FONTPLUS) {
         clearInterval(checkFontPlus);
+        console.log('[FONTPLUS] Library loaded');
         if (fonts[currentLang].length > 0) {
+          console.log('[FONTPLUS] setFonts:', fonts[currentLang]);
           window.FONTPLUS.setFonts(fonts[currentLang]);
+          console.log('[FONTPLUS] start() - initial');
           window.FONTPLUS.start();
         }
       }
@@ -32,13 +36,17 @@
     // Subscribe to language changes
     const unsubLang = lang.subscribe(newLang => {
       if (newLang !== currentLang) {
+        console.log('[LangFontManager] Language changed:', currentLang, '->', newLang);
         currentLang = newLang;
         document.documentElement.setAttribute('lang', newLang);
         
         // Update fonts and restart
         if (window.FONTPLUS && fonts[newLang].length > 0) {
+          console.log('[FONTPLUS] setFonts on lang change:', fonts[newLang]);
           window.FONTPLUS.setFonts(fonts[newLang]);
+          console.log('[FONTPLUS] reload() on lang change');
           window.FONTPLUS.reload(() => {
+            console.log('[FONTPLUS] start() after lang change');
             window.FONTPLUS.start();
           });
         }
@@ -48,17 +56,22 @@
 
     // Fire FONTPLUS on every route change (SPA navigation)
     const unsubNav = afterNavigate(() => {
+      console.log('[LangFontManager] Navigation detected');
       if (window.FONTPLUS) {
         // Immediate execution for new page content
         requestAnimationFrame(() => {
+          console.log('[FONTPLUS] Route change - current lang:', currentLang);
           if (fonts[currentLang].length > 0) {
+            console.log('[FONTPLUS] setFonts on route:', fonts[currentLang]);
             window.FONTPLUS.setFonts(fonts[currentLang]);
           }
-          // Reload scans new DOM for characters
+          console.log('[FONTPLUS] reload() on route change');
           window.FONTPLUS.reload();
-          // Start applies fonts to new content
+          console.log('[FONTPLUS] start() on route change');
           window.FONTPLUS.start();
         });
+      } else {
+        console.warn('[FONTPLUS] Not available on route change');
       }
     });
     cleanup.push(unsubNav);
