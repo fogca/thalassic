@@ -26,13 +26,13 @@
 }
 
 :lang(en) {
-    --heading-font: "Neue Haas Unica W1G", system-ui, sans-serif;
-    --text-font: "Neue Haas Unica W1G", system-ui, sans-serif;
+    --heading-font: NeueHaasUnicaPro-Regular,"Neue Haas Unica W1G", system-ui, sans-serif;
+    --text-font: NeueHaasUnicaPro-Regular, "Neue Haas Unica W1G", system-ui, sans-serif;
     letter-spacing: 0em;
   }
   :lang(ja) {
     --heading-font: "Neue Haas Unica W1G",TazuganeGothicStdN-Medium, "MT たづがね角ゴシック StdN Medium", system-ui, sans-serif;
-    --text-font: "Neue Haas Unica W1G",TazuganeGothicStdN-Regular, "MT たづがね角ゴシック StdN Regular", system-ui, sans-serif;
+    --text-font: NeueHaasUnicaPro-Regular, "Neue Haas Unica W1G", TazuganeGothicStdN-Regular, "MT たづがね角ゴシック StdN Regular", system-ui, sans-serif;
     letter-spacing: 0.01em;
   }
   :lang(zh) {
