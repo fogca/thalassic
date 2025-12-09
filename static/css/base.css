@@ -26,18 +26,18 @@
 }
 
 :lang(en) {
-    --heading-font: NeueHaasUnicaPro-Regular,"Neue Haas Unica W1G", system-ui, sans-serif;
-    --text-font: NeueHaasUnicaPro-Regular, "Neue Haas Unica W1G", system-ui, sans-serif;
+    --heading-font: NeueHaasUnicaPro-Regular, "Neue Haas Unica W1G", system-ui, sans-serif;
+       --text-font: NeueHaasUnicaPro-Regular, "Neue Haas Unica W1G", system-ui, sans-serif;
     letter-spacing: 0em;
   }
   :lang(ja) {
-    --heading-font: "Neue Haas Unica W1G",TazuganeGothicStdN-Medium, "MT たづがね角ゴシック StdN Medium", system-ui, sans-serif;
-    --text-font: NeueHaasUnicaPro-Regular, "Neue Haas Unica W1G", TazuganeGothicStdN-Regular, "MT たづがね角ゴシック StdN Regular", system-ui, sans-serif;
+    --heading-font: NeueHaasUnicaPro-Regular, "Neue Haas Unica W1G", TazuganeGothicStdN-Medium,  "MT たづがね角ゴシック StdN Medium",  system-ui, sans-serif;
+       --text-font: NeueHaasUnicaPro-Regular, "Neue Haas Unica W1G", TazuganeGothicStdN-Regular, "MT たづがね角ゴシック StdN Regular", system-ui, sans-serif;
     letter-spacing: 0.01em;
   }
   :lang(zh) {
     --heading-font: FZFW-ZhuZiHeiS-B--GB1, TsukuGoPr5-B, "FOT-筑紫ゴシック Pro B", system-ui, sans-serif;
-    --text-font: FZFW-ZhuZiHeiS-M--GB1, TsukuGoPr5-M, "FOT-筑紫ゴシック Pro M", system-ui, sans-serif;
+       --text-font: FZFW-ZhuZiHeiS-D--GB1, TsukuGoPr5-D, "FOT-筑紫ゴシック Pro D", system-ui, sans-serif;
   }
 
   .serif,.serif * {
