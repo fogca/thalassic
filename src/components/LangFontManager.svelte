@@ -24,6 +24,7 @@
         clearInterval(checkFontPlus);
         if (fonts[currentLang].length > 0) {
           window.FONTPLUS.setFonts(fonts[currentLang]);
+          window.FONTPLUS.start();
         }
       }
     }, 100);
@@ -34,19 +35,25 @@
         currentLang = newLang;
         document.documentElement.setAttribute('lang', newLang);
         
-        // Update fonts
+        // Update fonts and restart
         if (window.FONTPLUS && fonts[newLang].length > 0) {
           window.FONTPLUS.setFonts(fonts[newLang]);
-          setTimeout(() => window.FONTPLUS.reload(), 100);
+          window.FONTPLUS.reload(() => {
+            window.FONTPLUS.start();
+          });
         }
       }
     });
     cleanup.push(unsubLang);
 
-    // Reload after navigation
+    // Reload and restart after navigation
     const unsubNav = afterNavigate(() => {
       if (window.FONTPLUS) {
-        setTimeout(() => window.FONTPLUS.reload(), 800);
+        setTimeout(() => {
+          window.FONTPLUS.reload(() => {
+            window.FONTPLUS.start();
+          });
+        }, 800);
       }
     });
     cleanup.push(unsubNav);
