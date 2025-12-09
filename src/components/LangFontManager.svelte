@@ -46,19 +46,19 @@
     });
     cleanup.push(unsubLang);
 
-    // Reload and restart after navigation (for 1000 glyph limit)
+    // Fire FONTPLUS on every route change (SPA navigation)
     const unsubNav = afterNavigate(() => {
       if (window.FONTPLUS) {
-        // During page transition, reload fonts for new page content
-        setTimeout(() => {
+        // Immediate execution for new page content
+        requestAnimationFrame(() => {
           if (fonts[currentLang].length > 0) {
             window.FONTPLUS.setFonts(fonts[currentLang]);
           }
-          window.FONTPLUS.reload(() => {
-            // Start font loading for new page glyphs
-            window.FONTPLUS.start();
-          });
-        }, 100); // Small delay to ensure DOM is ready
+          // Reload scans new DOM for characters
+          window.FONTPLUS.reload();
+          // Start applies fonts to new content
+          window.FONTPLUS.start();
+        });
       }
     });
     cleanup.push(unsubNav);
