@@ -1,11 +1,34 @@
+
+
+
+.l-Contents {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 100px 0 60px;
+}
+.l-Contents .heading {width: 45%;}
+.l-Contents .container {width: 55%;}
+.l-Contents .heading h2 {
+  font-size: 64px;
+  line-height: 1;
+  margin-bottom: 5px;
+}
+
+.l-Contents {}
+
+.l-Contents {}
+
 .curtain.open {
   transform: translateY(-100%);
 }
 
 .hero__title {
-  line-height: 1.6;
+  font-size: 45px;
+  line-height: 1.1;
   letter-spacing: 0.05em;
 }
+.hero__subtitle {letter-spacing: .1em;line-height: 1.5;}
 
 .topLayout {
   height: 100vh;

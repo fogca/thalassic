@@ -9,6 +9,7 @@
     let y
 
     import { lang } from '$lib/utils/lang'; // NEW path, not '$lib/lang'
+    import { t } from './Header.dict';
   
   let opens = false;
   
@@ -38,11 +39,11 @@
 
             <nav class="pc">
                 <ul>
-                    <li><a class="h5" href="/real-estate">Real Estate</a></li>
-                    <li><a class="h5" href="/services">Services</a></li>
-                    <li><a class="h5" href="/about">About</a></li>
-                    <li><a class="h5" href="/about#Recruitment">Recruitment</a></li>
-                    <li><a class="h5" href="/">Contact</a></li>
+                    <li><a class="h5" href="/real-estate">{t('realestate', $lang)}</a></li>
+                    <li><a class="h5" href="/services"   >{t('hotel', $lang)}</a></li>
+                    <li><a class="h5" href="/about"      >{t('about', $lang)}</a></li>
+                    <li><a class="h5" href="/about#Recruitment">{t('recruit', $lang)}</a></li>
+                    <li><a class="h5" href="/contact"    >{t('contact', $lang)}</a></li>
                     <li>
                         <div class="lang-switch">
                             <!-- toggle button -->

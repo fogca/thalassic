@@ -51,12 +51,9 @@
   </section>
 
 
-  <section class="bodyLayout aboutValue aboutList">
-
-    <hr>
-    <h3 class="h1" lang="en">Value</h3>
+  <section class="aboutValue aboutList">
+    
     <div class="wrapper">
-
       <div class="container">
         <div class="h4" lang="en">01</div>
         <div class="box">
@@ -64,7 +61,6 @@
           <div class="h6 half">その地域の個性を読み解き、<br>土地の持つポテンシャルを最大限引き出します。</div>
         </div>
       </div>
-
       <div class="container">
         <div class="h4" lang="en">02</div>
         <div class="box">
@@ -72,7 +68,6 @@
           <div class="h6 half">日本やオーストラリア、中国など様々なバックグラウンドを持つプロフェッショナルが集まり、<br class="pc">多様で国際的な視点が新たな価値をつくリます。</div>
         </div>
       </div>
-
       <div class="container">
         <div class="h4" lang="en">03</div>
         <div class="box">
@@ -80,14 +75,11 @@
           <div class="h6 half">短期的な利益ではなく、土地に根ざす持続的な価値を優先します。</div>
         </div>
       </div>
-
     </div>
     
   </section>
 
   <section class="bodyLayout aboutCompany aboutList">
-
-    <hr>
     <h3 class="h1" lang="en">Company Profile</h3>
     <div class="wrapper">
 
@@ -286,7 +278,7 @@
 
 .aboutValue .wrapper {margin-top: 12rem;}
 
-.aboutCompany .wrapper {margin-top: 12rem;}
+.aboutCompany .wrapper {margin-top: 8rem;}
 .aboutRecruit .wrap {margin-top: 12rem;}
 .aboutRecruit .wrap .h0 {font-size: 4.2rem;}
 
@@ -316,7 +308,7 @@
   .aboutValue .container {padding: 2.5rem 0 2.5rem;}
 
 
-  .aboutCompany .wrapper {margin-top: 12rem;}
+  .aboutCompany .wrapper {margin-top: 0;}
   .aboutRecruit .wrap {
     padding-left: 25%;
     margin-top: 12rem;
@@ -334,7 +326,6 @@
   .aboutRecruit .aboutList .container:nth-of-type(1) * {width: 60%;margin-left:auto;}
   
 
-  .aboutCompany .wrapper {margin-top: 12rem;}
 .aboutRecruit .wrap {
   padding-left: 25%;
   margin-top: 12rem;
@@ -402,6 +393,7 @@
     height: 90%;
     width: 80%;
     background-color: #ced1c8;
+    background-color: #a8dae7;
     left: -30%;
     top: -10%;
 }
@@ -410,6 +402,7 @@
     height: 80%;
     width: 60%;
     background-color: #8ac5db;
+    background-color: #83cce0;
     top: -10%;
     right: 0%;
     animation-delay: .8s;
@@ -419,6 +412,7 @@
     height: 65%;
     width: 80%;
     background-color: #005fac;
+    background-color: #062D7A;
     bottom: -15%;
     right: -20%;
     animation-delay: 0.3s;
@@ -428,6 +422,7 @@
     height: 50%;
     width: 75%;
     background-color: #f1af9b;
+    background-color: #e2d6c2;
     bottom: -10%;
     left: -50%;
     animation-delay: 1.2s;
