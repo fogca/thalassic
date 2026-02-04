@@ -26,18 +26,8 @@ import Wavy from "../components/Wavy.svelte"
 
     <div class="l-Contents">
       <div class="heading">
-        <h2 class="" lang="en">Our Hotels</h2>
+        <h3 class="" lang="en">Our Hotels</h3>
         <h5>国内不動産事業</h5>
-      </div>
-      <div class="wrapper">
-        <Hotel />
-      </div>
-    </div>
-
-    <div class="l-Contents">
-      <div class="heading">
-        <h2 class="" lang="en">Property</h2>
-        <h5>不動産取引実績</h5>
       </div>
       <div class="wrapper">
         <Hotel />

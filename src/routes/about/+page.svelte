@@ -224,13 +224,7 @@
 
   </section>
 
-  </div>
-
-  <div class="bannar">
-
-    <Bannar />
   
-  </div>
 
 </main>
 
