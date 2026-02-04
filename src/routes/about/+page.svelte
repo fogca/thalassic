@@ -51,7 +51,7 @@
   </section>
 
 
-  <section class="aboutValue aboutList">
+  <section class="aboutValue aboutList" style="display: none;">
     
     <div class="wrapper">
       <div class="container">
