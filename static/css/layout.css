@@ -1,6 +1,4 @@
 
-
-
 .l-Contents {
   display: flex;
   justify-content: space-between;
@@ -13,6 +11,12 @@
   font-size: 64px;
   line-height: 1;
   margin-bottom: 5px;
+}
+
+
+.TopBusiness .Hotel a.container {
+  width: 16vw !important;
+  height: 20vw !important;
 }
 
 .l-Contents {}

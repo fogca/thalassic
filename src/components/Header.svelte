@@ -98,7 +98,7 @@ header {
     height: 50px;
     padding: .5rem var(--padding) 0;
     position: fixed;
-    z-index: 3;
+    z-index: 10;
     display: flex;
     justify-content: space-between;
     align-items: center;

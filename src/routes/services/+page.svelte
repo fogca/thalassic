@@ -2,6 +2,7 @@
   import { onMount} from 'svelte';
   import Footer from "../../components/Footer.svelte"
   import Link from "../../components/Link.svelte"
+  import Hotel from "../../components/snippet/Hotel.svelte"
 
   import { t } from './services.dict';
   import { lang } from '$lib/utils/lang';
@@ -9,34 +10,62 @@
 </script>
 
 
-<main>
+<main class="Services_Page">
 
   <section class="topLayout topLayoutPages" id="">
     <div class="texts-container">
       <div></div>
       <div>
-        <h1 class="h4"lang="en">Services</h1>
-        <h2 class="h1 hero__title bold">{@html t('heading', $lang)}</h2>
+        <h1 class="h2 hero__title uppercase" lang="en">Woven with<br>local soul.</h1>
+        <h2 class="h5 hero__subtitle">{@html t('heading', $lang)}</h2>
       </div>
       <div class="h6 half">{@html t('sub', $lang)}</div>
     </div>
     <div class="image-container w100">
-      <img class="pz" src="../../image/TC_top.webp" alt="" loading="eager" decoding="async" />
+      <img class="pz" src="../../image/THALASSIC_Mokuseki_00.webp" alt="" loading="eager" decoding="async" />
     </div>
   </section>
 
 
-  <section class="bodyLayout serviceBody">
-
-    <h3 class="h1" lang="en">Concept</h3>
-    <div class="wrapper">
-      <p>{@html t('concept', $lang)}</p>
+  <section class="serviceBody">
+    <div class="l-Contents">
+      <div class="heading">
+        <h2 class="" lang="en">Concept</h2>
+        <h5>フィロソフィー</h5>
+      </div>
+      <div class="container">
+        <p>
+        名古屋の空気を静かに味わう宿泊体験。<br>
+        木と石が持つ静かな調和を基調に、<br>
+        名古屋という都市の文化と感性を<br>
+        再発見するための滞在を創ります。<br>
+        <br>
+        日本の伝統技能や職人にルーツを持つ「木石」の思想は、<br>
+        素材そのものの美しさと、余白を生かした静けさを大切にします。<br>
+        その感性を基盤に、名古屋の人の営みを体感できる場を設計します。<br>
+        <br>
+        土地の物語と素材の温もりを静かに深く味わう。<br>
+        その土地を楽しむ新しい滞在のかたち。
+        </p>
+      </div>
     </div>
-    
-    <img class="pz w100 mar" src="../../image/TC_top.webp" alt="" loading="eager" decoding="async" />
-
   </section>
 
+  
+
+  
+  <section>
+    <div class="l-Contents">
+      <div class="heading">
+        <h2 class="" lang="en">What’s<br>Mokuseki</h2>
+        <h5>木石という思想</h5>
+      </div>
+      <div class="container">
+        <img class="pz" src="../../image/THALASSIC_Mokuseki_01.webp" alt="" loading="eager" decoding="async" />
+        <p>{@html t('concept', $lang)}</p>
+      </div>
+    </div>
+  </section>
 
 
   <section class="serviceAcc mar">
@@ -44,26 +73,10 @@
     <h3 class="h1" lang="en">Accommodation</h3>
     <p>{@html t('accommodation', $lang)}</p>
     
-    <div class="wrapper w100 grid">
+    <div class="wrapper">
 
-      <a href="/" class="container">
-        <img class="pz" src="../../image/TC_services_acc1.webp" alt="" loading="eager" decoding="async" />
-        <div class="box">
-          <h4 class="white h3" lang="en">Mokuseki Nagoya</h4>
-        </div>
-      </a>
-      <a href="/" class="container">
-        <img class="pz" src="../../image/TC_services_acc2.webp" alt="" loading="eager" decoding="async" />
-        <div class="box">
-          <h4 class="white h3" lang="en">Nagoya Castle I</h4>
-        </div>
-      </a>
-      <a href="/" class="container">
-        <img class="pz" src="../../image/TC_top.webp" alt="" loading="eager" decoding="async" />
-        <div class="box">
-          <h4 class="white h3" lang="en">Mokuseki Nagoya</h4>
-        </div>
-      </a>
+      <Hotel />
+
       
     </div>
     
@@ -76,55 +89,33 @@
 
 <style>
 
-.serviceBody.bodyLayout .wrapper {width: fit-content;}
-.serviceAcc .wrapper {margin-top: 2rem;}
-.grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2px;
-}
+.serviceImage {margin-left: 0;height: 60vh;}
+.Services_Page * {color: #272726;}
 
-.serviceAcc .container {position: relative;}
-.serviceAcc .container .box {
-  position: absolute;
-  top: 0;
+.serviceAcc .wrapper {margin-top: 2rem;}
+
+
+.serviceAcc .wrapper {
   width: 100%;
   height: 100%;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  padding-left: var(--padding);
 }
+
 
 @media screen and (min-width:720px) {
 
   .serviceAcc .w100,
-  .serviceBody .w100{
+  .serviceBody .w100 {
     width: 100%;
     margin-left: 0;
   }
 
-  .serviceBody {margin-top: 4rem;}
-  .serviceBody.bodyLayout .wrapper {width: 100%;}
-  .serviceBody * {text-align: center;}
-  .serviceBody img {
-    margin-top: 12rem;
-    height: 60vh;
-    border-radius: 1rem;
+  .serviceBody {
+    margin-top: 4rem;
+    margin-bottom: 160px;
   }
+
 
   .serviceAcc {margin: 12rem 0 16rem;}
-  .serviceAcc img {
-    height: calc(85vw / 3 / 3 * 2);
-    border-radius: 1rem;
-    filter: brightness(.85) contrast(1.2);
-  }
-  .serviceAcc .container .box {justify-content: center;padding-left: 0;}
-
-  .grid {
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 1rem;
-  }
 
 }
 

@@ -38,7 +38,7 @@ onMount(() => {
     <div class="wrapper">
       <div class="container">
         <h1 class="h0 white center" lang="en">
-          Echoing the land's essence,<br>Shaping the next century's form
+          Echoing the land's<br>essence, Shaping<br>the next century's form
         </h1>
         <h2 class="white h4 center">土地の豊かさを知り、次の100年を形作る</h2>
       </div>
@@ -141,6 +141,7 @@ onMount(() => {
     z-index: 2;
     pointer-events: none;
     overflow: hidden;
+    display: none;
   }
 
   .Marquee p {

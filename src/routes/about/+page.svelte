@@ -81,42 +81,58 @@
 
   <section class="bodyLayout aboutCompany aboutList">
     <h3 class="h1" lang="en">Company Profile</h3>
+
     <div class="wrapper">
-
-      <div class="container">
-        <div class="h6">商号</div>
-        <div class="h5">THALASSIC CAPITAL株式会社</div>
+      <div class="wrap">
+        <div class="container">
+          <div class="h6">商号</div>
+          <div class="h5">THALASSIC CAPITAL株式会社</div>
+        </div>
+        <div class="container">
+          <div class="h6">所在地</div>
+          <div class="h5">451-0034<br>愛知県名古屋市西区樋の口町1-15</div>
+        </div>
+        <div class="container">
+          <div class="h6">設立</div>
+          <div class="h5">2021年</div>
+        </div>
+        <div class="container">
+          <div class="h6">資本金</div>
+          <div class="h5">30,000,000円</div>
+        </div>
+        <div class="container">
+          <div class="h6">代表</div>
+          <div class="h5">J Wang</div>
+        </div>
       </div>
 
-      <div class="container">
-        <div class="h6">所在地</div>
-        <div class="h5">451-0034<br>愛知県名古屋市西区樋の口町1-15</div>
+      <div class="wrap">
+        <h3 class="h5">子会社</h3>
+        <div class="container">
+          <div class="h6">商号</div>
+          <div class="h5" lang="en">THALASSIC不動産 株式会社</div>
+        </div>
+        <div class="container">
+          <div class="h6">所在地</div>
+          <div class="h5" lang="en">Level 4, 524 Hay St. Perth, WA 6000</div>
+        </div>
       </div>
 
-      <div class="container">
-        <div class="h6">設立</div>
-        <div class="h5">2021年</div>
+      <div class="wrap">
+        <h3 class="h5">海外支社</h3>
+        <div class="container">
+          <div class="h6">商号</div>
+          <div class="h5" lang="en">THALASSIC  CAPITAL Ltd, Pty.  / Australia</div>
+        </div>
+        <div class="container">
+          <div class="h6">所在地</div>
+          <div class="h5" lang="en">Level 4, 524 Hay St. Perth, WA 6000</div>
+        </div>
       </div>
 
-      <div class="container">
-        <div class="h6">資本金</div>
-        <div class="h5">30,000,000円</div>
-      </div>
+      
 
-      <div class="container">
-        <div class="h6">代表</div>
-        <div class="h5">J Wang</div>
-      </div>
-
-      <div class="container">
-        <div class="h6">子会社</div>
-        <div class="h5" lang="en">THALASSIC  CAPITAL Ltd, Pty.  / Australia</div>
-      </div>
-
-      <div class="container">
-        <div class="h6">子会社所在地</div>
-        <div class="h5" lang="en">Level 4, 524 Hay St. Perth, WA 6000</div>
-      </div>
+      
 
     </div>
     
@@ -263,6 +279,8 @@
   height: .5px;
   background-color: #ccc;
 }
+
+.aboutCompany .wrapper .wrap h3 {margin: 60px 0 20px;}
 
 .aboutCompany .container {
   display: flex;
