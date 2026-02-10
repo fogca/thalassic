@@ -105,6 +105,7 @@
         {#each row as image}
           <div class="container">
             <img src={image.src} alt={image.alt} />
+            <div class="overlay"></div>
           </div>
         {/each}
         </div>
@@ -128,6 +129,17 @@
     height: 100%;
     object-fit: cover;
     display: block;
+    filter: saturate(.25) contrast(1.1) brightness(1.0);
+  }
+
+  .Gallery .row .container {position:relative;}
+  .Gallery .row .overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,250,0.075);
+    position: absolute;
+    top: 0;
+    left: 0;
   }
   .Gallery .container {width:100%;}
     </style>
@@ -135,21 +147,29 @@
   </section>
 
   <section class="GlobalBusiness">
-    <img class="w100" src="../../image/THALASSIC_Global_01.webp" alt="" loading="eager" decoding="async" />     
+    <img class="w100" src="../../image/aus/1.jpg" alt="" loading="eager" decoding="async" />     
     <div class="l-Contents wrapper">
       <div class="heading">
         <h2 class="" lang="en">Global<br>Business</h2>
         <h5>海外不動産事業</h5>
       </div>
       <div class="container">
-        <h5 class="h3 bold">グローバル化の進展を事業拡大の好機と捉え、<br>オーストラリアを中心に海外展開を推進</h5>
+        <img class="" src="../../image/THALASSIC_Career.webp" alt="" loading="eager" decoding="async" />     
+        <h5 class="h4 bold">グローバル化の進展を事業拡大の好機と捉え、<br>オーストラリアを中心に海外展開を推進</h5>
         <p>新たな分野を切り拓く戦略的投資（海外事業）として、グローバル化の進展を事業拡大の好機と捉え、オーストラリアを中心に海外展開を推進しています。オーストラリアは南半球に位置する広大な国で、豊かな自然環境と多文化社会が特徴です。国土は世界第6位の広さを誇り、乾燥地帯から熱帯雨林、サンゴ礁まで多様な自然を有します。</p>
-        <div class="box">
-          <img class="pz" src="../../image/TC_business_international.webp" alt="" loading="eager" decoding="async" />     
-          <img class="pz" src="../../image/TC_business_international.webp" alt="" loading="eager" decoding="async" />     
-          <img class="pz" src="../../image/TC_business_international.webp" alt="" loading="eager" decoding="async" />     
-          <img class="pz" src="../../image/TC_business_international.webp" alt="" loading="eager" decoding="async" />     
-        </div>
+      </div>
+    </div>
+
+    <div class="city">
+      <div class="container">
+        <h2 lang="en" class="h2">Sydney</h2>
+        <img class="" src="../../image/THALASSIC_Career.webp" alt="" loading="eager" decoding="async" />     
+        <p>シドニーは、OOOO新たな分野を切り拓く戦略的投資（海外事業）として、グローバル化の進展を事業拡大の好機と捉え、オーストラリアを中心に海外展開を推進しています。</p>
+      </div>
+      <div class="container">
+        <h2 lang="en" class="h2">Sydney</h2>
+        <img class="" src="../../image/THALASSIC_Career.webp" alt="" loading="eager" decoding="async" />     
+        <p>シドニーは、OOOO新たな分野を切り拓く戦略的投資（海外事業）として、グローバル化の進展を事業拡大の好機と捉え、オーストラリアを中心に海外展開を推進しています。</p>
       </div>
     </div>
   </section>
@@ -162,7 +182,15 @@
 
 
 <style>
+  .GlobalBusiness .city {
+    width: 100%;
+    display: flex;
+    margin-bottom: 100px;
+  }
+  .GlobalBusiness .city .container {width: 49%;margin-right: 1%;}
 
+.GlobalBusiness .container img:nth-of-type(1) {height: 40vh;}
+.GlobalBusiness .container h5 {margin: 30px 0 10px;}
 .GlobalBusiness {margin-top: 180px;}
 .GlobalBusiness img.w100 {height: 50vh;}
 .GlobalBusiness .box {

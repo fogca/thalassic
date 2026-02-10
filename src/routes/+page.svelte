@@ -23,24 +23,14 @@ import Wavy from "../components/Wavy.svelte"
   <Business />
   <Texts />
   <section class="TopBusiness">
-
     <div class="l-Contents">
       <div class="heading">
-        <h3 class="" lang="en">Our Hotels</h3>
+        <h3 class="h1" lang="en">Our Hotels</h3>
         <h5>国内不動産事業</h5>
       </div>
       <div class="wrapper">
         <Hotel />
       </div>
-    </div>
-
-  </section>
-
-  <section class="TopContact">
-    <div class="wrapper">
-      <h2 class="texts" lang="en">Let’s build what’s<br>next, together!</h2>
-      <p>プロジェクトへの参画や事業提携、不動産活用のお悩みなど、<br>ぜひお気軽にご相談ください。</p>
-      <a href="/contact" class="h2" lang="en" aria-label="Link">Contact Us</a>
     </div>
   </section>
 

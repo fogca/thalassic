@@ -59,8 +59,8 @@ afterNavigate(() => {
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
-	<link rel="stylesheet" href="../css/base.css?var=1.16">
-	<link rel="stylesheet" href="../css/layout.css?var=1.10">
+	<link rel="stylesheet" href="../css/base.css?var=1.17">
+	<link rel="stylesheet" href="../css/layout.css?var=1.11">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">

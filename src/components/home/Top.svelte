@@ -2,6 +2,8 @@
 import { onMount } from 'svelte';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import TopHead from './TopHead.svelte';
+import Identity from '../snippet/Identity.svelte';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -28,7 +30,7 @@ onMount(() => {
 <div class="TopSection">
   <div class="bg_wrapper">
     <div class="bg"></div>
-    <div class="cloud">
+    <div class="cloud" style="display:none;">
       <img src="/image/THALASSIC_KVa.png" alt="" class="" />
     </div>
   </div>
@@ -37,10 +39,8 @@ onMount(() => {
   <section class="Sky">
     <div class="wrapper">
       <div class="container">
-        <h1 class="h0 white center" lang="en">
-          Echoing the land's<br>essence, Shaping<br>the next century's form
-        </h1>
-        <h2 class="white h4 center">土地の豊かさを知り、次の100年を形作る</h2>
+        <TopHead />
+        <h2 class="white h5 center">土地の豊かさを知り、次の100年を形作る</h2>
       </div>
     </div>
     <div class="Marquee">
@@ -63,7 +63,7 @@ onMount(() => {
         </p>
       </div>
       <div class="container">
-        
+        <Identity />
       </div>
     </div>
   </section>
@@ -71,10 +71,12 @@ onMount(() => {
 </div>
 
 <style>
+
+  .Sky h2 {margin-top: 15px;}
   .TopSection {
     position: relative;
     overflow: hidden;
-    margin-bottom: 180px;
+    margin-bottom: 100px;
   }
 
   .TopSection .bg_wrapper {
@@ -171,10 +173,18 @@ onMount(() => {
   }
 
   .Identity {
-    padding-top: 60px;
-    height: 100vh;
+    margin-top: 0;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    height: fit-content;
+    height: calc(100vw - 100vh);
     position: relative;
     z-index: 1;
+  }
+
+  .Identity .wrapper {
+    display: flex;
+    justify-content: space-between;
   }
   .Identity h2 {margin-top: 2rem;}
   .Identity h3 {margin: 2rem 0 1.5rem;}

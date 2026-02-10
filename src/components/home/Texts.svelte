@@ -66,7 +66,7 @@
   
   <style>
     .InlineText {
-      padding: 200px 0;
+      padding: 200px 0 80px;
     }
   
     .InlineText .wrapper {

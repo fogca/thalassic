@@ -2,6 +2,7 @@
     import Logo from "./Logo.svelte";
     import Links from "./pageLinks.svelte";
     import Link from "./Link.svelte";
+    import Icons from "./snippet/Icons.svelte";
 </script>
 
 
@@ -37,39 +38,41 @@
 
     <section class="footer">
 
-    
-
-
-    <div class="top">
-
-        <ul>
-            <li class="container">
-                <a class="h2" lang="en" href="/about">About</a>
-            </li>
-            <li class="container">
-                <a class="h2" lang="en" href="/real-estate">Real Estate</a>
-            </li>
-            <li class="container">
-                <a class="h2" lang="en" href="/services">Services</a>
-            </li>
-            <li class="container">
-                <a class="h2" lang="en" href="/recruit">Recruitment</a>
-            </li>
-            <li class="container">
-                <a class="h2" lang="en" href="/contact">Contact</a>
-            </li>
-
-        </ul>
-
+    <div class="left">
+        <h2 class="h1" lang="en">Let’s build<br>what’snext,<br>together!</h2>
+        <p>プロジェクトへの参画や事業提携、<br>不動産活用のお悩みなど、<br>ぜひお気軽にご相談ください。</p>
+        <a href="/contact" lang="en" class="h5">Contact Form</a>
     </div>
-    <div class="h7 half" lang="en">@Thalassic Capital, 2026</div>
+    <div class="right">
+        <h5 class="h5" lang="en">Menu</h5>
+        <div class="menu">
+            <ul>
+                <li class="container"><a class="h2" lang="en" href="/real-estate">Real Estate</a></li>
+                <li class="container"><a class="h2" lang="en" href="/real-estate#international">International</a></li>
+            </ul>
+            <ul>
+                <li class="container"><a class="h2" lang="en" href="/Hotel">Hotel</a></li>
+                <li class="container"><a class="h2" lang="en" href="/About">About</a></li>
+            </ul>
+            <ul>
+                <li class="container"><a class="h2" lang="en" href="/about#recruit">Recruitment</a></li>
+                <li class="container"><a class="h2" lang="en" href="/contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class="icons">
+            <Icons />
+        </div>
+        <div class="bottom">
+            <div class="h6" lang="en">©Thalassic Capital, 2026</div>
+        </div>
+        
+    </div>
+    
     </section>
-
 </footer>
 
 <style>
     footer {
-        background-color: white;
         position: relative;
     }
 
@@ -96,6 +99,53 @@
 
     }
     footer .navigation .container img {height: 50vh; filter: brightness(.9);}
+
+
+    footer .footer {
+        background-color: #F7F8F8;
+        padding: 100px var(--pcPadding) 50px;
+        margin-top: 120px;
+
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    footer .footer .left,
+    footer .footer .right {width: 50%;}
+
+    footer .footer .left p {margin: 20px 0 60px;}
+    footer .footer .left a {text-decoration: underline;}
+    footer .footer .menu {
+        display: flex;
+        margin: 20px 0 40px;
+    }
+    footer .footer ul {margin-right: 30px;}
+    footer .footer ul li a {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    footer .footer .bottom {
+        width: 100%;
+        margin-top: 120px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     .gradation {
     width: 100%;
     height: 50vh;
@@ -116,11 +166,7 @@
 
 
 
-    footer .footer {
 
-    }
-
-    footer .footer li a {font-size: 1.4rem;}
     
     
 

@@ -13,15 +13,16 @@
   margin-bottom: 5px;
 }
 
-
+.TopBusiness .l-Contents {
+  display: block;
+  width: 100%;
+}
+.TopBusiness .l-Contents .wrapper {width: 100% !important;margin: 40px 0 100px;}
 .TopBusiness .Hotel a.container {
-  width: 16vw !important;
-  height: 20vw !important;
+  width: 16vw;
+  height: 20vw;
 }
 
-.l-Contents {}
-
-.l-Contents {}
 
 .curtain.open {
   transform: translateY(-100%);
