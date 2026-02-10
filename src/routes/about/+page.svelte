@@ -2,6 +2,7 @@
   import { onMount} from 'svelte';
   import Footer from "../../components/Footer.svelte"
   import Bannar from "../../components/RecruitBannar.svelte"
+  import Identity from "../../components/snippet/Identity.svelte"
 
   import { t } from './about.dict';
   import { lang } from '$lib/utils/lang';
@@ -46,6 +47,8 @@
     <div class="wrapper">
       <p>{@html t('about', $lang)}</p>
     </div>
+
+    <Identity />
     
 
   </section>

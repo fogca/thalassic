@@ -76,16 +76,7 @@
         <p>当社は、収益不動産を中心に「買取・再生・管理・仲介」の全フェーズをワンストップで手掛ける不動産総合サービスを展開しています。買取事業においては、市場価値を精緻に分析し、自社で直接購入。リノベーションやバリューアップを施すことで不動産の潜在能力を引き出し、次なるオーナー様への販売へと繋げます。運営フェーズでは、中長期的な収益最大化を目的とした賃貸管理から、円滑な事業承継のサポートまでを網羅。さらに、収益物件に特化した仲介サービスを通じて、経験豊富なスタッフが安心かつスピード感のある取引を実現します。</p>
         
         <style>
-          .Illustration {
-            width: 100%;
-            background-color: #fafafa;
-            border-radius: 10px;
-            display: flex;
-            padding: 30px;
-            margin-bottom: 30px;
-          }
-          .Illustration .box {margin: 0 10px;}
-          .Illustration .box img {border-radius: 10px}
+
         </style>
         <!--<p>{@html t('real4p', $lang)}</p>
         <img class="pz" src="../../image/TC_business_international.webp" alt="" loading="eager" decoding="async" />
@@ -157,7 +148,28 @@
         <img class="" src="../../image/THALASSIC_Career.webp" alt="" loading="eager" decoding="async" />     
         <h5 class="h4 bold">グローバル化の進展を事業拡大の好機と捉え、<br>オーストラリアを中心に海外展開を推進</h5>
         <p>新たな分野を切り拓く戦略的投資（海外事業）として、グローバル化の進展を事業拡大の好機と捉え、オーストラリアを中心に海外展開を推進しています。オーストラリアは南半球に位置する広大な国で、豊かな自然環境と多文化社会が特徴です。国土は世界第6位の広さを誇り、乾燥地帯から熱帯雨林、サンゴ礁まで多様な自然を有します。</p>
+
+        <div class="Illustration">
+          <div class="box">
+            <img class="pz" src="../../image/Illust/4.png" alt="" loading="eager" decoding="async" />
+            <h3 class="h4 center" lang="en">Acquisitions</h3>
+          </div>
+          <div class="box">
+            <img class="pz" src="../../image/Illust/1.png" alt="" loading="eager" decoding="async" />
+            <h3 class="h4 center" lang="en">Revitalisation</h3>
+          </div>
+          <div class="box">
+            <img class="pz" src="../../image/Illust/2.png" alt="" loading="eager" decoding="async" />
+            <h3 class="h4 center" lang="en">Brokerage Services</h3>
+          </div>
+          <div class="box">
+            <img class="pz" src="../../image/Illust/3.png" alt="" loading="eager" decoding="async" />
+            <h3 class="h4 center" lang="en">Property Management</h3>
+          </div>
+        </div>
+
       </div>
+
     </div>
 
     <div class="city">
@@ -167,11 +179,12 @@
         <p>シドニーは、OOOO新たな分野を切り拓く戦略的投資（海外事業）として、グローバル化の進展を事業拡大の好機と捉え、オーストラリアを中心に海外展開を推進しています。</p>
       </div>
       <div class="container">
-        <h2 lang="en" class="h2">Sydney</h2>
+        <h2 lang="en" class="h2">Perth</h2>
         <img class="" src="../../image/THALASSIC_Career.webp" alt="" loading="eager" decoding="async" />     
         <p>シドニーは、OOOO新たな分野を切り拓く戦略的投資（海外事業）として、グローバル化の進展を事業拡大の好機と捉え、オーストラリアを中心に海外展開を推進しています。</p>
       </div>
     </div>
+
   </section>
   
   
@@ -182,6 +195,24 @@
 
 
 <style>
+
+
+.Illustration {
+            width: 100%;
+            background-color: #fafafa;
+            border-radius: 10px;
+            display: flex;
+            padding: 30px;
+            margin-bottom: 30px;
+          }
+          .Illustration .box {margin: 0 10px;}
+          .Illustration .box img {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px}
+
+
+
   .GlobalBusiness .city {
     width: 100%;
     display: flex;
