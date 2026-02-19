@@ -12,11 +12,11 @@
 
     <section class="navigation">
         <div class="container">
-            <img src="../../image/THALASSIC_Career.webp" alt="">
+            <img src="../../image/Illust/Career01.webp" alt="">
             <div class="contents white">
                 <p class="h6 bold center white">キャリア・採用に関して</p>
                 <h2 class="white" lang="en">Recruitment</h2>
-                <a href="/career" class=""><Link /></a>
+                <a href="/about#Recruitment" class=""><Link /></a>
             </div>
         </div>
         <div class="container">
@@ -34,7 +34,7 @@
         </div>
     </section>
 
-    
+    <section class="space"></section>
 
     <section class="footer">
 
@@ -72,8 +72,14 @@
 </footer>
 
 <style>
+
+    section.space {
+        padding-top: 160px;
+    }
     footer {
         position: relative;
+        background-color: white;
+        padding-top: 160px;
     }
 
 
@@ -83,6 +89,7 @@
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
+        background-color: white;
     }
 
     footer .navigation .container {
@@ -104,7 +111,7 @@
     footer .footer {
         background-color: #F7F8F8;
         padding: 100px var(--pcPadding) 50px;
-        margin-top: 120px;
+        margin-top: 0;
 
         display: flex;
         flex-wrap: wrap;

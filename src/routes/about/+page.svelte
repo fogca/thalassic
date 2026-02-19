@@ -46,9 +46,10 @@
     
     <div class="wrapper">
       <p>{@html t('about', $lang)}</p>
+      <Identity />
     </div>
 
-    <Identity />
+
     
 
   </section>
@@ -145,11 +146,17 @@
     <hr>
     <h3 class="h1" lang="en">Recruitment</h3>
     <div class="wrap">
-      <h4 class="h0" lang="en">Join Our Team!</h4>
+      <h4 class="h0" lang="en">Join Our Team!
+        <img src="../../image/Illust/Character_J.png" class="" alt="">
+      </h4>
       <p>{@html t('recruit', $lang)}</p>
     </div>
+
+    
       
     <div class="container aboutList">
+
+      <img src="../../image/Illust/Character_J_half.png" class="character" alt="">
       
       <h5 class="h3">募集要項</h5>
       <div class="container">
@@ -221,6 +228,23 @@
     
 
     <style>
+
+    #Recruitment .container {position: relative;}
+
+    #Recruitment .wrap img {
+      width: 70px;
+      margin-left: -15px;
+      margin-bottom: -15px;
+    }
+    #Recruitment img.character {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      top: -105px;
+      left: auto;
+      right: 0;
+    }
+    
       
     </style>
     

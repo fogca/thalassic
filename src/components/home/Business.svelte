@@ -1,19 +1,19 @@
 <script lang="ts">
     const cards = [
       {
-        image: '/image/TC_business_international.webp',
+        image: '/image/TC_services_acc1.webp',
         category: '宿泊事業',
         title: 'HOTEL',
         link: '/hotel'
       },
       {
-        image: '/image/TC_business_international.webp',
+        image: '/image/Illust/Career01.webp',
         category: '採用情報',
         title: 'RECRUITMENT',
-        link: '/recruitment'
+        link: '/about#Recruitment'
       },
       {
-        image: '/image/TC_business_international.webp',
+        image: '/image/THALASSIC_Global_01.webp',
         category: '会社情報',
         title: 'ABOUT US',
         link: '/about'
@@ -33,7 +33,7 @@
         <div class="overlay"></div>
         <div class="texts">
           <h6 class="white">{cards[0].category}</h6>
-          <h2 class="h1 uppercase white" lang="en">{cards[0].title}</h2>
+          <h2 class="h2 uppercase white" lang="en">{cards[0].title}</h2>
           <div class="button" lang="en">READ MORE</div>
         </div>
       </a>
@@ -43,7 +43,7 @@
         <div class="overlay"></div>
         <div class="texts">
           <h6 class="white">{cards[1].category}</h6>
-          <h2 class="h1 uppercase white" lang="en">{cards[1].title}</h2>
+          <h2 class="h2 uppercase white" lang="en">{cards[1].title}</h2>
           <div class="button" lang="en">READ MORE</div>
         </div>
       </a>
@@ -53,7 +53,7 @@
         <div class="overlay"></div>
         <div class="texts">
           <h6 class="white">{cards[2].category}</h6>
-          <h2 class="h1 uppercase white" lang="en">{cards[2].title}</h2>
+          <h2 class="h2 uppercase white" lang="en">{cards[2].title}</h2>
           <div class="button" lang="en">READ MORE</div>
         </div>
       </a>
@@ -63,7 +63,7 @@
         <div class="overlay"></div>
         <div class="texts">
           <h6 class="white">{cards[3].category}</h6>
-          <h2 class="h1 uppercase white" lang="en">{cards[3].title}</h2>
+          <h2 class="h2 uppercase white" lang="en">{cards[3].title}</h2>
           <div class="button" lang="en">READ MORE</div>
         </div>
       </a>

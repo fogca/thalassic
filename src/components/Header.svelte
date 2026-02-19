@@ -40,7 +40,7 @@
             <nav class="pc">
                 <ul>
                     <li><a class="h5" href="/real-estate">{t('realestate', $lang)}</a></li>
-                    <li><a class="h5" href="/services"   >{t('hotel', $lang)}</a></li>
+                    <li><a class="h5" href="/hotel"   >{t('hotel', $lang)}</a></li>
                     <li><a class="h5" href="/about"      >{t('about', $lang)}</a></li>
                     <li><a class="h5" href="/about#Recruitment">{t('recruit', $lang)}</a></li>
                     <li><a class="h5" href="/contact"    >{t('contact', $lang)}</a></li>

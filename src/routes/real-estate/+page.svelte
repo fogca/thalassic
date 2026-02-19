@@ -9,21 +9,21 @@
   const rows = [
     // 1行目: 大・中・中
     [
-      { src: '/image/TC_business_international.webp', alt: 'Image 1' },
-      { src: '/image/TC_business_international.webp', alt: 'Image 2' },
-      { src: '/image/TC_business_international.webp', alt: 'Image 3' },
+      { src: '/image/case/case1.jpg', alt: 'Image 1' },
+      { src: '/image/case/case3.jpg', alt: 'Image 2' },
+      { src: '/image/case/case4.jpg', alt: 'Image 3' },
     ],
     // 2行目: 小・中・大
     [
-      { src: '/image/TC_business_international.webp', alt: 'Image 4' },
-      { src: '/image/TC_business_international.webp', alt: 'Image 5' },
-      { src: '/image/TC_business_international.webp', alt: 'Image 6' },
+      { src: '/image/case/case5.jpg', alt: 'Image 4' },
+      { src: '/image/case/case6.jpg', alt: 'Image 5' },
+      { src: '/image/case/case7.jpg', alt: 'Image 6' },
     ],
     // 3行目: 大・小・中
     [
-      { src: '/image/TC_business_international.webp', alt: 'Image 7' },
-      { src: '/image/TC_business_international.webp', alt: 'Image 8' },
-      { src: '/image/TC_business_international.webp', alt: 'Image 9' },
+      { src: '/image/case/case2.jpg', alt: 'Image 7' },
+      
+    
     ],
   ];
 
@@ -58,19 +58,23 @@
         <div class="Illustration">
           <div class="box">
             <img class="pz" src="../../image/Illust/4.png" alt="" loading="eager" decoding="async" />
-            <h3 class="h4 center" lang="en">Acquisitions</h3>
+            <h3 class="h5 center">Acquisitions</h3>
+            <h4 class="h5 center">不動産買取</h4>
           </div>
           <div class="box">
             <img class="pz" src="../../image/Illust/1.png" alt="" loading="eager" decoding="async" />
             <h3 class="h4 center" lang="en">Revitalisation</h3>
+            <h4 class="h5 center">再生事業</h4>
           </div>
           <div class="box">
             <img class="pz" src="../../image/Illust/2.png" alt="" loading="eager" decoding="async" />
             <h3 class="h4 center" lang="en">Brokerage Services</h3>
+            <h4 class="h5 center">不動産仲介</h4>
           </div>
           <div class="box">
             <img class="pz" src="../../image/Illust/3.png" alt="" loading="eager" decoding="async" />
             <h3 class="h4 center" lang="en">Property Management</h3>
+            <h4 class="h5 center">賃貸管理</h4>
           </div>
         </div>
         <p>当社は、収益不動産を中心に「買取・再生・管理・仲介」の全フェーズをワンストップで手掛ける不動産総合サービスを展開しています。買取事業においては、市場価値を精緻に分析し、自社で直接購入。リノベーションやバリューアップを施すことで不動産の潜在能力を引き出し、次なるオーナー様への販売へと繋げます。運営フェーズでは、中長期的な収益最大化を目的とした賃貸管理から、円滑な事業承継のサポートまでを網羅。さらに、収益物件に特化した仲介サービスを通じて、経験豊富なスタッフが安心かつスピード感のある取引を実現します。</p>
@@ -109,7 +113,7 @@
     display: grid;
     grid-template-rows: repeat(3, 1fr);
     gap: 5px;
-    height: 70vh;
+    height: 100%;
   }
   .Gallery .row {display: grid;gap: 5px;}
   .Gallery .row[data-row="1"] {grid-template-columns: 2fr 1fr 1fr;}
@@ -118,10 +122,12 @@
   .Gallery img {
     width: 100%;
     height: 100%;
+    height: 250px;
     object-fit: cover;
     display: block;
     filter: saturate(.25) contrast(1.1) brightness(1.0);
   }
+  
 
   .Gallery .row .container {position:relative;}
   .Gallery .row .overlay {
@@ -152,19 +158,23 @@
         <div class="Illustration">
           <div class="box">
             <img class="pz" src="../../image/Illust/4.png" alt="" loading="eager" decoding="async" />
-            <h3 class="h4 center" lang="en">Acquisitions</h3>
+            <h3 class="h5 center">Acquisitions</h3>
+            <h4 class="h5 center">不動産買取</h4>
           </div>
           <div class="box">
             <img class="pz" src="../../image/Illust/1.png" alt="" loading="eager" decoding="async" />
             <h3 class="h4 center" lang="en">Revitalisation</h3>
+            <h4 class="h5 center">再生事業</h4>
           </div>
           <div class="box">
             <img class="pz" src="../../image/Illust/2.png" alt="" loading="eager" decoding="async" />
             <h3 class="h4 center" lang="en">Brokerage Services</h3>
+            <h4 class="h5 center">不動産仲介</h4>
           </div>
           <div class="box">
             <img class="pz" src="../../image/Illust/3.png" alt="" loading="eager" decoding="async" />
             <h3 class="h4 center" lang="en">Property Management</h3>
+            <h4 class="h5 center">賃貸管理</h4>
           </div>
         </div>
 
@@ -197,19 +207,6 @@
 <style>
 
 
-.Illustration {
-            width: 100%;
-            background-color: #fafafa;
-            border-radius: 10px;
-            display: flex;
-            padding: 30px;
-            margin-bottom: 30px;
-          }
-          .Illustration .box {margin: 0 10px;}
-          .Illustration .box img {
-            width: 100%;
-            height: 100%;
-            border-radius: 10px}
 
 
 
@@ -230,6 +227,36 @@
   grid-template-columns: 1fr 1fr;
   gap: 5px;
 }
+
+.Illustration {
+  width: 100%;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 15px;
+  padding: 30px 25px 20px;
+  margin-bottom: 30px;
+}
+.Illustration .box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.Illustration .box img,
+.GlobalBusiness .container .Illustration img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.GlobalBusiness .Illustration {margin-top: 40px;}
+
+.Illustration .box h3 {display: none;}
+.Illustration .box h4 {margin-top: 15px;}
+
 
 
 </style>
