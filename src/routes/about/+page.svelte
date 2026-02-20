@@ -147,7 +147,10 @@
     <h3 class="h1" lang="en">Recruitment</h3>
     <div class="wrap">
       <h4 class="h0" lang="en">Join Our Team!
-        <img src="../../image/Illust/Character_J.png" class="" alt="">
+        <img src="../../image/Illust/Character_M.png" class="" alt="">
+        <img src="../../image/Illust/Character_Ja.png" class="" alt="">
+        <img src="../../image/Illust/Character_Q.png" class="" alt="">
+        <img src="../../image/Illust/Character_B.png" class="" alt="">
       </h4>
       <p>{@html t('recruit', $lang)}</p>
     </div>
