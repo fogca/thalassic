@@ -342,6 +342,8 @@
       width: 100%;
       background-color: white;
       padding: 160px var(--pcPadding);
+      padding-right: 0;
+      padding-bottom: 1px;
     }
 
     .accomodation__wrapper {

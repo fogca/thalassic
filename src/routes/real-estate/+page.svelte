@@ -133,7 +133,8 @@
   .Gallery .row .overlay {
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,250,0.075);
+    background-color: rgba(0,50,120,0.25);
+    
     position: absolute;
     top: 0;
     left: 0;
@@ -156,15 +157,11 @@
         <p>新たな分野を切り拓く戦略的投資（海外事業）として、グローバル化の進展を事業拡大の好機と捉え、オーストラリアを中心に海外展開を推進しています。オーストラリアは南半球に位置する広大な国で、豊かな自然環境と多文化社会が特徴です。国土は世界第6位の広さを誇り、乾燥地帯から熱帯雨林、サンゴ礁まで多様な自然を有します。</p>
 
         <div class="Illustration">
-          <div class="box">
-            <img class="pz" src="../../image/Illust/4.png" alt="" loading="eager" decoding="async" />
-            <h3 class="h5 center">Acquisitions</h3>
-            <h4 class="h5 center">不動産買取</h4>
-          </div>
+          
           <div class="box">
             <img class="pz" src="../../image/Illust/1.png" alt="" loading="eager" decoding="async" />
             <h3 class="h4 center" lang="en">Revitalisation</h3>
-            <h4 class="h5 center">再生事業</h4>
+            <h4 class="h5 center">不動産開発</h4>
           </div>
           <div class="box">
             <img class="pz" src="../../image/Illust/2.png" alt="" loading="eager" decoding="async" />
@@ -257,6 +254,8 @@
 .Illustration .box h3 {display: none;}
 .Illustration .box h4 {margin-top: 15px;}
 
+
+.GlobalBusiness .Illustration {grid-template-columns: 1fr 1fr 1fr; gap: 20px;}
 
 
 </style>
