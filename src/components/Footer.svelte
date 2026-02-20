@@ -51,8 +51,8 @@
                 <li class="container"><a class="h2" lang="en" href="/real-estate#international">International</a></li>
             </ul>
             <ul>
-                <li class="container"><a class="h2" lang="en" href="/Hotel">Hotel</a></li>
-                <li class="container"><a class="h2" lang="en" href="/About">About</a></li>
+                <li class="container"><a class="h2" lang="en" href="/hotel">Hotel</a></li>
+                <li class="container"><a class="h2" lang="en" href="/about">About</a></li>
             </ul>
             <ul>
                 <li class="container"><a class="h2" lang="en" href="/about#recruit">Recruitment</a></li>

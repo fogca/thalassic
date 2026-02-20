@@ -22,6 +22,7 @@
     // 3行目: 大・小・中
     [
       { src: '/image/case/case2.jpg', alt: 'Image 7' },
+      { src: '/image/case/case8.jpg', alt: 'Image 8' },
       
     
     ],
