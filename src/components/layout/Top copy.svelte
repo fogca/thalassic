@@ -109,8 +109,49 @@ onMount(() => {
 });
 </script>
 
+<div class="TopSection">
+  <div class="bg_wrapper">
+    <div class="bg"></div>
+    <div class="cloud" style="display:none;">
+      <img src="/images/top_03.png" alt="" class="" />
+    </div>
+  </div>
 
-
+  <section class="Sky">
+    <div class="wrapper">
+      <div class="container">
+        <div class="Title" bind:this={heroTitleEl}>
+          <h1
+            class="h1 splitting --split"
+            lang="en"
+            style="--word-total: {wordTotal}; --char-total: {charTotal};"
+          >
+            {#each heroTitleLines as line, lineIndex}
+              {#each line.words as wordData, wordIndex}
+                <span class="word" data-word={wordData.word} style="--word-index: {wordData.wordIndex};">
+                  {#each wordData.chars as { char, globalIndex }}
+                    <span
+                      class="char"
+                      data-char={char}
+                      style="--char-index: {globalIndex};"
+                    >{char}</span>
+                  {/each}
+                </span>
+                {#if line.isWhitespace[wordIndex]}
+                  <span class="whitespace"> </span>
+                {/if}
+              {/each}
+              {#if lineIndex < heroTitleLines.length - 1}<br />{/if}
+            {/each}
+          </h1>
+        </div>
+        <h2 class="white h5 center">土地の豊かさを知り、次の100年を形作る</h2>
+      </div>
+    </div>
+    <div class="Marquee">
+      <p lang="en">Thalassic Capital Shaping The Next</p>
+    </div>
+  </section>
 
   <section class="Identity">
     <div class="wrapper">
@@ -131,7 +172,7 @@ onMount(() => {
       </div>
     </div>
   </section>
-
+</div>
 
 <section class="Business">
   <div class="wrapper">
@@ -162,15 +203,130 @@ onMount(() => {
 </section>
 
 <style lang="scss">
+  .Sky h2 { margin-top: 15px; }
 
+  .Sky .Title h1 {
+    font-size: 48px;
+    line-height: 1.2;
+    text-align: center;
+    color: white;
+  }
 
+  .Sky .Title h1 span { line-height: 1.2; color: white; }
+  .Sky .Title .word { display: inline-block; }
+  .Sky .Title .whitespace { display: inline-block; }
+  .Sky .Title .char {
+    display: inline-block;
+    will-change: opacity, transform;
+    transform-origin: 50% 0%;
+  }
+
+  @media screen and (max-width: 834px) {
+    .Sky .Title { padding: 120px 0; }
+    .Sky .Title h1 { font-size: 48px; }
+  }
+
+  .TopSection {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 100px;
+  }
+
+  .TopSection .bg_wrapper {
+    position: absolute;
+    top: 0;
+    z-index: 0;
+    width: 100vw;
+    height: 100%;
+    height: 133.2vw;
+    overflow: hidden;
+  }
+
+  .TopSection .bg_wrapper .bg {
+    aspect-ratio: 3 / 4;
+    background-image: url('/images/top_01.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  @media screen and (min-width: 720px) {
+    .TopSection .bg_wrapper { height: 100vw; }
+    .TopSection .bg_wrapper .bg {
+      aspect-ratio: 1 / 1;
+      background-image: url('/images/top_02.jpg');
+    }
+  }
+
+  .TopSection .bg_wrapper .cloud {
+    position: absolute;
+    top: -70vh;
+    left: 40vw;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .TopSection .bg_wrapper .cloud img {
+    position: absolute;
+    top: 5%;
+    left: 0;
+    width: 100%;
+    height: auto;
+    opacity: 0.9;
+  }
+
+  .Sky .wrapper {
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+  }
+
+  .Marquee {
+    position: fixed;
+    bottom: -20px;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    pointer-events: none;
+    overflow: hidden;
+    display: none;
+  }
+
+  .Marquee p {
+    font-size: 128px;
+    letter-spacing: 0.02em;
+    color: rgba(255, 255, 255, 0);
+    white-space: nowrap;
+    text-transform: uppercase;
+    margin: 0;
+    will-change: transform;
+    line-height: 1;
+    -webkit-text-stroke: 1px #FFF;
+    transition: color 0.5s ease-in-out;
+  }
+
+  .Marquee p:hover { color: rgba(255, 255, 255, 1); }
+
+  @media screen and (max-width: 834px) {
+    .Marquee { bottom: 40px; }
+    .Marquee p { font-size: 48px; letter-spacing: 0; }
+  }
 
   .Identity {
-    margin: 200px 0;
+    margin-top: 0;
     padding-top: 0;
     padding-bottom: 0;
     height: fit-content;
-    
+    height: calc(100vw - 100vh);
     position: relative;
     z-index: 1;
   }
@@ -178,23 +334,11 @@ onMount(() => {
   .Identity .wrapper {
     display: flex;
     justify-content: space-between;
-    position: relative;
   }
 
-  .Identity .wrapper .container:nth-of-type(2) {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: -45vh;
-    left: auto;
-    right: -10vw;
-  }
   .Identity h2 { margin-top: 2rem; }
   .Identity h3 { margin: 2rem 0 1.5rem; }
-
-
-
-  
+  .Identity * { color: white; }
 
   @media screen and (max-width: 834px) {
     .Hero { height: 150vh; }

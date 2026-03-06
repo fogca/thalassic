@@ -4,6 +4,7 @@
     import { ScrollTrigger } from 'gsap/ScrollTrigger';
     import Lenis from 'lenis';
     import Logo from '../snippets/Logo.svelte';
+    import Ball from '../snippets/Ball.svelte';
     
     gsap.registerPlugin(ScrollTrigger);
     
@@ -150,35 +151,35 @@
       <h1>
         <div class="line">
           <span class="word">
-            {#each 'ECHOING'.split('') as char}<span class="char">{char}</span>{/each}
+            {#each 'ECHOING'.split('') as char}<span class="char" lang="en">{char}</span>{/each}
           </span>
           <span class="word">
-            {#each 'THE'.split('') as char}<span class="char">{char}</span>{/each}
+            {#each 'THE'.split('') as char}<span class="char" lang="en">{char}</span>{/each}
           </span>
           <span class="word">
-            {#each "LAND'S".split('') as char}<span class="char">{char}</span>{/each}
-          </span>
-        </div>
-        <div class="line">
-          <span class="word">
-            {#each 'ESSENCE,'.split('') as char}<span class="char">{char}</span>{/each}
-          </span>
-          <span class="word">
-            {#each 'SHAPING'.split('') as char}<span class="char">{char}</span>{/each}
-          </span>
-          <span class="word">
-            {#each 'THE'.split('') as char}<span class="char">{char}</span>{/each}
-          </span>
-          <span class="word">
-            {#each 'NEXT'.split('') as char}<span class="char">{char}</span>{/each}
+            {#each "LAND'S".split('') as char}<span class="char" lang="en">{char}</span>{/each}
           </span>
         </div>
         <div class="line">
           <span class="word">
-            {#each "CENTURY'S".split('') as char}<span class="char">{char}</span>{/each}
+            {#each 'ESSENCE,'.split('') as char}<span class="char" lang="en">{char}</span>{/each}
           </span>
           <span class="word">
-            {#each 'FORM'.split('') as char}<span class="char">{char}</span>{/each}
+            {#each 'SHAPING'.split('') as char}<span class="char" lang="en">{char}</span>{/each}
+          </span>
+          <span class="word">
+            {#each 'THE'.split('') as char}<span class="char" lang="en">{char}</span>{/each}
+          </span>
+          <span class="word">
+            {#each 'NEXT'.split('') as char}<span class="char" lang="en">{char}</span>{/each}
+          </span>
+        </div>
+        <div class="line">
+          <span class="word">
+            {#each "CENTURY'S".split('') as char}<span class="char" lang="en">{char}</span>{/each}
+          </span>
+          <span class="word">
+            {#each 'FORM'.split('') as char}<span class="char" lang="en">{char}</span>{/each}
           </span>
         </div>
       </h1>
@@ -190,14 +191,18 @@
        次のコンテンツ（通常スクロール）
        ============================================================ -->
   <div class="content-section">
-    <div class="content-inner">
-      <h2>Next Section</h2>
-      <p>ここから通常のスクロールになります</p>
-      <p style="height: 200vh;">Scroll content...</p>
-    </div>
+    
+
+    
   </div>
   
   <style lang="scss">
+
+
+  
+
+
+
     /* ============================================================
        OPオーバーレイ
        ============================================================ */
@@ -267,13 +272,22 @@
     }
     
     .hero-title h1 {
-      font-size: clamp(1.5rem, 4vw, 3rem);
+      font-size: clamp(48px, 4vw, 3rem);
       font-weight: 300;
       letter-spacing: 0.1em;
       margin-bottom: 1rem;
       text-transform: uppercase;
     }
+    .hero-title h1 span {
+      line-height: 1.1;
+      color: white;
+    }
     
+    .hero-title p {
+      text-align: center;
+      color: white;
+      opacity: 0;
+    }
     .hero-title .line {
       display: flex;
       justify-content: center;
@@ -294,20 +308,14 @@
       opacity: 0;
     }
     
-    .hero-title p {
-      font-size: clamp(0.875rem, 1.5vw, 1rem);
-      font-weight: 300;
-      letter-spacing: 0.2em;
-      opacity: 0;
-      transform: translateY(10px);
-    }
+
     
     /* ============================================================
        次のコンテンツ
        ============================================================ */
     .content-section {
       background: #ffffff;
-      min-height: 100vh;
+      min-height: 0;
       padding: 4rem 2rem;
     }
     

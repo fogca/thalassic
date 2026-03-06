@@ -4,6 +4,7 @@ import Link from "../components/snippets/Link.svelte"
 import Top from "../components/layout/Top.svelte"
 import New from "../components/layout/New.svelte"
 import Hotel from "../components/snippets/Hotel.svelte"
+import Ball from "../components/snippets/Ball.svelte"
 
   import { t } from './top.dict';
   import { lang } from '$lib/utils/lang';
@@ -17,6 +18,7 @@ import Hotel from "../components/snippets/Hotel.svelte"
 
   <New />
   <Top />
+
   <section class="TopBusiness">
     <div class="l-Contents">
       <div class="heading">
@@ -33,6 +35,11 @@ import Hotel from "../components/snippets/Hotel.svelte"
 
 
 <style>
+
+
+
+
+
 
 .TopBusiness .l-Contents .heading {width: 50%;}
 .TopBusiness .l-Contents .wrapper {width: 50%;}
