@@ -85,7 +85,7 @@
       <div class="wrap">
         <div class="container">
           <div class="h6">商号</div>
-          <div class="h5">THALASSIC CAPITAL株式会社</div>
+          <div class="h5">株式会社THALASSIC CAPITAL</div>
         </div>
         <div class="container">
           <div class="h6">所在地</div>
@@ -97,23 +97,20 @@
         </div>
         <div class="container">
           <div class="h6">資本金</div>
-          <div class="h5">47,500,000円</div>
+          <div class="h5">47,300,000円</div>
         </div>
         <div class="container">
           <div class="h6">代表取締役</div>
           <div class="h5">J Wang</div>
         </div>
-        <div class="container">
-          <div class="h6">取締役</div>
-          <div class="h5">Dominic Lim</div>
-        </div>
+
       </div>
 
       <div class="wrap">
         <h3 class="h5">子会社</h3>
         <div class="container">
           <div class="h6">商号</div>
-          <div class="h5" lang="en">THALASSIC不動産 株式会社</div>
+          <div class="h5" lang="en">株式会社THALASSIC不動産</div>
         </div>
         <div class="container">
           <div class="h6">所在地</div>
