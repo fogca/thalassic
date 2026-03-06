@@ -89,7 +89,7 @@
     footer {
         position: relative;
         background-color: white;
-        padding-top: 160px;
+        padding-top: 120px;
     }
 
     footer.no-padding {
