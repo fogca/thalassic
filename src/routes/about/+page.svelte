@@ -25,7 +25,7 @@
       <div></div>
       <div>
         <h1 class="h4"lang="en">About Us</h1>
-        <h2 class="h1 hero__title bold">{@html t('heading', $lang)}</h2>
+        <h2 class="h1 hero__title bold" lang="en">Creating Value<br>that Endures</h2>
       </div>
       <div class="h6 half" style="opacity:0;">{@html t('sub', $lang)}</div>
     </div>
@@ -97,11 +97,15 @@
         </div>
         <div class="container">
           <div class="h6">資本金</div>
-          <div class="h5">30,000,000円</div>
+          <div class="h5">47,500,000円</div>
         </div>
         <div class="container">
-          <div class="h6">代表</div>
+          <div class="h6">代表取締役</div>
           <div class="h5">J Wang</div>
+        </div>
+        <div class="container">
+          <div class="h6">取締役</div>
+          <div class="h5">Dominic Lim</div>
         </div>
       </div>
 
@@ -113,7 +117,7 @@
         </div>
         <div class="container">
           <div class="h6">所在地</div>
-          <div class="h5" lang="en">Level 4, 524 Hay St. Perth, WA 6000</div>
+          <div class="h5">愛知県名古屋市西区樋の口町1-15 ホーワビル２階3号</div>
         </div>
       </div>
 

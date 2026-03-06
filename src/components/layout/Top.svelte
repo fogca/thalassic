@@ -166,13 +166,16 @@ onMount(() => {
 
 
   .Identity {
-    margin: 200px 0;
+    margin: 40px 0;
     padding-top: 0;
     padding-bottom: 0;
     height: fit-content;
     
+    min-height: 100vh;
     position: relative;
     z-index: 1;
+    display: flex;
+    align-items: center;
   }
 
   .Identity .wrapper {
@@ -194,7 +197,7 @@ onMount(() => {
 
 
 
-  
+
 
   @media screen and (max-width: 834px) {
     .Hero { height: 150vh; }

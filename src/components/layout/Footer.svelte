@@ -3,13 +3,20 @@
     import Links from "../snippets/pageLinks.svelte";
     import Link from "../snippets/Link.svelte";
     import Icons from "../snippets/Icons.svelte";
+
+    import { page } from '$app/stores';
+  
+  $: isAboutPage = $page.url.pathname === '/about';
+
+
 </script>
 
 
 
 
-<footer>
+<footer class:no-padding={isAboutPage}>
 
+    {#if !isAboutPage}
     <section class="navigation">
         <div class="container">
             <img src="/images/recruit-career_01.webp" alt="">
@@ -33,9 +40,12 @@
             </div>
         </div>
     </section>
+    {/if}
 
+    {#if !isAboutPage}
     <section class="space"></section>
-
+    {/if}
+    
     <section class="footer">
 
     <div class="left">
@@ -80,6 +90,10 @@
         position: relative;
         background-color: white;
         padding-top: 160px;
+    }
+
+    footer.no-padding {
+        padding-top: 0;
     }
 
 
