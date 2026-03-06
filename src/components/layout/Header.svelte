@@ -1,10 +1,10 @@
 <script lang="ts">
-    import Logo from "./Logo.svelte";
+    import Logo from "../snippets/Logo.svelte";
     import { slide } from 'svelte/transition';
 	import { onMount } from 'svelte';
     import { page } from '$app/stores'; 
     import { browser } from '$app/environment';
-    import Links from "./pageLinks.svelte";
+    import Links from "../snippets/pageLinks.svelte";
    
     let y
 
@@ -64,7 +64,7 @@
                 </ul>
             </nav>
 
-            <img src="../image/header_career.png" alt="" class="" loading="eager" decoding="async" />
+            <img src="/images/top-header_01.png" alt="" class="" loading="eager" decoding="async" />
             
             <button class="menu-btn sp" on:click={toggle} aria-label="menu">
                 <span class:open={open}></span>
@@ -98,7 +98,7 @@ header {
     height: 50px;
     padding: .5rem var(--padding) 0;
     position: fixed;
-    z-index: 10;
+    z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;

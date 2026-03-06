@@ -3,28 +3,28 @@
   
     const hotels = [
       {
-        name: 'Hotel Name 1',
+        name: 'Nagoya Kamejima',
         description: 'ホテルの簡単紹介1',
-        image: '/image/TC_services_acc1.webp',
-        link: '/hotel/1'
+        image: '/images/hotel-accommodation_01.webp',
+        link: 'https://www.airbnb.jp/rooms/18603174?viralityEntryPoint=1&s=76'
       },
       {
-        name: 'Hotel Name 2',
+        name: 'Nagoya Castle I',
         description: 'ホテルの簡単紹介2',
-        image: '/image/TC_services_acc1.webp',
-        link: '/hotel/2'
+        image: '/images/hotel-accommodation_02.webp',
+        link: 'https://www.airbnb.jp/rooms/18603174?viralityEntryPoint=1&s=76'
       },
       {
-        name: 'Hotel Name 3',
+        name: 'Nagoya Castle II',
         description: 'ホテルの簡単紹介3',
-        image: '/image/TC_services_acc1.webp',
-        link: '/hotel/3'
+        image: '/images/hotel-accommodation_03.jpg',
+        link: 'https://www.airbnb.jp/rooms/50121066?viralityEntryPoint=1&s=76'
       },
       {
-        name: 'Hotel Name 4',
-        description: 'ホテルの簡単紹介4',
-        image: '/image/TC_services_acc1.webp',
-        link: '/hotel/4'
+        name: 'Coming Soon',
+        description: '',
+        image: '/images/hotel-accommodation_04.webp',
+        link: ''
       }
     ];
   </script>
@@ -38,7 +38,9 @@
             <h3 class="h3 white center" lang="en">{hotel.name}</h3>
             <p class="white center">{hotel.description}</p>
           </div>
-          <Button />
+          {#if (hotel.link)}
+            <Button />
+          {/if}
         </div>
       </a>
     {/each}

@@ -1,5 +1,5 @@
 <script>
-	import Arrow from "../components/Arrow.svelte"
+	import Arrow from "./Arrow.svelte"
 
     export let className = "";
 

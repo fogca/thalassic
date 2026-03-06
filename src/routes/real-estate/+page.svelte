@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount} from 'svelte';
-  import Footer from "../../components/Footer.svelte"
-  import Link from "../../components/Link.svelte"
+  import Footer from "../../components/layout/Footer.svelte"
+  import Link from "../../components/snippets/Link.svelte"
   
   import { t } from './realestate.dict';
   import { lang } from '$lib/utils/lang';
@@ -9,20 +9,22 @@
   const rows = [
     // 1行目: 大・中・中
     [
-      { src: '/image/case/case1.jpg', alt: 'Image 1' },
-      { src: '/image/case/case3.jpg', alt: 'Image 2' },
-      { src: '/image/case/case4.jpg', alt: 'Image 3' },
+      { src: '/images/property-case_01.jpg', alt: 'Image 1' },
+      { src: '/images/property-case_03.jpg', alt: 'Image 2' },
+      { src: '/images/property-case_04.jpg', alt: 'Image 3' },
     ],
     // 2行目: 小・中・大
     [
-      { src: '/image/case/case5.jpg', alt: 'Image 4' },
-      { src: '/image/case/case6.jpg', alt: 'Image 5' },
-      { src: '/image/case/case7.jpg', alt: 'Image 6' },
+      { src: '/images/property-case_05.jpg', alt: 'Image 4' },
+      { src: '/images/property-case_06.jpg', alt: 'Image 5' },
+      { src: '/images/property-case_08.jpg', alt: 'Image 8' },
+      
     ],
     // 3行目: 大・小・中
     [
-      { src: '/image/case/case2.jpg', alt: 'Image 7' },
-      { src: '/image/case/case8.jpg', alt: 'Image 8' },
+      { src: '/images/property-case_02.jpg', alt: 'Image 7' },
+      { src: '/images/property-case_07.jpg', alt: 'Image 6' },
+      
       
     
     ],
@@ -43,7 +45,7 @@
       <div></div>
     </div>
     <div class="image-container w100">
-      <img class="pz" src="../../image/TC_top.webp" alt="" loading="eager" decoding="async" />
+      <img class="pz" src="/images/top_05.webp" alt="" loading="eager" decoding="async" />
     </div>
   </section>
 
@@ -58,22 +60,22 @@
       <div class="container">
         <div class="Illustration">
           <div class="box">
-            <img class="pz" src="../../image/Illust/4.png" alt="" loading="eager" decoding="async" />
+            <img class="pz" src="/images/property-character_04.png" alt="" loading="eager" decoding="async" />
             <h3 class="h5 center">Acquisitions</h3>
             <h4 class="h5 center">不動産買取</h4>
           </div>
           <div class="box">
-            <img class="pz" src="../../image/Illust/1.png" alt="" loading="eager" decoding="async" />
+            <img class="pz" src="/images/property-character_01.png" alt="" loading="eager" decoding="async" />
             <h3 class="h4 center" lang="en">Revitalisation</h3>
             <h4 class="h5 center">再生事業</h4>
           </div>
           <div class="box">
-            <img class="pz" src="../../image/Illust/2.png" alt="" loading="eager" decoding="async" />
+            <img class="pz" src="/images/property-character_02.png" alt="" loading="eager" decoding="async" />
             <h3 class="h4 center" lang="en">Brokerage Services</h3>
             <h4 class="h5 center">不動産仲介</h4>
           </div>
           <div class="box">
-            <img class="pz" src="../../image/Illust/3.png" alt="" loading="eager" decoding="async" />
+            <img class="pz" src="/images/property-character_03.png" alt="" loading="eager" decoding="async" />
             <h3 class="h4 center" lang="en">Property Management</h3>
             <h4 class="h5 center">賃貸管理</h4>
           </div>
@@ -84,7 +86,7 @@
 
         </style>
         <!--<p>{@html t('real4p', $lang)}</p>
-        <img class="pz" src="../../image/TC_business_international.webp" alt="" loading="eager" decoding="async" />
+        <img class="pz" src="/images/property-global_01.webp" alt="" loading="eager" decoding="async" />
         -->
       </div>
     </div>
@@ -119,7 +121,7 @@
   .Gallery .row {display: grid;gap: 5px;}
   .Gallery .row[data-row="1"] {grid-template-columns: 2fr 1fr 1fr;}
   .Gallery .row[data-row="2"] {grid-template-columns: 0.8fr 1.2fr 2fr;}
-  .Gallery .row[data-row="3"] {grid-template-columns: 2fr 0.8fr 1.2fr;}
+  .Gallery .row[data-row="3"] {grid-template-columns: 1.8fr 2.2fr;}
   .Gallery img {
     width: 100%;
     height: 100%;
@@ -146,31 +148,31 @@
   </section>
 
   <section class="GlobalBusiness">
-    <img class="w100" src="../../image/aus/1.jpg" alt="" loading="eager" decoding="async" />     
+    <img class="w100" src="/images/property-global_02.jpg" alt="" loading="eager" decoding="async" />     
     <div class="l-Contents wrapper">
       <div class="heading">
         <h2 class="" lang="en">Global<br>Business</h2>
         <h5>海外不動産事業</h5>
       </div>
       <div class="container">
-        <img class="" src="../../image/THALASSIC_Career.webp" alt="" loading="eager" decoding="async" />     
+        <img class="" src="/images/property-career_01.webp" alt="" loading="eager" decoding="async" />     
         <h5 class="h4 bold">グローバル化の進展を事業拡大の好機と捉え、<br>オーストラリアを中心に海外展開を推進</h5>
         <p>新たな分野を切り拓く戦略的投資（海外事業）として、グローバル化の進展を事業拡大の好機と捉え、オーストラリアを中心に海外展開を推進しています。オーストラリアは南半球に位置する広大な国で、豊かな自然環境と多文化社会が特徴です。国土は世界第6位の広さを誇り、乾燥地帯から熱帯雨林、サンゴ礁まで多様な自然を有します。</p>
 
         <div class="Illustration">
           
           <div class="box">
-            <img class="pz" src="../../image/Illust/1.png" alt="" loading="eager" decoding="async" />
+            <img class="pz" src="/images/property-character_01.png" alt="" loading="eager" decoding="async" />
             <h3 class="h4 center" lang="en">Revitalisation</h3>
             <h4 class="h5 center">不動産開発</h4>
           </div>
           <div class="box">
-            <img class="pz" src="../../image/Illust/2.png" alt="" loading="eager" decoding="async" />
+            <img class="pz" src="/images/property-character_02.png" alt="" loading="eager" decoding="async" />
             <h3 class="h4 center" lang="en">Brokerage Services</h3>
             <h4 class="h5 center">不動産仲介</h4>
           </div>
           <div class="box">
-            <img class="pz" src="../../image/Illust/3.png" alt="" loading="eager" decoding="async" />
+            <img class="pz" src="/images/property-character_03.png" alt="" loading="eager" decoding="async" />
             <h3 class="h4 center" lang="en">Property Management</h3>
             <h4 class="h5 center">賃貸管理</h4>
           </div>
@@ -183,12 +185,12 @@
     <div class="city">
       <div class="container">
         <h2 lang="en" class="h2">Sydney</h2>
-        <img class="" src="../../image/THALASSIC_Career.webp" alt="" loading="eager" decoding="async" />     
+        <img class="" src="/images/global_1.png" alt="" loading="eager" decoding="async" />     
         <p>シドニーは、OOOO新たな分野を切り拓く戦略的投資（海外事業）として、グローバル化の進展を事業拡大の好機と捉え、オーストラリアを中心に海外展開を推進しています。</p>
       </div>
       <div class="container">
         <h2 lang="en" class="h2">Perth</h2>
-        <img class="" src="../../image/THALASSIC_Career.webp" alt="" loading="eager" decoding="async" />     
+        <img class="" src="/images/recruit_01.jpg" alt="" loading="eager" decoding="async" />     
         <p>シドニーは、OOOO新たな分野を切り拓く戦略的投資（海外事業）として、グローバル化の進展を事業拡大の好機と捉え、オーストラリアを中心に海外展開を推進しています。</p>
       </div>
     </div>

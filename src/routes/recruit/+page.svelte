@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount} from 'svelte';
-  import Footer from "../../components/Footer.svelte"
+  import Footer from "../../components/layout/Footer.svelte"
   import Grad from "../../components/RecruitGrad.svelte"
 
   import { t } from './recruit.dict';
@@ -23,7 +23,7 @@
       <div class="h6 half">{@html t('sub', $lang)}</div>
     </div>
     <div class="image-container w100">
-      <!--<img class="pz" src="../../image/TC_top.webp" alt="" loading="eager" decoding="async" />-->
+      <!--<img class="pz" src="/images/top_05.webp" alt="" loading="eager" decoding="async" />-->
       
         <div class="gradation">
           <div></div>

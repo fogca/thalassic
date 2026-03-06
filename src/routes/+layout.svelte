@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { browser } from '$app/environment';
-	import Header from "../components/Header.svelte";
-	import Footer from "../components/Footer.svelte";
+	import Header from "../components/layout/Header.svelte";
+	import Footer from "../components/layout/Footer.svelte";
 	import favicon from '$lib/assets/favicon.svg';
 	import { afterNavigate } from '$app/navigation';
 	import { onMount, onDestroy } from 'svelte';
@@ -10,10 +10,10 @@
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 	import Lenis from '@studio-freight/lenis';
 
-	import PageTransition from '../components/PageTransition.svelte';
-	import CustomCursor from '../components/CustomCursor.svelte';
-	import OpeningAnimation from '../components/OpeningAnimation.svelte';
-	import LangFontManager from '../components/LangFontManager.svelte';
+	import PageTransition from '../components/utilities/PageTransition.svelte';
+	import CustomCursor from '../components/snippets/CustomCursor.svelte';
+	import OpeningAnimation from '../components/utilities/OpeningAnimation.svelte';
+	import LangFontManager from '../components/utilities/LangFontManager.svelte';
 
 	let { children } = $props();
 
@@ -138,13 +138,15 @@
 
 <div class="main">
 <OpeningAnimation />
-<PageTransition />
+
 <LangFontManager />
 <CustomCursor />
 
+<PageTransition>
 <Header />
-{@render children?.()}
+{@render children()}
 <Footer />
+</PageTransition>
 
 </div>
 

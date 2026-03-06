@@ -1,8 +1,8 @@
 <script>
-    import Logo from "./Logo.svelte";
-    import Links from "./pageLinks.svelte";
-    import Link from "./Link.svelte";
-    import Icons from "./snippet/Icons.svelte";
+    import Logo from "../snippets/Logo.svelte";
+    import Links from "../snippets/pageLinks.svelte";
+    import Link from "../snippets/Link.svelte";
+    import Icons from "../snippets/Icons.svelte";
 </script>
 
 
@@ -12,7 +12,7 @@
 
     <section class="navigation">
         <div class="container">
-            <img src="../../image/Illust/Career01.webp" alt="">
+            <img src="/images/recruit-career_01.webp" alt="">
             <div class="contents white">
                 <p class="h6 bold center white">キャリア・採用に関して</p>
                 <h2 class="white" lang="en">Recruitment</h2>

@@ -1,12 +1,13 @@
 <script lang="ts">
   import { onMount} from 'svelte';
-  import Footer from "../../components/Footer.svelte"
+  import Footer from "../../components/layout/Footer.svelte"
   import Bannar from "../../components/RecruitBannar.svelte"
-  import Identity from "../../components/snippet/Identity.svelte"
+  import Identity from "../../components/snippets/Identity.svelte"
+  import Gradation from "../../components/snippets/Gradation.svelte"
 
   import { t } from './about.dict';
   import { lang } from '$lib/utils/lang';
-    import { materialRoughness } from 'three/tsl';
+    
   
 
 </script>
@@ -14,16 +15,10 @@
 
 <main id="About">
 
-  <div>
-
   <div class="fixedGrad">
-    <div class="gradation">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
+    <Gradation />
   </div>
+
 
   <section class="topLayout topLayoutPages" id="">
     <div class="texts-container">
@@ -35,7 +30,7 @@
       <div class="h6 half" style="opacity:0;">{@html t('sub', $lang)}</div>
     </div>
     <div class="image-container w100" style="display: none;">
-      <img class="pz" src="../../image/TC_top.webp" alt="" loading="eager" decoding="async" />
+      <img class="pz" src="/images/top_05.webp" alt="" loading="eager" decoding="async" />
     </div>
     
   </section>
@@ -147,10 +142,10 @@
     <h3 class="h1" lang="en">Recruitment</h3>
     <div class="wrap">
       <h4 class="h0" lang="en">Join Our Team!
-        <img src="../../image/Illust/Character_M.png" class="" alt="">
-        <img src="../../image/Illust/Character_Ja.png" class="" alt="">
-        <img src="../../image/Illust/Character_Q.png" class="" alt="">
-        <img src="../../image/Illust/Character_B.png" class="" alt="">
+        <img src="/images/about-character_01.png" class="" alt="">
+        <img src="/images/about-character_02.png" class="" alt="">
+        <img src="/images/about-character_03.png" class="" alt="">
+        <img src="/images/about-character_04.png" class="" alt="">
       </h4>
       <p>{@html t('recruit', $lang)}</p>
     </div>
@@ -159,7 +154,7 @@
       
     <div class="container aboutList">
 
-      <img src="../../image/Illust/Character_J_half.png" class="character" alt="">
+      <img src="/images/about-character_05.png" class="character" alt="">
       
       <h5 class="h3">募集要項</h5>
       <div class="container">
@@ -403,79 +398,6 @@
   background-color: rgba(255, 255, 255, .3);
 }
 
-.fixedGrad {
-  position: fixed;
-  z-index: 0;
-}
-.gradation {
-    width: 100vw;
-    height: 100vh;
-    position: relative;
-    margin: auto;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    overflow: hidden;
-}
 
-.gradation div {
-    position: absolute;
-    border-radius: 50%;
-    animation: gradient 4s infinite;
-}
-
-@keyframes gradient {
-    70% {
-        transform: scale(1.5) translate(80px);
-    }
-}
-
-.gradation div:nth-child(1) {
-    height: 90%;
-    width: 80%;
-    background-color: #ced1c8;
-    background-color: #a8dae7;
-    left: -30%;
-    top: -10%;
-}
-
-.gradation div:nth-child(2) {
-    height: 80%;
-    width: 60%;
-    background-color: #8ac5db;
-    background-color: #83cce0;
-    top: -10%;
-    right: 0%;
-    animation-delay: .8s;
-}
-
-.gradation div:nth-child(3) {
-    height: 65%;
-    width: 80%;
-    background-color: #005fac;
-    background-color: #062D7A;
-    bottom: -15%;
-    right: -20%;
-    animation-delay: 0.3s;
-}
-
-.gradation div:nth-child(4) {
-    height: 50%;
-    width: 75%;
-    background-color: #f1af9b;
-    background-color: #e2d6c2;
-    bottom: -10%;
-    left: -50%;
-    animation-delay: 1.2s;
-}
-
-.gradation::after {
-    position: absolute;
-    content: "";
-    height: 100%;
-    width: 100%;
-    backdrop-filter: blur(120px);
-}
 
 </style>

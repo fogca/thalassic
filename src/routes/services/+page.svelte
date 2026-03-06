@@ -1,8 +1,8 @@
 <script lang="ts">
   import { onMount} from 'svelte';
-  import Footer from "../../components/Footer.svelte"
-  import Link from "../../components/Link.svelte"
-  import Hotel from "../../components/snippet/Hotel.svelte"
+  import Footer from "../../components/layout/Footer.svelte"
+  import Link from "../../components/snippets/Link.svelte"
+  import Hotel from "../../components/snippets/Hotel.svelte"
 
   import { t } from './services.dict';
   import { lang } from '$lib/utils/lang';
@@ -22,7 +22,7 @@
       <div class="h6 half">{@html t('sub', $lang)}</div>
     </div>
     <div class="image-container w100">
-      <img class="pz" src="../../image/THALASSIC_Mokuseki_00.webp" alt="" loading="eager" decoding="async" />
+      <img class="pz" src="/images/hotel_01.webp" alt="" loading="eager" decoding="async" />
     </div>
   </section>
 
@@ -61,7 +61,7 @@
         <h5>木石という思想</h5>
       </div>
       <div class="container">
-        <img class="pz" src="../../image/THALASSIC_Mokuseki_01.webp" alt="" loading="eager" decoding="async" />
+        <img class="pz" src="/images/hotel_02.webp" alt="" loading="eager" decoding="async" />
         <p>{@html t('concept', $lang)}</p>
       </div>
     </div>

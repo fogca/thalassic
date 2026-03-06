@@ -1,13 +1,9 @@
 <script lang="ts">
 import { onMount} from 'svelte';
-import Link from "../components/Link.svelte"
-import Top from "../components/home/Top.svelte"
-import Business from "../components/home/Business.svelte"
-import Texts from "../components/home/Texts.svelte"
-import Hotel from "../components/snippet/Hotel.svelte"
-import Recruit from "../components/home/Recruit.svelte"
-import Wavy from "../components/Wavy.svelte"
-//import Company from "../components/home/Company.svelte"
+import Link from "../components/snippets/Link.svelte"
+import Top from "../components/layout/Top.svelte"
+import New from "../components/layout/New.svelte"
+import Hotel from "../components/snippets/Hotel.svelte"
 
   import { t } from './top.dict';
   import { lang } from '$lib/utils/lang';
@@ -19,9 +15,8 @@ import Wavy from "../components/Wavy.svelte"
 
 <main>
 
+  <New />
   <Top />
-  <Business />
-  <Texts />
   <section class="TopBusiness">
     <div class="l-Contents">
       <div class="heading">

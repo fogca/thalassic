@@ -2,19 +2,21 @@
     import { onMount, onDestroy } from 'svelte';
     import { browser } from '$app/environment';
     import { gsap } from 'gsap';
+
+    import Hotel from '../../components/snippets/Hotel.svelte';
   
     import { t } from './services.dict';
     import { lang } from '$lib/utils/lang';
   
     // ============================================================
-    // 画像データ - static/image/ から参照
+    // 画像データ - static/images/ から参照
     // ============================================================
     const imageData = [
-      { src: '/image/THALASSIC_Mokuseki_00.webp' },
-      { src: '/image/THALASSIC_Mokuseki_01.webp' },
-      { src: '/image/TC_services_acc1.webp' },
-      { src: '/image/TC_services_acc1.webp' },
-      { src: '/image/TC_services_acc1.webp' },
+      { src: '/images/hotel_01.webp' },
+      { src: '/images/hotel_02.webp' },
+      { src: '/images/hotel-accommodation_01.webp' },
+      { src: '/images/hotel-accommodation_01.webp' },
+      { src: '/images/hotel-accommodation_01.webp' },
     ];
   
     // ============================================================
@@ -225,38 +227,43 @@
     </div>
   </div>
 
+
+
   <section class="accomodation">
+
+    <Hotel />
+
     <div class="accomodation__wrapper">
 
       <a href="/hotel/mokuseki" class="accomodation__container">
-        <img class="accomodation__image" src="/image/TC_services_acc1.webp" alt=""/>
+        <img class="accomodation__image" src="/images/hotel-accommodation_01.webp" alt=""/>
         <div class="accomodation__overlay"></div>
         <div class="accomodation__texts">
-          <h2 class="accomodation__title" lang="en">MOKUSEKI NAGOYA</h2>
+          <h2 class="accomodation__title" lang="en">Nagoya Kamejima</h2>
           <p class="accomodation__subtitle">名古屋白壁に構える和風建築</p>
         </div>
       </a>
       <a href="/hotel/mokuseki" class="accomodation__container">
-        <img class="accomodation__image" src="/image/TC_services_acc1.webp" alt=""/>
+        <img class="accomodation__image" src="/images/hotel-accommodation_02.webp" alt=""/>
         <div class="accomodation__overlay"></div>
         <div class="accomodation__texts">
-          <h2 class="accomodation__title" lang="en">MOKUSEKI NAGOYA</h2>
+          <h2 class="accomodation__title" lang="en">Nagoya Castle I</h2>
           <p class="accomodation__subtitle">名古屋白壁に構える和風建築</p>
         </div>
       </a>
       <a href="/hotel/mokuseki" class="accomodation__container">
-        <img class="accomodation__image" src="/image/TC_services_acc1.webp" alt=""/>
+        <img class="accomodation__image" src="/images/hotel-accommodation_03.jpg" alt=""/>
         <div class="accomodation__overlay"></div>
         <div class="accomodation__texts">
-          <h2 class="accomodation__title" lang="en">MOKUSEKI NAGOYA</h2>
+          <h2 class="accomodation__title" lang="en">Nagoya Castle II</h2>
           <p class="accomodation__subtitle">名古屋白壁に構える和風建築</p>
         </div>
       </a>
       <a href="/hotel/mokuseki" class="accomodation__container">
-        <img class="accomodation__image" src="/image/TC_services_acc1.webp" alt=""/>
+        <img class="accomodation__image" src="/images/hotel-accommodation_04.webp" alt=""/>
         <div class="accomodation__overlay"></div>
         <div class="accomodation__texts">
-          <h2 class="accomodation__title" lang="en">MOKUSEKI NAGOYA</h2>
+          <h2 class="accomodation__title" lang="en">Coming Soon</h2>
           <p class="accomodation__subtitle">名古屋白壁に構える和風建築</p>
         </div>
       </a>
@@ -348,6 +355,7 @@
 
     .accomodation__wrapper {
       width: 100%;
+      margin-top: 40px;
     }
 
     .accomodation__container {
