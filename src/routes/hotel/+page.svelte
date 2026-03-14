@@ -207,19 +207,19 @@
             <h5>フィロソフィー</h5>
           </div>
           <div class="container">
-            <p class="serif">
-              名古屋の空気を静かに味わう宿泊体験。<br>
-              木と石が持つ静かな調和を基調に、<br>
-              名古屋という都市の文化と感性を<br>
-              再発見するための滞在を創ります。<br>
-              <br>
-              日本の伝統技能や職人にルーツを持つ「木石」の思想は、<br>
-              素材そのものの美しさと、余白を生かした静けさを大切にします。<br>
-              その感性を基盤に、名古屋の人の営みを体感できる場を設計します。<br>
-              <br>
-              土地の物語と素材の温もりを静かに深く味わう。<br>
-              その土地を楽しむ新しい滞在のかたち。
-            </p>
+            <p class="serif">{@html t('mokuseki', $lang)}</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="serviceBody">
+        <div class="l-Contents">
+          <div class="heading">
+            <h2 class="h3" lang="en">What is Mokuseki</h2>
+            <h5>The Philosophy of “Wood and Stone”</h5>
+            <div class="container">
+              <p class="serif">{@html t('mokuseki', $lang)}</p>
+            </div>
           </div>
         </div>
       </section>
@@ -233,7 +233,7 @@
 
     <Hotel />
 
-    <div class="accomodation__wrapper">
+    <div class="accomodation__wrapper" style="display: none;">
 
       <a href="/hotel/mokuseki" class="accomodation__container">
         <img class="accomodation__image" src="/images/hotel-accommodation_01.webp" alt=""/>
