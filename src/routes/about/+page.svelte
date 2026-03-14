@@ -114,7 +114,7 @@
         </div>
         <div class="container">
           <div class="h6">所在地</div>
-          <div class="h5">愛知県名古屋市西区樋の口町1-15 ホーワビル２階3号</div>
+          <div class="h5">451-0034<br>愛知県名古屋市西区樋の口町1-15 ホーワビル２階3号</div>
         </div>
       </div>
 
@@ -122,11 +122,11 @@
         <h3 class="h5">海外支社</h3>
         <div class="container">
           <div class="h6">商号</div>
-          <div class="h5" lang="en">THALASSIC  CAPITAL PTY LTD / Australia</div>
+          <div class="h5" lang="en">THALASSIC  CAPITAL PTY LTD</div>
         </div>
         <div class="container">
           <div class="h6">所在地</div>
-          <div class="h5" lang="en">105/311 Hay St, Perth, WA 6004</div>
+          <div class="h5" lang="en">105/311 Hay St, Perth, WA, Australia</div>
         </div>
       </div>
 
@@ -261,6 +261,11 @@
 
 
 <style>
+
+#About * {
+  color: white;
+  -webkit-text-stroke: 0;
+}
   .bannar {
     width: 100vw;
     height: 100vh;

@@ -7,7 +7,7 @@ export const dict = {
     en: '01'
   },
   item1Body: {
-    ja: 'サラシックキャピタルの運用物件数',
+    ja: 'サラシックキャピタルの管理・投資物件数',
     zh: '管理物业数量 / 在管物业数',
     en: 'Properties Under Management'
   },
@@ -27,7 +27,7 @@ export const dict = {
     en: '03'
   },
   item3Body: {
-    ja: 'サラシックキャピタルの運用資産残高 / AUM',
+    ja: 'サラシックキャピタルの累計取引額',
     zh: '资产管理规模',
     en: 'Assets Under Management'
   }

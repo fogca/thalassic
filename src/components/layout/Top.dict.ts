@@ -26,6 +26,28 @@ export const dict = {
     zh: '住宿业务及其他活动',
     en: 'Accommodation business and other activities'
   },
+
+  /* Business card categories (section.Business) */
+  categoryHotel: {
+    ja: '宿泊事業',
+    zh: '住宿事业',
+    en: ''
+  },
+  categoryRecruit: {
+    ja: '採用情報',
+    zh: '招聘信息',
+    en: ''
+  },
+  categoryAbout: {
+    ja: '会社情報',
+    zh: '公司信息',
+    en: ''
+  },
+  categoryRealEstate: {
+    ja: '不動産事業',
+    zh: '房地产事业',
+    en: ''
+  },
 };
 
 export function t<K extends keyof typeof dict>(key: K, lang: Lang) {

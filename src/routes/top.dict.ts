@@ -6,6 +6,11 @@ export const dict = {
     zh: '业务详情',
     en: 'Business Overview'
   },
+  ourHotels: {
+    ja: '私たちが運営する国内の宿泊施設',
+    zh: '我们运营的国内住宿设施',
+    en: 'Our Accommodations in Japan'
+  },
   business1: {
     ja: '不動産売買・賃貸管理・不動産仲介',
     zh: '业务详情',

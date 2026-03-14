@@ -35,6 +35,7 @@
     :global(.white) .underline * {
         color: white;
         fill: white;
+        -webkit-text-stroke: 0;
     }
     :global(.white) .underline::after {background: white;}
 </style>

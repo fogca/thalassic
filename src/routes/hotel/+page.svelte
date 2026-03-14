@@ -207,7 +207,7 @@
             <h5>フィロソフィー</h5>
           </div>
           <div class="container">
-            <p class="serif">{@html t('mokuseki', $lang)}</p>
+            <p class="serif">{@html t('concept', $lang)}</p>
           </div>
         </div>
       </section>
@@ -215,11 +215,11 @@
       <section class="serviceBody">
         <div class="l-Contents">
           <div class="heading">
-            <h2 class="h3" lang="en">What is Mokuseki</h2>
+            <h2 class="h3" lang="en">What is<br>Mokuseki</h2>
             <h5>The Philosophy of “Wood and Stone”</h5>
-            <div class="container">
-              <p class="serif">{@html t('mokuseki', $lang)}</p>
-            </div>
+          </div>
+          <div class="container">
+            <p class="serif">{@html t('mokuseki', $lang)}</p>
           </div>
         </div>
       </section>
@@ -273,11 +273,13 @@
   <!-- ============================================================
        Styles
        ============================================================ -->
-  <style lang="scss">
+  <style lang="css">
     .content * { color: white; }
 
     .content section {height: 100vh;}
 
+      
+    
     .serif {
         font-size: 18px;
         font-family: "fot-tsukuaoldmin-pr6n", serif;
@@ -286,6 +288,16 @@
         -ms-writing-mode: tb-rl;
         writing-mode: vertical-rl;
     }
+
+    .serif:lang(en) {
+        font-size: 18px;
+        font-family: var(--heading-font);
+        -ms-writing-mode: horizontal-tb;
+        writing-mode: horizontal-tb;
+        -webkit-text-stroke: 0;
+    }
+
+    .serviceBody p {height: 60vh;}
   
     .ScrollStory {
       position: relative;

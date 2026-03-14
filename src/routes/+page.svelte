@@ -18,15 +18,15 @@ import Hotel from "../components/snippets/Hotel.svelte"
     <div class="wrapper">
       <div class="container">
         <p class="body">{tNumber('item1Body', $lang)}</p>
-        <span class="title sans" lang="en">12+</span>
+        <span class="title sans" lang="en">120+</span>
       </div>
       <div class="container">
         <p class="body">{tNumber('item2Body', $lang)}</p>
-        <span class="title sans" lang="en">32%</span>
+        <span class="title sans" lang="en">48%</span>
       </div>
       <div class="container">
         <p class="body">{tNumber('item3Body', $lang)}</p>
-        <span class="title sans" lang="en">¥1.4B+</span>
+        <span class="title sans" lang="en">¥1.3B+</span>
       </div>
     </div>
   </section>
@@ -34,8 +34,8 @@ import Hotel from "../components/snippets/Hotel.svelte"
   <section class="TopBusiness mt-120">
     <div class="l-Contents">
       <div class="heading">
-        <h3 class="h1" lang="en">Our Hotels</h3>
-        <h5>国内不動産事業</h5>
+        <h3 class="h1 mb-10" lang="en">Our Hotels</h3>
+        <h5 class="h5 sans">{t('ourHotels', $lang)}</h5>
       </div>
       <div class="wrapper">
         <Hotel />

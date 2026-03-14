@@ -5,6 +5,8 @@
     import Icons from "../snippets/Icons.svelte";
 
     import { page } from '$app/stores';
+    import { lang } from '$lib/utils/lang';
+    import { t } from './Header.dict';
   
   $: isAboutPage = $page.url.pathname === '/about';
 
@@ -21,7 +23,7 @@
         <div class="container">
             <img src="/images/recruit-career_01.webp" alt="">
             <div class="contents white">
-                <p class="h6 bold center white">キャリア・採用に関して</p>
+                <p class="h6 bold center white">{t('footerRecruit', $lang)}</p>
                 <h2 class="white" lang="en">Recruitment</h2>
                 <a href="/about#Recruitment" class=""><Link /></a>
             </div>
@@ -34,7 +36,7 @@
                 <div></div>
             </div>
             <div class="contents white">
-                <p class="h6 bold center white">会社概要</p>
+                <p class="h6 bold center white">{t('footerAbout', $lang)}</p>
                 <h2 class="white" lang="en">About Company</h2>
                 <a href="/about" class=""><Link /></a>
             </div>
@@ -50,7 +52,7 @@
 
     <div class="left">
         <h2 class="h1" lang="en">Let’s build<br>what’s next,<br>together!</h2>
-        <p>プロジェクトへの参画や事業提携、<br>不動産活用のお悩みなど、<br>ぜひお気軽にご相談ください。</p>
+        <p>{@html t('contactBody', $lang)}</p>
         <a href="/contact" lang="en" class="h5">Contact Form</a>
     </div>
     <div class="right">
@@ -69,7 +71,7 @@
                 <li class="container"><a class="h2" lang="en" href="/contact">Contact</a></li>
             </ul>
         </div>
-        <div class="icons" style="opacity:0;">
+        <div class="icons">
             <Icons />
         </div>
         <div class="bottom">
@@ -120,6 +122,7 @@
 
     }
     footer .navigation .container img {height: 50vh; filter: brightness(.9);}
+    footer .navigation .container p {text-align: center;}
 
 
     footer .footer {

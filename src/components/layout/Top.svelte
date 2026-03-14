@@ -4,6 +4,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { lang } from '$lib/utils/lang';
 import { t } from './New.dict';
+import { t as tTop } from './Top.dict';
 import Ball from '../snippets/Ball.svelte';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -11,11 +12,13 @@ gsap.registerPlugin(ScrollTrigger);
 /** Ball diameter in pixels (used in Identity section). */
 const ballSize = 1200;
 
-const cards = [
-  { image: '/images/hotel-accommodation_01.webp', category: '宿泊事業', title: 'HOTEL', link: '/hotel' },
-  { image: '/images/recruit-career_01.webp', category: '採用情報', title: 'RECRUITMENT', link: '/about#Recruitment' },
-  { image: '/images/top-about_01.webp', category: '会社情報', title: 'ABOUT US', link: '/about' },
-  { image: '/images/property-global_01.webp', category: '不動産事業', title: 'REAL ESTATE', link: '/real-estate' }
+type BusinessCategoryKey = 'categoryHotel' | 'categoryRecruit' | 'categoryAbout' | 'categoryRealEstate';
+
+const cards: { image: string; categoryKey: BusinessCategoryKey; title: string; link: string }[] = [
+  { image: '/images/hotel-accommodation_01.webp', categoryKey: 'categoryHotel', title: 'HOTEL', link: '/hotel' },
+  { image: '/images/recruit-career_01.webp', categoryKey: 'categoryRecruit', title: 'RECRUITMENT', link: '/about#Recruitment' },
+  { image: '/images/top-about_01.webp', categoryKey: 'categoryAbout', title: 'ABOUT US', link: '/about' },
+  { image: '/images/property-global_01.webp', categoryKey: 'categoryRealEstate', title: 'REAL ESTATE', link: '/real-estate' }
 ];
 
 // Hero title: word/char split for animation (from TopHead)
@@ -124,8 +127,7 @@ onMount(() => {
   <div class="wrapper">
     <div class="container">
       <div class="h5 sans" lang="en">Group Company</div>
-      <h2 class="h1" lang="en">Three Identities,<br />One Collective Vision.</h2>
-      <h3 class="h4">「土地の本質を読み解き、未来へつながる価値を設計する」</h3>
+      <h2 class="h1 mb-10" lang="en">Three Identities,<br />One Collective Vision.</h2>
       <p>{t('identityBody', $lang)}</p>
       <a class="button white mt-40" href="/about" lang="en">About Us</a>
     </div>
@@ -142,7 +144,7 @@ onMount(() => {
         <img src={card.image} alt={card.title} />
         <div class="overlay"></div>
         <div class="texts">
-          <h6 class="white">{card.category}</h6>
+          <h6 class="white">{tTop(card.categoryKey, $lang)}</h6>
           <h2 class="h2 uppercase white" lang="en">{card.title}</h2>
           <div class="button" lang="en">READ MORE</div>
         </div>

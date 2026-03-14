@@ -163,7 +163,7 @@
             </span>
         </div>
       </h1>
-      <p class="white h5">{@html t('heroBody', $lang)}</p>
+      <p class="white">{@html t('heroBody', $lang)}</p>
       
     </div>
   </div>
@@ -197,8 +197,8 @@
       width: 100vw;
       min-height: 100vh; /* ✅ 固定表示、スクロールしない */
       display: flex;
-      align-items: center;
-      justify-content: center;
+      align-items: flex-start;
+      justify-content: flex-start;
       background: white;
       overflow: hidden;
     }
@@ -234,18 +234,18 @@
        テキスト
        ============================================================ */
     .hero-title {
-      position: absolute;
-      text-align: center;
+      
+          padding: calc(var(--padding) * 2) var(--padding);
       color: white;
       z-index: 10;
     }
     
-    .hero-title h1 {
-      font-size: clamp(1.5rem, 4vw, 3rem);
-      font-weight: 300;
-      letter-spacing: 0.1em;
-      margin-bottom: 1rem;
-      text-transform: uppercase;
+    .hero-title h1,
+    .hero-title h1 * {
+      font-size: clamp(30px, 4vw, 64px);
+      line-height: 1.1;
+      color: white;
+        -webkit-text-stroke: calc(0.1px + 0.01em) white;
     }
     
     .hero-title .line {
@@ -268,13 +268,6 @@
       opacity: 0;
     }
 
-    .hero-title * {font-family: var(--heading-font);}
-    .hero-title span {
-        font-size: 64px;
-        line-height: 1.1;
-        color: white;
-        -webkit-text-stroke: calc(0.1px + 0.01em) white;
-    }
     .hero-title p {
       opacity: 0;
       transform: translateY(10px);

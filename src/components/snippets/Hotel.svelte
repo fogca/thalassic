@@ -36,7 +36,7 @@
         <div class="contents">
           <div class="">
             <h3 class="h3 white center" lang="en">{hotel.name}</h3>
-            <p class="white center">{hotel.description}</p>
+            <p class="white center" style="opacity: 0;">{hotel.description}</p>
           </div>
           {#if (hotel.link)}
             <Button />
@@ -67,7 +67,7 @@
         position: absolute;
         top: 0;
         left: 0;
-        border-radius: 3px;
+        border-radius: 10px;
     }
     .Hotel .contents {
         width: 100%;
