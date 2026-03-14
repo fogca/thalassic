@@ -2,10 +2,14 @@
 import { onMount } from 'svelte';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Identity from '../snippets/Identity.svelte';
+import { lang } from '$lib/utils/lang';
+import { t } from './New.dict';
 import Ball from '../snippets/Ball.svelte';
 
 gsap.registerPlugin(ScrollTrigger);
+
+/** Ball diameter in pixels (used in Identity section). */
+const ballSize = 1200;
 
 const cards = [
   { image: '/images/hotel-accommodation_01.webp', category: '宿泊事業', title: 'HOTEL', link: '/hotel' },
@@ -25,7 +29,7 @@ const rawLines = [
   "century's form"
 ];
 
-let heroTitleEl: HTMLElement;
+let heroTitleEl: HTMLElement | null = null;
 let charTotal = 0;
 let wordTotal = 0;
 const heroTitleLines: LineData[] = rawLines.map((line) => {
@@ -39,8 +43,9 @@ const heroTitleLines: LineData[] = rawLines.map((line) => {
 });
 
 onMount(() => {
-  if (heroTitleEl) {
-    const chars = heroTitleEl.querySelectorAll('.char');
+  const el = heroTitleEl as HTMLElement | null;
+  if (el) {
+    const chars = el.querySelectorAll('.char');
     gsap.fromTo(
       chars,
       { opacity: 0, y: 5, rotateX: -90, transformPerspective: 1000 },
@@ -53,7 +58,7 @@ onMount(() => {
         ease: 'power2.out',
         stagger: 0.0025,
         scrollTrigger: {
-          trigger: heroTitleEl,
+          trigger: el,
           start: 'top 80%',
           toggleActions: 'play none none reverse',
         }
@@ -112,26 +117,23 @@ onMount(() => {
 
 
 
-  <section class="Identity">
-    <div class="wrapper">
-      <div class="container">
-        <div class="h4" lang="en">Company</div>
-        <h2 class="h1" lang="en">Three Identities,<br>One Collective Vision.</h2>
-        <h3 class="h4">「土地の本質を読み解き、未来へつながる価値を設計する」</h3>
-        <p>サラシックキャピタルは、日本とオーストラリアを拠点に、<br>
-          不動産事業と宿泊事業を展開するグループ企業です。<br>
-          多様で国際的なプロフェッショナルが集い、<br>
-          国境を越えたまだ見ぬ可能性を開拓します。<br>
-          地域に根ざした価値を未来へと繋ぐことを目指し、<br>
-          地域の未来が輝く不動産・宿泊体験を創造していきます。
-        </p>
-      </div>
-      <div class="container">
-        <Ball />
-      </div>
-    </div>
-  </section>
 
+
+
+<section class="Identity mt-160 mb-160">
+  <div class="wrapper">
+    <div class="container">
+      <div class="h5 sans" lang="en">Group Company</div>
+      <h2 class="h1" lang="en">Three Identities,<br />One Collective Vision.</h2>
+      <h3 class="h4">「土地の本質を読み解き、未来へつながる価値を設計する」</h3>
+      <p>{t('identityBody', $lang)}</p>
+      <a class="button white mt-40" href="/about" lang="en">About Us</a>
+    </div>
+    <div class="container">
+      <Ball size={ballSize} />
+    </div>
+  </div>
+</section>
 
 <section class="Business">
   <div class="wrapper">
@@ -162,20 +164,11 @@ onMount(() => {
 </section>
 
 <style lang="scss">
-
-
-
   .Identity {
-    margin: 40px 0;
     padding-top: 0;
     padding-bottom: 0;
-    height: fit-content;
-    
-    min-height: 100vh;
     position: relative;
     z-index: 1;
-    display: flex;
-    align-items: center;
   }
 
   .Identity .wrapper {
@@ -183,17 +176,42 @@ onMount(() => {
     justify-content: space-between;
     position: relative;
   }
-
+  .Identity .wrapper .container:nth-of-type(1) { width: 42.5%; }
   .Identity .wrapper .container:nth-of-type(2) {
     position: absolute;
-    width: 100%;
+    width: 50%;
     height: 100%;
-    top: -45vh;
+    top: 0;
     left: auto;
-    right: -10vw;
+    right: 0;
   }
-  .Identity h2 { margin-top: 2rem; }
-  .Identity h3 { margin: 2rem 0 1.5rem; }
+
+  .Identity h2 {
+    margin-top: 2rem;
+  }
+
+  .Identity h3 {
+    margin: 2rem 0 1.5rem;
+  }
+
+  @media screen and (max-width: 834px) {
+    .Identity {
+      margin: 80px 0;
+    }
+
+    .Identity .wrapper {
+      flex-direction: column;
+    }
+
+    .Identity .wrapper .container:nth-of-type(2) {
+      position: static;
+      width: 100%;
+      height: auto;
+      margin-top: 2rem;
+      right: auto;
+      top: auto;
+    }
+  }
 
 
 
@@ -215,6 +233,8 @@ onMount(() => {
     gap: 5px;
     width: 100%;
     height: 70vh;
+    border-radius: 10px;
+    overflow: hidden;
   }
 
   .Business .container:nth-of-type(1) {

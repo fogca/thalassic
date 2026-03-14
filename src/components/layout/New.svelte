@@ -4,7 +4,8 @@
     import { ScrollTrigger } from 'gsap/ScrollTrigger';
     import Lenis from 'lenis';
     import Logo from '../snippets/Logo.svelte';
-    import Ball from '../snippets/Ball.svelte';
+    import { lang } from '$lib/utils/lang';
+    import { t } from './New.dict';
     
     gsap.registerPlugin(ScrollTrigger);
     
@@ -41,7 +42,7 @@
       const opTimeline = gsap.timeline({
         onComplete: () => {
           showOP = false;
-          initScrollAnimation();
+          // ✅ スクロールアニメーションは削除、固定表示のまま
         }
       });
       
@@ -95,36 +96,13 @@
         ease: 'power2.out',
       }, '-=0.2');
       
-      // ============================================================
-      // スクロールアニメーション
-      // ============================================================
-      function initScrollAnimation() {
-        const heroSection = document.querySelector('.hero-section') as HTMLElement;
-        const imageGrid = document.querySelector('.image-grid') as HTMLElement;
-        
-        if (!heroSection || !imageGrid) return;
-        
-        // 画像を内部スクロール（残り80-100vhを見せる）
-        ScrollTrigger.create({
-          trigger: heroSection,
-          start: 'top top',
-          end: '+=100vh',
-          pin: true,
-          pinSpacing: false, // ✅ 余白を作らない
-          scrub: 1,
-          onUpdate: (self) => {
-            const progress = self.progress;
-            // 画像を上にスクロール
-            imageGrid.style.transform = `translateY(-${progress * 80}vh)`;
-          },
-        });
-      }
-      
       return () => {
         ScrollTrigger.getAll().forEach(trigger => trigger.kill());
         lenisInstance.destroy();
       };
     });
+
+    
   </script>
   
   <!-- ============================================================
@@ -151,58 +129,49 @@
       <h1>
         <div class="line">
           <span class="word">
-            {#each 'ECHOING'.split('') as char}<span class="char" lang="en">{char}</span>{/each}
+            {#each 'SHAPED'.split('') as char}<span class="char">{char}</span>{/each}
           </span>
           <span class="word">
-            {#each 'THE'.split('') as char}<span class="char" lang="en">{char}</span>{/each}
+            {#each 'BY'.split('') as char}<span class="char">{char}</span>{/each}
           </span>
           <span class="word">
-            {#each "LAND'S".split('') as char}<span class="char" lang="en">{char}</span>{/each}
+            {#each "TIME".split('') as char}<span class="char">{char}</span>{/each}
+          </span>
+          <span class="word">
+            {#each "AND".split('') as char}<span class="char">{char}</span>{/each}
+          </span>
+          <span class="word">
+            {#each "TIDES".split('') as char}<span class="char">{char}</span>{/each}
           </span>
         </div>
+
         <div class="line">
           <span class="word">
-            {#each 'ESSENCE,'.split('') as char}<span class="char" lang="en">{char}</span>{/each}
+            {#each "GUIDING".split('') as char}<span class="char">{char}</span>{/each}
           </span>
-          <span class="word">
-            {#each 'SHAPING'.split('') as char}<span class="char" lang="en">{char}</span>{/each}
-          </span>
-          <span class="word">
-            {#each 'THE'.split('') as char}<span class="char" lang="en">{char}</span>{/each}
-          </span>
-          <span class="word">
-            {#each 'NEXT'.split('') as char}<span class="char" lang="en">{char}</span>{/each}
-          </span>
-        </div>
-        <div class="line">
-          <span class="word">
-            {#each "CENTURY'S".split('') as char}<span class="char" lang="en">{char}</span>{/each}
-          </span>
-          <span class="word">
-            {#each 'FORM'.split('') as char}<span class="char" lang="en">{char}</span>{/each}
-          </span>
+            <span class="word">
+                {#each 'THE'.split('') as char}<span class="char">{char}</span>{/each}
+            </span>
+            <span class="word">
+                {#each 'NEXT'.split('') as char}<span class="char">{char}</span>{/each}
+            </span>
+            <span class="word">
+                {#each 'CENTURY’S'.split('') as char}<span class="char">{char}</span>{/each}
+            </span>
+            <span class="word">
+                {#each 'FORM'.split('') as char}<span class="char">{char}</span>{/each}
+            </span>
         </div>
       </h1>
-      <p>土地の豊かさを知り、次の100年を形作る</p>
+      <p class="white h5">{@html t('heroBody', $lang)}</p>
+      
     </div>
   </div>
   
-  <!-- ============================================================
-       次のコンテンツ（通常スクロール）
-       ============================================================ -->
-  <div class="content-section">
-    
-
-    
-  </div>
+  <!-- ✅ 次のセクションはこのコンポーネントの外で呼び出される -->
+  <!-- 親レイアウトでz-indexを使って上に被せる -->
   
   <style lang="scss">
-
-
-  
-
-
-
     /* ============================================================
        OPオーバーレイ
        ============================================================ */
@@ -226,7 +195,7 @@
     .hero-section {
       position: relative;
       width: 100vw;
-      height: 100vh;
+      min-height: 100vh; /* ✅ 固定表示、スクロールしない */
       display: flex;
       align-items: center;
       justify-content: center;
@@ -238,7 +207,7 @@
     .image-grid {
       position: absolute;
       width: 100vw;
-      height: 180vh; /* ✅ 画像の実際の高さ */
+      height: 100vh; /* ✅ 100vhに変更（スクロールなし） */
       top: 0;
       left: 0;
       display: grid;
@@ -272,25 +241,16 @@
     }
     
     .hero-title h1 {
-      font-size: clamp(48px, 4vw, 3rem);
+      font-size: clamp(1.5rem, 4vw, 3rem);
       font-weight: 300;
       letter-spacing: 0.1em;
       margin-bottom: 1rem;
       text-transform: uppercase;
     }
-    .hero-title h1 span {
-      line-height: 1.1;
-      color: white;
-    }
     
-    .hero-title p {
-      text-align: center;
-      color: white;
-      opacity: 0;
-    }
     .hero-title .line {
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       gap: 0.3em;
       overflow: hidden;
       padding-bottom: 0.1em;
@@ -307,25 +267,16 @@
       transform: translateY(100%);
       opacity: 0;
     }
-    
 
-    
-    /* ============================================================
-       次のコンテンツ
-       ============================================================ */
-    .content-section {
-      background: #ffffff;
-      min-height: 0;
-      padding: 4rem 2rem;
+    .hero-title * {font-family: var(--heading-font);}
+    .hero-title span {
+        font-size: 64px;
+        line-height: 1.1;
+        color: white;
+        -webkit-text-stroke: calc(0.1px + 0.01em) white;
     }
-    
-    .content-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    
-    .content-inner h2 {
-      font-size: 2rem;
-      margin-bottom: 2rem;
+    .hero-title p {
+      opacity: 0;
+      transform: translateY(10px);
     }
   </style>

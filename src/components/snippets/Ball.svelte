@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let size: number = 1500;
+  export let size: number = 1000;
 </script>
 
 <div class="container" style="--size: {size}px;">
@@ -132,14 +132,14 @@
 <style>
   .container {
     position: relative;
-    width: var(--size);
-    height: var(--size);
+    width: calc(var(--size) * 0.5);
+    height: calc(var(--size) * 0.5);
     filter: url(#goo);
   }
 
   .circle {
     position: absolute;
-    background: var(--mainColor);
+    background: #EEE;
     border-radius: 50%;
     will-change: transform;
     display: flex;
@@ -154,12 +154,16 @@
     pointer-events: none;
   }
 
+  .circle svg * {
+    fill: var(--textColor);
+  }
+
   /* Main large circle - 28% of container */
   .circle-main {
     width: calc(var(--size) * 0.28);
     height: calc(var(--size) * 0.28);
-    top: calc(var(--size) * 0.5);
-    left: calc(var(--size) * 0.5);
+    top: calc(var(--size) * 0.25);
+    left: calc(var(--size) * 0.25);
     margin-top: calc(var(--size) * -0.14);
     margin-left: calc(var(--size) * -0.14);
     animation: 
@@ -171,8 +175,8 @@
   .circle-small-1 {
     width: calc(var(--size) * 0.18);
     height: calc(var(--size) * 0.18);
-    top: calc(var(--size) * 0.5);
-    left: calc(var(--size) * 0.5);
+    top: calc(var(--size) * 0.25);
+    left: calc(var(--size) * 0.25);
     margin-top: calc(var(--size) * -0.09);
     margin-left: calc(var(--size) * -0.09);
     animation: 
@@ -184,8 +188,8 @@
   .circle-small-2 {
     width: calc(var(--size) * 0.16);
     height: calc(var(--size) * 0.16);
-    top: calc(var(--size) * 0.5);
-    left: calc(var(--size) * 0.5);
+    top: calc(var(--size) * 0.25);
+    left: calc(var(--size) * 0.25);
     margin-top: calc(var(--size) * -0.08);
     margin-left: calc(var(--size) * -0.08);
     animation: 
@@ -227,7 +231,7 @@
       transform: translate(0, calc(var(--size) * -0.12));
     }
     50% {
-      transform: translate(0, calc(var(--size) * -0.16));
+      transform: translate(0, calc(var(--size) * -0.14));
     }
   }
 
@@ -236,16 +240,16 @@
       transform: translate(calc(var(--size) * -0.15), calc(var(--size) * 0.05));
     }
     50% {
-      transform: translate(calc(var(--size) * -0.13), calc(var(--size) * 0.07));
+      transform: translate(calc(var(--size) * -0.14), calc(var(--size) * 0.06));
     }
   }
 
   @keyframes bobSmall2 {
     0%, 100% {
-      transform: translate(calc(var(--size) * 0.1), calc(var(--size) * 0.03));
+      transform: translate(calc(var(--size) * 0.16), calc(var(--size) * 0.03));
     }
     50% {
-      transform: translate(calc(var(--size) * 0.15), calc(var(--size) * 0.05));
+      transform: translate(calc(var(--size) * 0.17), calc(var(--size) * 0.04));
     }
   }
 </style>

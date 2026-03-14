@@ -122,11 +122,11 @@
         <h3 class="h5">海外支社</h3>
         <div class="container">
           <div class="h6">商号</div>
-          <div class="h5" lang="en">THALASSIC  CAPITAL Ltd, Pty.  / Australia</div>
+          <div class="h5" lang="en">THALASSIC  CAPITAL PTY LTD / Australia</div>
         </div>
         <div class="container">
           <div class="h6">所在地</div>
-          <div class="h5" lang="en">Level 4, 524 Hay St. Perth, WA 6000</div>
+          <div class="h5" lang="en">105/311 Hay St, Perth, WA 6004</div>
         </div>
       </div>
 

@@ -49,12 +49,12 @@
     <section class="footer">
 
     <div class="left">
-        <h2 class="h1" lang="en">Let’s build<br>what’snext,<br>together!</h2>
+        <h2 class="h1" lang="en">Let’s build<br>what’s next,<br>together!</h2>
         <p>プロジェクトへの参画や事業提携、<br>不動産活用のお悩みなど、<br>ぜひお気軽にご相談ください。</p>
         <a href="/contact" lang="en" class="h5">Contact Form</a>
     </div>
     <div class="right">
-        <h5 class="h5" lang="en">Menu</h5>
+        <h5 class="h5" lang="en"></h5>
         <div class="menu">
             <ul>
                 <li class="container"><a class="h2" lang="en" href="/real-estate">Real Estate</a></li>
@@ -69,7 +69,7 @@
                 <li class="container"><a class="h2" lang="en" href="/contact">Contact</a></li>
             </ul>
         </div>
-        <div class="icons">
+        <div class="icons" style="opacity:0;">
             <Icons />
         </div>
         <div class="bottom">
