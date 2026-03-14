@@ -37,9 +37,12 @@
   <section class="topLayout topLayoutPages" id="">
     <div class="texts-container">
       <div></div>
+
       <div>
-        <h1 class="h2 hero__title uppercase" lang="en">Forging the next<br>century’s form.</h1>
-        <h2 class="h5 hero__subtitle">{@html t('heading', $lang)}</h2>
+        <h1 class="h2 hero__title uppercase" lang="en">
+          BUILDING LASTING VALUE<br>THROUGH REAL ESTATE
+        </h1>
+        <h2 class="h5 hero__subtitle sans">{@html t('heading', $lang)}</h2>
       </div>
       <div></div>
     </div>
@@ -54,33 +57,32 @@
     <div class="l-Contents wrapper">
       <div class="heading">
         <h2 class="" lang="en">Business<br>details</h2>
-        <h5>国内不動産事業</h5>
+        <h5>{t('real1h', $lang)}</h5>
       </div>
       <div class="container">
         <div class="Illustration">
           <div class="box">
             <img class="pz" src="/images/property-character_04.png" alt="" loading="eager" decoding="async" />
-            <h3 class="h5 center">Acquisitions</h3>
-            <h4 class="h5 center">不動産買取</h4>
+            <h3 class="h4 center" lang="en">Acquisitions</h3>
+            <h4 class="h6 center">{t('buy', $lang)}</h4>
           </div>
           <div class="box">
             <img class="pz" src="/images/property-character_01.png" alt="" loading="eager" decoding="async" />
             <h3 class="h4 center" lang="en">Revitalisation</h3>
-            <h4 class="h5 center">再生事業</h4>
+            <h4 class="h6 center">{t('revitalisation', $lang)}</h4>
           </div>
           <div class="box">
             <img class="pz" src="/images/property-character_02.png" alt="" loading="eager" decoding="async" />
             <h3 class="h4 center" lang="en">Brokerage Services</h3>
-            <h4 class="h5 center">不動産仲介</h4>
+            <h4 class="h6 center">{t('brokerage', $lang)}</h4>
           </div>
           <div class="box">
             <img class="pz" src="/images/property-character_03.png" alt="" loading="eager" decoding="async" />
             <h3 class="h4 center" lang="en">Property Management</h3>
-            <h4 class="h5 center">賃貸管理</h4>
+            <h4 class="h6 center">{t('management', $lang)}</h4>
           </div>
         </div>
-        <p>当社は、収益不動産を中心に「買取・再生・仲介・管理」の全フェーズをワンストップで手掛ける不動産総合サービスを展開しています。買取事業においては、市場価値を精緻に分析し、自社で直接購入。リノベーションやバリューアップを施すことで不動産の潜在能力を引き出し、次なるオーナー様への販売へと繋げます。運営フェーズでは、中長期的な収益最大化を目的とした賃貸管理から、円滑な事業承継のサポートまでを網羅。さらに、収益物件に特化した仲介サービスを通じて、経験豊富なスタッフが安心かつスピード感のある取引を実現します。</p>
-        
+        <p>{@html t('real1p', $lang)}</p>
         <style>
 
         </style>
@@ -93,7 +95,7 @@
     <div class="l-Contents wrapper">
       <div class="heading">
         <h2 class="" lang="en">Case<br>study</h2>
-        <h5>事例紹介</h5>
+        <h5>{t('real2h', $lang)}</h5>
       </div>
       <div class="container Gallery">
 
@@ -151,29 +153,29 @@
     <div class="l-Contents wrapper">
       <div class="heading">
         <h2 class="" lang="en">Global<br>Business</h2>
-        <h5>海外不動産事業</h5>
+        <h5>{t('real3h', $lang)}</h5>
       </div>
       <div class="container">
         <img class="" src="/images/property-career_01.webp" alt="" loading="eager" decoding="async" />     
-        <h5 class="h4 bold">グローバル化の進展を事業拡大の好機と捉え、<br>オーストラリアを中心に海外展開を推進</h5>
-        <p>新たな分野を切り拓く戦略的投資（海外事業）として、グローバル化の進展を事業拡大の好機と捉え、オーストラリアを中心に海外展開を推進しています。オーストラリアは南半球に位置する広大な国で、豊かな自然環境と多文化社会が特徴です。国土は世界第6位の広さを誇り、乾燥地帯から熱帯雨林、サンゴ礁まで多様な自然を有します。</p>
+        <h5 class="h4 bold">{@html t('real3s', $lang)}</h5>
+        <p>{@html t('real3p', $lang)}</p>
 
         <div class="Illustration">
           
           <div class="box">
             <img class="pz" src="/images/property-character_01.png" alt="" loading="eager" decoding="async" />
             <h3 class="h4 center" lang="en">Revitalisation</h3>
-            <h4 class="h5 center">不動産開発</h4>
+            <h4 class="h6 center">{t('dev', $lang)}</h4>
           </div>
           <div class="box">
             <img class="pz" src="/images/property-character_02.png" alt="" loading="eager" decoding="async" />
             <h3 class="h4 center" lang="en">Brokerage Services</h3>
-            <h4 class="h5 center">不動産仲介</h4>
+            <h4 class="h6 center">{t('brokerage', $lang)}</h4>
           </div>
           <div class="box">
             <img class="pz" src="/images/property-character_03.png" alt="" loading="eager" decoding="async" />
             <h3 class="h4 center" lang="en">Property Management</h3>
-            <h4 class="h5 center">賃貸管理</h4>
+            <h4 class="h6 center">{t('management', $lang)}</h4>
           </div>
         </div>
 
@@ -183,14 +185,16 @@
 
     <div class="city">
       <div class="container">
-        <h2 lang="en" class="h2">Sydney</h2>
+        <h2 lang="en" class="h2 mb-20">Sydney</h2>
         <img class="" src="/images/global_1.png" alt="" loading="eager" decoding="async" />     
-        <p>シドニーは、OOOO新たな分野を切り拓く戦略的投資（海外事業）として、グローバル化の進展を事業拡大の好機と捉え、オーストラリアを中心に海外展開を推進しています。</p>
+        <h3 class="h4 mt-20 mb-10" lang="en">Core Long-Term Market</h3>
+        <p>{@html t('city1', $lang)}</p>
       </div>
       <div class="container">
-        <h2 lang="en" class="h2">Perth</h2>
-        <img class="" src="/images/recruit_01.jpg" alt="" loading="eager" decoding="async" />     
-        <p>シドニーは、OOOO新たな分野を切り拓く戦略的投資（海外事業）として、グローバル化の進展を事業拡大の好機と捉え、オーストラリアを中心に海外展開を推進しています。</p>
+        <h2 lang="en" class="h2 mb-20">Perth</h2>
+        <img class="" src="/images/recruit_01.jpg" alt="" loading="eager" decoding="async" />   
+        <h3 class="h4 mt-20 mb-10" lang="en">Growth & Income Market</h3>
+        <p>{@html t('city2', $lang)}</p>
       </div>
     </div>
 
@@ -214,7 +218,8 @@
     display: flex;
     margin-bottom: 100px;
   }
-  .GlobalBusiness .city .container {width: 49%;margin-right: 1%;}
+  .GlobalBusiness .city .container {width: 44%;margin-right: 1%;}
+  .GlobalBusiness .city .container:last-of-type {width: 55%; margin-right: 0;}
 
 .GlobalBusiness .container img:nth-of-type(1) {height: 40vh;}
 .GlobalBusiness .container h5 {margin: 30px 0 10px;}
@@ -241,7 +246,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
 }
 .Illustration .box img,
 .GlobalBusiness .container .Illustration img {
@@ -250,11 +255,12 @@
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 10px;
+  margin-bottom: 20px;
 }
 .GlobalBusiness .Illustration {margin-top: 40px;}
 
-.Illustration .box h3 {display: none;}
-.Illustration .box h4 {margin-top: 15px;}
+
+.Illustration .box h4 {margin-top: 0px;}
 
 
 .GlobalBusiness .Illustration {grid-template-columns: 1fr 1fr 1fr; gap: 20px;}
