@@ -8,7 +8,7 @@ export const dict = {
   },
   item1Body: {
     ja: 'サラシックキャピタルの管理・投資物件数',
-    zh: '管理物业数量 / 在管物业数',
+    zh: '管理物业数量',
     en: 'Properties Under Management'
   },
   item2Title: {
@@ -18,7 +18,7 @@ export const dict = {
   },
   item2Body: {
     ja: 'サラシックキャピタルの年平均成長率',
-    zh: '年均复合增长率',
+    zh: '企业年均增长率',
     en: 'Compound Annual Growth Rate'
   },
   item3Title: {
@@ -28,7 +28,7 @@ export const dict = {
   },
   item3Body: {
     ja: 'サラシックキャピタルの累計取引額',
-    zh: '资产管理规模',
+    zh: '累计管理规模',
     en: 'Assets Under Management'
   }
 };

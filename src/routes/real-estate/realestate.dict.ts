@@ -3,7 +3,7 @@ import type { Lang } from '$lib/utils/lang';
 export const dict = {
   heading: {
     ja: 'サラシック不動産ーその土地とともに<br>次の100年の価値を育んでいく。',
-    zh: 'THALASSIC Real Estate：<br>一家植根于当地文化并塑造未来的房地产公司。',
+    zh: 'THALASSIC Real Estate：<br>一家深植本土文化、致力于塑造城市未来的房地产公司。',
     en: 'THALASSIC Real Estate: <br>A real estate division rooted <br>in the local culture and shaping the future'
   },
   real1h: {
@@ -14,7 +14,7 @@ export const dict = {
 
   real1p: {
     ja: '私たちは、収益不動産を中心に「買取・再生・仲介・管理」の全フェーズをワンストップで手掛ける不動産総合サービスを展開しています。買取事業においては、市場価値を精緻に分析し、自社で直接購入。リノベーションやバリューアップを施すことで不動産の潜在能力を引き出し、次なるオーナー様への販売へと繋げます。運営フェーズでは、中長期的な収益最大化を目的とした賃貸管理から、円滑な事業承継のサポートまでを網羅。さらに、収益物件に特化した仲介サービスを通じて、経験豊富なスタッフが安心かつスピード感のある取引を実現します。',
-    zh: '塔拉西克房地产提供贯穿收益型物业全生命周期的综合房地产服务：收购、焕新、经纪和管理。我们专注于被忽视的机会，将严谨的分析与本地市场洞察相结合，收购并重新定位表现不佳的资产，将其转化为稳定的创收投资。通过实践性管理，我们提升现金流、租户质量和长期资产表现，为业主提供注重实效的解决方案。我们以投资为导向的经纪服务，确保交易透明、高效且专业管理。',
+    zh: '我们提供贯穿收益型物业全生命周期的综合房地产服务：收购, 改造, 中介,管理。我们专注于被忽视的机会，将严谨的分析与本地市场洞察相结合，收购并重新定位表现不佳的资产，将其转化为稳定的创收投资。通过实践性管理，我们提升现金流、租户质量和长期资产表现，为业主提供注重实效的解决方案。我们以投资为导向的经纪服务，确保交易透明、高效且专业管理。',
     en: 'Thalassic Real Estate provides integrated real estate services across the lifecycle of income-producing properties: acquisition, revitalisation, Brokerage, and Management. We focus on overlooked opportunities, combining disciplined analysis with local market insight to acquire and reposition underperforming assets into stable, income-generating investments. Through hands-on management, we enhance cash flow, tenant quality, and long-term asset performance—supporting owners with practical, results-driven solutions. Our investment-focused brokerage delivers transactions that are transparent, efficient, and professionally managed.'
   },
   real2h: {
@@ -49,27 +49,27 @@ export const dict = {
   },
   buy: {
     ja: '不動産買取',
-    zh: '房地产收购',
+    zh: '收购',
     en: ''
   },
   revitalisation: {
     ja: '再生事業',
-    zh: '焕新业务',
+    zh: '改造',
     en: ''
   },
   brokerage: {
     ja: '不動産仲介',
-    zh: '房地产经纪',
+    zh: '中介',
     en: ''
   },
   management: {
     ja: '賃貸管理',
-    zh: '租赁管理',
+    zh: '管理',
     en: ''
   },
   dev: {
     ja: '不動産開発',
-    zh: '房地产开发',
+    zh: '开发',
     en: ''
   },
 

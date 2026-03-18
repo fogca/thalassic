@@ -12,14 +12,14 @@ export const dict = {
     en: 'Australia – <br>The Starting Point of <br>Our Global Strategy'
   },
   concept: {
-    ja: '名古屋の空気を静かに味わう宿泊体験。<br>木と石が持つ静かな調和を基調に、名古屋という都市の文化と感性を<br>再発見するための滞在を創ります。<br><br>日本の伝統技能や職人にルーツを持つ<br>「木石」の思想は、素材そのものの美しさと、<br>余白を生かした静けさを大切にします。<br>その感性を基盤に、名古屋の<br class="sp">人の営みを体感できる場を設計します。<br><br>土地の物語と素材の温もりを<br class="sp">静かに深く味わう。<br class="pc">その土地を楽しむ<br class="sp">新しい滞在のかたち。',
-    zh: '作为开拓新领域的战略性海外投资，本公司将全球化的推进视为业务扩张的重要契机，重点布局澳大利亚市场。<br>澳大利亚以稳定的政治与经济基础、多元文化的城市结构及成熟的房地产市场著称，为长期投资与发展提供了良好环境。<br><br>我们的海外团队由曾在澳大利亚学习或工作的成员组成，凭借扎根当地的经验与人脉网络，使我们能够更深入地理解市场，并积极推进房地产收购、开发及多种合作机会。<br><br>未来，我们将继续强化在澳大利亚的布局，通过战略性的全球扩展，为客户与投资者创造更高价值。',
+    ja: '名古屋の空気を静かに味わう宿泊体験。<br>木と石が持つ静かな調和を基調に、<br>名古屋という都市の文化と感性を<br>再発見するための滞在を創ります。<br><br>日本の伝統技能や職人にルーツを持つ<br>「木石」の思想は、素材そのものの美しさと、<br>余白を生かした静けさを大切にします。<br>その感性を基盤に、名古屋の人の営みを<br>体感できる場を設計します。<br><br>土地の物語と素材の温もりを<br class="sp">静かに深く味わう。<br class="pc">その土地を楽しむ<br class="sp">新しい滞在のかたち。',
+    zh: '静静品味名古屋气息的住宿体验。<br>以木与石的静谧和谐为基调，<br>打造一场重新发现名古屋<br>这座城市文化与感性的旅居。<br><br>源于日本传统技艺与匠人精神的<br>"木石"理念，珍视材质本身的美感，<br>以及留白所带来的宁静。<br>以此感性为基础，<br>设计一处能够感受名古屋人文生活的空间。<br><br>静静地、深深地品味<br>这片土地的故事与材质的温度。<br>享受当地风土的<br>全新旅居方式。',
     en: 'Our accommodations are designed for travelers who want to experience JAPAN beyond the surface.<br>Inspired by the balance of wood and stone, we shape environments that feel warm yet calm, simple yet refined. Each space is guided by proportion, light, and the character of its surroundings.<br>A stay with us is not about spectacle. It is about slowing down, observing, and living within the rhythm of the city.<br>To experience a place with intention. To discover a more thoughtful way of staying.'
   },
   mokuseki: {
-    ja: '名古屋の空気を静かに味わう宿泊体験。<br>木と石が持つ静かな調和を基調に、<br class="sp">名古屋という都市の文化と感性を<br class="sp">再発見するための滞在を創ります。<br><br>日本の伝統技能や職人にルーツを持つ<br class="sp">「木石」の思想は、素材そのものの美しさと、<br class="sp">余白を生かした静けさを大切にします。<br>その感性を基盤に、名古屋の<br class="sp">人の営みを体感できる場を設計します。<br><br>土地の物語と素材の温もりを<br class="sp">静かに深く味わう。<br class="pc">その土地を楽しむ<br class="sp">新しい滞在のかたち。',
-    zh: '作为开拓新领域的战略性海外投资，本公司将全球化的推进视为业务扩张的重要契机，重点布局澳大利亚市场。<br>澳大利亚以稳定的政治与经济基础、多元文化的城市结构及成熟的房地产市场著称，为长期投资与发展提供了良好环境。<br><br>我们的海外团队由曾在澳大利亚学习或工作的成员组成，凭借扎根当地的经验与人脉网络，使我们能够更深入地理解市场，并积极推进房地产收购、开发及多种合作机会。<br><br>未来，我们将继续强化在澳大利亚的布局，通过战略性的全球扩展，为客户与投资者创造更高价值。',
-    en: '“Mokuseki” expresses harmony between nature and everyday life.<br>Wood – warmth, comfort, vitality<br>Stone – stability, calmness, endurance<br><br>These elements shape our approach to hospitality.<br>Our accommodations are:<br>1. Minimal yet meaningful<br>2. Elegant yet approachable<br>3. Simple yet deeply memorable<br><br>Mokuseki is not a concept layered onto a space.'
+    ja: 'わたしたちが大切にする「木石」の思想、<br>それは自然との調和であり、<br>日々の喧騒から静寂をもたらすものです。<br><br>木は暖かさや心地良さ、活力を象徴し、<br>石は静けさや力強さを表します。<br><br>こうした素材の力を随所に散りばめることで、<br>私たちのホスピタリティを体現しています。<br><br>私たちの宿泊施設は<br>「シンプルでいて豊かであること」、<br>「優雅でいて気取らないこと」、<br>「繊細でいて深く記憶に残ること」<br>を基準に設計しています。',
+    zh: '我们珍视的"木石"理念，<br>是与自然的和谐共处，<br>是为日常喧嚣带来宁静。<br><br>木象征着温暖、舒适与活力，<br>石则代表着静谧与力量。<br><br>通过将这些材质的力量融入各处，<br>我们诠释着自己的待客之道。<br><br>我们的住宿设施以<br>"简约而丰盈"、<br>"优雅而不造作"、<br>"细腻而令人难忘"<br>为设计理念。',
+    en: '“Mokuseki” expresses harmony between nature and everyday life.<br>Wood – warmth, comfort, vitality<br>Stone – stability, calmness, endurance<br><br>These elements shape our approach to hospitality.<br>Our accommodations are: <br>1. Minimal yet meaningful<br>2. Elegant yet approachable<br>3. Simple yet deeply memorable<br><br>Mokuseki is not a concept layered onto a space.'
   },
   accommodation: {
     ja: '運営する宿泊施設',

@@ -17,13 +17,13 @@
       {
         name: 'Nagoya Castle II',
         description: 'ホテルの簡単紹介3',
-        image: '/images/hotel-accommodation_03.jpg',
+        image: '/images/hotel-accommodation_04.webp',
         link: 'https://www.airbnb.jp/rooms/50121066?viralityEntryPoint=1&s=76'
       },
       {
         name: 'Coming Soon',
         description: '',
-        image: '/images/hotel-accommodation_04.webp',
+        image: '/images/hotel-accommodation_03.jpg',
         link: ''
       }
     ];

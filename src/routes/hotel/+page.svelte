@@ -195,15 +195,15 @@
             <h1 class="h2 hero__title uppercase" lang="en">Woven with<br>local soul.</h1>
             <h2 class="h5 hero__subtitle">{@html t('heading', $lang)}</h2>
           </div>
-          <div class="h6 half">{@html t('sub', $lang)}</div>
+          
         </div>
         
       </section>
   
-      <section class="serviceBody">
+      <section class="serviceBody mt-200">
         <div class="l-Contents">
           <div class="heading">
-            <h2 class="h3" lang="en">Concept</h2>
+            <h2 class="h3" lang="en">CONCEPT<br>PHILOSOPHY</h2>
             <h5>フィロソフィー</h5>
           </div>
           <div class="container">
@@ -252,7 +252,7 @@
         </div>
       </a>
       <a href="/hotel/mokuseki" class="accomodation__container">
-        <img class="accomodation__image" src="/images/hotel-accommodation_03.jpg" alt=""/>
+        <img class="accomodation__image" src="/images/hotel-accommodation_04.webp" alt=""/>
         <div class="accomodation__overlay"></div>
         <div class="accomodation__texts">
           <h2 class="accomodation__title" lang="en">Nagoya Castle II</h2>
@@ -260,7 +260,7 @@
         </div>
       </a>
       <a href="/hotel/mokuseki" class="accomodation__container">
-        <img class="accomodation__image" src="/images/hotel-accommodation_04.webp" alt=""/>
+        <img class="accomodation__image" src="" alt=""/>
         <div class="accomodation__overlay"></div>
         <div class="accomodation__texts">
           <h2 class="accomodation__title" lang="en">Coming Soon</h2>
@@ -276,7 +276,7 @@
   <style lang="css">
     .content * { color: white; }
 
-    .content section {height: 100vh;}
+    
 
       
     
@@ -287,6 +287,7 @@
         font-style: normal;
         -ms-writing-mode: tb-rl;
         writing-mode: vertical-rl;
+        font-feature-settings: "palt" 0;
     }
 
     .serif:lang(en) {
@@ -361,7 +362,6 @@
       width: 100%;
       background-color: white;
       padding: 160px var(--pcPadding);
-      padding-right: 0;
       padding-bottom: 1px;
     }
 

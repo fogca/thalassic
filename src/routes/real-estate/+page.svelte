@@ -73,12 +73,12 @@
           </div>
           <div class="box">
             <img class="pz" src="/images/property-character_02.png" alt="" loading="eager" decoding="async" />
-            <h3 class="h4 center" lang="en">Brokerage Services</h3>
+            <h3 class="h4 center" lang="en">Brokerage</h3>
             <h4 class="h6 center">{t('brokerage', $lang)}</h4>
           </div>
           <div class="box">
             <img class="pz" src="/images/property-character_03.png" alt="" loading="eager" decoding="async" />
-            <h3 class="h4 center" lang="en">Property Management</h3>
+            <h3 class="h4 center" lang="en">Management</h3>
             <h4 class="h6 center">{t('management', $lang)}</h4>
           </div>
         </div>
@@ -164,17 +164,17 @@
           
           <div class="box">
             <img class="pz" src="/images/property-character_01.png" alt="" loading="eager" decoding="async" />
-            <h3 class="h4 center" lang="en">Revitalisation</h3>
+            <h3 class="h4 center" lang="en">Development</h3>
             <h4 class="h6 center">{t('dev', $lang)}</h4>
           </div>
           <div class="box">
             <img class="pz" src="/images/property-character_02.png" alt="" loading="eager" decoding="async" />
-            <h3 class="h4 center" lang="en">Brokerage Services</h3>
+            <h3 class="h4 center" lang="en">Brokerage</h3>
             <h4 class="h6 center">{t('brokerage', $lang)}</h4>
           </div>
           <div class="box">
             <img class="pz" src="/images/property-character_03.png" alt="" loading="eager" decoding="async" />
-            <h3 class="h4 center" lang="en">Property Management</h3>
+            <h3 class="h4 center" lang="en">Management</h3>
             <h4 class="h6 center">{t('management', $lang)}</h4>
           </div>
         </div>

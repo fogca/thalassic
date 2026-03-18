@@ -8,7 +8,7 @@ export const dict = {
   },
   ourHotels: {
     ja: '私たちが運営する国内の宿泊施設',
-    zh: '我们运营的国内住宿设施',
+    zh: '我们住宿设施',
     en: 'Our Accommodations in Japan'
   },
   business1: {
