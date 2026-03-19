@@ -83,4 +83,22 @@
         transform: translateX(-50%);
     }
 
+
+    @media screen and (max-width: 834px) {
+
+
+      .Hotel {
+        width: 100vw;
+        margin-left: calc(-1 * var(--padding));
+        grid-template-columns: 1fr 1fr;
+        gap: 1px;
+        height: 120vw;
+      }
+
+      .Hotel a.container img {border-radius: 0;}
+
+
+
+    }
+
   </style>

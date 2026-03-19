@@ -153,7 +153,7 @@ onMount(() => {
   </div>
 </section>
 
-<section class="InlineText">
+<section class="InlineText pc">
   <div class="wrapper">
     <h1 class="center uppercase" lang="en">
       Rooted in nature,
@@ -198,8 +198,14 @@ onMount(() => {
 
   @media screen and (max-width: 834px) {
     .Identity {
-      margin: 80px 0;
+      margin-top: 120px;
     }
+
+    .Identity .wrapper .container:nth-of-type(1) {
+      width:100%;
+    }
+
+
 
     .Identity .wrapper {
       flex-direction: column;
@@ -305,12 +311,23 @@ onMount(() => {
     border-radius: 24px;
   }
 
+
+
+
+
+
+
+
   @media screen and (max-width: 834px) {
     .Business .wrapper {
+      width: 100vw;
+      margin-left: calc(-1 * var(--padding));
       grid-template-columns: 1fr;
       grid-template-rows: repeat(4, 1fr);
       height: auto;
       min-height: 100vh;
+      border-radius: 0;
+      gap: 1px;
     }
 
     .Business .container:nth-of-type(1),
@@ -320,11 +337,28 @@ onMount(() => {
       grid-column: 1 / 2;
       grid-row: auto;
     }
+    .Business .container {height: 60vw;}
+    .Business .container:nth-of-type(1) {order: 2;}
+    .Business .container:nth-of-type(2) {order: 4;}
+    .Business .container:nth-of-type(3) {order: 3;}
+    .Business .container:nth-of-type(4) {order: 1;}
 
-    .Business .texts { bottom: 40px; left: 40px; }
+    .Business .texts {
+      top: auto;
+      bottom: 0;
+      left: 0;
+      padding: 25px var(--padding);
+    }
     .Business .texts h6 { font-size: 12px; margin-bottom: 8px; }
-    .Business .texts h2 { font-size: 32px; margin-bottom: 16px; }
+    .Business .texts h2 { font-size: 28px; margin-bottom: 30px; }
     .Business .button { padding: 10px 24px; font-size: 11px; }
+
+
+
+
+
+
+    
   }
 
   .InlineText {
@@ -356,6 +390,12 @@ onMount(() => {
   .InlineText .image:nth-of-type(2) {
     margin-right: 5px;
   }
+
+
+
+
+
+
 
   @media screen and (max-width: 834px) {
     .InlineText { padding: 120px 0; }

@@ -97,13 +97,27 @@ import Hotel from "../components/snippets/Hotel.svelte"
   }
 }
 
-.TopContact {margin: 300px 0 200px;}
-.TopContact h2 {
-  font-size: 100px;
-  line-height: 1;
+
+
+
+@media screen and (max-width: 834px) {
+
+  .TopNumber .wrapper {gap: 15px;}
+  .TopNumber .container {
+      min-height: 160px;
+      padding: 20px 25px 10px;
+  }
+
+  .TopBusiness .l-Contents .heading {
+    width: 100%;
+    text-align: center;
+  }
+  .TopBusiness .l-Contents .heading h3 {font-size: 28px;}
+
+
 }
-.TopContact p {margin: 20px 0 30px;}
-.TopContact a {text-decoration: underline;}
+
+
 
 
 </style>

@@ -125,7 +125,7 @@
     footer .navigation .container p {text-align: center;}
 
 
-    footer .footer {
+    .footer {
         background-color: #F7F8F8;
         padding: 100px var(--pcPadding) 50px;
         margin-top: 0;
@@ -154,6 +154,33 @@
         margin-top: 120px;
     }
 
+
+    @media screen and (max-width: 834px) {
+
+        footer .navigation {
+            flex-direction: column;
+            height: 100%;
+        }
+        footer .navigation .container {width: 100%;}
+
+        footer .footer {
+            padding-bottom: 30px;
+            flex-direction: column;
+        }
+        footer .footer .left,
+        footer .footer .right {width: 100%;}
+        footer .footer .right {margin-top: 40px;}
+        footer .footer h2 {font-size: 32px;}
+        footer .footer .left p {margin: 15px 0 30px;}
+
+        footer .footer .menu {flex-direction: column;}
+
+        footer .footer .bottom {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: -20px;
+        }
+    }
 
 
 
