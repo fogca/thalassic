@@ -2,9 +2,9 @@ import type { Lang } from '$lib/utils/lang';
 
 export const dict = {
   heading: {
-    ja: '土地の可能性を読み解き、<br>暮らしと文化を未来へ<br>つなぐ会社。',
-    zh: 'Thalassic Real Estate：<br>一家植根于当地文化并塑造未来的房地产公司。',
-    en: 'Thalassic Real Estate: <br>A real estate division rooted <br>in the local culture and shaping the future'
+    ja: '未来へ続く価値を創造する会社',
+    zh: '创造可持续的长期价值',
+    en: ''
   },
   sub: {
     ja: '会社概要とアイデンティティ',
@@ -13,9 +13,88 @@ export const dict = {
   },
   about: {
     ja: 'サラシックキャピタルは、<br class="sp">日本とオーストラリアを拠点に、<br class="sp">不動産事業と宿泊事業を展開する企業です。<br class="sp"><br class="sp">私たちは「土地の本質を読み解くこと」を<br class="sp">事業の起点とし、地域に根ざした価値を、<br class="sp">未来へ続く形で設計することを目指しています。<br class="sp"><br class="sp">不動産部門では、売買・賃貸管理・仲介を<br class="sp">中心に、地域の特性と暮らしの実感に<br class="sp">寄り添った事業を行っています。<br class="sp"><br class="sp">宿泊事業では、名古屋を中心に「木石」の<br class="sp">思想を取り入れ、素材の静けさと土地の空気を<br class="sp">そのまま体験できる滞在をつくっています。<br class="sp"><br class="sp">多様な文化圏のプロフェッショナルが集う<br class="sp">チームとして、私たちは “土地が語る価値” を<br class="sp">丁寧に汲み取り、その地域の未来につながる<br class="sp">新しい形の不動産・宿泊体験を<br class="sp">創造していきます。',
-    zh: '本公司主要从事收益型不动产的收购业务。<br>我们直接向业主购买物业，无需中介，并在深入分析市场价值、区位特性及潜在提升空间后，针对性地进行改造和价值提升。<br><br>完成再生后的物业将作为本公司的不动产众筹产品进行运营，或出售给寻求优质资产的个人或法人客户。通过集“收购—改造—运营—销售”于一体的一站式流程，我们实现快速而透明的交易流程，为不动产创造新的价值与可能性。',
+    zh: '塔拉西克资本专注于房地产及酒店业务管理，主要致力于创收型房地产投资与价值提升。通过严格的收购策略和针对性翻新，我们重新定位并强化资产，以实现长期稳健表现。通过将收购、改善和资产管理整合于统一方法中，我们以严谨的投资理念和本地洞察力创造稳定的长期房地产价值。立足日本，连接世界。',
     en: 'Thalassic Capital oversees real estate and hospitality businesses, with a primary focus on income-producing real estate investment and value enhancement. Through disciplined acquisition and targeted renovations, assets are repositioned and strengthened for long-term performance. By integrating acquisition, improvement, and asset management within a unified approach, we create stable long-term real estate value, guided by disciplined investment and local insight. United in Japan. Connected to the World.'
   },
+  firm_main: {
+    ja: '株式会社THALASSIC CAPITAL',
+    zh: 'THALASSIC CAPITAL, Inc.',
+    en: 'THALASSIC Capital, Inc.'
+  },
+  subsidiary1_heading:{
+    ja: '子会社',
+    zh: '子公司',
+    en: 'Subsidiary'
+  },
+  subsidiary2_heading:{
+    ja: '海外支社',
+    zh: '海外分公司',
+    en: 'Overseas Branch'
+  },
+  firm_heading: {
+    ja: '商号',
+    zh: '公司名称',
+    en: 'Firm Name'
+  },
+  firm_name: {
+    ja: '株式会社THALASSIC不動産',
+    zh: 'THALASSIC不动产',
+    en: 'THALASSIC Real Estate, Inc.'
+  },
+  location_heading: {
+    ja: '所在地',
+    zh: '公司地址',
+    en: 'Address'
+  },
+  firm_location: {
+    ja: '451-0034<br>愛知県名古屋市西区樋の口町1-15 ホーワビル２階3号',
+    zh: '451-0034<br>爱知县名古屋市西区樋の口町1-15 Howa Building 2F 3号',
+    en: '1-15 Hinokuchi-cho, Nishi-ku, Nagoya, Aichi Prefecture,<br>Japan 451-0034'
+  },
+  establishment_heading: {
+    ja: '設立',
+    zh: '成立时间',
+    en: 'Establishment'
+  },
+  firm_establishment: {
+    ja: '2021年',
+    zh: '2021年',
+    en: '2021'
+  },
+  capital_heading: {
+    ja: '資本金',
+    zh: '注册资本',
+    en: 'Capital'
+  },
+  firm_capital: {
+    ja: '47,300,000円',
+    zh: '47,300,000円',
+    en: '47,300,000 JPY'
+  },
+  representative_heading: {
+    ja: '代表取締役',
+    zh: '代表董事',
+    en: 'Chief Executive Officer'
+  },
+  firm_representative: {
+    ja: '王珏峰 / Wang Juefeng',
+    zh: '王珏峰 / Wang Juefeng',
+    en: 'Juefeng Wang'
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   recruit: {
     ja:'不動産と宿泊の両軸から、地域の価値をともに創出する会社です。柔軟な発想や誠実さを大切にし、長く続く価値を一緒に生み出すメンバーを募集しています。<br class="sp"><br class="sp">詳しい募集キャリアは以下をご覧ください',
   },

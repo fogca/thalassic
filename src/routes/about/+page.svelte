@@ -26,8 +26,9 @@
       <div>
         <h1 class="h4"lang="en">About Us</h1>
         <h2 class="h1 hero__title bold" lang="en">Creating Value<br>that Endures</h2>
+        <h3 class="h5 hero__subtitle sans mt-20">{@html t('heading', $lang)}</h3>
       </div>
-      <div class="h6 half" style="opacity:0;">{@html t('sub', $lang)}</div>
+      
     </div>
     <div class="image-container w100" style="display: none;">
       <img class="pz" src="/images/top_05.webp" alt="" loading="eager" decoding="async" />
@@ -84,48 +85,48 @@
     <div class="wrapper">
       <div class="wrap">
         <div class="container">
-          <div class="h6">商号</div>
-          <div class="h5">株式会社THALASSIC CAPITAL</div>
+          <div class="h6">{t('firm_heading', $lang)}</div>
+          <div class="h5">{t('firm_main', $lang)}</div>
         </div>
         <div class="container">
-          <div class="h6">所在地</div>
-          <div class="h5">451-0034<br>愛知県名古屋市西区樋の口町1-15</div>
+          <div class="h6">{t('location_heading', $lang)}</div>
+          <div class="h5">{@html t('firm_location', $lang)}</div>
         </div>
         <div class="container">
-          <div class="h6">設立</div>
-          <div class="h5">2021年</div>
+          <div class="h6">{t('establishment_heading', $lang)}</div>
+          <div class="h5">{t('firm_establishment', $lang)}</div>
         </div>
         <div class="container">
-          <div class="h6">資本金</div>
-          <div class="h5">47,300,000円</div>
+          <div class="h6">{t('capital_heading', $lang)}</div>
+          <div class="h5">{t('firm_capital', $lang)}</div>
         </div>
         <div class="container">
-          <div class="h6">代表取締役</div>
-          <div class="h5">J Wang</div>
+          <div class="h6">{t('representative_heading', $lang)}</div>
+          <div class="h5">{t('firm_representative', $lang)}</div>
         </div>
 
       </div>
 
       <div class="wrap">
-        <h3 class="h5">子会社</h3>
+        <h3 class="h5">{@html t('subsidiary1_heading', $lang)}</h3>
         <div class="container">
-          <div class="h6">商号</div>
-          <div class="h5" lang="en">株式会社THALASSIC不動産</div>
+          <div class="h6">{t('firm_heading', $lang)}</div>
+          <div class="h5" lang="en">{t('firm_name', $lang)}</div>
         </div>
         <div class="container">
-          <div class="h6">所在地</div>
-          <div class="h5">451-0034<br>愛知県名古屋市西区樋の口町1-15 ホーワビル２階3号</div>
+          <div class="h6">{t('location_heading', $lang)}</div>
+          <div class="h5">{@html t('firm_location', $lang)}</div>
         </div>
       </div>
 
       <div class="wrap">
-        <h3 class="h5">海外支社</h3>
+        <h3 class="h5">{@html t('subsidiary2_heading', $lang)}</h3>
         <div class="container">
-          <div class="h6">商号</div>
+          <div class="h6">{t('firm_heading', $lang)}</div>
           <div class="h5" lang="en">THALASSIC  CAPITAL PTY LTD</div>
         </div>
         <div class="container">
-          <div class="h6">所在地</div>
+          <div class="h6">{t('location_heading', $lang)}</div>
           <div class="h5" lang="en">105/311 Hay St, Perth, WA, Australia</div>
         </div>
       </div>
