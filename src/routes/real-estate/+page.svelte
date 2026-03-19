@@ -40,7 +40,7 @@
 
       <div>
         <h1 class="h2 hero__title uppercase" lang="en">
-          BUILDING LASTING VALUE<br>THROUGH REAL ESTATE
+          BUILDING LASTING <br class="sp">VALUE <br class="pc">THROUGH <br class="sp">REAL ESTATE
         </h1>
         <h2 class="h5 hero__subtitle sans">{@html t('heading', $lang)}</h2>
       </div>
@@ -264,6 +264,36 @@
 
 
 .GlobalBusiness .Illustration {grid-template-columns: 1fr 1fr 1fr; gap: 20px;}
+
+
+
+@media screen and (max-width: 834px) {
+
+  .Illustration {
+    width: 100vw;
+    margin-left: calc(-1 * var(--padding));
+    padding: 40px var(--padding) 20px;
+    gap: 10px;
+    border-radius: 0;
+    overflow: scroll;
+  }
+
+  .Illustration .box {min-width: 32vw;}
+  .Illustration .box h3 {font-size: 12px;}
+
+  .Gallery {width: calc(100vw - var(--padding));}
+  .Gallery img {height:160px;}
+
+
+
+  .GlobalBusiness {margin-top: 120px;}
+
+  .GlobalBusiness .city {flex-direction: column;margin-bottom: 0;}
+  .GlobalBusiness .city .container {width: 100%;margin-bottom: 40px;}
+  .GlobalBusiness .city .container:last-of-type {width: 100%;margin-bottom: 0;}
+  
+
+}
 
 
 </style>

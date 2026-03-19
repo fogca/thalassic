@@ -48,6 +48,31 @@
 }
 .hero__subtitle {letter-spacing: .1em;line-height: 1.5;}
 
+
+
+@media screen and (max-width: 834px) {
+  .hero__title {
+    font-size: 28px;
+  }
+  .hero__subtitle {
+    font-size: 14px;
+  }
+
+  .l-Contents {
+    margin: 80px 0 60px;
+    flex-direction: column;}
+  .l-Contents .heading {width: 100%;margin-bottom: 20px;}
+  .l-Contents .container {width: 100%;}
+  .l-Contents .heading h2 {font-size: 32px;margin-bottom: 10px;}
+  .l-Contents .heading h5 {font-size: 14px;}
+  .l-Contents .container p {font-size: 14px;}
+}
+
+
+
+
+
+
 .topLayout {
   height: 100vh;
   height: 100dvh;

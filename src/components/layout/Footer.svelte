@@ -157,6 +157,7 @@
 
     @media screen and (max-width: 834px) {
 
+        section.space {padding-top: 80px;}
         footer .navigation {
             flex-direction: column;
             height: 100%;
@@ -164,7 +165,7 @@
         footer .navigation .container {width: 100%;}
 
         footer .footer {
-            padding-bottom: 30px;
+            padding: 70px var(--padding) 30px;
             flex-direction: column;
         }
         footer .footer .left,
