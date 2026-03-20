@@ -3,7 +3,7 @@ import type { Lang } from '$lib/utils/lang';
 export const dict = {
   heroBody: {
     ja: '「その土地と共に、次の100年を形づくる」<br>私たちは不動産のプロフェッショナルとして、<br class="sp">その土地を深く理解し、<br class="pc">地域と共に歩みながら、<br class="sp">未来へ続く価値を創造します。',
-    zh: '「与这片土地共同塑造下一个百年」<br>作为房地产领域的专业团队，我们深入学习每一片土地，<br>与地区共同前行，创造延续至未来的价值。',
+    zh: '「与这片土地共同塑造下一个百年」<br>作为房地产领域的专业团队，<br class="sp">我们深入学习每一片土地，<br>与地区共同前行，创造延续至未来的价值。',
     en: 'Embracing the richness of place, shaping the next hundred years.'
   },
 
