@@ -46,20 +46,6 @@
         }
       });
       
-      // ✅ ロゴアニメーションをスキップ
-      // opTimeline
-      //   .to('.op-logo', {
-      //     opacity: 1,
-      //     duration: 1.5,
-      //     ease: 'power2.inOut',
-      //   })
-      //   .to('.op-logo', {
-      //     opacity: 0,
-      //     duration: 1,
-      //     delay: 1,
-      //     ease: 'power2.inOut',
-      //   });
-      
       // ✅ 画像4分割タイルの初期設定
       const tiles = document.querySelectorAll('.image-tile');
       gsap.set(tiles, { y: '100%' }); // ✅ 最初は下に隠す
@@ -101,18 +87,7 @@
         lenisInstance.destroy();
       };
     });
-
-    
   </script>
-  
-  <!-- ============================================================
-       OPアニメーション
-       ============================================================ -->
-  <!-- {#if showOP}
-    <div class="op-overlay">
-      <Logo class="op-logo" width={600} height={150} />
-    </div>
-  {/if} -->
   
   <!-- ============================================================
        ヒーローセクション
@@ -127,51 +102,201 @@
     
     <div class="hero-title">
       <h1>
-        <div class="line">
-          <span class="word">
-            {#each 'SHAPED'.split('') as char}<span class="char">{char}</span>{/each}
-          </span>
-          <span class="word">
-            {#each 'BY'.split('') as char}<span class="char">{char}</span>{/each}
-          </span>
-          <span class="word">
-            {#each "TIME".split('') as char}<span class="char">{char}</span>{/each}
-          </span>
-          <span class="word">
-            {#each "AND".split('') as char}<span class="char">{char}</span>{/each}
-          </span>
-          <span class="word">
-            {#each "TIDES".split('') as char}<span class="char">{char}</span>{/each}
-          </span>
+        <!-- ✅ PC版 (768px以上) -->
+        <div class="desktop-text">
+          <div class="line">
+            <span class="word">
+              {#each 'SHAPED'.split('') as char}<span class="char">{char}</span>{/each}
+            </span>
+            <span class="word">
+              {#each 'BY'.split('') as char}<span class="char">{char}</span>{/each}
+            </span>
+            <span class="word">
+              {#each "TIME".split('') as char}<span class="char">{char}</span>{/each}
+            </span>
+            <span class="word">
+              {#each "AND".split('') as char}<span class="char">{char}</span>{/each}
+            </span>
+            <span class="word">
+              {#each "TIDES".split('') as char}<span class="char">{char}</span>{/each}
+            </span>
+          </div>
+  
+          <div class="line">
+            <span class="word">
+              {#each "GUIDING".split('') as char}<span class="char">{char}</span>{/each}
+            </span>
+            <span class="word">
+              {#each 'THE'.split('') as char}<span class="char">{char}</span>{/each}
+            </span>
+            <span class="word">
+              {#each 'NEXT'.split('') as char}<span class="char">{char}</span>{/each}
+            </span>
+            <span class="word">
+              {#each 'CENTURYS'.split('') as char}<span class="char">{char}</span>{/each}
+            </span>
+            <span class="word">
+              {#each 'FORM'.split('') as char}<span class="char">{char}</span>{/each}
+            </span>
+          </div>
         </div>
-
-        <div class="line">
-          <span class="word">
-            {#each "GUIDING".split('') as char}<span class="char">{char}</span>{/each}
-          </span>
+  
+        <!-- ✅ モバイル版 (767px以下) -->
+        <div class="mobile-text">
+          <div class="line">
             <span class="word">
-                {#each 'THE'.split('') as char}<span class="char">{char}</span>{/each}
+              {#each 'SHAPED'.split('') as char}<span class="char">{char}</span>{/each}
             </span>
             <span class="word">
-                {#each 'NEXT'.split('') as char}<span class="char">{char}</span>{/each}
+              {#each 'BY'.split('') as char}<span class="char">{char}</span>{/each}
+            </span>
+          </div>
+  
+          <div class="line">
+            <span class="word">
+              {#each "TIME".split('') as char}<span class="char">{char}</span>{/each}
             </span>
             <span class="word">
-                {#each 'CENTURY’S'.split('') as char}<span class="char">{char}</span>{/each}
+              {#each "AND".split('') as char}<span class="char">{char}</span>{/each}
             </span>
             <span class="word">
-                {#each 'FORM'.split('') as char}<span class="char">{char}</span>{/each}
+              {#each "TIDES".split('') as char}<span class="char">{char}</span>{/each}
             </span>
+          </div>
+  
+          <div class="line">
+            <span class="word">
+              {#each "GUIDING".split('') as char}<span class="char">{char}</span>{/each}
+            </span>
+            <span class="word">
+              {#each 'THE'.split('') as char}<span class="char">{char}</span>{/each}
+            </span>
+            <span class="word">
+              {#each 'NEXT'.split('') as char}<span class="char">{char}</span>{/each}
+            </span>
+          </div>
+  
+          <div class="line">
+            <span class="word">
+              {#each 'CENTURYS'.split('') as char}<span class="char">{char}</span>{/each}
+            </span>
+            <span class="word">
+              {#each 'FORM'.split('') as char}<span class="char">{char}</span>{/each}
+            </span>
+          </div>
         </div>
       </h1>
       <p class="white">{@html t('heroBody', $lang)}</p>
-      
     </div>
   </div>
   
-  <!-- ✅ 次のセクションはこのコンポーネントの外で呼び出される -->
-  <!-- 親レイアウトでz-indexを使って上に被せる -->
+  <style lang="css">
+    /* ============================================================
+       ヒーローセクション
+       ============================================================ */
+    .hero-section {
+      position: relative;
+      width: 100vw;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: white;
+      overflow: hidden;
+    }
+    
+    /* ✅ 画像分割グリッド（横4分割） */
+    .image-grid {
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 1fr;
+      z-index: 2;
+    }
+    
+    .image-tile {
+      width: 100%;
+      height: 100%;
+      background-image: url('/images/top_02.jpg');
+      background-size: 400% 100%;
+      background-position: top center;
+    }
+    
+    /* 各タイルの背景位置 */
+    .image-tile[data-index="0"] { background-position: 0% 0%; }
+    .image-tile[data-index="1"] { background-position: 33.333% 0%; }
+    .image-tile[data-index="2"] { background-position: 66.666% 0%; }
+    .image-tile[data-index="3"] { background-position: 100% 0%; }
+    
+    /* ============================================================
+       テキスト
+       ============================================================ */
+    .hero-title {
+      position: absolute;
+      text-align: center;
+      color: white;
+      z-index: 10;
+    }
+    
+    .hero-title h1 {
+      font-size: clamp(1.5rem, 4vw, 3rem);
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+    }
   
-  <style lang="scss">
+    /* ✅ PC/モバイル切り替え */
+    .desktop-text {
+      display: block;
+    }
+    
+    .mobile-text {
+      display: none;
+    }
+    
+    @media (max-width: 767px) {
+      .desktop-text {
+        display: none;
+      }
+      
+      .mobile-text {
+        display: block;
+      }
+    }
+    
+    .hero-title .line {
+      display: flex;
+      justify-content: center;
+      gap: 0.3em;
+      overflow: hidden;
+      padding-bottom: 0.1em;
+    }
+    
+    .hero-title .word {
+      display: inline-block;
+      overflow: hidden;
+      padding-bottom: 0.1em;
+    }
+    
+    .hero-title .char {
+      display: inline-block;
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    
+    .hero-title p {
+        font-size: 12px;
+        letter-spacing: 0.05em;
+      opacity: 0;
+      transform: translateY(10px);
+    }
+  
+
     /* ============================================================
        OPオーバーレイ
        ============================================================ */
@@ -242,8 +367,8 @@
     
     .hero-title h1,
     .hero-title h1 * {
-      font-size: clamp(30px, 4vw, 64px);
-      line-height: 1.1;
+      font-size: clamp(28px, 4vw, 64px);
+      line-height: 1.0;
       color: white;
         -webkit-text-stroke: calc(0.1px + 0.01em) white;
     }
@@ -259,7 +384,7 @@
     .hero-title .word {
       display: inline-block;
       overflow: hidden;
-      padding-bottom: 0.1em;
+      
     }
     
     .hero-title .char {
@@ -271,5 +396,18 @@
     .hero-title p {
       opacity: 0;
       transform: translateY(10px);
+    }
+
+
+
+    @media screen and (max-width: 834px) {
+
+
+        .hero-title {
+            padding: 0 var(--padding);
+            top: 52%;
+            transform: translateY(-50%);
+        }
+
     }
   </style>

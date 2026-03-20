@@ -126,7 +126,7 @@ onMount(() => {
 <section class="Identity mt-160 mb-160">
   <div class="wrapper">
     <div class="container">
-      <div class="h5 sans" lang="en">Group Company</div>
+      <div class="h5 sans uppercase" lang="en">Group Company</div>
       <h2 class="h1 mb-10" lang="en">Three Identities,<br />One Collective Vision.</h2>
       <p>{t('identityBody', $lang)}</p>
       <a class="button white mt-40" href="/about" lang="en">About Us</a>
@@ -146,7 +146,7 @@ onMount(() => {
         <div class="texts">
           <h6 class="white">{tTop(card.categoryKey, $lang)}</h6>
           <h2 class="h2 uppercase white" lang="en">{card.title}</h2>
-          <div class="button" lang="en">READ MORE</div>
+          <div class="button" lang="en">Discover</div>
         </div>
       </a>
     {/each}
@@ -198,7 +198,7 @@ onMount(() => {
 
   @media screen and (max-width: 834px) {
     .Identity {
-      margin-top: 120px;
+      margin-top: 100px;
     }
 
     .Identity .wrapper .container:nth-of-type(1) {
