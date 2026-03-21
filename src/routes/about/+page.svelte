@@ -161,32 +161,32 @@
       <h5 class="h3">募集要項</h5>
       <div class="container">
         <div class="h6 half"><br>募集人材</div>
-        <div class="h5">不動産営業<br>不動産管理<br>SNS・コンテンツクリエイター</div>
+        <div class="h3">不動産営業<br>不動産管理<br>SNS・コンテンツクリエイター</div>
       </div>
 
       <div class="container">
-        <div class="h6 half">勤務体系</div>
-        <div class="h5">フルフレックス（コアタイムなし）<br>1日の標準労働時間は実働8時間、休憩1時間（時短勤務も相談可）</div>
+        <div class="h6 half" style="display: none;">勤務体系</div>
+        <div class="h5" style="display: none;">フルフレックス（コアタイムなし）<br>1日の標準労働時間は実働8時間、休憩1時間（時短勤務も相談可）</div>
       </div>
 
-      <div class="container">
+      <div class="container"style="display: none;">
         <div class="h6 half">給与</div>
         <div class="h5">経験・能力を考慮し、当社規定によって決定いたします</div>
       </div>
 
-      <div class="container">
+      <div class="container"style="display: none;">
         <div class="h6 half">福利厚生</div>
         <div class="h5">各種保険完備 / 健康診断補助 / 交通費手当：10,000円／月</div>
       </div>
 
-      <div class="container">
+      <div class="container"style="display: none;">
         <div class="h6 half">休日休暇</div>
         <div class="h5">土日、祝日、特別休暇、有給休暇（初年度13日）</div>
       </div>
   
     </div>
 
-    <div class="container aboutList">
+    <div class="container aboutList" style="display: none;">
       <h5 class="h3">01. 不動産営業</h5>
       <div class="container">
         <p><br>不動産営業職<br>
@@ -199,7 +199,7 @@
       </div>
     </div>
 
-    <div class="container aboutList">
+    <div class="container aboutList"  style="display: none;">
       <h5 class="h3">02. 不動産管理</h5>
       <div class="container">
         <p><br>不動産営業職<br>
@@ -212,7 +212,7 @@
       </div>
     </div>
 
-    <div class="container aboutList">
+    <div class="container aboutList" style="display: none;">
       <h5 class="h3">03. SNS・コンテンツクリエイター</h5>
       <div class="container">
         <p><br>不動産営業職<br>
@@ -329,11 +329,6 @@
 .aboutRecruit .aboutList h5 {margin-bottom: 2rem;}
 
 
-
-
-.aboutRecruit .container:nth-of-type(3),
-.aboutRecruit .container:nth-of-type(4),
-.aboutRecruit .container:nth-of-type(5) {display: none;}
 
 @media screen and (max-width: 834px) {
   
