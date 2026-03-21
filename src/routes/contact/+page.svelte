@@ -1,8 +1,10 @@
-<script>
+<script lang="ts">
   import { enhance } from '$app/forms';
-  
+  import { lang } from '$lib/utils/lang';
+  import { t } from './contact.dict';
+
   export let form;
-  
+
   let loading = false;
 </script>
 
@@ -11,11 +13,11 @@
   <div class="contact-container">
     {#if form?.success}
       <div class="success-message">
-        <p>お問い合わせありがとうございます。<br>内容を確認の上、折り返しご連絡いたします。</p>
+        <p>{@html t('formSuccessBody', $lang)}</p>
       </div>
     {:else}
-      <form 
-        method="POST" 
+      <form
+        method="POST"
         action="?/submit"
         use:enhance={() => {
           loading = true;
@@ -28,13 +30,13 @@
         <!-- Name -->
         <div class="form-group">
           <label for="name">
-            お名前 <span class="required">*</span>
+            {t('formNameLabel', $lang)} <span class="required">*</span>
           </label>
-          <input 
-            type="text" 
-            id="name" 
-            name="name" 
-            placeholder="例） サラシック 太郎"
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder={t('formNamePlaceholder', $lang)}
             required
           />
         </div>
@@ -42,13 +44,13 @@
         <!-- Email -->
         <div class="form-group">
           <label for="email">
-            メールアドレス <span class="required">*</span>
+            {t('formEmailLabel', $lang)} <span class="required">*</span>
           </label>
-          <input 
-            type="email" 
-            id="email" 
-            name="email" 
-            placeholder="例） info@thalassiccapital.com"
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder={t('formEmailPlaceholder', $lang)}
             required
           />
         </div>
@@ -56,13 +58,13 @@
         <!-- Phone -->
         <div class="form-group">
           <label for="phone">
-            電話番号 <span class="required">*</span>
+            {t('formPhoneLabel', $lang)} <span class="required">*</span>
           </label>
-          <input 
-            type="tel" 
-            id="phone" 
-            name="phone" 
-            placeholder="例） 03-0000-0000"
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder={t('formPhonePlaceholder', $lang)}
             required
           />
         </div>
@@ -70,62 +72,62 @@
         <!-- Type of Contact -->
         <div class="form-group">
           <label for="type">
-            お問い合わせ種類 <span class="required">*</span>
+            {t('formTypeLabel', $lang)} <span class="required">*</span>
           </label>
           <select id="type" name="type" required>
-            <option value="" disabled selected>選択してください</option>
-            <option value="business">事業について</option>
-            <option value="service">サービスについて</option>
-            <option value="recruit">採用について</option>
+            <option value="" disabled selected>{t('formTypePlaceholder', $lang)}</option>
+            <option value="business">{t('formTypeBusiness', $lang)}</option>
+            <option value="service">{t('formTypeService', $lang)}</option>
+            <option value="recruit">{t('formTypeRecruit', $lang)}</option>
           </select>
         </div>
 
         <!-- Company Name -->
         <div class="form-group">
           <label for="company">
-            会社名 <span class="required">*</span>
+            {t('formCompanyLabel', $lang)} <span class="required">*</span>
           </label>
-          <input 
-            type="text" 
-            id="company" 
-            name="company" 
-            placeholder="例） 株式会社サラシックキャピタル"
+          <input
+            type="text"
+            id="company"
+            name="company"
+            placeholder={t('formCompanyPlaceholder', $lang)}
             required
           />
         </div>
 
         <!-- Department (Optional) -->
         <div class="form-group">
-          <label for="department">部署名</label>
-          <input 
-            type="text" 
-            id="department" 
-            name="department" 
-            placeholder="例） マーケティング事業部"
+          <label for="department">{t('formDepartmentLabel', $lang)}</label>
+          <input
+            type="text"
+            id="department"
+            name="department"
+            placeholder={t('formDepartmentPlaceholder', $lang)}
           />
         </div>
 
         <!-- Website (Optional) -->
         <div class="form-group">
-          <label for="website">Webサイト</label>
-          <input 
-            type="url" 
-            id="website" 
-            name="website" 
-            placeholder="例） https://yourcomapny.com/"
+          <label for="website">{t('formWebsiteLabel', $lang)}</label>
+          <input
+            type="url"
+            id="website"
+            name="website"
+            placeholder={t('formWebsitePlaceholder', $lang)}
           />
         </div>
 
         <!-- Message -->
         <div class="form-group">
           <label for="message">
-            お問い合わせ内容 <span class="required">*</span>
+            {t('formMessageLabel', $lang)} <span class="required">*</span>
           </label>
-          <textarea 
-            id="message" 
-            name="message" 
+          <textarea
+            id="message"
+            name="message"
             rows="6"
-            placeholder="可能な限り詳しく教えてください"
+            placeholder={t('formMessagePlaceholder', $lang)}
             required
           ></textarea>
         </div>
@@ -137,24 +139,20 @@
         {/if}
 
         <button type="submit" class="submit-btn" disabled={loading}>
-          {loading ? '送信中...' : '送信する'}
+          {loading ? t('formSubmitting', $lang) : t('formSubmit', $lang)}
         </button>
       </form>
     {/if}
   </div>
-
 </section>
 
 <style>
-
   .Contact {
     padding-top: 20vh;
   }
-  .Contact h1 {font-size: 3.6rem;}
-
-
-
-
+  .Contact h1 {
+    font-size: 3.6rem;
+  }
 
   .contact-container {
     max-width: 800px;
@@ -200,7 +198,7 @@
   select:focus,
   textarea:focus {
     outline: none;
-    border-color: #3B82F6;
+    border-color: #3b82f6;
   }
 
   input::placeholder,
@@ -227,7 +225,7 @@
     font-size: 16px;
     font-weight: 500;
     color: white;
-    background: #3B82F6;
+    background: #3b82f6;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -237,7 +235,7 @@
   }
 
   .submit-btn:hover:not(:disabled) {
-    background: #2563EB;
+    background: #2563eb;
   }
 
   .submit-btn:disabled {

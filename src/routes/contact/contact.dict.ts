@@ -17,7 +17,9 @@ export const dict = {
     en: 'Our company specializes in acquiring income-producing real estate. We purchase properties directly from owners, then enhance their value through tailored renovations and strategic improvements.<br><br>After revitalization, these properties are either managed as part of our real estate crowdfunding products or sold to new individual and corporate buyers.<br>By handling acquisition, renovation, management, and resale in a unified process, we deliver efficient transactions and create new opportunities for real-estate value growth.'
   },
   recruit: {
-    ja:'不動産と宿泊の両軸から、地域の価値をともに創出する会社です。柔軟な発想や誠実さを大切にし、長く続く価値を一緒に生み出すメンバーを募集しています。<br class="sp"><br class="sp">詳しい募集キャリアは以下をご覧ください',
+    ja: '不動産と宿泊の両軸から、地域の価値をともに創出する会社です。柔軟な発想や誠実さを大切にし、長く続く価値を一緒に生み出すメンバーを募集しています。<br class="sp"><br class="sp">詳しい募集キャリアは以下をご覧ください',
+    zh: '我们是一家从房地产与住宿两方面共同创造地域价值的公司。重视灵活创意与诚信，招募能一起创造长久价值的成员。详情请见下方招聘信息。',
+    en: 'We are a company that creates local value through both real estate and hospitality. We value flexible thinking and integrity, and we welcome members who want to build lasting value together. See below for open roles.'
   },
   real2h: {
     ja: '賃貸管理',
@@ -50,16 +52,123 @@ export const dict = {
     en: 'Rediscover Nagoya through culture and sensibility.<br>We offer stays designed to connect you with the city’s unique rhythm and cultural layers.<br>Across several Airbnb-based locations, set within neighborhoods where historic streets blend with contemporary aesthetics, guests can experience an authentic “everyday Nagoya” that typical sightseeing cannot reveal—through food, architecture, and encounters with local people.<br>No matter the style of stay, each location shares a single value: to feel the atmosphere of the place itself.'
   },
 
+  /* Contact form — labels */
+  formNameLabel: {
+    ja: 'お名前',
+    zh: '姓名',
+    en: 'Name'
+  },
+  formEmailLabel: {
+    ja: 'メールアドレス',
+    zh: '电子邮箱',
+    en: 'Email'
+  },
+  formPhoneLabel: {
+    ja: '電話番号',
+    zh: '电话号码',
+    en: 'Phone'
+  },
+  formTypeLabel: {
+    ja: 'お問い合わせ種類',
+    zh: '咨询类型',
+    en: 'Inquiry type'
+  },
+  formCompanyLabel: {
+    ja: '会社名',
+    zh: '公司名称',
+    en: 'Company'
+  },
+  formDepartmentLabel: {
+    ja: '部署名',
+    zh: '部门名称',
+    en: 'Department'
+  },
+  formWebsiteLabel: {
+    ja: 'Webサイト',
+    zh: '网站',
+    en: 'Website'
+  },
+  formMessageLabel: {
+    ja: 'お問い合わせ内容',
+    zh: '咨询内容',
+    en: 'Message'
+  },
 
-  
+  /* Contact form — placeholders */
+  formNamePlaceholder: {
+    ja: '例） サラシック 太郎',
+    zh: '例：张三',
+    en: 'e.g. Taro Thalassic'
+  },
+  formEmailPlaceholder: {
+    ja: '例） info@thalassiccapital.com',
+    zh: '例：info@thalassiccapital.com',
+    en: 'e.g. info@thalassiccapital.com'
+  },
+  formPhonePlaceholder: {
+    ja: '例） 03-0000-0000',
+    zh: '例：03-0000-0000',
+    en: 'e.g. 03-0000-0000'
+  },
+  formTypePlaceholder: {
+    ja: '選択してください',
+    zh: '请选择',
+    en: 'Please select'
+  },
+  formTypeBusiness: {
+    ja: '事業について',
+    zh: '关于业务',
+    en: 'About our business'
+  },
+  formTypeService: {
+    ja: 'サービスについて',
+    zh: '关于服务',
+    en: 'About our services'
+  },
+  formTypeRecruit: {
+    ja: '採用について',
+    zh: '关于招聘',
+    en: 'Recruitment'
+  },
+  formCompanyPlaceholder: {
+    ja: '例） 株式会社サラシックキャピタル',
+    zh: '例：某某股份有限公司',
+    en: 'e.g. Thalassic Capital Co., Ltd.'
+  },
+  formDepartmentPlaceholder: {
+    ja: '例） マーケティング事業部',
+    zh: '例：市场部',
+    en: 'e.g. Marketing'
+  },
+  formWebsitePlaceholder: {
+    ja: '例） https://yourcompany.com/',
+    zh: '例：https://yourcompany.com/',
+    en: 'e.g. https://yourcompany.com/'
+  },
+  formMessagePlaceholder: {
+    ja: '可能な限り詳しく教えてください',
+    zh: '请尽可能详细说明',
+    en: 'Please share as much detail as possible'
+  },
 
-
-
-  
+  /* Contact form — actions & feedback */
+  formSubmit: {
+    ja: '送信する',
+    zh: '提交',
+    en: 'Submit'
+  },
+  formSubmitting: {
+    ja: '送信中...',
+    zh: '发送中...',
+    en: 'Sending...'
+  },
+  formSuccessBody: {
+    ja: 'お問い合わせありがとうございます。<br>内容を確認の上、折り返しご連絡いたします。',
+    zh: '感谢您的咨询。<br>我们将在确认内容后与您联系。',
+    en: 'Thank you for your inquiry.<br>We will review your message and get back to you shortly.'
+  }
 };
 
 export function t<K extends keyof typeof dict>(key: K, lang: Lang) {
   return dict[key][lang];
 }
-
-
