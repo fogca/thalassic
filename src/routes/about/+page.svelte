@@ -331,7 +331,9 @@
 
 
 
-
+.aboutRecruit .container:nth-of-type(3),
+.aboutRecruit .container:nth-of-type(4),
+.aboutRecruit .container:nth-of-type(5) {display: none;}
 
 @media screen and (max-width: 834px) {
   
