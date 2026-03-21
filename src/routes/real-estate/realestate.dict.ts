@@ -15,7 +15,7 @@ export const dict = {
   real1p: {
     ja: '私たちは、収益不動産を中心に「買取・再生・仲介・管理」の全フェーズをワンストップで手掛ける不動産総合サービスを展開しています。買取事業においては、市場価値を精緻に分析し、自社で直接購入。リノベーションやバリューアップを施すことで不動産の潜在能力を引き出し、次なるオーナー様への販売へと繋げます。運営フェーズでは、中長期的な収益最大化を目的とした賃貸管理から、円滑な事業承継のサポートまでを網羅。さらに、収益物件に特化した仲介サービスを通じて、経験豊富なスタッフが安心かつスピード感のある取引を実現します。',
     zh: '我们提供贯穿收益型物业全生命周期的综合房地产服务：收购, 改造, 中介,管理。我们专注于被忽视的机会，将严谨的分析与本地市场洞察相结合，收购并重新定位表现不佳的资产，将其转化为稳定的创收投资。通过实践性管理，我们提升现金流、租户质量和长期资产表现，为业主提供注重实效的解决方案。我们以投资为导向的经纪服务，确保交易透明、高效且专业管理。',
-    en: 'Thalassic Real Estate provides integrated real estate services across the lifecycle of income-producing properties: acquisition, revitalisation, Brokerage, and Management. We focus on overlooked opportunities, combining disciplined analysis with local market insight to acquire and reposition underperforming assets into stable, income-generating investments. Through hands-on management, we enhance cash flow, tenant quality, and long-term asset performance—supporting owners with practical, results-driven solutions. Our investment-focused brokerage delivers transactions that are transparent, efficient, and professionally managed.'
+    en: 'Thalassic Real Estate provides integrated real estate services across the lifecycle of income-producing properties: Acquisition, Revitalisation, Brokerage and Management. We focus on overlooked opportunities, combining disciplined analysis with local market insight to acquire and reposition underperforming assets into stable, income-generating investments. Through hands-on management, we enhance cash flow, tenant quality, and long-term asset performance—supporting owners with practical, results-driven solutions. Our investment-focused brokerage delivers transactions that are transparent, efficient and professionally managed.'
   },
   real2h: {
     ja: '事例紹介',
@@ -35,7 +35,7 @@ export const dict = {
   real3p: {
     ja: '新たな分野を切り拓く戦略的投資（海外事業）として、グローバル化の進展を事業拡大の好機と捉え、オーストラリアを中心に海外展開を推進しています。オーストラリアは南半球に位置する広大な国で、豊かな自然環境と多文化社会が特徴です。国土は世界第6位の広さを誇り、乾燥地帯から熱帯雨林、サンゴ礁まで多様な自然を有します。',
     zh: '作为开拓新领域的战略投资（海外业务），我们将全球化进程视为业务拓展的良机，以澳大利亚为中心推进海外发展。澳大利亚位于南半球，是一个幅员辽阔的国家，以丰富的自然环境和多元文化社会为特色。国土面积居世界第六，拥有从干旱地带到热带雨林、珊瑚礁等多样化的自然景观。',
-    en: 'Our international initiatives connect Japanese and Australian markets through investment partnerships, cross-border advisory, and collaborative development. By combining local expertise with international networks, we support investors seeking stable real estate exposure across both regions.'
+    en: 'As a strategic investment to pioneer new fields (overseas business), we view the advancement of globalization as a valuable opportunity for business expansion and are promoting our international development with a focus on Australia.<br><br>Australia, located in the Southern Hemisphere, is a vast country known for its rich natural environment and multicultural society. It ranks sixth in the world in terms of land area and features a diverse range of landscapes, from arid regions to tropical rainforests and coral reefs.'
   },
   city1: {
     ja: '1. 人口増加による住宅需要高<br>2. オーストラリアの金融・経済の中心地<br>3. 賃貸物件の慢性的な供給不足<br>4. 安定的な資産保全を目指した設計',
