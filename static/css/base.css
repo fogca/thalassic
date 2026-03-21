@@ -69,8 +69,8 @@
     letter-spacing: 0.025em;
   }
   :lang(zh) {
-    --heading-font: "Marcellus",NeueHaasUnicaPro-Medium, FZFW-ZhuZiHeiS-B--GB1, TsukuGoPr5-B, system-ui, sans-serif;
-       --text-font: NeueHaasUnicaPro-Regular, FZFW-ZhuZiHeiS-D--GB1, TsukuGoPr5-D, system-ui, sans-serif;
+    --heading-font: Inter, "Inter", NeueHaasUnicaPro-Medium, FZFW-ZhuZiHeiS-B--GB1, TsukuGoPr5-B, system-ui, sans-serif;
+       --text-font: Inter, "Inter", NeueHaasUnicaPro-Regular, FZFW-ZhuZiHeiS-D--GB1, TsukuGoPr5-D, system-ui, sans-serif;
   }
 
 
