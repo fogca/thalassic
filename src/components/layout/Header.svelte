@@ -79,6 +79,12 @@
         <div class="overlay" class:open={open} on:click={toggle}>
             <nav class="menu" on:click|stopPropagation>
                <Links />
+
+               <div class="lang">
+                <button class="item" on:click={() => select('ja')}>日本語</button>
+                <button class="item" on:click={() => select('zh')}>中文</button>
+                <button class="sans item" on:click={() => select('en')}>English</button>
+               </div>
             </nav>
         </div>
 
@@ -181,12 +187,13 @@ header .right {
 	position: absolute;
 	top: 0px;
 	right: 0;
-	width: 80vw;
+	width: 100vw;
 	height: calc(100vh - 50px);
 	background: white;
 	display: flex;
 	flex-direction: column;
-	padding: 40px 45px;
+  justify-content: space-between;
+	padding: 40px var(--padding) 30px;
 	transform: translateX(100%);
 	transition: transform 0.3s ease;
 }
@@ -198,6 +205,12 @@ header .right {
 	color: #000;
 	font-size: 1.2rem;
 	margin-bottom: 1.2rem;
+}
+
+.menu .lang button.item {
+  padding: 0;
+  font-size: 16px;
+  margin-right: 15px;
 }
 
 
