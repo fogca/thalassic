@@ -64,7 +64,9 @@
                 </ul>
             </nav>
 
-            <img src="/images/top-header_01.png" alt="" class="" loading="eager" decoding="async" />
+            <a href="/about#recruitment" class="pc">
+              <img src="/images/top-header_01.png" alt="" class="" loading="eager" decoding="async" />
+            </a>
             
             <button class="menu-btn sp" on:click={toggle} aria-label="menu">
                 <span class:open={open}></span>

@@ -106,37 +106,37 @@
         <div class="desktop-text">
           <div class="line">
             <span class="word">
-              {#each 'SHAPED'.split('') as char}<span class="char">{char}</span>{/each}
+              {#each 'SHAPED'.split('') as char}<span class="char" lang="en">{char}</span>{/each}
             </span>
             <span class="word">
-              {#each 'BY'.split('') as char}<span class="char">{char}</span>{/each}
+              {#each 'BY'.split('') as char}<span class="char" lang="en">{char}</span>{/each}
             </span>
             <span class="word">
-              {#each "TIME".split('') as char}<span class="char">{char}</span>{/each}
+              {#each "TIME".split('') as char}<span class="char" lang="en">{char}</span>{/each}
             </span>
             <span class="word">
-              {#each "AND".split('') as char}<span class="char">{char}</span>{/each}
+              {#each "AND".split('') as char}<span class="char" lang="en">{char}</span>{/each}
             </span>
             <span class="word">
-              {#each "TIDES".split('') as char}<span class="char">{char}</span>{/each}
+              {#each "TIDES".split('') as char}<span class="char" lang="en">{char}</span>{/each}
             </span>
           </div>
   
           <div class="line">
             <span class="word">
-              {#each "GUIDING".split('') as char}<span class="char">{char}</span>{/each}
+              {#each "GUIDING".split('') as char}<span class="char" lang="en">{char}</span>{/each}
             </span>
             <span class="word">
-              {#each 'THE'.split('') as char}<span class="char">{char}</span>{/each}
+              {#each 'THE'.split('') as char}<span class="char" lang="en">{char}</span>{/each}
             </span>
             <span class="word">
-              {#each 'NEXT'.split('') as char}<span class="char">{char}</span>{/each}
+              {#each 'NEXT'.split('') as char}<span class="char" lang="en">{char}</span>{/each}
             </span>
             <span class="word">
-              {#each 'CENTURYS'.split('') as char}<span class="char">{char}</span>{/each}
+              {#each 'CENTURYS'.split('') as char}<span class="char" lang="en">{char}</span>{/each}
             </span>
             <span class="word">
-              {#each 'FORM'.split('') as char}<span class="char">{char}</span>{/each}
+              {#each 'FORM'.split('') as char}<span class="char" lang="en">{char}</span>{/each}
             </span>
           </div>
         </div>
@@ -145,43 +145,43 @@
         <div class="mobile-text">
           <div class="line">
             <span class="word">
-              {#each 'SHAPED'.split('') as char}<span class="char">{char}</span>{/each}
+              {#each 'SHAPED'.split('') as char}<span class="char" lang="en">{char}</span>{/each}
             </span>
             <span class="word">
-              {#each 'BY'.split('') as char}<span class="char">{char}</span>{/each}
-            </span>
-          </div>
-  
-          <div class="line">
-            <span class="word">
-              {#each "TIME".split('') as char}<span class="char">{char}</span>{/each}
-            </span>
-            <span class="word">
-              {#each "AND".split('') as char}<span class="char">{char}</span>{/each}
-            </span>
-            <span class="word">
-              {#each "TIDES".split('') as char}<span class="char">{char}</span>{/each}
+              {#each 'BY'.split('') as char}<span class="char" lang="en">{char}</span>{/each}
             </span>
           </div>
   
           <div class="line">
             <span class="word">
-              {#each "GUIDING".split('') as char}<span class="char">{char}</span>{/each}
+              {#each "TIME".split('') as char}<span class="char" lang="en">{char}</span>{/each}
             </span>
             <span class="word">
-              {#each 'THE'.split('') as char}<span class="char">{char}</span>{/each}
+              {#each "AND".split('') as char}<span class="char" lang="en">{char}</span>{/each}
             </span>
             <span class="word">
-              {#each 'NEXT'.split('') as char}<span class="char">{char}</span>{/each}
+              {#each "TIDES".split('') as char}<span class="char" lang="en">{char}</span>{/each}
             </span>
           </div>
   
           <div class="line">
             <span class="word">
-              {#each 'CENTURYS'.split('') as char}<span class="char">{char}</span>{/each}
+              {#each "GUIDING".split('') as char}<span class="char" lang="en">{char}</span>{/each}
             </span>
             <span class="word">
-              {#each 'FORM'.split('') as char}<span class="char">{char}</span>{/each}
+              {#each 'THE'.split('') as char}<span class="char" lang="en">{char}</span>{/each}
+            </span>
+            <span class="word">
+              {#each 'NEXT'.split('') as char}<span class="char" lang="en">{char}</span>{/each}
+            </span>
+          </div>
+  
+          <div class="line">
+            <span class="word">
+              {#each 'CENTURYS'.split('') as char}<span class="char" lang="en">{char}</span>{/each}
+            </span>
+            <span class="word">
+              {#each 'FORM'.split('') as char}<span class="char" lang="en">{char}</span>{/each}
             </span>
           </div>
         </div>

@@ -24,9 +24,9 @@
     <div class="texts-container">
       <div></div>
       <div>
-        <h1 class="h4"lang="en">About Us</h1>
-        <h2 class="h1 hero__title bold" lang="en">Creating Value<br>that Endures</h2>
-        <h3 class="h5 hero__subtitle sans mt-20">{@html t('heading', $lang)}</h3>
+        <h1 class="h4 white" lang="en">About Us</h1>
+        <h2 class="h1 hero__title white" lang="en">Creating Value<br>that Endures</h2>
+        <h3 class="h5 hero__subtitle white mt-10">{@html t('heading', $lang)}</h3>
       </div>
       
     </div>
@@ -80,29 +80,29 @@
   </section>
 
   <section class="bodyLayout aboutCompany aboutList">
-    <h3 class="h1" lang="en">Company Profile</h3>
+    <h3 class="h1 white" lang="en">Company Profile</h3>
 
     <div class="wrapper">
       <div class="wrap">
         <div class="container">
-          <div class="h6">{t('firm_heading', $lang)}</div>
-          <div class="h5">{t('firm_main', $lang)}</div>
+          <div class="h6 white">{t('firm_heading', $lang)}</div>
+          <div class="h5 white">{t('firm_main', $lang)}</div>
         </div>
         <div class="container">
-          <div class="h6">{t('location_heading', $lang)}</div>
-          <div class="h5">{@html t('firm_location', $lang)}</div>
+          <div class="h6 white">{t('location_heading', $lang)}</div>
+          <div class="h5 white">{@html t('firm_location', $lang)}</div>
         </div>
         <div class="container">
-          <div class="h6">{t('establishment_heading', $lang)}</div>
-          <div class="h5">{t('firm_establishment', $lang)}</div>
+          <div class="h6 white">{t('establishment_heading', $lang)}</div>
+          <div class="h5 white">{t('firm_establishment', $lang)}</div>
         </div>
         <div class="container">
-          <div class="h6">{t('capital_heading', $lang)}</div>
-          <div class="h5">{t('firm_capital', $lang)}</div>
+          <div class="h6 white">{t('capital_heading', $lang)}</div>
+          <div class="h5 white">{t('firm_capital', $lang)}</div>
         </div>
         <div class="container">
-          <div class="h6">{t('representative_heading', $lang)}</div>
-          <div class="h5">{t('firm_representative', $lang)}</div>
+          <div class="h6 white">{t('representative_heading', $lang)}</div>
+          <div class="h5 white">{t('firm_representative', $lang)}</div>
         </div>
 
       </div>
@@ -110,24 +110,24 @@
       <div class="wrap">
         <h3 class="h5">{@html t('subsidiary1_heading', $lang)}</h3>
         <div class="container">
-          <div class="h6">{t('firm_heading', $lang)}</div>
-          <div class="h5" lang="en">{t('firm_name', $lang)}</div>
+          <div class="h6 white">{t('firm_heading', $lang)}</div>
+          <div class="h5 white" lang="en">{t('firm_name', $lang)}</div>
         </div>
         <div class="container">
-          <div class="h6">{t('location_heading', $lang)}</div>
-          <div class="h5">{@html t('firm_location', $lang)}</div>
+          <div class="h6 white">{t('location_heading', $lang)}</div>
+          <div class="h5 white">{@html t('firm_location', $lang)}</div>
         </div>
       </div>
 
       <div class="wrap">
         <h3 class="h5">{@html t('subsidiary2_heading', $lang)}</h3>
         <div class="container">
-          <div class="h6">{t('firm_heading', $lang)}</div>
-          <div class="h5" lang="en">THALASSIC  CAPITAL PTY LTD</div>
+          <div class="h6 white">{t('firm_heading', $lang)}</div>
+          <div class="h5 white" lang="en">THALASSIC  CAPITAL PTY LTD</div>
         </div>
         <div class="container">
-          <div class="h6">{t('location_heading', $lang)}</div>
-          <div class="h5" lang="en">105/311 Hay St, Perth, WA, Australia</div>
+          <div class="h6 white">{t('location_heading', $lang)}</div>
+          <div class="h5 white" lang="en">105/311 Hay St, Perth, WA, Australia</div>
         </div>
       </div>
 
@@ -141,9 +141,9 @@
 
   <section class="bodyLayout aboutRecruit" id="Recruitment">
     <hr>
-    <h3 class="h1" lang="en">Recruitment</h3>
+    <h3 class="h1 white" lang="en">Recruitment</h3>
     <div class="wrap">
-      <h4 class="h0" lang="en">Join Our Team!
+      <h4 class="h0 white" lang="en">Join Our Team!
         <img src="/images/about-character_01.png" class="" alt="">
         <img src="/images/about-character_02.png" class="" alt="">
         <img src="/images/about-character_03.png" class="" alt="">
@@ -265,7 +265,6 @@
 
 #About * {
   color: white;
-  -webkit-text-stroke: 0;
 }
   .bannar {
     width: 100vw;
@@ -279,7 +278,7 @@
 
 
 #About section:nth-last-of-type(1) {padding-bottom: 10rem;}
-.aboutBody {margin-top: -75vh;}
+
 
 
 .aboutValue .wrapper,
@@ -328,6 +327,25 @@
 
 .aboutRecruit .aboutList {margin-top: 8rem;}
 .aboutRecruit .aboutList h5 {margin-bottom: 2rem;}
+
+
+
+
+
+
+@media screen and (max-width: 834px) {
+
+
+  
+  .aboutCompany {margin-top: 100px;}
+  .aboutCompany .wrapper {margin-top: 20px;}
+  .aboutCompany .wrapper .wrap .container .h5 {font-size: 14px;}
+
+}
+
+
+
+
 
 @media screen and (min-width: 960px) {
 

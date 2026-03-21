@@ -40,7 +40,7 @@
     height: 90%;
     width: 80%;
     background-color: #ced1c8;
-    background-color: #afcedd;
+    background-color: #003ebb;
     left: -30%;
     top: -10%;
 }
@@ -49,7 +49,7 @@
     height: 80%;
     width: 60%;
     background-color: #8ac5db;
-    background-color: #84c6ce;
+    background-color: #2a95ff;
     top: -10%;
     right: 0%;
     animation-delay: .8s;
@@ -59,7 +59,7 @@
     height: 65%;
     width: 80%;
     background-color: #005fac;
-    background-color: #0a3888;
+    background-color: #0016a9;
     bottom: -15%;
     right: -20%;
     animation-delay: 0.3s;
@@ -69,7 +69,7 @@
     height: 50%;
     width: 75%;
     background-color: #f1af9b;
-    background-color: #fcf5f5;
+    background-color: #a6f2ff;
     bottom: -10%;
     left: -50%;
     animation-delay: 1.2s;
