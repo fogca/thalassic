@@ -13,7 +13,7 @@ export const dict = {
   },
   about: {
     ja: 'サラシックキャピタルは、<br class="sp">日本とオーストラリアを拠点に、<br class="sp">不動産事業と宿泊事業を展開する企業です。<br class="sp"><br class="sp">私たちは「土地の本質を読み解くこと」を<br class="sp">事業の起点とし、地域に根ざした価値を、<br class="sp">未来へ続く形で設計することを目指しています。<br class="sp"><br class="sp">不動産部門では、売買・賃貸管理・仲介を<br class="sp">中心に、地域の特性と暮らしの実感に<br class="sp">寄り添った事業を行っています。<br class="sp"><br class="sp">宿泊事業では、名古屋を中心に「木石」の<br class="sp">思想を取り入れ、素材の静けさと土地の空気を<br class="sp">そのまま体験できる滞在をつくっています。<br class="sp"><br class="sp">多様な文化圏のプロフェッショナルが集う<br class="sp">チームとして、私たちは “土地が語る価値” を<br class="sp">丁寧に汲み取り、その地域の未来につながる<br class="sp">新しい形の不動産・宿泊体験を<br class="sp">創造していきます。',
-    zh: '塔拉西克资本专注于房地产及酒店业务管理，主要致力于创收型房地产投资与价值提升。通过严格的收购策略和针对性翻新，我们重新定位并强化资产，以实现长期稳健表现。通过将收购、改善和资产管理整合于统一方法中，我们以严谨的投资理念和本地洞察力创造稳定的长期房地产价值。立足日本，连接世界。',
+    zh: '本公司专注于房地产及酒店业务管理，主要致力于创收型房地产投资与价值提升。通过严格的收购策略和针对性翻新，我们重新定位并强化资产，以实现长期稳健表现。通过将收购、改善和资产管理整合于统一方法中，我们以严谨的投资理念和本地洞察力创造稳定的长期房地产价值。立足日本，连接世界。',
     en: 'Thalassic Capital oversees real estate and hospitality businesses, with a primary focus on income-producing real estate investment and value enhancement. Through disciplined acquisition and targeted renovations, assets are repositioned and strengthened for long-term performance. By integrating acquisition, improvement, and asset management within a unified approach, we create stable long-term real estate value, guided by disciplined investment and local insight. United in Japan. Connected to the World.'
   },
   firm_main: {

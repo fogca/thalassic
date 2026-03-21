@@ -41,8 +41,7 @@
 
     
     <div class="wrapper">
-      <p>{@html t('about', $lang)}</p>
-      <div class="sp mb-40"></div>
+      <p class="mb-40">{@html t('about', $lang)}</p>
       <Identity />
     </div>
 
