@@ -124,7 +124,7 @@ onMount(() => {
 
 
 
-<section class="Identity mt-160 mb-160">
+<section class="Identity mt-160 mb-80">
   <div class="wrapper">
     <div class="container">
       <div class="h5 sans uppercase" lang="en">Group Company</div>
@@ -181,14 +181,7 @@ onMount(() => {
     position: relative;
   }
   .Identity .wrapper .container:nth-of-type(1) { width: 42.5%; }
-  .Identity .wrapper .container:nth-of-type(2) {
-    position: absolute;
-    width: 50%;
-    height: 100%;
-    top: 0;
-    left: auto;
-    right: 0;
-  }
+  .Identity .wrapper .container:nth-of-type(2) {margin-top: -80px;}
 
   .Identity h2 {
     margin-top: 2rem;
@@ -206,6 +199,8 @@ onMount(() => {
     .Identity .wrapper .container:nth-of-type(1) {
       width:100%;
     }
+
+    .Identity .wrapper .container:nth-of-type(2) {margin-top: 0px;}
 
 
 
