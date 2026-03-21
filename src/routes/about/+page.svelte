@@ -115,7 +115,7 @@
         </div>
         <div class="container">
           <div class="h6 white">{t('location_heading', $lang)}</div>
-          <div class="h5 white">{@html t('firm_location', $lang)}</div>
+          <div class="h5 white">{@html t('firm_location2', $lang)}</div>
         </div>
       </div>
 

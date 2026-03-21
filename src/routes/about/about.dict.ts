@@ -18,7 +18,7 @@ export const dict = {
   },
   firm_main: {
     ja: '株式会社THALASSIC CAPITAL',
-    zh: 'THALASSIC CAPITAL, Inc.',
+    zh: '株式会社THALASSIC CAPITAL',
     en: 'THALASSIC Capital, Inc.'
   },
   subsidiary1_heading:{
@@ -38,7 +38,7 @@ export const dict = {
   },
   firm_name: {
     ja: '株式会社THALASSIC不動産',
-    zh: 'THALASSIC不动产',
+    zh: '株式会社THALASSIC不動産',
     en: 'THALASSIC Real Estate, Inc.'
   },
   location_heading: {
@@ -47,6 +47,11 @@ export const dict = {
     en: 'Address'
   },
   firm_location: {
+    ja: '451-0034<br>愛知県名古屋市西区樋の口町1-15',
+    zh: '451-0034<br>爱知县名古屋市西区樋の口町1-15',
+    en: '1-15 Hinokuchi-cho, Nishi-ku, Nagoya, Aichi Prefecture,<br>Japan 451-0034'
+  },
+  firm_location2: {
     ja: '451-0034<br>愛知県名古屋市西区樋の口町1-15 ホーワビル２階3号',
     zh: '451-0034<br>爱知县名古屋市西区樋の口町1-15 Howa Building 2F 3号',
     en: '1-15 Hinokuchi-cho, Nishi-ku, Nagoya, Aichi Prefecture,<br>Japan 451-0034'
