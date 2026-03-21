@@ -138,8 +138,8 @@
   .l-Contents .container p {font-size: 14px;}
 
 
-  .topLayout {height: auto;}
-  .topLayout .texts-container {height: auto;margin-top: 120px;}
+  #About .topLayout {height: auto;}
+  #About .topLayout .texts-container {height: auto;margin-top: 120px;}
 
   .bodyLayout {margin-top: 0;padding-top: 0;}
   .aboutBody {margin-top: 40px;padding-top: 0;}

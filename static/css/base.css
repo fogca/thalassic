@@ -429,6 +429,7 @@ section {
 @media screen and (max-width: 834px) {
 
     p {
+        font-size: 12.8px;
         line-height: 1.8;
     }
 }

@@ -1,133 +1,134 @@
 <script lang="ts">
-    import Logo from "../snippets/Logo.svelte";
-    import { slide } from 'svelte/transition';
-	import { onMount } from 'svelte';
-    import { page } from '$app/stores'; 
-    import { browser } from '$app/environment';
-    import Links from "../snippets/pageLinks.svelte";
-   
-    let y
+  import Logo from "../snippets/Logo.svelte";
+  import { slide } from 'svelte/transition';
+import { onMount } from 'svelte';
+  import { page } from '$app/stores'; 
+  import { browser } from '$app/environment';
+  import Links from "../snippets/pageLinks.svelte";
+ 
+  let y
 
-    import { lang } from '$lib/utils/lang'; // NEW path, not '$lib/lang'
-    import { t } from './Header.dict';
-  
-  let opens = false;
-  
-  function select(newLang) {
-    lang.set(newLang); // This saves to localStorage
-    opens = false;
-  }
+  import { lang } from '$lib/utils/lang'; // NEW path, not '$lib/lang'
+  import { t } from './Header.dict';
+
+let opens = false;
+
+function select(newLang) {
+  lang.set(newLang); // This saves to localStorage
+  opens = false;
+  open = false; // ✅ メニューを閉じる
+}
 
 
-  let open = false;
-	const toggle = () => (open = !open);
+let open = false;
+const toggle = () => (open = !open);
 
 </script>
-    
+  
 <svelte:window bind:scrollY={y} />
 
-    <header class:scrolled={y > 100}>
-    
-        <div class="left">
-            <a href="/" class="logo"><Logo /></a>
-            
-        </div>
+  <header class:scrolled={y > 100}>
+  
+      <div class="left">
+          <a href="/" class="logo"><Logo /></a>
+          
+      </div>
 
-        
+      
 
-        <div class="right">
+      <div class="right">
 
-            <nav class="pc">
-                <ul>
-                    <li><a class="h5" href="/real-estate">{t('realestate', $lang)}</a></li>
-                    <li><a class="h5" href="/hotel"   >{t('hotel', $lang)}</a></li>
-                    <li><a class="h5" href="/about"      >{t('about', $lang)}</a></li>
-                    <li><a class="h5" href="/about#Recruitment">{t('recruit', $lang)}</a></li>
-                    <li><a class="h5" href="/contact"    >{t('contact', $lang)}</a></li>
-                    <li>
-                        <div class="lang-switch">
-                            <!-- toggle button -->
-                            <button class="current" on:click={() => (opens = !opens)}>
-                              <span>{$lang.toUpperCase()}</span>
-                              <span class="arrow" class:open={opens}>▾</span>
-                            </button>
-                          
-                            {#if opens}
-                              <div class="dropdown">
-                                <button class="item" on:click={() => select('ja')}>JP</button>
-                                <button class="item" on:click={() => select('zh')}>ZH</button>
-                                <button class="item" on:click={() => select('en')}>EN</button>
-                              </div>
-                            {/if}
-                          </div>
-                    </li>
-                </ul>
-            </nav>
+          <nav class="pc">
+              <ul>
+                  <li><a class="h5" href="/real-estate">{t('realestate', $lang)}</a></li>
+                  <li><a class="h5" href="/hotel"   >{t('hotel', $lang)}</a></li>
+                  <li><a class="h5" href="/about"      >{t('about', $lang)}</a></li>
+                  <li><a class="h5" href="/about#Recruitment">{t('recruit', $lang)}</a></li>
+                  <li><a class="h5" href="/contact"    >{t('contact', $lang)}</a></li>
+                  <li>
+                      <div class="lang-switch">
+                          <!-- toggle button -->
+                          <button class="current" on:click={() => (opens = !opens)}>
+                            <span>{$lang.toUpperCase()}</span>
+                            <span class="arrow" class:open={opens}>▾</span>
+                          </button>
+                        
+                          {#if opens}
+                            <div class="dropdown">
+                              <button class="item" on:click={() => select('ja')}>JP</button>
+                              <button class="item" on:click={() => select('zh')}>ZH</button>
+                              <button class="item" on:click={() => select('en')}>EN</button>
+                            </div>
+                          {/if}
+                        </div>
+                  </li>
+              </ul>
+          </nav>
 
-            <a href="/about#recruitment" class="pc">
-              <img src="/images/top-header_01.png" alt="" class="" loading="eager" decoding="async" />
-            </a>
-            
-            <button class="menu-btn sp" on:click={toggle} aria-label="menu">
-                <span class:open={open}></span>
-                <span class:open={open}></span>
-            </button>
+          <a href="/about#recruitment" class="pc">
+            <img src="/images/top-header_01.png" alt="" class="" loading="eager" decoding="async" />
+          </a>
+          
+          <button class="menu-btn sp" on:click={toggle} aria-label="menu">
+              <span class:open={open}></span>
+              <span class:open={open}></span>
+          </button>
 
-        </div>
-        
-        
-    
-        <!-- オーバーレイメニュー -->
-        <div class="overlay" class:open={open} on:click={toggle}>
-            <nav class="menu" on:click|stopPropagation>
-               <Links />
+      </div>
+      
+      
+  
+      <!-- オーバーレイメニュー -->
+      <div class="overlay" class:open={open} on:click={toggle}>
+          <nav class="menu" on:click|stopPropagation>
+             <Links />
 
-               <div class="lang">
-                <button class="item" on:click={() => select('ja')}>日本語</button>
-                <button class="item" on:click={() => select('zh')}>中文</button>
-                <button class="sans item" on:click={() => select('en')}>English</button>
-               </div>
-            </nav>
-        </div>
+             <div class="lang">
+              <button class="item" class:active={$lang === 'ja'} on:click={() => select('ja')}>日本語</button>
+              <button class="item" class:active={$lang === 'zh'} on:click={() => select('zh')}>中文</button>
+              <button class="sans item" class:active={$lang === 'en'} on:click={() => select('en')}>English</button>
+             </div>
+          </nav>
+      </div>
 
-        
-
-
-
-    
-    </header>
+      
 
 
-    
+
+  
+  </header>
+
+
+  
 <style>
-    
+  
 header {
-    width: 100vw;
-    height: 50px;
-    padding: .5rem var(--padding) 0;
-    position: fixed;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    top: 0;
-    left: 0;
-    background-color: var(--backgroundColor);
-    border-bottom: .5px solid rgba(0,0,0,0.1);
+  width: 100vw;
+  height: 50px;
+  padding: .5rem var(--padding) 0;
+  position: fixed;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  left: 0;
+  background-color: var(--backgroundColor);
+  border-bottom: .5px solid rgba(0,0,0,0.1);
 }
 
 
 header .left {
-    display: flex;
-    white-space: nowrap;
-    width: auto;
-    opacity: 1;
+  display: flex;
+  white-space: nowrap;
+  width: auto;
+  opacity: 1;
 }
 
 header img {
-    width: auto;
-    height: 45px;
-    margin-right: 8px;   
+  width: auto;
+  height: 45px;
+  margin-right: 8px;   
 }
 
 
@@ -135,165 +136,175 @@ header, header * {transition: all 1000ms cubic-bezier(0.19, 1, 0.22, 1);}
 
 
 header .right {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 .menu-btn {
-	position: relative;
-	width: 25px;
-	height: 8px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	border: none;
-	background: none;
-	cursor: pointer;
-	z-index: 10;
-    margin-right: -15px;
+position: relative;
+width: 25px;
+height: 8px;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+border: none;
+background: none;
+cursor: pointer;
+z-index: 10;
+  margin-right: -15px;
 }
 .menu-btn span {
-	display: block;
-	width: 100%;
-	height: 1.5px;
-	background: #000;
-	border-radius: 2px;
-	transition: all 0.3s ease;
+display: block;
+width: 100%;
+height: 1.5px;
+background: #000;
+border-radius: 2px;
+transition: all 0.3s ease;
 }
 .menu-btn span.open:first-child {
-	transform: translateY(3.5px) rotate(30deg);
+transform: translateY(3.5px) rotate(30deg);
 }
 .menu-btn span.open:last-child {
-	transform: translateY(-3.5px) rotate(-30deg);
+transform: translateY(-3.5px) rotate(-30deg);
 }
 
 /* --- overlay --- */
 .overlay {
-	position: fixed;
-	inset: 0;
-	background: rgba(0, 0, 0, 0);
-	opacity: 0;
-	pointer-events: none;
-	transition: all 0.3s ease;
-    width: 100vw;
-    height: calc(100vh - 50px);
-    top: 50px;
+position: fixed;
+inset: 0;
+background: rgba(0, 0, 0, 0);
+opacity: 0;
+pointer-events: none;
+transition: all 0.3s ease;
+  width: 100vw;
+  height: calc(100vh - 50px);
+  top: 50px;
 }
 .overlay.open {
-	background: rgba(0, 0, 0, 0.6);
-	opacity: 1;
-	pointer-events: auto;
+background: rgba(0, 0, 0, 0.6);
+opacity: 1;
+pointer-events: auto;
 }
 
 /* --- menu --- */
 .menu {
-	position: absolute;
-	top: 0px;
-	right: 0;
-	width: 100vw;
-	height: calc(100vh - 50px);
-	background: white;
-	display: flex;
-	flex-direction: column;
-  justify-content: space-between;
-	padding: 40px var(--padding) 30px;
-	transform: translateX(100%);
-	transition: transform 0.3s ease;
+position: absolute;
+top: 0px;
+right: 0;
+width: 100vw;
+height: calc(100vh - 50px);
+background: white;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+padding: 40px var(--padding) 30px;
+transform: translateX(100%);
+transition: transform 0.3s ease;
 }
 .overlay.open .menu {
-	transform: translateX(0);
+transform: translateX(0);
 }
 .menu a {
-	text-decoration: none;
-	color: #000;
-	font-size: 1.2rem;
-	margin-bottom: 1.2rem;
+text-decoration: none;
+color: #000;
+font-size: 1.2rem;
+margin-bottom: 1.2rem;
+}
+
+.menu .lang {
+display: flex;
+gap: 15px;
 }
 
 .menu .lang button.item {
-  padding: 0;
-  font-size: 16px;
-  margin-right: 15px;
+padding: 0;
+font-size: 16px;
+opacity: 0.3; /* ✅ デフォルトで薄く */
+transition: opacity 0.3s ease;
+}
+
+.menu .lang button.item.active {
+opacity: 1; /* ✅ 選択中の言語は不透明 */
 }
 
 
-  .lang-switch {
-    position: relative;
-    display: inline-block;
-    user-select: none;
-    font-size: 14px;
-  }
+.lang-switch {
+  position: relative;
+  display: inline-block;
+  user-select: none;
+  font-size: 14px;
+}
 
-  button {
-    all: unset;
-    cursor: pointer;
-  }
+button {
+  all: unset;
+  cursor: pointer;
+}
 
-  .current {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    padding: 6px 10px;
-    border-radius: 4px;
-    background: #f3f3f3;
-  }
+.current {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  background: #f3f3f3;
+}
 
-  .arrow {
-    transition: transform 0.2s;
-    display: inline-block;
-  }
-  .arrow.open {
-    transform: rotate(180deg);
-  }
+.arrow {
+  transition: transform 0.2s;
+  display: inline-block;
+}
+.arrow.open {
+  transform: rotate(180deg);
+}
 
-  .dropdown {
-    position: absolute;
-    top: 110%;
-    right: 0;
-    background: #fff;
-    border: 1px solid #ddd;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    border-radius: 4px;
-    padding: 4px 0;
-    width: 80px;
-    z-index: 10;
-  }
+.dropdown {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border-radius: 4px;
+  padding: 4px 0;
+  width: 80px;
+  z-index: 10;
+}
 
-  .item {
-    padding: 8px 12px;
-    cursor: pointer;
-  }
-  .item:hover {
-    background: #f0f0f0;
-  }
+.item {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+.item:hover {
+  background: #f0f0f0;
+}
 
 
 @media screen and (min-width: 720px) {
 
-    
-    header {
-        height: 60px;
-        padding: 2.8rem 25px 2rem;
-        background-color: transparent;
-        border-bottom: 0;
-    }
+  
+  header {
+      height: 60px;
+      padding: 2.8rem 25px 2rem;
+      background-color: transparent;
+      border-bottom: 0;
+  }
 
-    header .right nav li {
-        display: inline;
-        margin: 0 1rem;
-    }
+  header .right nav li {
+      display: inline;
+      margin: 0 1rem;
+  }
 
-    header img {
-        height: 55px;
-        margin-right: -15px;
-        margin-left: 15px;
-    }
-    header .logo {margin-left: 10px;}
+  header img {
+      height: 55px;
+      margin-right: -15px;
+      margin-left: 15px;
+  }
+  header .logo {margin-left: 10px;}
 
-    .menu-btn.sp {display: none;}
+  .menu-btn.sp {display: none;}
 
 
 }
-    
-    
-    
+  
+  
+  
 </style>

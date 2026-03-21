@@ -42,6 +42,7 @@
     
     <div class="wrapper">
       <p>{@html t('about', $lang)}</p>
+      <div class="sp mb-40"></div>
       <Identity />
     </div>
 
@@ -335,6 +336,11 @@
 
 @media screen and (max-width: 834px) {
   
+  #About .topLayout h2.h1 {
+    font-size: 32px;
+    line-height: 1.4;
+    margin-left: -2px;
+  }
   .aboutCompany {margin-top: 100px;}
   .aboutCompany .wrapper {margin-top: 20px;}
   .aboutCompany .wrapper .wrap .container .h5 {font-size: 14px;}
