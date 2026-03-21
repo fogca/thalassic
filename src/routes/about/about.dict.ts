@@ -83,7 +83,7 @@ export const dict = {
   },
   firm_representative: {
     ja: '王珏峰 / Wang Juefeng',
-    zh: '王珏峰 / Wang Juefeng',
+    zh: '王珏峰',
     en: 'Juefeng Wang'
   },
 
