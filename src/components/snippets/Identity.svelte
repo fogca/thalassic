@@ -178,4 +178,9 @@ svg {
     height: auto;
 }
 
+
+@media screen and (max-width: 834px) {
+  svg {width: 100%;}
+}
+
   </style>

@@ -140,7 +140,7 @@
   </section>
 
   <section class="bodyLayout aboutRecruit" id="Recruitment">
-    <hr>
+    <hr class="pc">
     <h3 class="h1 white" lang="en">Recruitment</h3>
     <div class="wrap">
       <h4 class="h0 white" lang="en">Join Our Team!
@@ -334,13 +334,18 @@
 
 
 @media screen and (max-width: 834px) {
-
-
   
   .aboutCompany {margin-top: 100px;}
   .aboutCompany .wrapper {margin-top: 20px;}
   .aboutCompany .wrapper .wrap .container .h5 {font-size: 14px;}
 
+  .aboutRecruit {margin-top: 100px;}
+  .aboutRecruit h3.h1 {font-size: 18px;}
+  .aboutRecruit .wrap {margin-top: 20px;}
+  #Recruitment .wrap h4 {margin-bottom: 20px;}
+  #Recruitment .wrap h4 img {width: 35px;}
+
+  #Recruitment img.character {top: -55px;}
 }
 
 

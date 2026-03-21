@@ -49,7 +49,7 @@
     height: 80%;
     width: 60%;
     background-color: #8ac5db;
-    background-color: #2a95ff;
+    background-color: #19a7ff;
     top: -10%;
     right: 0%;
     animation-delay: .8s;
@@ -69,7 +69,7 @@
     height: 50%;
     width: 75%;
     background-color: #f1af9b;
-    background-color: #a6f2ff;
+    background-color: #92befc;
     bottom: -10%;
     left: -50%;
     animation-delay: 1.2s;
