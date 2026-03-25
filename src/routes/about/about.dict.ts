@@ -72,9 +72,9 @@ export const dict = {
     en: 'Capital'
   },
   firm_capital: {
-    ja: '47,300,000円',
-    zh: '47,300,000円',
-    en: '47,300,000 JPY'
+    ja: '90,750,000円',
+    zh: '90,750,000円',
+    en: '90,750,000 JPY'
   },
   representative_heading: {
     ja: '代表取締役',
