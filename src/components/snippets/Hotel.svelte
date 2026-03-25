@@ -6,7 +6,7 @@
         name: 'Nagoya Kamejima',
         description: 'ホテルの簡単紹介1',
         image: '/images/hotel-accommodation_01.webp',
-        link: 'https://www.airbnb.jp/rooms/18603174?viralityEntryPoint=1&s=76'
+        link: 'https://www.airbnb.jp/rooms/1354754710759878224'
       },
       {
         name: 'Nagoya Castle I',
@@ -31,7 +31,7 @@
   
   <div class="Hotel">
     {#each hotels as hotel}
-      <a href={hotel.link} class="container" aria-label={hotel.name}>
+      <a href={hotel.link} class="container" aria-label={hotel.name} target="_blank">
         <img src={hotel.image} alt={hotel.name} />
         <div class="contents">
           <div class="">
