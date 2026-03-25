@@ -87,6 +87,33 @@ export const dict = {
     en: 'Juefeng Wang'
   },
 
+  
+  recruit_career_heading: {
+    ja: '募集要項',
+    zh: '招聘要求',
+    en: 'Recruitment Requirements'
+  },
+  recruit_career_title: {
+    ja: '募集人材',
+    zh: '招聘人才',
+    en: 'Recruitment Requirements'
+  },
+  recruit_career_1: {
+    ja: '不動産営業',
+    zh: '房地产销售',
+    en: 'Real estate sales'
+  },
+  recruit_career_2: {
+    ja: '不動産管理',
+    zh: '房地产管理',
+    en: 'Real estate management'
+  },
+  recruit_career_3: {
+    ja: 'SNS・コンテンツクリエイター',
+    zh: 'SNS・内容创作者',
+    en: 'SNS & Content Creator'
+  },
+
 
 
 

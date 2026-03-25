@@ -158,10 +158,10 @@
 
       <img src="/images/about-character_05.png" class="character" alt="">
       
-      <h5 class="h3">募集要項</h5>
+      <h5 class="h3 white">{@html t('recruit_career_heading', $lang)}</h5>
       <div class="container">
-        <div class="h6 half"><br>募集人材</div>
-        <div class="h3">不動産営業<br>不動産管理<br>SNS・コンテンツクリエイター</div>
+        <div class="h6 half white"><br>{@html t('recruit_career_title', $lang)}</div>
+        <div class="h3 white">{@html t('recruit_career_1', $lang)}<br>{@html t('recruit_career_2', $lang)}<br>{@html t('recruit_career_3', $lang)}</div>
       </div>
 
       <div class="container">
@@ -187,7 +187,7 @@
     </div>
 
     <div class="container aboutList" style="display: none;">
-      <h5 class="h3">01. 不動産営業</h5>
+      <h5 class="h3">01. {@html t('recruit_career_1', $lang)}</h5>
       <div class="container">
         <p><br>不動産営業職<br>
           投資用・居住用不動産の売買仲介および販売戦略の立案・実行、顧客への提案書作成、プレゼンテーション、交渉、契約業務、物件調査、価格査定、販売資料の作成、契約後フォロー
@@ -200,7 +200,7 @@
     </div>
 
     <div class="container aboutList"  style="display: none;">
-      <h5 class="h3">02. 不動産管理</h5>
+      <h5 class="h3">02. {@html t('recruit_career_2', $lang)}</h5>
       <div class="container">
         <p><br>不動産営業職<br>
           投資用・居住用不動産の売買仲介および販売戦略の立案・実行、顧客への提案書作成、プレゼンテーション、交渉、契約業務、物件調査、価格査定、販売資料の作成、契約後フォロー
@@ -213,7 +213,7 @@
     </div>
 
     <div class="container aboutList" style="display: none;">
-      <h5 class="h3">03. SNS・コンテンツクリエイター</h5>
+      <h5 class="h3">03. {@html t('recruit_career_3', $lang)}</h5>
       <div class="container">
         <p><br>不動産営業職<br>
           投資用・居住用不動産の売買仲介および販売戦略の立案・実行、顧客への提案書作成、プレゼンテーション、交渉、契約業務、物件調査、価格査定、販売資料の作成、契約後フォロー
