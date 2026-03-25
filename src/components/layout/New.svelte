@@ -290,12 +290,17 @@
     }
     
     .hero-title p {
-        font-size: 12px;
+        font-size: 16px;
         letter-spacing: 0.05em;
       opacity: 0;
       transform: translateY(10px);
     }
-  
+
+    @media screen and (max-width: 834px) {
+    .hero-title p {
+        font-size: 13px;
+    }
+    }
 
     /* ============================================================
        OPオーバーレイ

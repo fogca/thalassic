@@ -465,6 +465,7 @@
 svg {
     width: 38vw;
     height: auto;
+    max-height: 500px;
 }
 
 
