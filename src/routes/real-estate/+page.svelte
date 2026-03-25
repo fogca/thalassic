@@ -192,7 +192,7 @@
       </div>
       <div class="container">
         <h2 lang="en" class="h2 mb-20">Perth</h2>
-        <img class="" src="/images/recruit_01.jpg" alt="" loading="eager" decoding="async" />   
+        <img class="" src="/images/global_2.jpg" alt="" loading="eager" decoding="async" />   
         <h3 class="h4 mt-20 mb-10" lang="en">Growth & Income Market</h3>
         <p>{@html t('city2', $lang)}</p>
       </div>
