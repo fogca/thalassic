@@ -284,8 +284,7 @@
     
     .serif {
         font-size: 18px;
-        font-family: "FOT-筑紫Aオールド明朝 Pr6 M", "TsukuAOldMinPr6-M", TsukuAOldMinPr6-M, "fot-tsukuaoldmin-pr6n", serif;
-        font-weight: 300;
+        font-family: TsukuAOldMinPr6-M, 'TsukuAOldMinPr6-M', serif;
         font-style: normal;
     }
 
@@ -453,5 +452,13 @@
       margin-top: 0.5em;
       font-size: clamp(0.875rem, 2vw, 1rem);
       font-weight: 300;
+    }
+
+
+    @media screen and (max-width: 834px) {
+
+      .l-Contents .heading h5 {font-size: 18px;}
+      .l-Contents .container p {font-size: 15px;}
+
     }
   </style>
