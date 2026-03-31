@@ -192,7 +192,7 @@
         <div class="texts-container">
           <div></div>
           <div>
-            <h1 class="h2 hero__title uppercase" lang="en">Woven with<br>local soul.</h1>
+            <h1 class="h2 hero__title uppercase white" lang="en">Woven with<br>local soul.</h1>
             <h2 class="h5 hero__subtitle">{@html t('heading', $lang)}</h2>
           </div>
           
@@ -203,7 +203,7 @@
       <section class="serviceBody mt-200">
         <div class="l-Contents">
           <div class="heading">
-            <h2 class="h3" lang="en">Hotel<br>Business</h2>
+            <h2 class="h3 white" lang="en">Hotel<br>Business</h2>
             <h5>ホテル事業に関して</h5>
           </div>
           <div class="container">
@@ -215,7 +215,7 @@
       <section class="serviceBody">
         <div class="l-Contents">
           <div class="heading">
-            <h2 class="h3" lang="en">What is<br>Mokuseki</h2>
+            <h2 class="h3 white" lang="en">What is<br>Mokuseki</h2>
             <h5>The Philosophy of “Wood and Stone”</h5>
           </div>
           <div class="container">
