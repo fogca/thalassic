@@ -272,15 +272,15 @@
     .hero-title .line {
       display: flex;
       justify-content: center;
-      gap: 0.3em;
+      gap: 0.15em;
       overflow: hidden;
-      padding-bottom: 0.1em;
+      padding-bottom: 0;
     }
     
     .hero-title .word {
       display: inline-block;
       overflow: hidden;
-      padding-bottom: 0.1em;
+      padding-bottom: 0;
     }
     
     .hero-title .char {

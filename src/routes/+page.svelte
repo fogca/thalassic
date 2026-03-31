@@ -3,7 +3,7 @@ import Link from "../components/snippets/Link.svelte"
 import Top from "../components/layout/Top.svelte"
 import New from "../components/layout/New.svelte"
 import Hotel from "../components/snippets/Hotel.svelte"
-
+import Orbit from "../components/snippets/Orbit.svelte"
   import { t } from './top.dict';
   import { t as tNumber } from './topNumber.dict';
   import { lang } from '$lib/utils/lang';
@@ -15,7 +15,7 @@ import Hotel from "../components/snippets/Hotel.svelte"
   <Top />
 
   <section class="TopNumber my-80">
-    <div class="wrapper">
+    <div class="wrapper" data-animate="fade-stagger">
       <div class="container">
         <p class="body">{tNumber('item1Body', $lang)}</p>
         <span class="title sans" lang="en">120+</span>
@@ -42,6 +42,8 @@ import Hotel from "../components/snippets/Hotel.svelte"
       </div>
     </div>
   </section>
+
+  <Orbit />
 
 
 

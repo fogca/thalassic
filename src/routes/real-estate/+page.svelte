@@ -39,7 +39,7 @@
       <div></div>
 
       <div>
-        <h1 class="h2 hero__title uppercase" lang="en">
+        <h1 class="h2 hero__title uppercase" lang="en" data-animate="text-reveal">
           BUILDING LASTING <br class="sp">VALUE <br class="pc">THROUGH <br class="sp">REAL ESTATE
         </h1>
         <h2 class="h5 hero__subtitle sans">{@html t('heading', $lang)}</h2>

@@ -1,6 +1,7 @@
 <script>
     import { onMount } from 'svelte';
     import gsap from 'gsap';
+    import Gradation from "../snippets/Gradation.svelte";
     
     let container;
     let logo;
@@ -52,12 +53,9 @@
   
   {#if showAnimation}
     <div class="opening-container" bind:this={container}>
-      <div class="gradation">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
+    <div class="fixedGrad">
+      <Gradation />
+    </div>
   
       <div class="logo" bind:this={logo}>
         <svg xmlns="http://www.w3.org/2000/svg" width="289.226" height="24.768" viewBox="0 0 289.226 24.768">

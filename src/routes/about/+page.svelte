@@ -24,9 +24,9 @@
     <div class="texts-container">
       <div></div>
       <div>
-        <h1 class="h4 white" lang="en">About Us</h1>
-        <h2 class="h1 hero__title white" lang="en">Creating Value<br>that Endures</h2>
-        <h3 class="h5 hero__subtitle white mt-10">{@html t('heading', $lang)}</h3>
+        <h1 class="h5 white" lang="en" data-animate="fade-up">About Us</h1>
+        <h2 class="h1 hero__title white mb-20 mt-40" lang="en" data-animate="fade-up">Creating Value<br>that Endures</h2>
+        <h3 class="h5 hero__subtitle white mt-10" data-animate="fade-up">{@html t('heading', $lang)}</h3>
       </div>
       
     </div>
@@ -41,7 +41,7 @@
 
     
     <div class="wrapper">
-      <p class="mb-40">{@html t('about', $lang)}</p>
+      <p class="mb-40" data-animate="fade-up">{@html t('about', $lang)}</p>
       <Identity />
     </div>
 
@@ -80,10 +80,10 @@
   </section>
 
   <section class="bodyLayout aboutCompany aboutList">
-    <h3 class="h1 white" lang="en">Company Profile</h3>
+    <h3 class="h1 white" lang="en" data-animate="fade-up">Company Profile</h3>
 
     <div class="wrapper">
-      <div class="wrap">
+      <div class="wrap" data-animate="fade-stagger">
         <div class="container">
           <div class="h6 white">{t('firm_heading', $lang)}</div>
           <div class="h5 white">{t('firm_main', $lang)}</div>
@@ -107,7 +107,7 @@
 
       </div>
 
-      <div class="wrap">
+      <div class="wrap" data-animate="fade-stagger">
         <h3 class="h5">{@html t('subsidiary1_heading', $lang)}</h3>
         <div class="container">
           <div class="h6 white">{t('firm_heading', $lang)}</div>
@@ -119,7 +119,7 @@
         </div>
       </div>
 
-      <div class="wrap">
+      <div class="wrap" data-animate="fade-stagger">
         <h3 class="h5">{@html t('subsidiary2_heading', $lang)}</h3>
         <div class="container">
           <div class="h6 white">{t('firm_heading', $lang)}</div>
@@ -131,25 +131,27 @@
         </div>
       </div>
 
+      <div class="mt-80">
+        <h3 class="h2 white mb-20" lang="en">Our Belief</h3>
+        <img src="/images/about-logo.png" alt="">
+        <p class="white mt-20">{@html t('logo_belief', $lang)}</p>
+      </div>
       
-
-      
-
     </div>
     
   </section>
 
   <section class="bodyLayout aboutRecruit" id="Recruitment">
-    <hr class="pc">
-    <h3 class="h1 white" lang="en">Recruitment</h3>
-    <div class="wrap">
+    
+    <h3 class="h1 white" lang="en" data-animate="fade-up">Recruitment</h3>
+    <div class="wrap" data-animate="fade-stagger">
       <h4 class="h0 white" lang="en">Join Our Team!
         <img src="/images/about-character_01.png" class="" alt="">
         <img src="/images/about-character_02.png" class="" alt="">
         <img src="/images/about-character_03.png" class="" alt="">
         <img src="/images/about-character_04.png" class="" alt="">
       </h4>
-      <p>{@html t('recruit', $lang)}</p>
+      <p data-animate="fade-up">{@html t('recruit', $lang)}</p>
     </div>
 
     
@@ -356,6 +358,11 @@
 
 @media screen and (min-width: 960px) {
 
+
+  #About .topLayout h2.h1 {
+    font-size: clamp(28px, 4vw, 64px);
+    line-height: 1.2;
+  }
   .aboutValue .wrapper,
   .aboutCompany .wrapper {
     width: 45%;

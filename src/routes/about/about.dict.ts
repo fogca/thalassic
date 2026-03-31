@@ -86,6 +86,11 @@ export const dict = {
     zh: '王珏峰',
     en: 'Juefeng Wang'
   },
+  logo_belief: {
+    ja: 'シンボルロゴは、私たちのアイデンティティである大海原を航海するアイコンであると同時に、「三方よし」の精神を表しています。近江商人の経営哲学である「三方よし」は、売り手・買い手・世間（地域社会）の三者すべてが満足する、持続可能なビジネスモデルの原点です。私たちは短期的な利益追求ではなく、長期的な信頼関係の構築を重視し、関わるすべての人々、そして地域と共に未来へ続く価値を創造することを目指します。',
+    zh: '我们的标志既代表着航行于广阔海洋的船只——这是我们的核心身份认同，同时也体现了"三方共赢"的理念。"三方共赢"源于近江商人的经营哲学，是一种让卖方、买方与社会三方共同受益的可持续商业模式的原点。我们不追求短期利益，而是重视建立长期信赖关系，致力于与所有利益相关方及地区社会共同创造面向未来的持久价值。',
+    en: 'Our symbol logo represents both a vessel navigating the vast ocean—core to our identity—and the philosophy of "Sanpo-yoshi" (three-way satisfaction). Rooted in the business philosophy of Omi merchants, Sanpo-yoshi embodies a sustainable model where seller, buyer, and society all benefit. Rather than pursuing short-term profit, we prioritize building long-term trust and creating enduring value together with all stakeholders and the communities we serve.'
+  },
 
   
   recruit_career_heading: {

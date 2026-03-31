@@ -10,9 +10,9 @@
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 	import Lenis from '@studio-freight/lenis';
 
-	import PageTransition from '../components/utilities/PageTransition.svelte';
+	import PageTransition from '../components/utilities/PageRouting.svelte';
 	import CustomCursor from '../components/snippets/CustomCursor.svelte';
-	import OpeningAnimation from '../components/utilities/OpeningAnimation.svelte';
+	import ScrollAnimations from '../components/utilities/ScrollAnimations.svelte';
 	import LangFontManager from '../components/utilities/LangFontManager.svelte';
 
 	let { children } = $props();
@@ -108,7 +108,7 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
-	<link rel="stylesheet" href="../css/base.css?var=1.21">
+	<link rel="stylesheet" href="../css/base.css?var=1.22">
 	<link rel="stylesheet" href="../css/layout.css?var=1.16">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
@@ -137,16 +137,16 @@
 -->
 
 <div class="main">
-<OpeningAnimation />
 
+<PageTransition columns={8} color="#00268D" />
 <LangFontManager />
 <CustomCursor />
+<ScrollAnimations />
 
-<PageTransition>
 <Header />
 {@render children()}
 <Footer />
-</PageTransition>
+
 
 </div>
 

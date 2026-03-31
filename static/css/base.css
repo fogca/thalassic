@@ -58,7 +58,7 @@
     --heading-font: "Marcellus", NeueHaasUnicaPro-Regular, "Neue Haas Unica W1G", system-ui, sans-serif;
        --text-font: "TTCR", NeueHaasUnicaPro-Regular, "Neue Haas Unica W1G", system-ui, sans-serif;
        font-weight: 400;
-       letter-spacing: 0.05em;
+       letter-spacing: 0.035em;
        -webkit-text-stroke: calc(0.1px + 0.01em) var(--textColor);
        text-transform: uppercase;
   }
@@ -251,7 +251,7 @@ main {margin: auto;}
 @media screen and (min-width: 720px) {
     html {font-size: 62.5%;}
     :root {
-        --h1-font-size: 36px;
+        --h1-font-size: 46px;
         --h2-font-size: 28px;
         --h3-font-size: 21.5px;
         --h4-font-size: 18px;

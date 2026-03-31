@@ -3,10 +3,11 @@
     import Links from "../snippets/pageLinks.svelte";
     import Link from "../snippets/Link.svelte";
     import Icons from "../snippets/Icons.svelte";
-
+    import Gradation from "../snippets/Gradation.svelte";
     import { page } from '$app/stores';
     import { lang } from '$lib/utils/lang';
     import { t } from './Header.dict';
+
   
   $: isAboutPage = $page.url.pathname === '/about';
 
@@ -29,11 +30,8 @@
             </div>
         </div>
         <div class="container">
-            <div class="gradation">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
+            <div class="gradation-wrapper">
+                <Gradation />
             </div>
             <div class="contents white">
                 <p class="h6 bold center white">{t('footerAbout', $lang)}</p>
@@ -198,7 +196,7 @@
 
 
 
-    .gradation {
+    .gradation-wrapper {
     width: 100%;
     height: 50vh;
     position: relative;
@@ -209,11 +207,8 @@
     bottom: 0;
     overflow: hidden;
     }
-    .gradation div {
-        position: absolute;
-        border-radius: 50%;
-        animation: gradient 4s infinite;
-    }   
+    footer .gradation-wrapper :global(.gradation) {width: 100%; height: 100%;}
+
 
 
 
