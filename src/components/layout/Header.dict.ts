@@ -7,7 +7,7 @@ export const dict = {
     en: 'Real Estate'
   },
   hotel: {
-    ja: '宿泊事業',
+    ja: 'ホテル事業',
     zh: '住宿业务',
     en: 'Hotel'
   },

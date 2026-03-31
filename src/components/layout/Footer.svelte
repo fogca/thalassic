@@ -54,19 +54,19 @@
         <a href="/contact" lang="en" class="h5">Contact Form</a>
     </div>
     <div class="right">
-        <h5 class="h5" lang="en"></h5>
+        
         <div class="menu">
             <ul>
-                <li class="container"><a class="h2" lang="en" href="/real-estate">Real Estate</a></li>
+                <li class="container"><a class="h2" href="/real-estate">{t('realestate', $lang)}</a></li>
                 
             </ul>
             <ul>
-                <li class="container"><a class="h2" lang="en" href="/hotel">Hotel</a></li>
-                <li class="container"><a class="h2" lang="en" href="/about">About</a></li>
+                <li class="container"><a class="h2" href="/hotel">{t('hotel', $lang)}</a></li>
+                <li class="container"><a class="h2" href="/about">{t('about', $lang)}</a></li>
             </ul>
             <ul>
-                <li class="container"><a class="h2" lang="en" href="/about#recruit">Recruitment</a></li>
-                <li class="container"><a class="h2" lang="en" href="/contact">Contact</a></li>
+                <li class="container"><a class="h2" href="/about#recruit">{t('recruit', $lang)}</a></li>
+                <li class="container"><a class="h2" href="/contact">{t('contact', $lang)}</a></li>
             </ul>
         </div>
         <div class="icons">

@@ -1,33 +1,50 @@
+<script>
+
+import { lang } from '$lib/utils/lang';
+import { t } from '../layout/Header.dict';
+
+</script>
+
 <ul class="wrapper">
     <li class="container">
         <a href="/real-estate">
             <div class="h1" lang="en">Real Estate</div>
-            <span class="h4">不動産</span>
+            {#if $lang !== 'en'}
+                <span class="h4">{t('realestate', $lang)}</span>
+            {/if}
         </a>
     </li>
     <li class="container">
         <a href="/hotel">
             <div class="h1" lang="en">Hotel</div>
-            <span class="h4">ホテル</span>
+            {#if $lang !== 'en'}
+                <span class="h4">{t('hotel', $lang)}</span>
+            {/if}
         </a>
     </li>
     <li class="container">
         <a href="/about">
             <div class="h1" lang="en">About Us</div>
-            <span class="h4">会社概要</span>
+            {#if $lang !== 'en'}
+                <span class="h4">{t('about', $lang)}</span>
+            {/if}
         </a>
     </li>
     <li class="container">
         <a href="/about#recruitment">
             <div class="h1" lang="en">Recruitment</div>
-            <span class="h4">採用に関して</span>
+            {#if $lang !== 'en'}
+                <span class="h4">{t('recruit', $lang)}</span>
+            {/if}
         </a>
     </li>
 
     <li class="container">
         <a href="/contact">
             <div class="h1" lang="en">Contact</div>
-            <span class="h4">お問い合わせ</span>
+            {#if $lang !== 'en'}
+                <span class="h4">{t('contact', $lang)}</span>
+            {/if}
         </a>
     </li>
 </ul>
