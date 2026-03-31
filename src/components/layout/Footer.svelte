@@ -58,7 +58,7 @@
         <div class="menu">
             <ul>
                 <li class="container"><a class="h2" lang="en" href="/real-estate">Real Estate</a></li>
-                <li class="container"><a class="h2" lang="en" href="/real-estate#international">International</a></li>
+                
             </ul>
             <ul>
                 <li class="container"><a class="h2" lang="en" href="/hotel">Hotel</a></li>

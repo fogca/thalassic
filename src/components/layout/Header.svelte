@@ -192,11 +192,12 @@ top: 0px;
 right: 0;
 width: 100vw;
 height: calc(100vh - 50px);
+height: calc(100dvh - 50px);
 background: white;
 display: flex;
 flex-direction: column;
 justify-content: space-between;
-padding: 40px var(--padding) 30px;
+padding: 60px var(--padding) 45px;
 transform: translateX(100%);
 transition: transform 0.3s ease;
 }

@@ -72,9 +72,9 @@ export const dict = {
     en: 'Capital'
   },
   firm_capital: {
-    ja: '90,750,000円',
-    zh: '90,750,000円',
-    en: '90,750,000 JPY'
+    ja: '77,150,000円',
+    zh: '77,150,000円',
+    en: '77,150,000 JPY'
   },
   representative_heading: {
     ja: '代表取締役',
@@ -95,7 +95,7 @@ export const dict = {
   
   recruit_career_heading: {
     ja: '募集要項',
-    zh: '招聘要求',
+    zh: '招聘内容',
     en: 'Recruitment Requirements'
   },
   recruit_career_title: {
@@ -119,6 +119,17 @@ export const dict = {
     en: 'SNS & Content Creator'
   },
 
+
+  company_profile_heading: {
+    ja: '会社概要',
+    zh: '公司简介',
+    en: ''
+  },
+  recruit_heading: {
+    ja: '採用に関して',
+    zh: '招聘信息',
+    en: ''
+  },
 
 
 

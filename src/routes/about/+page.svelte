@@ -81,7 +81,7 @@
 
   <section class="bodyLayout aboutCompany aboutList">
     <h3 class="h1 white" lang="en" data-animate="fade-up">Company Profile</h3>
-
+    <h4 class="h5 white mt-10" data-animate="fade-up">{@html t('company_profile_heading', $lang)}</h4>
     <div class="wrapper">
       <div class="wrap" data-animate="fade-stagger">
         <div class="container">
@@ -144,6 +144,7 @@
   <section class="bodyLayout aboutRecruit" id="Recruitment">
     
     <h3 class="h1 white" lang="en" data-animate="fade-up">Recruitment</h3>
+    <h4 class="h5 white mt-10" data-animate="fade-up">{@html t('recruit_heading', $lang)}</h4>
     <div class="wrap" data-animate="fade-stagger">
       <h4 class="h0 white" lang="en">Join Our Team!
         <img src="/images/about-character_01.png" class="" alt="">
