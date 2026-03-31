@@ -2,8 +2,8 @@ import type { Lang } from '$lib/utils/lang';
 
 export const dict = {
   heading: {
-    ja: '土地が持つ文化と<br>物語を形にし、<br>「暮らすように泊まる」<br>滞在体験を<br>お届けする。',
-    zh: '带着这里的空气和文化，<br class="sp">像住在这里一样去生活。<br>给你一段能留下记忆的旅行体验。',
+    ja: 'その土地が持つ文化と<br>物語を形にし、<br>「暮らすように泊まる」<br>滞在体験をお届けする。',
+    zh: '将土地的文化<br>与故事具象化，<br>提供"像生活一样住宿"的<br>入住体验。',
     en: 'Drive global expansion <br>through strategic investments that <br>open new fields of opportunity.'
   },
   sub: {
