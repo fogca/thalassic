@@ -13,6 +13,12 @@ import { onMount } from 'svelte';
 
 let opens = false;
 
+const langLabel = (l: 'ja' | 'zh' | 'en') => {
+  if (l === 'ja') return '日本語';
+  if (l === 'zh') return '中文';
+  return 'English';
+};
+
 function select(newLang) {
   lang.set(newLang); // This saves to localStorage
   opens = false;
@@ -49,15 +55,15 @@ const toggle = () => (open = !open);
                       <div class="lang-switch">
                           <!-- toggle button -->
                           <button class="current" on:click={() => (opens = !opens)}>
-                            <span>{$lang.toUpperCase()}</span>
+                            <span>{langLabel($lang)}</span>
                             <span class="arrow" class:open={opens}>▾</span>
                           </button>
                         
                           {#if opens}
                             <div class="dropdown">
-                              <button class="item" on:click={() => select('ja')}>JP</button>
-                              <button class="item" on:click={() => select('zh')}>ZH</button>
-                              <button class="item" on:click={() => select('en')}>EN</button>
+                              <button class="item" on:click={() => select('ja')}>日本語</button>
+                              <button class="item" on:click={() => select('zh')}>中文</button>
+                              <button class="item" on:click={() => select('en')}>English</button>
                             </div>
                           {/if}
                         </div>
