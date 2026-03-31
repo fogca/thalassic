@@ -128,7 +128,7 @@
 -->
 
 <div class="main">
-
+<LangFontManager />
 <PageTransition columns={8} color="#00268D" />
 <CustomCursor />
 <ScrollAnimations />
