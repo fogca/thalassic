@@ -2,7 +2,7 @@ import type { Lang } from '$lib/utils/lang';
 
 export const dict = {
   heading: {
-    ja: '土地が持つ文化と<br>物語を形にし、<br>「暮らすように泊まる」<br>そんな滞在体験を<br>お届けします。',
+    ja: '土地が持つ文化と<br>物語を形にし、<br>「暮らすように泊まる」<br>滞在体験を<br>お届けする。',
     zh: '带着这里的空气和文化，<br class="sp">像住在这里一样去生活。<br>给你一段能留下记忆的旅行体验。',
     en: 'Drive global expansion <br>through strategic investments that <br>open new fields of opportunity.'
   },

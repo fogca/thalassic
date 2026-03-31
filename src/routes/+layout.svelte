@@ -140,7 +140,6 @@
 <div class="main">
 
 <PageTransition columns={8} color="#00268D" />
-<LangFontManager />
 <CustomCursor />
 <ScrollAnimations />
 
