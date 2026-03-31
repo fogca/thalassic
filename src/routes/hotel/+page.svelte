@@ -203,8 +203,8 @@
       <section class="serviceBody mt-200">
         <div class="l-Contents">
           <div class="heading">
-            <h2 class="h3" lang="en">CONCEPT<br>PHILOSOPHY</h2>
-            <h5>フィロソフィー</h5>
+            <h2 class="h3" lang="en">Hotel<br>Business</h2>
+            <h5>ホテル事業に関して</h5>
           </div>
           <div class="container">
             <p class="serif">{@html t('concept', $lang)}</p>
