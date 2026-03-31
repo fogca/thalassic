@@ -185,16 +185,20 @@
 
     <div class="city">
       <div class="container">
-        <h2 lang="en" class="h2 mb-20">Sydney</h2>
-        <img class="" src="/images/global_1.png" alt="" loading="eager" decoding="async" />     
-        <h3 class="h4 mt-20 mb-10" lang="en">Core Long-Term Market</h3>
-        <p>{@html t('city1', $lang)}</p>
+        <h2 lang="en" class="h2 mb-5">Sydney</h2>
+        <span class="h5">{t('sydney', $lang)}</span>
+        <img class="mt-20" src="/images/global_1.png" alt="" loading="eager" decoding="async" />     
+        <h3 class="h4 mt-20 mb-5" lang="en">Core Long-Term Market</h3>
+        <span class="h5">{t('market1', $lang)}</span>
+        <p class="mt-10">{@html t('city1', $lang)}</p>
       </div>
       <div class="container">
-        <h2 lang="en" class="h2 mb-20">Perth</h2>
-        <img class="" src="/images/global_2.jpg" alt="" loading="eager" decoding="async" />   
-        <h3 class="h4 mt-20 mb-10" lang="en">Growth & Income Market</h3>
-        <p>{@html t('city2', $lang)}</p>
+        <h2 lang="en" class="h2 mb-5">Perth</h2>
+        <span class="h5">{t('perth', $lang)}</span>
+        <img class="mt-20" src="/images/global_2.jpg" alt="" loading="eager" decoding="async" />   
+        <h3 class="h4 mt-20 mb-5" lang="en">Growth & Income Market</h3>
+        <span class="h5">{t('market2', $lang)}</span>
+        <p class="mt-10">{@html t('city2', $lang)}</p>
       </div>
     </div>
 

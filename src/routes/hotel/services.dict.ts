@@ -2,7 +2,7 @@ import type { Lang } from '$lib/utils/lang';
 
 export const dict = {
   heading: {
-    ja: '空気と文化を纏い、暮らすように泊まる。<br>旅の記憶になる滞在体験をお届けする。',
+    ja: '土地が持つ文化と<br>物語を形にし、<br>「暮らすように泊まる」<br>そんな滞在体験を<br>お届けします。',
     zh: '带着这里的空气和文化，<br class="sp">像住在这里一样去生活。<br>给你一段能留下记忆的旅行体验。',
     en: 'Drive global expansion <br>through strategic investments that <br>open new fields of opportunity.'
   },
@@ -13,7 +13,7 @@ export const dict = {
   },
   concept: {
     ja: 'サラシックキャピタルは、ホスピタリティ事業の一環として、名古屋を中心に宿泊施設を運営しています。都市型ホテルとして、地域の文化と素材を活かした空間設計と地域に根ざした運営モデルを実践。不動産投資と事業運営の両面から、持続可能な宿泊事業の開発を推進しています。単なる宿泊提供ではなく、地域価値の再発見と長期的な資産価値向上を目指した事業展開を行っています。今後は名古屋での実績を基盤に、日本国内のさまざまな地域へと展開を進め、それぞれの土地が持つ固有の文化と物語を形にし、お客様に届けてまいります。',
-    zh: '静静品味名古屋气息的住宿体验。<br>以木与石的静谧和谐为基调，<br>打造一场重新发现名古屋<br>这座城市文化与感性的旅居。<br><br>源于日本传统技艺与匠人精神的<br>"木石"理念，珍视材质本身的美感，<br>以及留白所带来的宁静。<br>以此感性为基础，<br>设计一处能够感受名古屋人文生活的空间。<br><br>静静地、深深地品味<br>这片土地的故事与材质的温度。<br>享受当地风土的<br>全新旅居方式。',
+    zh: '我们资本作为酒店业务的一部分，以名古屋为中心运营住宿设施。作为城市型酒店，我们实践融合地区文化与素材的空间设计，以及扎根当地的运营模式。从房地产投资和业务运营两个层面，推进可持续住宿事业的开发。我们的事业不仅仅是提供住宿，更旨在重新发现地区价值并提升长期资产价值。今后，我们将以名古屋的实践为基础，向日本各地拓展业务，将每个地区独有的文化与故事转化为具体体验，呈献给客人。',
     en: 'Thalassic Capital operates accommodation facilities centered in Nagoya as part of our hospitality business. As an urban hotel, we integrate regional culture and materials into spatial design and implement community-rooted operational models. From both real estate investment and operational perspectives, we advance sustainable accommodation development. Our approach goes beyond lodging provision—we aim to rediscover regional value and enhance long-term asset performance. Building on our Nagoya foundation, we plan to expand across diverse regions in Japan, translating each locale unique culture and story into tangible experiences for our guests.'
   },
   mokuseki: {
@@ -30,6 +30,16 @@ export const dict = {
     ja: '当社は収益最大化を目指し、物件管理から事業承継に至るまでをワンストップでサポートいたします。収益物件の安定した運営を実現するため、中長期的な視点からご提案を行います。オーナー様にとって大きな課題である「資産価値の維持・向上」や「空室対策」についても、競合物件や周辺環境の変化を専門的に調査し、収益向上を支援するとともに、次世代への円滑な承継を実現します。',
     zh: '我们以实现资产收益最大化为目标，提供从物业管理到事业承继的一站式服务。<br>为了确保收益型不动产的稳定运营，我们基于中长期视角提出专业建议，并深入分析竞争物业与周边环境的变化。<br><br>我们协助业主维护与提升资产价值、解决空置问题、提高收益，并实现不动产向下一代的顺利承继。',
     en: 'We provide comprehensive, one-stop support for property owners—from asset management to business succession—aimed at maximizing long-term income. Our team offers mid- to long-term strategies to ensure stable operation of income-producing properties, including expert analysis of market competition and local trends. <br><br> We help owners maintain and enhance asset value, address vacancy challenges, improve profitability, and ensure a smooth transition of real estate assets to the next generation.'
+  },
+  business: {
+    ja: 'ホテル事業に関して',
+    zh: '酒店业务',
+    en: 'Hotel Business'
+  },
+  philosophy: {
+    ja: '木石という思想',
+    zh: '木石思想',
+    en: 'The Philosophy of "Wood and Stone"'
   }
   
 };

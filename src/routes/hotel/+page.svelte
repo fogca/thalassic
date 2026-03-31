@@ -193,7 +193,7 @@
           <div></div>
           <div>
             <h1 class="h2 hero__title uppercase white" lang="en">Woven with<br>local soul.</h1>
-            <h2 class="h5 hero__subtitle">{@html t('heading', $lang)}</h2>
+            <h2 class="h5 hero__subtitle serif vertical">{@html t('heading', $lang)}</h2>
           </div>
           
         </div>
@@ -203,8 +203,8 @@
       <section class="serviceBody mt-200">
         <div class="l-Contents">
           <div class="heading">
-            <h2 class="h3 white" lang="en">Hotel<br>Business</h2>
-            <h5>ホテル事業に関して</h5>
+            <h2 class="h3 white mb-10" lang="en">Hotel<br>Business</h2>
+            <h5 class="serif">{t('business', $lang)}</h5>
           </div>
           <div class="container">
             <p class="serif">{@html t('concept', $lang)}</p>
@@ -215,8 +215,8 @@
       <section class="serviceBody">
         <div class="l-Contents">
           <div class="heading">
-            <h2 class="h3 white" lang="en">What is<br>Mokuseki</h2>
-            <h5>The Philosophy of “Wood and Stone”</h5>
+            <h2 class="h3 white mb-10" lang="en">What is<br>Mokuseki</h2>
+            <h5 class="serif">{t('philosophy', $lang)}</h5>
           </div>
           <div class="container">
             <p class="serif">{@html t('mokuseki', $lang)}</p>
@@ -277,15 +277,20 @@
     .content * { color: white; }
 
     
-
+    .l-Contents .heading h2 {
+      line-height: 1.25;
+      margin-bottom: 10px;}
       
     
     .serif {
         font-size: 18px;
-        font-family: "fot-tsukuaoldmin-pr6n", serif;
+        font-family: "FOT-筑紫Aオールド明朝 Pr6 M", "TsukuAOldMinPr6-M", "fot-tsukuaoldmin-pr6n", serif;
         font-weight: 300;
         font-style: normal;
-        -ms-writing-mode: tb-rl;
+    }
+
+    .vertical {
+      -ms-writing-mode: tb-rl;
         writing-mode: vertical-rl;
         font-feature-settings: "palt" 0;
     }
@@ -296,6 +301,22 @@
         -ms-writing-mode: horizontal-tb;
         writing-mode: horizontal-tb;
         -webkit-text-stroke: 0;
+    }
+
+    :global(.topLayout) .texts-container {
+      height: 100vh;
+      height: 100dvh;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    :global(.topLayout) .texts-container h1 {text-align: center;}
+    :global(.topLayout) .texts-container h2 {
+      font-size: 24px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
 
     .serviceBody p {height: 60vh;}
@@ -341,9 +362,9 @@
       inset: 0;
       background: linear-gradient(
         to bottom,
-        rgba(0, 0, 0, 0.45) 0%,
-        rgba(0, 0, 0, 0.55) 50%,
-        rgba(0, 0, 0, 0.65) 100%
+        rgba(0, 0, 0, 0.6) 0%,
+        rgba(0, 0, 0, 0.75) 50%,
+        rgba(0, 0, 0, 0.9) 100%
       );
       pointer-events: none;
       z-index: 1;

@@ -73,6 +73,27 @@ export const dict = {
     en: ''
   },
 
+  sydney: {
+    ja: 'シドニー',
+    zh: '悉尼',
+    en: ''
+  },
+  perth: {
+    ja: 'パース',
+    zh: '珀斯',
+    en: ''
+  },
+
+  market1: {
+    ja: '',
+    zh: '核心长期市场',
+    en: ''
+  },
+  market2: {
+    ja: '',
+    zh: '成长与收益型市场',
+    en: ''
+  },
 
   
 };
