@@ -284,7 +284,7 @@
     
     .serif {
         font-size: 18px;
-        font-family: "FOT-筑紫Aオールド明朝 Pr6 M", "TsukuAOldMinPr6-M", "fot-tsukuaoldmin-pr6n", serif;
+        font-family: "FOT-筑紫Aオールド明朝 Pr6 M", "TsukuAOldMinPr6-M", TsukuAOldMinPr6-M, "fot-tsukuaoldmin-pr6n", serif;
         font-weight: 300;
         font-style: normal;
     }
@@ -310,7 +310,15 @@
       justify-content: center;
       position: relative;
     }
-    :global(.topLayout) .texts-container h1 {text-align: center;}
+    :global(.topLayout) .texts-container h1 {
+      font-size: 24px;
+    position: absolute;
+    top: auto;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    }
     :global(.topLayout) .texts-container h2 {
       font-size: 24px;
       position: absolute;
