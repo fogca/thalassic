@@ -460,5 +460,13 @@
       .l-Contents .heading h5 {font-size: 18px;}
       .l-Contents .container p {font-size: 15px;}
 
+      .accomodation {padding: 80px var(--padding);padding-bottom: 1px;}
+      
+      :global(.Hotel) {
+        width: 100% !important;
+        margin-left: 0 !important;
+        height: 180vw !important;
+      }
+
     }
   </style>
