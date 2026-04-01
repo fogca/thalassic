@@ -59,14 +59,14 @@
         <div class="menu">
             <ul>
                 <li class="container"><a class="h2" href="/real-estate">{t('realestate', $lang)}</a></li>
-                
-            </ul>
-            <ul>
                 <li class="container"><a class="h2" href="/hotel">{t('hotel', $lang)}</a></li>
-                <li class="container"><a class="h2" href="/about">{t('about', $lang)}</a></li>
             </ul>
             <ul>
+                <li class="container"><a class="h2" href="/about">{t('about', $lang)}</a></li>
                 <li class="container"><a class="h2" href="/about#recruit">{t('recruit', $lang)}</a></li>
+            </ul>
+            <ul>
+                
                 <li class="container"><a class="h2" href="/contact">{t('contact', $lang)}</a></li>
             </ul>
         </div>
