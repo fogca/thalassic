@@ -189,6 +189,9 @@
 		width: 100%;
 		max-width: 600px;
 		aspect-ratio: 1;
+    width: 38vw;
+    height: auto;
+    max-height: 500px;
 	}
 
 	.orbit-svg {

@@ -43,7 +43,7 @@ import Orbit from "../components/snippets/Orbit.svelte"
     </div>
   </section>
 
-  <Orbit />
+
 
 
 

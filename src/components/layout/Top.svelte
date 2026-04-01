@@ -7,6 +7,7 @@ import { t } from './New.dict';
 import { t as tTop } from './Top.dict';
 import Ball from '../snippets/Ball.svelte';
 import Identity from '../snippets/Identity.svelte';
+import Orbit from '../snippets/Orbit.svelte';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -133,7 +134,8 @@ onMount(() => {
       <a class="button white mt-40" href="/about" lang="en">About Us</a>
     </div>
     <div class="container" data-animate="fade-up">
-      <Identity />
+      <Orbit />
+      
       <!--<Ball size={ballSize} />-->
     </div>
   </div>
