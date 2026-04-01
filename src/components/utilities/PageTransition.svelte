@@ -375,68 +375,75 @@
 	  z-index: 1;
 	}
 	
-	/* ✅ Outer Wrapper（縮小対象） */
+
+
+	
 	.outer-wrapper {
-	  position: relative;
-	  width: 100%;
-	  min-height: 100vh;
-	  z-index: 10;
-	  transform-origin: center center;
-	  overflow: hidden; /* ✅ オーバーレイをクリップ */
+		position: relative;
+		width: 100%;
+		min-height: 100vh;
+		min-height: 100dvh; /* ✅ Dynamic viewport height */
+		z-index: 10;
+		transform-origin: center center;
+		overflow: hidden;
+		background: #ffffff; /* ✅ 背景を白に追加 */
 	}
-	
-	/* ✅ 薄いグレーオーバーレイ */
-	.gray-overlay {
-	  position: absolute; /* ✅ absoluteに変更 */
-	  inset: 0;
-	  background: rgba(100, 100, 100, 0.1);
-	  z-index: 150;
-	  pointer-events: none;
-	  opacity: 0;
-	}
-	
-	/* 白いオーバーレイ */
-	.white-overlay {
-	  position: absolute; /* ✅ absoluteに変更 */
-	  inset: 0;
-	  background: #ffffff;
-	  z-index: 200;
-	  pointer-events: none;
-	  transform: translateY(100%);
-	}
-	
-	/* Inner Body（スクロール可能） */
+
+	/* ✅ inner-bodyも同様 */
 	.inner-body {
-	  position: relative;
-	  width: 100%;
-	  min-height: 100vh;
+		position: relative;
+		width: 100%;
+		min-height: 100vh;
+		min-height: 100dvh; /* ✅ dvh対応 */
+		background: #ffffff; /* ✅ 追加 */
 	}
-	
-	/* ページコンテナ */
-	.transition-wrapper {
-	  position: relative;
-	  width: 100%;
-	  min-height: 100vh;
+
+	/* ✅ グラデーションも dvh 対応 */
+	.gradation {
+		width: 100vw;
+		height: 100vh;
+		height: 100dvh; /* ✅ dvh対応 */
+		position: fixed;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		overflow: hidden;
+		z-index: 0;
+		opacity: 1;
 	}
-	
+
+	/* ✅ ページコンテナ */
 	.page-container {
-	  width: 100%;
-	  min-height: 100vh;
-	  background: #ffffff;
-	  transform-origin: center center;
+		width: 100%;
+		min-height: 100vh;
+		min-height: 100dvh; /* ✅ dvh対応 */
+		background: #ffffff;
+		transform-origin: center center;
 	}
-	
-	[data-page="current"] {
-	  position: relative;
-	  z-index: 1;
-	}
-	
+
 	[data-page="next"] {
-	  position: fixed;
-	  top: 0;
-	  left: 0;
-	  width: 100%;
-	  min-height: 100vh;
-	  z-index: 2;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		height: 100dvh; /* ✅ dvh対応 */
+		min-height: 100vh;
+		min-height: 100dvh;
+		z-index: 2;
+	}
+
+	/* ✅ 白オーバーレイも dvh */
+	.white-overlay {
+		position: absolute;
+		inset: 0;
+		height: 100%;
+		min-height: 100vh;
+		min-height: 100dvh;
+		background: #ffffff;
+		z-index: 200;
+		pointer-events: none;
+		transform: translateY(100%);
 	}
   </style>

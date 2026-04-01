@@ -249,6 +249,10 @@
 		grid-template-columns: repeat(var(--columns), 1fr);
 		grid-template-rows: repeat(auto-fill, var(--block-size));
 		pointer-events: none;
+		background: transparent;
+	}
+
+	.page-transition:not(.is-initialized) {
 		background: var(--color);
 	}
 
@@ -262,5 +266,7 @@
 		background: var(--color);
 		opacity: 1;
 		visibility: visible;
+		opacity: 0;
+		visibility: hidden;
 	}
 </style>
