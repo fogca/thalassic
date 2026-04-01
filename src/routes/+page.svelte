@@ -110,6 +110,7 @@ import Orbit from "../components/snippets/Orbit.svelte"
       padding: 20px 25px 10px;
   }
 
+  .TopBusiness .l-Contents {margin-bottom: 0;}
   .TopBusiness .l-Contents .heading {
     width: 100%;
     text-align: center;

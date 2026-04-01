@@ -155,6 +155,7 @@
 
     @media screen and (max-width: 834px) {
 
+        footer {padding-top: 80px;}
         section.space {padding-top: 80px;}
         footer .navigation {
             flex-direction: column;
@@ -162,6 +163,20 @@
         }
         footer .navigation .container {width: 100%;}
 
+        footer .navigation .container:nth-of-type(2) {
+            width: 100vw;
+            height: 100vw;
+            margin-left: calc(-1 * var(--padding));
+            margin-top: 60px;
+        }
+        footer .gradation-wrapper {height: 100%;}
+        footer .navigation .container .contents {width: 100%;}
+        footer .navigation .container .contents h2 {font-size: 22.5px;margin-top: 5px;}
+        
+        
+        
+        footer .space {margin: 0;padding-top: 0;}
+    
         footer .footer {
             padding: 70px var(--padding) 30px;
             flex-direction: column;

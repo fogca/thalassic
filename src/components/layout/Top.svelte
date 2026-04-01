@@ -128,7 +128,7 @@ onMount(() => {
 <section class="Identity mt-160 mb-80">
   <div class="wrapper">
     <div class="container" data-animate="fade-stagger">
-      <div class="h5 sans uppercase" lang="en">Group Company</div>
+      <div class="h5 sans uppercase" lang="en">GROUP COMPANY</div>
       <h2 class="h1 mb-10" lang="en">Three Identities,<br />One Collective Vision.</h2>
       <p>{t('identityBody', $lang)}</p>
       <a class="button white mt-40" href="/about" lang="en">About Us</a>

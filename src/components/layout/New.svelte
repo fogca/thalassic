@@ -410,6 +410,9 @@
           padding-left: var(--padding);
         }
 
+        .hero-title h1 * {
+          line-height: 1.15;
+        }
         .hero-title p {
           font-size: 13.5px;
         }

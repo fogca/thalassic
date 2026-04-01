@@ -7,7 +7,7 @@
 		direction?: 1 | -1;
 	}
 
-	let { duration = 20, direction = 1 }: Props = $props();
+	let { duration = 40, direction = 1 }: Props = $props();
 </script>
 
 <div class="orbit-container">
