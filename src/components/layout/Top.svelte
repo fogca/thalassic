@@ -18,7 +18,7 @@ type BusinessCategoryKey = 'categoryHotel' | 'categoryRecruit' | 'categoryAbout'
 
 const cards: { image: string; categoryKey: BusinessCategoryKey; title: string; link: string }[] = [
   { image: '/images/hotel-accommodation_01.webp', categoryKey: 'categoryHotel', title: 'HOTEL', link: '/hotel' },
-  { image: '/images/recruit-career_01.webp', categoryKey: 'categoryRecruit', title: 'RECRUITMENT', link: '/about#Recruitment' },
+  { image: '/images/recruit_26a.jpg', categoryKey: 'categoryRecruit', title: 'RECRUITMENT', link: '/about#Recruitment' },
   { image: '/images/top-about_01.webp', categoryKey: 'categoryAbout', title: 'ABOUT US', link: '/about' },
   { image: '/images/property-global_01.webp', categoryKey: 'categoryRealEstate', title: 'REAL ESTATE', link: '/real-estate' }
 ];
@@ -263,6 +263,13 @@ onMount(() => {
     grid-column: 3 / 5;
     grid-row: 1 / 3;
   }
+
+  .Business .container:nth-of-type(2) .overlay {display: none;}
+  .Business .container:nth-of-type(2) .texts * {
+    color: var(--textColor) !important;
+    -webkit-text-stroke: calc(0.1px + 0.01em) var(--textColor);
+  }
+  
 
   .Business .container {
     position: relative;
