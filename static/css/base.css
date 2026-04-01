@@ -63,8 +63,8 @@
        text-transform: uppercase;
   }
   :lang(ja) {
-    --heading-font: Inter, "Inter", "Tazugane Gothic StdN", "FOT-筑紫ゴシック Pro D",TsukuGoPr5-D, NeueHaasUnicaPro-Medium,  "Neue Haas Unica W1G", TazuganeGothicStdN-Medium,  "MT たづがね角ゴシック StdN Medium",  system-ui, sans-serif;
-       --text-font: Inter, "Inter", "Tazugane Gothic StdN", "FOT-筑紫ゴシック Pro D",TsukuGoPr5-D, NeueHaasUnicaPro-Regular, "Neue Haas Unica W1G", TazuganeGothicStdN-Regular, "MT たづがね角ゴシック StdN Regular", system-ui, sans-serif;
+    --heading-font: "Tazugane Gothic StdN", TazuganeGothicStdN-Medium,  "MT たづがね角ゴシック StdN Medium",  system-ui, sans-serif;
+       --text-font: "Tazugane Gothic StdN", TazuganeGothicStdN-Regular, "MT たづがね角ゴシック StdN Regular", system-ui, sans-serif;
        --bold-font: "Tazugane Gothic StdN", "FOT-筑紫ゴシック Pro B",TsukuGoPr5-B, system-ui, sans-serif;
     letter-spacing: 0.025em;
   }

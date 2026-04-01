@@ -214,7 +214,7 @@ onMount(() => {
       position: static;
       width: 100%;
       height: auto;
-      margin-top: 2rem;
+      margin-top: 40px;
       right: auto;
       top: auto;
     }
