@@ -142,7 +142,7 @@
   </section>
 
   <section class="bodyLayout aboutRecruit" id="Recruitment">
-    
+    <hr class="sp mb-40">
     <h3 class="h1 white" lang="en" data-animate="fade-up">Recruitment</h3>
     <h4 class="h5 white mt-10" data-animate="fade-up">{@html t('recruit_heading', $lang)}</h4>
     <div class="wrap" data-animate="fade-stagger">
@@ -154,6 +154,7 @@
       </h4>
       <p data-animate="fade-up">{@html t('recruit', $lang)}</p>
     </div>
+    <img src="/images/about_recruit.png" class="" alt="">
 
     
       
@@ -239,6 +240,7 @@
       margin-left: -15px;
       margin-bottom: -15px;
     }
+    
     #Recruitment img.character {
       width: 100px;
       height: 100px;
@@ -247,7 +249,14 @@
       left: auto;
       right: 0;
     }
-    
+
+
+
+    @media screen and (max-width: 834px) {
+      #Recruitment .wrap img {display: none;}
+      #Recruitment .wrap h4 {font-size: 32px; margin: 40px 0 5px;}
+      #Recruitment hr {margin: 0 0 60px;}
+    }
       
     </style>
     
@@ -347,7 +356,6 @@
   .aboutRecruit {margin-top: 100px;}
   .aboutRecruit h3.h1 {font-size: 18px;}
   .aboutRecruit .wrap {margin-top: 20px;}
-  #Recruitment .wrap h4 {margin-bottom: 20px;}
   #Recruitment .wrap h4 img {width: 35px;}
 
   #Recruitment img.character {top: -55px;}
