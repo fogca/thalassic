@@ -108,7 +108,7 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
-	<link rel="stylesheet" href="../css/base.css?var=1.24">
+	<link rel="stylesheet" href="../css/base.css?var=1.25">
 	<link rel="stylesheet" href="../css/layout.css?var=1.16">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com">

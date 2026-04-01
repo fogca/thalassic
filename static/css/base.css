@@ -63,9 +63,9 @@
        text-transform: uppercase;
   }
   :lang(ja) {
-    --heading-font: "Tazugane Gothic StdN", TazuganeGothicStdN-Medium,  "MT たづがね角ゴシック StdN Medium",  system-ui, sans-serif;
-       --text-font: "Tazugane Gothic StdN", TazuganeGothicStdN-Regular, "MT たづがね角ゴシック StdN Regular", system-ui, sans-serif;
-       --bold-font: "Tazugane Gothic StdN", "FOT-筑紫ゴシック Pro B",TsukuGoPr5-B, system-ui, sans-serif;
+    --heading-font: "Tazugane Gothic StdN", TazuganeGothicStdN-Medium, "MT たづがね角ゴシック StdN Medium",  system-ui, sans-serif;
+       --text-font: "Tazugane Gothic StdN", TazuganeGothicStdN-Mediun, "MT たづがね角ゴシック StdN Regular", system-ui, sans-serif;
+       --bold-font: "Tazugane Gothic StdN", TazuganeGothicStdN-Mediun, "FOT-筑紫ゴシック Pro B",TsukuGoPr5-B, system-ui, sans-serif;
     letter-spacing: 0.025em;
   }
   :lang(zh) {
