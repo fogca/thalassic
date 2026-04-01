@@ -22,10 +22,11 @@
     {#if !isAboutPage}
     <section class="navigation">
         <div class="container">
-            <img src="/images/recruit-career_01.webp" alt="">
-            <div class="contents white">
-                <p class="h6 bold center white">{t('footerRecruit', $lang)}</p>
-                <h2 class="white" lang="en">Recruitment</h2>
+            <img src="/images/recruit_26a.jpg" alt="" class="pc">
+            <img src="/images/recruit_26_sp.jpg" alt="" class="sp">
+            <div class="contents">
+                <p class="h6 bold">{t('footerRecruit', $lang)}</p>
+                <h2 class="h1" lang="en">Recruitment</h2>
                 <a href="/about#Recruitment" class=""><Link /></a>
             </div>
         </div>
@@ -34,8 +35,8 @@
                 <Gradation />
             </div>
             <div class="contents white">
-                <p class="h6 bold center white">{t('footerAbout', $lang)}</p>
-                <h2 class="white" lang="en">About Company</h2>
+                <p class="h6 bold white">{t('footerAbout', $lang)}</p>
+                <h2 class="h1 white" lang="en">About Company</h2>
                 <a href="/about" class=""><Link /></a>
             </div>
         </div>
@@ -84,7 +85,7 @@
 <style>
 
     section.space {
-        padding-top: 160px;
+        padding-top: 0;
     }
     footer {
         position: relative;
@@ -104,23 +105,42 @@
         justify-content: space-between;
         align-items: flex-start;
         background-color: white;
+
+        flex-direction: column;
+        width: 100vw;
+        padding: 0;
+        height: auto;
+        
     }
 
     footer .navigation .container {
         width: calc(50% - 2.5px);
         height: 100%;
         position: relative;
+        width: 100%;
     }
+
+    footer .navigation .container:nth-of-type(1) {
+        width: 80%;
+        margin: auto;
+    }
+
     footer .navigation .container .contents {
         position: absolute;
         top: 50%;
+        left: var(--padding);
+        transform: translate(0,-50%);
+        text-align: left;
+    }
+    footer .navigation .container:nth-of-type(2) {margin-top: 120px;}
+    footer .navigation .container:nth-of-type(2) .contents {
         left: 50%;
         transform: translate(-50%,-50%);
         text-align: center;
-
     }
-    footer .navigation .container img {height: 50vh; filter: brightness(.9);}
-    footer .navigation .container p {text-align: center;}
+    footer .navigation .container:nth-of-type(2) .contents p {text-align: center;}
+    footer .navigation .container img {height: 60vh; filter: brightness(1);}
+    
 
 
     .footer {
@@ -163,11 +183,31 @@
         }
         footer .navigation .container {width: 100%;}
 
+
+        footer .navigation .container:nth-of-type(1) {
+            margin-left: calc(-1 * var(--padding));
+            margin-left: 0;
+            width: 100vw;
+            height: 120vw;
+        }
+        footer .navigation .container:nth-of-type(1) img {height: 100%;}
+
+        footer .navigation .container:nth-of-type(1) .contents {
+            text-align: center;
+            top: auto;
+            bottom: 40px;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+        footer .navigation .container:nth-of-type(1) .contents p {text-align: center;}
+        
+
         footer .navigation .container:nth-of-type(2) {
             width: 100vw;
-            height: 100vw;
+            height: 120vw;
             margin-left: calc(-1 * var(--padding));
-            margin-top: 60px;
+            margin-left: 0;
+            margin-top: 0px;
         }
         footer .gradation-wrapper {height: 100%;}
         footer .navigation .container .contents {width: 100%;}
@@ -213,7 +253,7 @@
 
     .gradation-wrapper {
     width: 100%;
-    height: 50vh;
+    height: 60vh;
     position: relative;
     margin: auto;
     left: 0;
