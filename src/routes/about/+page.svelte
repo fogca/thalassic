@@ -152,15 +152,17 @@
         <img src="/images/about-character_03.png" class="" alt="">
         <img src="/images/about-character_04.png" class="" alt="">
       </h4>
-      <p data-animate="fade-up">{@html t('recruit', $lang)}</p>
+      <p data-animate="fade-up">{@html t('recruit', $lang)}
+        <img src="/images/about_recruit.png" class="" alt="">
+      </p>
+      
     </div>
-    <img src="/images/about_recruit.png" class="" alt="">
+    
 
     
       
     <div class="container aboutList">
 
-      <img src="/images/about-character_05.png" class="character" alt="">
       
       <h5 class="h3 white">{@html t('recruit_career_heading', $lang)}</h5>
       <div class="container">
@@ -235,7 +237,8 @@
 
     #Recruitment .container {position: relative;}
 
-    #Recruitment .wrap img {
+    #Recruitment .wrap h4 img {
+      display: none;
       width: 70px;
       margin-left: -15px;
       margin-bottom: -15px;
@@ -253,7 +256,7 @@
 
 
     @media screen and (max-width: 834px) {
-      #Recruitment .wrap img {display: none;}
+      #Recruitment .wrap h4 img {display: none;}
       #Recruitment .wrap h4 {font-size: 32px; margin: 40px 0 5px;}
       #Recruitment hr {margin: 0 0 60px;}
     }
