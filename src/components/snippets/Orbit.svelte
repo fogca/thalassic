@@ -269,4 +269,11 @@
 	.orbit-container:hover .counter-rotate {
 		animation-play-state: paused;
 	}
+
+
+  @media screen and (max-width: 834px) {
+    .orbit-container {
+      width: 100%;
+    }
+  }
 </style>

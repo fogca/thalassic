@@ -296,11 +296,6 @@
       transform: translateY(10px);
     }
 
-    @media screen and (max-width: 834px) {
-    .hero-title p {
-        font-size: 13px;
-    }
-    }
 
     /* ============================================================
        OPオーバーレイ
@@ -409,9 +404,14 @@
 
 
         .hero-title {
-            padding: 0 var(--padding);
-            top: 52%;
-            transform: translateY(-50%);
+          padding: 0 var(--padding);
+          top: calc(60px + 8vh);
+          padding-left: calc(.8 * var(--padding));
+          padding-left: var(--padding);
+        }
+
+        .hero-title p {
+          font-size: 13.5px;
         }
 
     }

@@ -90,11 +90,30 @@
       .Hotel {
         width: 100vw;
         margin-left: calc(-1 * var(--padding));
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         gap: 1px;
-        height: 120vw;
+        height: 200vw;
       }
 
+      
+      .Hotel a.container::after{
+        display: block;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
+      }
+
+      .Hotel a.container .contents {
+        flex-direction: row;
+        padding: 0 var(--padding);
+        position: relative;
+        z-index: 1;
+      }
+      .Hotel a.container .contents p {display: none;}
       .Hotel a.container img {border-radius: 0;}
 
 
