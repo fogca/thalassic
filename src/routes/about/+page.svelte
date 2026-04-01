@@ -347,7 +347,9 @@
   #About .topLayout h2.h1 {
     font-size: 32px;
     line-height: 1.4;
+    margin: 20px 0 10px;
     margin-left: -2px;
+    
   }
   .aboutCompany {margin-top: 100px;}
   .aboutCompany .wrapper {margin-top: 20px;}
