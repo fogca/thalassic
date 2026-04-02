@@ -38,15 +38,15 @@
     <div class="texts-container">
       <div></div>
 
-      <div>
-        <h1 class="h2 hero__title uppercase" lang="en" data-animate="text-reveal">
+      <div data-animate="fade-up">
+        <h1 class="h2 hero__title uppercase" lang="en">
           BUILDING LASTING <br class="sp">VALUE <br class="pc">THROUGH <br class="sp">REAL ESTATE
         </h1>
         <h2 class="h5 hero__subtitle sans">{@html t('heading', $lang)}</h2>
       </div>
       <div></div>
     </div>
-    <div class="image-container w100">
+    <div class="image-container w100" data-animate="fade-up">
       <img class="pz" src="/images/top_05.webp" alt="" loading="eager" decoding="async" />
     </div>
   </section>
@@ -55,12 +55,12 @@
   <section class="BusinessDetails">
 
     <div class="l-Contents wrapper">
-      <div class="heading">
+      <div class="heading" data-animate="fade-up">
         <h2 class="" lang="en">Business<br>details</h2>
         <h5>{t('real1h', $lang)}</h5>
       </div>
       <div class="container">
-        <div class="Illustration">
+        <div class="Illustration" data-animate="fade-stagger">
           <div class="box">
             <img class="pz" src="/images/property-character_04.png" alt="" loading="eager" decoding="async" />
             <h3 class="h4 center" lang="en">Acquisitions</h3>
@@ -82,7 +82,7 @@
             <h4 class="h6 center">{t('management', $lang)}</h4>
           </div>
         </div>
-        <p>{@html t('real1p', $lang)}</p>
+        <p data-animate="fade-up">{@html t('real1p', $lang)}</p>
         <style>
 
         </style>
@@ -93,11 +93,11 @@
     </div>
 
     <div class="l-Contents wrapper">
-      <div class="heading">
+      <div class="heading" data-animate="fade-up">
         <h2 class="" lang="en">Case<br>study</h2>
         <h5>{t('real2h', $lang)}</h5>
       </div>
-      <div class="container Gallery">
+      <div class="container Gallery" data-animate="fade-stagger">
 
       {#each rows as row, rowIndex}
         <div class="row" data-row={rowIndex + 1}>
@@ -149,18 +149,18 @@
   </section>
 
   <section class="GlobalBusiness">
-    <img class="w100" src="/images/property-global_02.jpg" alt="" loading="eager" decoding="async" />     
+    <img class="w100" data-animate="fade-up" src="/images/property-global_02.jpg" alt="" loading="eager" decoding="async" />     
     <div class="l-Contents wrapper">
-      <div class="heading">
+      <div class="heading" data-animate="fade-up">
         <h2 class="" lang="en">Global<br>Business</h2>
         <h5>{t('real3h', $lang)}</h5>
       </div>
-      <div class="container">
+      <div class="container" data-animate="fade-stagger">
         <img class="" src="/images/property-career_01.webp" alt="" loading="eager" decoding="async" />     
         <h5 class="h4 bold">{@html t('real3s', $lang)}</h5>
-        <p>{@html t('real3p', $lang)}</p>
+        <p data-animate="fade-up">{@html t('real3p', $lang)}</p>
 
-        <div class="Illustration">
+        <div class="Illustration" data-animate="fade-stagger">
           
           <div class="box">
             <img class="pz" src="/images/property-character_01.png" alt="" loading="eager" decoding="async" />
@@ -184,7 +184,7 @@
     </div>
 
     <div class="city">
-      <div class="container">
+      <div class="container" data-animate="fade-up">
         <h2 lang="en" class="h2 mb-5">Sydney</h2>
         <span class="h5">{t('sydney', $lang)}</span>
         <img class="mt-20" src="/images/global_1.png" alt="" loading="eager" decoding="async" />     
@@ -192,7 +192,7 @@
         <span class="h5">{t('market1', $lang)}</span>
         <p class="mt-10">{@html t('city1', $lang)}</p>
       </div>
-      <div class="container">
+      <div class="container" data-animate="fade-up">
         <h2 lang="en" class="h2 mb-5">Perth</h2>
         <span class="h5">{t('perth', $lang)}</span>
         <img class="mt-20" src="/images/global_2.jpg" alt="" loading="eager" decoding="async" />   

@@ -151,6 +151,7 @@ p, .p {
     line-height: 1.6;
     letter-spacing: 0.01em;
     text-align: justify;
+    text-align: left;
     word-wrap: break-word;
     hyphens: none;
     -webkit-hyphens: none;

@@ -33,11 +33,11 @@ import Orbit from "../components/snippets/Orbit.svelte"
 
   <section class="TopBusiness mt-120">
     <div class="l-Contents">
-      <div class="heading">
+      <div class="heading" data-animate="fade-up">
         <h3 class="h1 mb-10" lang="en">Our Hotels</h3>
         <h5 class="h5 sans">{t('ourHotels', $lang)}</h5>
       </div>
-      <div class="wrapper">
+      <div class="wrapper" data-animate="fade-up">
         <Hotel />
       </div>
     </div>

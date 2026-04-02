@@ -23,10 +23,10 @@
   <section class="topLayout topLayoutPages" id="">
     <div class="texts-container">
       <div></div>
-      <div>
-        <h1 class="h5 white" lang="en" data-animate="fade-up">About Us</h1>
-        <h2 class="h1 hero__title white mb-20 mt-40" lang="en" data-animate="fade-up">Creating Value<br>that Endures</h2>
-        <h3 class="h5 hero__subtitle white mt-10" data-animate="fade-up">{@html t('heading', $lang)}</h3>
+      <div data-animate="fade-stagger">
+        <h1 class="h5 white" lang="en">About Us</h1>
+        <h2 class="h1 hero__title white mb-20 mt-40" lang="en">Creating Value<br>that Endures</h2>
+        <h3 class="h5 hero__subtitle white mt-10">{@html t('heading', $lang)}</h3>
       </div>
       
     </div>
@@ -40,8 +40,8 @@
   <section class="bodyLayout aboutBody">
 
     
-    <div class="wrapper">
-      <p class="mb-40" data-animate="fade-up">{@html t('about', $lang)}</p>
+    <div class="wrapper" data-animate="fade-stagger" >
+      <p class="mb-40">{@html t('about', $lang)}</p>
       <Identity />
     </div>
 
@@ -132,9 +132,9 @@
       </div>
 
       <div class="mt-80">
-        <h3 class="h2 white mb-20" lang="en">Our Belief</h3>
-        <img src="/images/about-logo.png" alt="">
-        <p class="white mt-20">{@html t('logo_belief', $lang)}</p>
+        <h3 class="h2 white mb-20" lang="en" data-animate="fade-up">Our Belief</h3>
+        <img src="/images/about-logo.png" alt="" data-animate="fade-up">
+        <p class="white mt-20" data-animate="fade-up">{@html t('logo_belief', $lang)}</p>
       </div>
       
     </div>
@@ -231,7 +231,7 @@
       </div>
     </div>
 
-    <div class="contact container">
+    <div class="contact container" data-animate="fade-up" >
       <p class="mt-40">{@html t('contact', $lang)}</p>
       <a href="/contact" class="button h5 mt-30 sans" lang="en">Contact Form</a>
     </div>
@@ -258,14 +258,17 @@
     }
 
 
-
+    .contact {width: 45%;margin-left: auto;margin-right: 0;}
     @media screen and (max-width: 834px) {
       #Recruitment .wrap h4 img {display: none;}
       #Recruitment .wrap h4 {font-size: 32px; margin: 40px 0 5px;}
       #Recruitment hr {margin: 0 0 60px;}
+
+      .contact {width: 100%;}
     }
 
-    .contact {width: 45%;margin-left: auto;margin-right: 0;}
+    
+    
       
     </style>
     
