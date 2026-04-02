@@ -131,6 +131,12 @@ export const dict = {
     en: ''
   },
 
+  contact: {
+    ja: '現在、採用に関する詳細情報を準備しております。<br>採用に関しての詳細やご質問は<br>ぜひフォームよりお問い合わせください。',
+    zh: '我们正在准备招聘的详细信息。<br>有关招聘的详细信息或任何问题，<br>请随时通过表单联系我们。',
+    en: 'We are currently preparing detailed information on recruitment. <br>For any questions or inquiries regarding recruitment, <br>please feel free to contact us through the form.'
+  },
+
 
 
 

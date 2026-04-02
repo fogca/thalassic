@@ -167,7 +167,7 @@
       <h5 class="h3 white">{@html t('recruit_career_heading', $lang)}</h5>
       <div class="container">
         <div class="h6 half white"><br>{@html t('recruit_career_title', $lang)}</div>
-        <div class="h3 white">{@html t('recruit_career_1', $lang)}<br>{@html t('recruit_career_2', $lang)}<br>{@html t('recruit_career_3', $lang)}</div>
+        <div class="h4 white mt-40 mb-20">{@html t('recruit_career_1', $lang)}<br>{@html t('recruit_career_2', $lang)}<br>{@html t('recruit_career_3', $lang)}</div>
       </div>
 
       <div class="container">
@@ -231,6 +231,10 @@
       </div>
     </div>
 
+    <div class="contact container">
+      <p class="mt-40">{@html t('contact', $lang)}</p>
+      <a href="/contact" class="button h5 mt-30 sans" lang="en">Contact Form</a>
+    </div>
     
 
     <style>
@@ -260,6 +264,8 @@
       #Recruitment .wrap h4 {font-size: 32px; margin: 40px 0 5px;}
       #Recruitment hr {margin: 0 0 60px;}
     }
+
+    .contact {width: 45%;margin-left: auto;margin-right: 0;}
       
     </style>
     
