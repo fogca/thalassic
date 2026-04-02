@@ -167,7 +167,7 @@ p.white:lang(en),
     line-height: 1.35;
     letter-spacing: 0.02em;
     text-align: justify;
-    
+    text-align: left;
     text-transform: none;
     -webkit-text-stroke: 0;
 }

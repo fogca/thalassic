@@ -34,7 +34,7 @@ export const dict = {
   business: {
     ja: 'ホテル事業に関して',
     zh: '酒店业务',
-    en: 'Hotel Business'
+    en: 'Business Overview'
   },
   philosophy: {
     ja: '木石という思想',

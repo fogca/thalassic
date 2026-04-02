@@ -108,7 +108,7 @@
       </div>
 
       <div class="wrap" data-animate="fade-stagger">
-        <h3 class="h5">{@html t('subsidiary1_heading', $lang)}</h3>
+        <h3 class="h5 white">{@html t('subsidiary1_heading', $lang)}</h3>
         <div class="container">
           <div class="h6 white">{t('firm_heading', $lang)}</div>
           <div class="h5 white" lang="en">{t('firm_name', $lang)}</div>
@@ -120,7 +120,7 @@
       </div>
 
       <div class="wrap" data-animate="fade-stagger">
-        <h3 class="h5">{@html t('subsidiary2_heading', $lang)}</h3>
+        <h3 class="h5 white">{@html t('subsidiary2_heading', $lang)}</h3>
         <div class="container">
           <div class="h6 white">{t('firm_heading', $lang)}</div>
           <div class="h5 white" lang="en">THALASSIC  CAPITAL PTY LTD</div>
@@ -338,6 +338,7 @@
   padding: 1.8rem 0 1.5rem;
 }
 .aboutCompany .container div:nth-of-type(1) {width: 30%;}
+:global(html[lang='en']) .aboutCompany .container div:nth-of-type(1) {width: 42%;}
 .aboutCompany .container div:nth-of-type(2) {width: 70%;}
 
 .aboutList .container::before {top: 0;}

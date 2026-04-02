@@ -330,9 +330,15 @@
       transform: translate(-50%, -50%);
     }
 
+    @media screen and (max-width: 834px) {
+      :global(.topLayout) .texts-container h1 {width: 100%;}
+    }
+
     :global(.topLayout) .texts-container h2:lang(en) {
       line-height: 1.2;
       text-align: center;
+      width: 100%;
+      font-size: 18px;
     }
 
     .serviceBody p {height: 60vh;}
@@ -466,7 +472,7 @@
 
     @media screen and (max-width: 834px) {
 
-      .l-Contents .heading h5 {font-size: 18px;}
+      .l-Contents .heading h5 {font-size: 16px;}
       .l-Contents .container p {font-size: 15px;}
 
       .accomodation {padding: 80px var(--padding);padding-bottom: 1px;}
@@ -476,6 +482,17 @@
         margin-left: 0 !important;
         height: 180vw !important;
       }
+
+      .l-Contents .container p.serif {
+        font-family: var(--text-font);
+        font-size: 14.5px;
+        text-transform: none;
+        line-height: 1.6;
+        text-align: left;
+        height: auto;
+      }
+
+      .serviceBody.mt-200 {margin-top: 0;}
 
     }
   </style>
