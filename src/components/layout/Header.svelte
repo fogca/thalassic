@@ -5,6 +5,7 @@ import { onMount } from 'svelte';
   import { page } from '$app/stores'; 
   import { browser } from '$app/environment';
   import Links from "../snippets/pageLinks.svelte";
+  import Fontplus from '../utilities/Fontplus.svelte';
  
   let y
 
@@ -23,6 +24,7 @@ function select(newLang) {
   lang.set(newLang); // This saves to localStorage
   opens = false;
   open = false; // ✅ メニューを閉じる
+  reloadFontPlus(); // ✅ 追加
 }
 
 

@@ -295,11 +295,15 @@
     }
 
     .serif:lang(en) {
-        font-size: 18px;
+        font-size: 16.5px;
+        font-family: var(--text-font);
         font-family: var(--heading-font);
+        text-transform: uppercase;
         -ms-writing-mode: horizontal-tb;
         writing-mode: horizontal-tb;
         -webkit-text-stroke: 0;
+        text-align: left;
+        line-height: 1.85;
     }
 
     :global(.topLayout) .texts-container {
@@ -324,6 +328,11 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+    }
+
+    :global(.topLayout) .texts-container h2:lang(en) {
+      line-height: 1.2;
+      text-align: center;
     }
 
     .serviceBody p {height: 60vh;}

@@ -152,8 +152,8 @@ p, .p {
     letter-spacing: 0.01em;
     text-align: justify;
     word-wrap: break-word;
-    hyphens: auto;
-    -webkit-hyphens: auto;
+    hyphens: none;
+    -webkit-hyphens: none;
     overflow-wrap: break-word;
     hyphenate-character: '-';
 }
