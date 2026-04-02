@@ -14,6 +14,7 @@
 	import CustomCursor from '../components/snippets/CustomCursor.svelte';
 	import ScrollAnimations from '../components/utilities/ScrollAnimations.svelte';
 	import LangFontManager from '../components/utilities/LangFontManager.svelte';
+	import Fontplus from '../components/utilities/Fontplus.svelte';
 
 	let { children } = $props();
 
@@ -129,6 +130,7 @@
 
 <div class="main">
 <LangFontManager />
+<Fontplus debug={true} />
 <PageTransition columns={8} color="#00268D" />
 <CustomCursor />
 <ScrollAnimations />
