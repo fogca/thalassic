@@ -150,11 +150,16 @@
 			const href = link.getAttribute('href');
 			if (!href) return;
 
+			const linkUrl = new URL(href, window.location.href);
+			const isSamePageHash =
+				linkUrl.hash !== '' && linkUrl.pathname === window.location.pathname;
+
 			const shouldSkip =
 				link.target === '_blank' ||
 				link.hasAttribute('data-transition-prevent') ||
 				link.hasAttribute('data-sveltekit-reload') ||
 				href.startsWith('#') ||
+				isSamePageHash ||
 				href.startsWith('http://') ||
 				href.startsWith('https://') ||
 				href.startsWith('mailto:') ||
@@ -182,7 +187,16 @@
 	});
 
 	afterNavigate(() => {
-		window.scrollTo(0, 0);
+		const hash = window.location.hash;
+		if (hash) {
+			// Use offsetTop (absolute position) to snap behind pixel blocks before reveal
+			const el = document.getElementById(hash.replace('#', ''));
+			if (el) {
+				window.scrollTo(0, el.offsetTop - 80);
+			}
+		} else {
+			window.scrollTo(0, 0);
+		}
 		calculateGrid();
 		if (isInitialized) {
 			animateIn();

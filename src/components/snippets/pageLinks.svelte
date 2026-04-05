@@ -31,7 +31,7 @@ import { t } from '../layout/Header.dict';
         </a>
     </li>
     <li class="container">
-        <a href="/about#recruitment">
+        <a href="/about#Recruitment">
             <div class="h1" lang="en">Recruitment</div>
             {#if $lang !== 'en'}
                 <span class="h4">{t('recruit', $lang)}</span>

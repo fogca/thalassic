@@ -101,7 +101,7 @@
           <div class="h5 white">{t('firm_capital', $lang)}</div>
         </div>
         <div class="container">
-          <div class="h6 white">{t('representative_heading', $lang)}</div>
+          <div class="h6 white">{@html t('representative_heading', $lang)}</div>
           <div class="h5 white">{t('firm_representative', $lang)}</div>
         </div>
 
@@ -265,6 +265,9 @@
       #Recruitment hr {margin: 0 0 60px;}
 
       .contact {width: 100%;}
+      .contact p.mt-40 {margin-top: 0;}
+
+      .aboutRecruit .aboutList {margin-top: 0;}
     }
 
     

@@ -79,7 +79,7 @@ export const dict = {
   representative_heading: {
     ja: '代表取締役',
     zh: '代表董事',
-    en: 'Chief Executive Officer'
+    en: 'Chief <br class="sp">Executive <br class="sp">Officer'
   },
   firm_representative: {
     ja: '王珏峰 / Wang Juefeng',

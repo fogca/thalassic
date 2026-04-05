@@ -2,8 +2,9 @@
   import Logo from "../snippets/Logo.svelte";
   import { slide } from 'svelte/transition';
 import { onMount } from 'svelte';
-  import { page } from '$app/stores'; 
+  import { page } from '$app/stores';
   import { browser } from '$app/environment';
+  import { afterNavigate } from '$app/navigation';
   import Links from "../snippets/pageLinks.svelte";
   import Fontplus from '../utilities/Fontplus.svelte';
  
@@ -30,6 +31,18 @@ function select(newLang) {
 
 let open = false;
 const toggle = () => (open = !open);
+
+// Close SP menu after any navigation (cross-page)
+afterNavigate(() => {
+  open = false;
+});
+
+// Close SP menu immediately when any link inside is clicked (handles same-page hash)
+function handleMenuLinkClick(e: MouseEvent) {
+  if ((e.target as HTMLElement).closest('a')) {
+    open = false;
+  }
+}
 
 </script>
   
@@ -88,7 +101,8 @@ const toggle = () => (open = !open);
   
       <!-- オーバーレイメニュー -->
       <div class="overlay" class:open={open} on:click={toggle}>
-          <nav class="menu" on:click|stopPropagation>
+          <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
+          <nav class="menu" on:click|stopPropagation on:click={handleMenuLinkClick}>
              <Links />
 
              <div class="lang">

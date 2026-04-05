@@ -85,12 +85,12 @@ export const dict = {
   },
 
   market1: {
-    ja: '',
+    ja: '長期安定型市場',
     zh: '核心长期市场',
     en: ''
   },
   market2: {
-    ja: '',
+    ja: '成長・収益市場',
     zh: '成长与收益型市场',
     en: ''
   },

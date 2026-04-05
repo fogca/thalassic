@@ -4,7 +4,7 @@
 	import Header from "../components/layout/Header.svelte";
 	import Footer from "../components/layout/Footer.svelte";
 	import favicon from '$lib/assets/favicon.svg';
-	import { afterNavigate } from '$app/navigation';
+	import { afterNavigate, goto } from '$app/navigation';
 	import { onMount, onDestroy } from 'svelte';
 	import gsap from 'gsap';
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -40,50 +40,32 @@
 
 		gsap.ticker.lagSmoothing(0);
 
-		// ✅ 同一ページ内のハッシュリンククリックを処理
-		document.addEventListener('click', handleHashClick);
+		// Use capture so stopPropagation in nav.menu doesn't block this
+		document.addEventListener('click', handleHashClick, true);
 	});
 
 	onDestroy(() => {
 		if (browser) {
-			document.removeEventListener('click', handleHashClick);
+			document.removeEventListener('click', handleHashClick, true);
 			lenis?.destroy();
 			ScrollTrigger.getAll().forEach(t => t.kill());
 		}
 	});
 
-	// ✅ ページ遷移後の処理
+	// Reset scroll on page navigation (hash scroll is handled per-case below)
 	afterNavigate(() => {
 		if (!browser || !lenis) return;
-
-		const hash = window.location.hash;
-
-		if (hash) {
-			// ハッシュがある場合 → 対象要素にスクロール
-			setTimeout(() => {
-				const targetId = hash.replace('#', '');
-				const el = document.getElementById(targetId);
-				
-				if (el) {
-					lenis!.scrollTo(el, {
-						offset: -80,        // Header分のオフセット（必要に応じて調整）
-						duration: 1.2,
-						immediate: false,   // スムーズにスクロール
-					});
-				}
-			}, 300); // DOM構築・画像読み込みを待つ
-		} else {
-			// ハッシュがない場合 → トップへリセット
+		// Non-hash navigations: reset to top
+		if (!window.location.hash) {
 			lenis.scrollTo(0, { immediate: true });
 		}
-
 		ScrollTrigger.refresh();
 	});
 
-	// 同一ページ内のハッシュリンク処理
+	// Handle same-page hash link clicks — both #Hash and /path#Hash forms
 	function handleHashClick(e: MouseEvent) {
 		if (!lenis) return;
-		
+
 		const target = e.target as HTMLElement;
 		const link = target.closest('a');
 		if (!link) return;
@@ -91,16 +73,19 @@
 		const href = link.getAttribute('href');
 		if (!href || !href.includes('#')) return;
 
-		// #Recruitment など、#のみで始まるリンク
-		if (href.startsWith('#')) {
+		const linkUrl = new URL(href, window.location.href);
+		const isSamePage = linkUrl.pathname === window.location.pathname;
+
+		if (isSamePage && linkUrl.hash) {
 			e.preventDefault();
-			const el = document.getElementById(href.substring(1));
+			// Use goto so afterNavigate fires everywhere (e.g. closes SP menu in Header)
+			goto(href, { noScroll: true });
+			const el = document.getElementById(linkUrl.hash.substring(1));
 			if (el) {
 				lenis.scrollTo(el, { offset: -80, duration: 1.2 });
 			}
 		}
-		// /about#Recruitment など、別ページへのハッシュリンクは
-		// SvelteKitのルーティングに任せる（afterNavigateで処理される）
+		// Cross-page hash links: PageRouting handles scroll position in afterNavigate
 	}
 
 	
