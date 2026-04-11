@@ -7,6 +7,7 @@ import { onMount } from 'svelte';
   import { afterNavigate } from '$app/navigation';
   import Links from "../snippets/pageLinks.svelte";
   import Fontplus from '../utilities/Fontplus.svelte';
+  import { reloadFontPlus } from '../../lib/utils/fontplus'; // ← これ追加
  
   let y
 

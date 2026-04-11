@@ -1,28 +1,16 @@
 <script>
-  import { onMount, onDestroy } from 'svelte';
-  import { lang } from '$lib/utils/lang';
+	import { onMount } from 'svelte';
+	import { lang } from '$lib/utils/lang';
 
-  let cleanup = [];
-  let currentLang = 'en';
-
-  onMount(() => {
-    // Initialize language
-    currentLang = lang.init();
-    document.documentElement.setAttribute('lang', currentLang);
-    console.log('[LangManager] Initial lang:', currentLang);
-    
-    // Subscribe to language changes
-    const unsubLang = lang.subscribe(newLang => {
-      if (newLang !== currentLang) {
-        console.log('[LangManager] Language changed:', currentLang, '->', newLang);
-        currentLang = newLang;
-        document.documentElement.setAttribute('lang', newLang);
-      }
-    });
-    cleanup.push(unsubLang);
-  });
-
-  onDestroy(() => {
-    cleanup.forEach(fn => fn());
-  });
+	onMount(() => {
+		const initialLang = lang.init();
+		document.documentElement.setAttribute('lang', initialLang);
+		
+		// 言語変更を監視
+		const unsub = lang.subscribe(newLang => {
+			document.documentElement.setAttribute('lang', newLang);
+		});
+		
+		return unsub;
+	});
 </script>

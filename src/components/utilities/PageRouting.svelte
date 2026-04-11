@@ -1,7 +1,7 @@
 <!-- src/lib/components/PageTransition.svelte -->
 <script lang="ts">
 	import { onMount, tick } from 'svelte';
-	import { afterNavigate } from '$app/navigation';
+	import { afterNavigate, goto } from '$app/navigation';
     import Logo from '../snippets/Logo.svelte';
 
 	interface Props {
@@ -19,19 +19,28 @@
 		showOpening = true
 	}: Props = $props();
 
+	const mobileBreakpoint = 768;
+	const mobileColumns = 5;
+
 	let blocks = $state<number[]>([]);
 	let blockSize = $state(0);
+	let activeColumns = $state(8);
 	let isAnimating = $state(false);
 	let isInitialized = $state(false);
 	let showOpeningAnimation = $state(false);
 	let openingContainer: HTMLElement;
 	let logoElement: HTMLElement;
 
+	function getRouteContent() {
+		return document.querySelector('.route-content');
+	}
+
 	function calculateGrid() {
 		if (typeof window === 'undefined') return;
-		blockSize = window.innerWidth / columns;
+		activeColumns = window.innerWidth <= mobileBreakpoint ? mobileColumns : columns;
+		blockSize = window.innerWidth / activeColumns;
 		const rows = Math.ceil(window.innerHeight / blockSize);
-		blocks = Array.from({ length: columns * rows }, (_, i) => i);
+		blocks = Array.from({ length: activeColumns * rows }, (_, i) => i);
 	}
 
 	async function animateOut(href: string) {
@@ -44,19 +53,27 @@
 		await tick();
 
 		return new Promise<void>((resolve) => {
+			if (!blocks.length) {
+				void goto(href, { noScroll: true }).then(() => resolve());
+				return;
+			}
+
 			gsap.fromTo(
 				'.transition-block',
 				{ opacity: 0, visibility: 'hidden' },
 				{
 					opacity: 1,
 					visibility: 'visible',
-					duration: 0.01,
-					ease: 'none',
+					duration: 0.24,
+					ease: 'power2.in',
 					stagger: { amount: staggerAmount, from: 'random' },
 					onComplete: () => {
-						window.scrollTo(0, 0);
-						window.location.href = href;
-						resolve();
+						const routeContent = getRouteContent();
+						if (routeContent) {
+							// Keep next page hidden until reveal starts.
+							gsap.set(routeContent, { opacity: 0 });
+						}
+						void goto(href, { noScroll: true }).then(() => resolve());
 					}
 				}
 			);
@@ -68,18 +85,29 @@
 
 		const gsapModule = await import('gsap');
 		const gsap = gsapModule.default;
+		const routeContent = getRouteContent();
 
 		gsap.to('.transition-block', {
 			opacity: 0,
 			visibility: 'hidden',
-			duration: 0.1,
+			duration: 0.16,
 			ease: 'none',
-			stagger: { amount: 0.75, from: 'random' },
-			delay: 0.3,
+			stagger: { amount: 0.65, from: 'random' },
+			delay: 0.12,
 			onComplete: () => {
 				isAnimating = false;
 			}
 		});
+
+		if (routeContent) {
+			gsap.fromTo(routeContent, { opacity: 0 }, {
+				opacity: 1,
+				duration: 1.0,
+				ease: 'power4.inOut',
+				delay: 0.75,
+				clearProps: 'opacity'
+			});
+		}
 	}
 
 	async function playOpeningAnimation() {
@@ -187,16 +215,7 @@
 	});
 
 	afterNavigate(() => {
-		const hash = window.location.hash;
-		if (hash) {
-			// Use offsetTop (absolute position) to snap behind pixel blocks before reveal
-			const el = document.getElementById(hash.replace('#', ''));
-			if (el) {
-				window.scrollTo(0, el.offsetTop - 80);
-			}
-		} else {
-			window.scrollTo(0, 0);
-		}
+		// Scroll position (top/hash) is controlled in +layout.svelte with Lenis.
 		calculateGrid();
 		if (isInitialized) {
 			animateIn();
@@ -218,7 +237,7 @@
 <div
 	class="page-transition"
 	class:is-initialized={isInitialized}
-	style:--columns={columns}
+	style:--columns={activeColumns}
 	style:--block-size="{blockSize}px"
 	style:--color={color}
 >

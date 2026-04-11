@@ -443,8 +443,12 @@ document.querySelectorAll('[data-animate="text-scrub"]').forEach((el) => {
 
 	afterNavigate(() => {
 		setTimeout(() => {
-			window.scrollTo(0, 0);
-			lenis?.scrollTo(0, { immediate: true });
+			// Deep links (/about#Recruitment): +layout.svelte scrolls with Lenis; resetting here would jump to top
+			const hasFragment = window.location.hash.length > 1;
+			if (!hasFragment) {
+				window.scrollTo(0, 0);
+				lenis?.scrollTo(0, { immediate: true });
+			}
 
 			setTimeout(() => {
 				initAnimations();
