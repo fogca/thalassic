@@ -472,6 +472,10 @@
 
     @media screen and (max-width: 834px) {
 
+      .topLayout .texts-container h2 {
+        white-space: nowrap;
+      }
+
       .l-Contents .heading h5 {font-size: 16px;}
       .l-Contents .container p {font-size: 15px;}
 
@@ -485,6 +489,7 @@
 
       .l-Contents .container p.serif {
         font-family: var(--text-font);
+        font-family: TsukuAOldMinPr6-M, 'TsukuAOldMinPr6-M', serif;
         font-size: 14.5px;
         text-transform: none;
         line-height: 1.6;
