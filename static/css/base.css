@@ -439,3 +439,11 @@ section {
 
 
 
+
+/* Prevent FOUC on SplitText .line elements before GSAP initialises.
+   Scoped to data-animate containers so other .line classes are unaffected. */
+[data-animate] .line,
+[data-animate-children] .line {
+  transform: translateY(100%);
+  will-change: transform;
+}

@@ -178,16 +178,11 @@
 			const href = link.getAttribute('href');
 			if (!href) return;
 
-			const linkUrl = new URL(href, window.location.href);
-			const isSamePageHash =
-				linkUrl.hash !== '' && linkUrl.pathname === window.location.pathname;
-
 			const shouldSkip =
 				link.target === '_blank' ||
 				link.hasAttribute('data-transition-prevent') ||
 				link.hasAttribute('data-sveltekit-reload') ||
 				href.startsWith('#') ||
-				isSamePageHash ||
 				href.startsWith('http://') ||
 				href.startsWith('https://') ||
 				href.startsWith('mailto:') ||

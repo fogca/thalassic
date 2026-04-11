@@ -1,116 +1,48 @@
 <script lang="ts">
-	import { page } from '$app/stores';
 	import { browser } from '$app/environment';
-	import Header from "../components/layout/Header.svelte";
-	import Footer from "../components/layout/Footer.svelte";
-	import favicon from '$lib/assets/favicon.svg';
 	import { afterNavigate } from '$app/navigation';
-	import { onMount, onDestroy } from 'svelte';
-	import gsap from 'gsap';
-	import { ScrollTrigger } from 'gsap/ScrollTrigger';
-	import Lenis from '@studio-freight/lenis';
-
+	import { get } from 'svelte/store';
+	import { lenisStore } from '$lib/stores/lenis';
+	import Header from '../components/layout/Header.svelte';
+	import Footer from '../components/layout/Footer.svelte';
+	import favicon from '$lib/assets/favicon.svg';
 	import PageTransition from '../components/utilities/PageRouting.svelte';
 	import CustomCursor from '../components/snippets/CustomCursor.svelte';
 	import ScrollAnimations from '../components/utilities/ScrollAnimations.svelte';
 	import LangFontManager from '../components/utilities/LangFontManager.svelte';
 	import Fontplus from '../components/utilities/Fontplus.svelte';
+    import OpAnimation from '../components/utilities/OpAnimation.svelte';
 
 	let { children } = $props();
 
-	let lenis: Lenis | null = null;
-
-	onMount(() => {
-		gsap.registerPlugin(ScrollTrigger);
-
-		// Lenisの初期化
-		lenis = new Lenis({
-			duration: 1.5,
-			easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-			smooth: true,
-			smoothTouch: false, // モバイルはネイティブスクロール
-		});
-
-		// LenisとScrollTriggerを連携
-		lenis.on('scroll', ScrollTrigger.update);
-
-		gsap.ticker.add((time) => {
-			lenis!.raf(time * 800);
-		});
-
-		gsap.ticker.lagSmoothing(0);
-
-		// ✅ 同一ページ内のハッシュリンククリックを処理
-		document.addEventListener('click', handleHashClick);
-	});
-
-	onDestroy(() => {
-		if (browser) {
-			document.removeEventListener('click', handleHashClick);
-			lenis?.destroy();
-			ScrollTrigger.getAll().forEach(t => t.kill());
-		}
-	});
-
-	// ✅ ページ遷移後の処理
+	// Handle hash scroll and scroll-to-top after every navigation.
+	// Lenis is owned by ScrollAnimations.svelte and shared via lenisStore.
 	afterNavigate(() => {
-		if (!browser || !lenis) return;
+		if (!browser) return;
+		const lenis = get(lenisStore);
+		if (!lenis) return;
 
 		const hash = window.location.hash;
 
 		if (hash) {
-			// ハッシュがある場合 → 対象要素にスクロール
+			// Scroll to target element with Lenis after DOM settles
 			setTimeout(() => {
-				const targetId = hash.replace('#', '');
-				const el = document.getElementById(targetId);
-				
+				const el = document.getElementById(hash.slice(1));
 				if (el) {
-					lenis!.scrollTo(el, {
-						offset: -80,        // Header分のオフセット（必要に応じて調整）
-						duration: 1.2,
-						immediate: false,   // スムーズにスクロール
-					});
+					lenis.scrollTo(el, { offset: -80, duration: 1.2, immediate: false });
 				}
-			}, 300); // DOM構築・画像読み込みを待つ
+			}, 300);
 		} else {
-			// ハッシュがない場合 → トップへリセット
 			lenis.scrollTo(0, { immediate: true });
 		}
-
-		ScrollTrigger.refresh();
 	});
-
-	// 同一ページ内のハッシュリンク処理
-	function handleHashClick(e: MouseEvent) {
-		if (!lenis) return;
-		
-		const target = e.target as HTMLElement;
-		const link = target.closest('a');
-		if (!link) return;
-
-		const href = link.getAttribute('href');
-		if (!href || !href.includes('#')) return;
-
-		// #Recruitment など、#のみで始まるリンク
-		if (href.startsWith('#')) {
-			e.preventDefault();
-			const el = document.getElementById(href.substring(1));
-			if (el) {
-				lenis.scrollTo(el, { offset: -80, duration: 1.2 });
-			}
-		}
-		// /about#Recruitment など、別ページへのハッシュリンクは
-		// SvelteKitのルーティングに任せる（afterNavigateで処理される）
-	}
-
-	
 </script>
 
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
-	<link rel="stylesheet" href="../css/base.css?var=1.29">
-	<link rel="stylesheet" href="../css/layout.css?var=1.16">
+	<link rel="stylesheet" href="../css/base.css?var=1.30">
+	<link rel="stylesheet" href="../css/layout.css?var=1.17">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400&family=Marcellus&display=swap" rel="stylesheet">
@@ -128,6 +60,8 @@
 <Leave />
 -->
 
+
+<OpAnimation />
 <div class="main">
 <LangFontManager />
 <Fontplus debug={true} />

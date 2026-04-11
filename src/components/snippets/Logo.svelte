@@ -31,13 +31,13 @@
 svg {
   margin-left: -10px;
   width: auto;
-  height: 1.6rem;
+  height: 17.5px;
 }
 
 @media screen and (min-width: 720px) {
   svg {
   margin-left: -10px;
-  height: 1.8rem;
+  height: 20px;
 }
 }
 

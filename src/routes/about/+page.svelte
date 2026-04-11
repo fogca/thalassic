@@ -40,7 +40,7 @@
   <section class="bodyLayout aboutBody">
 
     
-    <div class="wrapper" data-animate="fade-stagger" >
+    <div class="wrapper">
       <p class="mb-40">{@html t('about', $lang)}</p>
       <Identity />
     </div>

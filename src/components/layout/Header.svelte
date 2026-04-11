@@ -9,10 +9,13 @@ import { onMount } from 'svelte';
   import Fontplus from '../utilities/Fontplus.svelte';
   import { reloadFontPlus } from '../../lib/utils/fontplus'; // ← これ追加
  
-  let y
+  let y: number = 0
 
   import { lang } from '$lib/utils/lang'; // NEW path, not '$lib/lang'
   import { t } from './Header.dict';
+
+  // White header mode: top page only, before scrolling past 100vh
+  $: isHero = $page.url.pathname === '/' && y < (browser ? window.innerHeight : 800);
 
 let opens = false;
 
@@ -49,7 +52,7 @@ function handleMenuLinkClick(e: MouseEvent) {
   
 <svelte:window bind:scrollY={y} />
 
-  <header class:scrolled={y > 100}>
+  <header class:scrolled={y > 100} class:hero={isHero}>
   
       <div class="left">
           <a href="/" class="logo"><Logo /></a>
@@ -62,11 +65,12 @@ function handleMenuLinkClick(e: MouseEvent) {
 
           <nav class="pc">
               <ul>
-                  <li><a class="h5" href="/real-estate">{t('realestate', $lang)}</a></li>
-                  <li><a class="h5" href="/hotel"   >{t('hotel', $lang)}</a></li>
-                  <li><a class="h5" href="/about"      >{t('about', $lang)}</a></li>
-                  <li><a class="h5" href="/about#Recruitment">{t('recruit', $lang)}</a></li>
-                  <li><a class="h5" href="/contact"    >{t('contact', $lang)}</a></li>
+              
+                  <li><a class="h5" data-animate="lines" data-scroll="false" data-delay="1" href="/real-estate">{t('realestate', $lang)}</a></li>
+                  <li><a class="h5" data-animate="lines" data-scroll="false" data-delay="1" href="/hotel"   >{t('hotel', $lang)}</a></li>
+                  <li><a class="h5" data-animate="lines" data-scroll="false" data-delay="1" href="/about"      >{t('about', $lang)}</a></li>
+                  <li><a class="h5" data-animate="lines" data-scroll="false" data-delay="1" href="/about#Recruitment">{t('recruit', $lang)}</a></li>
+                  <li><a class="h5" data-animate="lines" data-scroll="false" data-delay="1" href="/contact"    >{t('contact', $lang)}</a></li>
                   <li>
                       <div class="lang-switch">
                           <!-- toggle button -->
@@ -137,7 +141,9 @@ header {
   top: 0;
   left: 0;
   background-color: var(--backgroundColor);
+  background-color: transparent;
   border-bottom: .5px solid rgba(0,0,0,0.1);
+  border-bottom: none;
 }
 
 
@@ -301,6 +307,32 @@ button {
   background: #f0f0f0;
 }
 
+
+/* --- hero mode (top page, before 100vh scroll) --- */
+header.hero {
+  background-color: transparent;
+  border-bottom-color: transparent;
+}
+header.hero a,
+header.hero button,
+header.hero span {
+  color: #fff;
+}
+header.hero .menu-btn span {
+  background: #fff;
+}
+header.hero :global(svg path) {
+  fill: #fff;
+}
+header.hero .current {
+  background: rgba(255,255,255,0.2);
+}
+header.hero .dropdown {
+  background: #fff;
+}
+header.hero .dropdown button {
+  color: #000;
+}
 
 @media screen and (min-width: 720px) {
 

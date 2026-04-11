@@ -38,11 +38,11 @@
     <div class="texts-container">
       <div></div>
 
-      <div data-animate="fade-up">
-        <h1 class="h2 hero__title uppercase" lang="en">
+      <div>
+        <h1 data-animate="lines" data-scroll="false" data-delay="1" class="h2 hero__title uppercase" lang="en">
           BUILDING LASTING <br class="sp">VALUE <br class="pc">THROUGH <br class="sp">REAL ESTATE
         </h1>
-        <h2 class="h5 hero__subtitle sans">{@html t('heading', $lang)}</h2>
+        <h2 data-animate="lines" data-scroll="false" data-delay="1" class="mt-10 h5 hero__subtitle sans">{@html t('heading', $lang)}</h2>
       </div>
       <div></div>
     </div>
@@ -56,8 +56,8 @@
 
     <div class="l-Contents wrapper">
       <div class="heading" data-animate="fade-up">
-        <h2 class="" lang="en">Business<br>details</h2>
-        <h5>{t('real1h', $lang)}</h5>
+        <h2 class="" lang="en" data-animate="lines" >Business<br>details</h2>
+        <h5 data-animate="lines">{t('real1h', $lang)}</h5>
       </div>
       <div class="container">
         <div class="Illustration" data-animate="fade-stagger">
@@ -82,7 +82,7 @@
             <h4 class="h6 center">{t('management', $lang)}</h4>
           </div>
         </div>
-        <p data-animate="fade-up">{@html t('real1p', $lang)}</p>
+        <p data-animate="lines">{@html t('real1p', $lang)}</p>
         <style>
 
         </style>
@@ -94,8 +94,8 @@
 
     <div class="l-Contents wrapper">
       <div class="heading" data-animate="fade-up">
-        <h2 class="" lang="en">Case<br>study</h2>
-        <h5>{t('real2h', $lang)}</h5>
+        <h2 class="" lang="en" data-animate="lines">Case<br>study</h2>
+        <h5 data-animate="lines">{t('real2h', $lang)}</h5>
       </div>
       <div class="container Gallery" data-animate="fade-stagger">
 
