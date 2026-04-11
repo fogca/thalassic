@@ -153,7 +153,7 @@
         <img src="/images/about-character_04.png" class="" alt="">
       </h4>
       <p data-animate="fade-up">{@html t('recruit', $lang)}
-        <img src="/images/about_recruit.png" class="" alt="">
+        <img src="/images/about_recruit.png" class="mt-40" alt="">
       </p>
       
     </div>
@@ -353,7 +353,7 @@
 .aboutRecruit .wrap {margin-top: 12rem;}
 .aboutRecruit .wrap .h0 {font-size: 4.2rem;}
 
-.aboutRecruit .aboutList {margin-top: 8rem;}
+.aboutRecruit .aboutList {margin-top: 40px;}
 .aboutRecruit .aboutList h5 {margin-bottom: 2rem;}
 
 
