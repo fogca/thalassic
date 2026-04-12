@@ -10,7 +10,7 @@
 
   
   $: isAboutPage = $page.url.pathname === '/about';
-  $: isTopPage = $page.url.pathname === '/';
+  $: isTopPage = $page.url.pathname === '/' || $page.url.pathname === '/contact';
 
 
 </script>

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Gradation from '../../components/snippets/Gradation.svelte';
   import { lang } from '$lib/utils/lang';
   import { t } from './contact.dict';
 
@@ -42,8 +43,12 @@
   <meta property="og:url" content="https://thalassiccapital.com/contact" />
 </svelte:head>
 
+<div class="fixedGrad">
+  <Gradation />
+</div>
+
 <section class="Contact">
-  <h1 class="h0" lang="en">Contact</h1>
+  <h1 class="h0 white" lang="en">Contact</h1>
   <div class="contact-container">
     {#if status === 'success'}
       <div class="success-message">
@@ -171,132 +176,174 @@
 </section>
 
 <style>
+  /* ── Page layout ──────────────────────────────────────────────── */
   .Contact {
+    position: relative;
+    z-index: 1;
     padding-top: 20vh;
-  }
-  .Contact h1 {
-    font-size: 3.6rem;
+    padding-bottom: 10vh;
+    min-height: 100vh;
   }
 
+  .Contact *:not(input):not(textarea):not(select):not(option):not(.submit-btn) {
+    color: white;
+  }
+
+  .Contact h1 {
+    padding: 0 var(--padding);
+    margin-bottom: 2rem;
+  }
+
+  /* ── Glass form container ─────────────────────────────────────── */
   .contact-container {
-    max-width: 800px;
+    max-width: 760px;
     margin: 0 auto;
-    padding: 60px 24px;
+    padding: 0 var(--padding) 6rem;
+  }
+
+  .success-message {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(24px) saturate(160%);
+    -webkit-backdrop-filter: blur(24px) saturate(160%);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 20px;
+    padding: 48px 40px;
+    box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.18),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
   }
 
   form {
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 28px;
   }
 
+  /* ── Form fields ──────────────────────────────────────────────── */
   .form-group {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 6px;
   }
 
   label {
-    font-size: 14px;
-    font-weight: 500;
-    color: #333;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.75;
   }
 
   .required {
-    color: #e74c3c;
-    font-size: 12px;
+    color: rgba(255, 180, 180, 0.9);
+    font-size: 11px;
   }
 
   input,
   select,
   textarea {
-    padding: 14px 16px;
-    font-size: 16px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    transition: border-color 0.2s;
+    padding: 13px 16px;
+    font-size: 15px;
     font-family: inherit;
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    transition: border-color 0.2s, background 0.2s;
+    outline: none;
   }
 
   input:focus,
   select:focus,
   textarea:focus {
-    outline: none;
-    border-color: #3b82f6;
+    border-color: rgba(255, 255, 255, 0.55);
+    background: rgba(255, 255, 255, 0.15);
   }
 
   input::placeholder,
   textarea::placeholder {
-    color: #aaa;
+    color: rgba(255, 255, 255, 0.4);
   }
 
   select {
     cursor: pointer;
     appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='white' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 16px center;
     padding-right: 40px;
   }
 
-  textarea {
-    resize: vertical;
-    min-height: 120px;
+  select option {
+    background: #1a3a6e;
+    color: white;
   }
 
+  textarea {
+    resize: vertical;
+    min-height: 130px;
+  }
+
+  /* ── Submit button ────────────────────────────────────────────── */
   .submit-btn {
-    padding: 18px 48px;
-    font-size: 16px;
-    font-weight: 500;
-    color: white;
-    background: #3b82f6;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background 0.2s;
     align-self: flex-start;
-    letter-spacing: 0.05em;
+    padding: 15px 48px;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    color: white !important;
+    background: rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 40px;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+    transition: background 0.2s, border-color 0.2s;
   }
 
   .submit-btn:hover:not(:disabled) {
-    background: #2563eb;
+    background: rgba(255, 255, 255, 0.28);
+    border-color: rgba(255, 255, 255, 0.55);
   }
 
   .submit-btn:disabled {
-    opacity: 0.6;
+    opacity: 0.5;
     cursor: not-allowed;
   }
 
+  /* ── States ───────────────────────────────────────────────────── */
   .success-message {
-    padding: 40px;
-    background: #d4edda;
-    border: 1px solid #c3e6cb;
-    border-radius: 8px;
     text-align: center;
+    padding: 60px 40px;
   }
 
   .success-message p {
-    font-size: 18px;
+    font-size: 17px;
     line-height: 1.8;
-    color: #155724;
+    opacity: 0.9;
     margin: 0;
   }
 
   .error-message {
-    padding: 16px;
-    background: #f8d7da;
-    border: 1px solid #f5c6cb;
-    border-radius: 4px;
-    color: #721c24;
+    padding: 14px 18px;
+    background: rgba(255, 80, 80, 0.15);
+    border: 1px solid rgba(255, 100, 100, 0.35);
+    border-radius: 8px;
   }
 
+  .error-message p {
+    font-size: 13px;
+    opacity: 0.9;
+    margin: 0;
+  }
+
+  /* ── Mobile ───────────────────────────────────────────────────── */
   @media (max-width: 768px) {
-    .contact-container {
-      padding: 40px 16px;
+    .success-message {
+      padding: 32px 20px;
+      border-radius: 14px;
     }
 
     .submit-btn {
       width: 100%;
+      text-align: center;
     }
   }
 </style>
