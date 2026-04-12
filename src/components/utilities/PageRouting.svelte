@@ -2,21 +2,17 @@
 <script lang="ts">
 	import { onMount, tick } from 'svelte';
 	import { afterNavigate, goto } from '$app/navigation';
-    import Logo from '../snippets/Logo.svelte';
 
 	interface Props {
 		columns?: number;
 		color?: string;
 		staggerAmount?: number;
-		/** OPアニメーションのロゴ（SVG文字列またはコンポーネント） */
-		showOpening?: boolean;
 	}
 
 	let {
 		columns = 8,
 		color = 'var(--key)',
 		staggerAmount = 0.5,
-		showOpening = true
 	}: Props = $props();
 
 	const mobileBreakpoint = 768;
@@ -27,9 +23,6 @@
 	let activeColumns = $state(8);
 	let isAnimating = $state(false);
 	let isInitialized = $state(false);
-	let showOpeningAnimation = $state(false);
-	let openingContainer: HTMLElement;
-	let logoElement: HTMLElement;
 
 	function getRouteContent() {
 		return document.querySelector('.route-content');
@@ -110,64 +103,10 @@
 		}
 	}
 
-	async function playOpeningAnimation() {
-		const gsapModule = await import('gsap');
-		const gsap = gsapModule.default;
-
-		document.body.style.overflow = 'hidden';
-
-		await tick();
-
-		const tl = gsap.timeline({
-			onComplete: () => {
-				document.body.style.overflow = '';
-				showOpeningAnimation = false;
-				isInitialized = true;
-				// OP終了後にピクセルトランジションでフェードアウト
-				animateIn();
-			}
-		});
-
-		// ロゴをフェードイン
-		tl.to(logoElement, {
-			opacity: 1,
-			duration: 0.8,
-			ease: 'power2.out',
-			delay: 0.5
-		})
-			// ロゴを表示したまま少し待つ
-			.to(logoElement, {
-				opacity: 1,
-				duration: 0.8
-			})
-			// ロゴをフェードアウト
-			.to(logoElement, {
-				opacity: 0,
-				duration: 0.5,
-				ease: 'power2.in'
-			})
-			// OPコンテナを非表示に
-			.set(openingContainer, {
-				display: 'none'
-			});
-	}
-
 	onMount(() => {
 		calculateGrid();
-
-		// セッション中の初回訪問かチェック
-		const hasVisited = sessionStorage.getItem('thalassic-visited') === 'true';
-
-		if (showOpening && !hasVisited) {
-			// OPアニメーションを表示
-			showOpeningAnimation = true;
-			sessionStorage.setItem('thalassic-visited', 'true');
-			playOpeningAnimation();
-		} else {
-			// OPスキップ、通常のトランジションイン
-			isInitialized = true;
-			animateIn();
-		}
+		isInitialized = true;
+		animateIn();
 
 		const handleClick = (e: MouseEvent) => {
 			const target = e.target as HTMLElement;
@@ -218,16 +157,6 @@
 	});
 </script>
 
-<!-- OPアニメーション -->
-{#if showOpeningAnimation}
-	<div class="opening-container" bind:this={openingContainer}>
-		<div class="opening-logo" bind:this={logoElement}>
-			<!-- THALASSICロゴ SVG（白） -->
-			<Logo />
-		</div>
-	</div>
-{/if}
-
 <!-- ピクセルトランジション -->
 <div
 	class="page-transition"
@@ -242,29 +171,6 @@
 </div>
 
 <style>
-	/* OPアニメーション */
-	.opening-container {
-		position: fixed;
-		inset: 0;
-		z-index: 10000;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		background: var(--key, #0a0a0a);
-	}
-
-	.opening-logo {
-		opacity: 0;
-		width: 50vw;
-		max-width: 600px;
-	}
-
-	.opening-logo :global(svg) {
-		width: 100%;
-		height: auto;
-		/* Logo SVG paths have fixed fill colors. This forces them to render white. */
-		filter: brightness(0) invert(1);
-	}
 
     
 

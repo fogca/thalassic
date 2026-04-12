@@ -1,11 +1,37 @@
 <script lang="ts">
-  import { enhance } from '$app/forms';
   import { lang } from '$lib/utils/lang';
   import { t } from './contact.dict';
 
-  export let form;
+  let name       = $state('');
+  let email      = $state('');
+  let phone      = $state('');
+  let type       = $state('');
+  let company    = $state('');
+  let department = $state('');
+  let website    = $state('');
+  let message    = $state('');
+  let status     = $state<'idle' | 'sending' | 'success' | 'error'>('idle');
+  let errorMsg   = $state('');
 
-  let loading = false;
+  async function handleSubmit(e: SubmitEvent) {
+    e.preventDefault();
+    status = 'sending';
+    errorMsg = '';
+
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, email, phone, type, company, department, website, message }),
+    });
+
+    if (res.ok) {
+      status = 'success';
+    } else {
+      const data = await res.json().catch(() => ({}));
+      errorMsg = data.error ?? 'エラーが発生しました';
+      status = 'error';
+    }
+  }
 </script>
 
 <svelte:head>
@@ -19,22 +45,12 @@
 <section class="Contact">
   <h1 class="h0" lang="en">Contact</h1>
   <div class="contact-container">
-    {#if form?.success}
+    {#if status === 'success'}
       <div class="success-message">
         <p>{@html t('formSuccessBody', $lang)}</p>
       </div>
     {:else}
-      <form
-        method="POST"
-        action="?/submit"
-        use:enhance={() => {
-          loading = true;
-          return async ({ update }) => {
-            await update();
-            loading = false;
-          };
-        }}
-      >
+      <form onsubmit={handleSubmit}>
         <!-- Name -->
         <div class="form-group">
           <label for="name">
@@ -43,7 +59,7 @@
           <input
             type="text"
             id="name"
-            name="name"
+            bind:value={name}
             placeholder={t('formNamePlaceholder', $lang)}
             required
           />
@@ -57,7 +73,7 @@
           <input
             type="email"
             id="email"
-            name="email"
+            bind:value={email}
             placeholder={t('formEmailPlaceholder', $lang)}
             required
           />
@@ -71,7 +87,7 @@
           <input
             type="tel"
             id="phone"
-            name="phone"
+            bind:value={phone}
             placeholder={t('formPhonePlaceholder', $lang)}
             required
           />
@@ -82,7 +98,7 @@
           <label for="type">
             {t('formTypeLabel', $lang)} <span class="required">*</span>
           </label>
-          <select id="type" name="type" required>
+          <select id="type" bind:value={type} required>
             <option value="" disabled selected>{t('formTypePlaceholder', $lang)}</option>
             <option value="business">{t('formTypeBusiness', $lang)}</option>
             <option value="service">{t('formTypeService', $lang)}</option>
@@ -98,7 +114,7 @@
           <input
             type="text"
             id="company"
-            name="company"
+            bind:value={company}
             placeholder={t('formCompanyPlaceholder', $lang)}
             required
           />
@@ -110,7 +126,7 @@
           <input
             type="text"
             id="department"
-            name="department"
+            bind:value={department}
             placeholder={t('formDepartmentPlaceholder', $lang)}
           />
         </div>
@@ -121,7 +137,7 @@
           <input
             type="url"
             id="website"
-            name="website"
+            bind:value={website}
             placeholder={t('formWebsitePlaceholder', $lang)}
           />
         </div>
@@ -133,21 +149,21 @@
           </label>
           <textarea
             id="message"
-            name="message"
+            bind:value={message}
             rows="6"
             placeholder={t('formMessagePlaceholder', $lang)}
             required
           ></textarea>
         </div>
 
-        {#if form?.error}
+        {#if status === 'error'}
           <div class="error-message">
-            <p>{form.error}</p>
+            <p>{errorMsg}</p>
           </div>
         {/if}
 
-        <button type="submit" class="submit-btn" disabled={loading}>
-          {loading ? t('formSubmitting', $lang) : t('formSubmit', $lang)}
+        <button type="submit" class="submit-btn" disabled={status === 'sending'}>
+          {status === 'sending' ? t('formSubmitting', $lang) : t('formSubmit', $lang)}
         </button>
       </form>
     {/if}
