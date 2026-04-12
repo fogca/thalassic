@@ -15,7 +15,7 @@ import { onMount } from 'svelte';
   import { t } from './Header.dict';
 
   // White header mode: top and about pages, before scrolling past 100vh
-  $: isHero = ['/', '/about'].includes($page.url.pathname) && y < (browser ? window.innerHeight : 800);
+  $: isHero = $page.url.pathname === '/contact' || (['/', '/about'].includes($page.url.pathname) && y < (browser ? window.innerHeight : 800));
 
 let opens = false;
 
@@ -329,6 +329,9 @@ header.hero .overlay :global(span) {
   color: var(--textColor) !important;
 }
 header.hero .menu-btn span {
+  background: #fff;
+}
+header.hero .menu-btn span.open {
   background: var(--textColor);
 }
 header.hero :global(svg path) {
