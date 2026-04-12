@@ -23,7 +23,7 @@
       {
         name: 'Coming Soon',
         description: '',
-        image: '/images/hotel-coming.jpg',
+        image: '/images/hotel-coming.webp',
         link: ''
       }
     ];

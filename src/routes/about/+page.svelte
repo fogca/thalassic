@@ -141,7 +141,7 @@
 
       <div class="mt-80">
         <h3 class="h2 white mb-20" lang="en" data-animate="fade-up">Our Belief</h3>
-        <img src="/images/about-logo.png" alt="" data-animate="fade-up">
+        <img src="/images/about-logo.webp" alt="" data-animate="fade-up">
         <p class="white mt-20" data-animate="fade-up">{@html t('logo_belief', $lang)}</p>
       </div>
       
@@ -155,13 +155,13 @@
     <h4 class="h5 white mt-10" data-animate="fade-up">{@html t('recruit_heading', $lang)}</h4>
     <div class="wrap" data-animate="fade-stagger">
       <h4 class="h0 white" lang="en">Join Our Team!
-        <img src="/images/about-character_01.png" class="" alt="">
-        <img src="/images/about-character_02.png" class="" alt="">
-        <img src="/images/about-character_03.png" class="" alt="">
-        <img src="/images/about-character_04.png" class="" alt="">
+        <img src="/images/about-character_01.webp" class="" alt="">
+        <img src="/images/about-character_02.webp" class="" alt="">
+        <img src="/images/about-character_03.webp" class="" alt="">
+        <img src="/images/about-character_04.webp" class="" alt="">
       </h4>
       <p data-animate="fade-up">{@html t('recruit', $lang)}
-        <img src="/images/about_recruit.png" class="mt-40" alt="">
+        <img src="/images/about_recruit.webp" class="mt-40" alt="">
       </p>
       
     </div>

@@ -250,7 +250,7 @@
     .image-tile {
       width: 100%;
       height: 100%;
-      background-image: url('/images/top_02.jpg');
+      background-image: url('/images/top_02.webp');
       background-size: 400% 400%; /* ✅ 4x4グリッドなので400% */
       opacity: 0;
     }

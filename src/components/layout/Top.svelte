@@ -18,7 +18,7 @@ type BusinessCategoryKey = 'categoryHotel' | 'categoryRecruit' | 'categoryAbout'
 
 const cards: { image: string; categoryKey: BusinessCategoryKey; title: string; link: string }[] = [
   { image: '/images/hotel-accommodation_01.webp', categoryKey: 'categoryHotel', title: 'HOTEL', link: '/hotel' },
-  { image: '/images/recruit_26a.jpg', categoryKey: 'categoryRecruit', title: 'RECRUITMENT', link: '/about#Recruitment' },
+  { image: '/images/recruit_26a.webp', categoryKey: 'categoryRecruit', title: 'RECRUITMENT', link: '/about#Recruitment' },
   { image: '/images/top-about_01.webp', categoryKey: 'categoryAbout', title: 'ABOUT US', link: '/about' },
   { image: '/images/property-global_01.webp', categoryKey: 'categoryRealEstate', title: 'REAL ESTATE', link: '/real-estate' }
 ];

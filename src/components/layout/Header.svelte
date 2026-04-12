@@ -93,7 +93,7 @@ function handleMenuLinkClick(e: MouseEvent) {
 
           
           <a href="/about#recruitment" class="pc" style="display: none;">
-            <img src="/images/top-header_01.png" alt="" class="" loading="eager" decoding="async" />
+            <img src="/images/top-header_01.webp" alt="" class="" loading="eager" decoding="async" />
           </a>
           
           <button class="menu-btn sp" on:click={toggle} aria-label="menu">
@@ -200,7 +200,7 @@ transform: translateY(-3.5px) rotate(-30deg);
 /* --- overlay --- */
 .overlay {
   position: fixed;
-  top: 50px;
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
@@ -320,8 +320,16 @@ header.hero :global(button *),
 header.hero :global(span) {
   color: #fff !important;
 }
+/* SP overlay menu has white background — keep text dark regardless of hero mode */
+header.hero .overlay :global(a),
+header.hero .overlay :global(a *),
+header.hero .overlay :global(button),
+header.hero .overlay :global(button *),
+header.hero .overlay :global(span) {
+  color: var(--textColor) !important;
+}
 header.hero .menu-btn span {
-  background: #fff;
+  background: var(--textColor);
 }
 header.hero :global(svg path) {
   fill: #fff;
@@ -333,7 +341,7 @@ header.hero .dropdown {
   background: #fff;
 }
 header.hero .dropdown button {
-  color: #000;
+  color: #000 !important;
 }
 
 @media screen and (min-width: 720px) {

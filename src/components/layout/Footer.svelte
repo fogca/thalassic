@@ -10,6 +10,7 @@
 
   
   $: isAboutPage = $page.url.pathname === '/about';
+  $: isTopPage = $page.url.pathname === '/';
 
 
 </script>
@@ -17,13 +18,13 @@
 
 
 
-<footer class:no-padding={isAboutPage}>
+<footer class:no-padding={isAboutPage} class:no-padding-top-sp={isTopPage}>
 
     {#if !isAboutPage}
     <section class="navigation">
         <div class="container" data-animate="fade-up">
-            <img src="/images/recruit_26a.jpg" alt="" class="pc">
-            <img src="/images/recruit_26_sp.jpg" alt="" class="sp">
+            <img src="/images/recruit_26a.webp" alt="" class="pc">
+            <img src="/images/recruit_26_sp.webp" alt="" class="sp">
             <div class="contents">
                 <p class="h6 bold">{t('footerRecruit', $lang)}</p>
                 <h2 class="h1" lang="en">Recruitment</h2>
@@ -176,6 +177,7 @@
     @media screen and (max-width: 834px) {
 
         footer {padding-top: 80px;}
+        footer.no-padding-top-sp {padding-top: 0;}
         section.space {padding-top: 80px;}
         footer .navigation {
             flex-direction: column;

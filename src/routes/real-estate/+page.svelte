@@ -9,20 +9,20 @@
   const rows = [
     // 1行目: 大・中・中
     [
-      { src: '/images/property-case_01.jpg', alt: 'Image 1' },
-      { src: '/images/property-case_03.jpg', alt: 'Image 2' },
-      { src: '/images/property-case_04.jpg', alt: 'Image 3' },
+      { src: '/images/property-case_01.webp', alt: 'Image 1' },
+      { src: '/images/property-case_03.webp', alt: 'Image 2' },
+      { src: '/images/property-case_04.webp', alt: 'Image 3' },
     ],
     // 2行目: 小・中・大
     [
-      { src: '/images/property-case_08.jpg', alt: 'Image 8' },
-      { src: '/images/property-case_06.jpg', alt: 'Image 5' },
-      { src: '/images/property-case_05.jpg', alt: 'Image 4' },
+      { src: '/images/property-case_08.webp', alt: 'Image 8' },
+      { src: '/images/property-case_06.webp', alt: 'Image 5' },
+      { src: '/images/property-case_05.webp', alt: 'Image 4' },
     ],
     // 3行目: 大・小・中
     [
-      { src: '/images/property-case_02.jpg', alt: 'Image 7' },
-      { src: '/images/property-case_07.jpg', alt: 'Image 6' },
+      { src: '/images/property-case_02.webp', alt: 'Image 7' },
+      { src: '/images/property-case_07.webp', alt: 'Image 6' },
       
       
     
@@ -70,22 +70,22 @@
       <div class="container">
         <div class="Illustration" data-animate="fade-stagger">
           <div class="box">
-            <img class="pz" src="/images/property-character_04.png" alt="" loading="eager" decoding="async" />
+            <img class="pz" src="/images/property-character_04.webp" alt="" loading="eager" decoding="async" />
             <h3 class="h4 center" lang="en">Acquisitions</h3>
             <h4 class="h6 center">{t('buy', $lang)}</h4>
           </div>
           <div class="box">
-            <img class="pz" src="/images/property-character_01.png" alt="" loading="eager" decoding="async" />
+            <img class="pz" src="/images/property-character_01.webp" alt="" loading="eager" decoding="async" />
             <h3 class="h4 center" lang="en">Revitalisation</h3>
             <h4 class="h6 center">{t('revitalisation', $lang)}</h4>
           </div>
           <div class="box">
-            <img class="pz" src="/images/property-character_02.png" alt="" loading="eager" decoding="async" />
+            <img class="pz" src="/images/property-character_02.webp" alt="" loading="eager" decoding="async" />
             <h3 class="h4 center" lang="en">Brokerage</h3>
             <h4 class="h6 center">{t('brokerage', $lang)}</h4>
           </div>
           <div class="box">
-            <img class="pz" src="/images/property-character_03.png" alt="" loading="eager" decoding="async" />
+            <img class="pz" src="/images/property-character_03.webp" alt="" loading="eager" decoding="async" />
             <h3 class="h4 center" lang="en">Management</h3>
             <h4 class="h6 center">{t('management', $lang)}</h4>
           </div>
@@ -157,7 +157,7 @@
   </section>
 
   <section class="GlobalBusiness">
-    <img class="w100" data-animate="fade-up" src="/images/property-global_02.jpg" alt="" loading="eager" decoding="async" />     
+    <img class="w100" data-animate="fade-up" src="/images/property-global_02.webp" alt="" loading="eager" decoding="async" />     
     <div class="l-Contents wrapper">
       <div class="heading" data-animate="fade-up">
         <h2 class="" lang="en">Global<br>Business</h2>
@@ -171,17 +171,17 @@
         <div class="Illustration" data-animate="fade-stagger">
           
           <div class="box">
-            <img class="pz" src="/images/property-character_01.png" alt="" loading="eager" decoding="async" />
+            <img class="pz" src="/images/property-character_01.webp" alt="" loading="eager" decoding="async" />
             <h3 class="h4 center" lang="en">Development</h3>
             <h4 class="h6 center">{t('dev', $lang)}</h4>
           </div>
           <div class="box">
-            <img class="pz" src="/images/property-character_02.png" alt="" loading="eager" decoding="async" />
+            <img class="pz" src="/images/property-character_02.webp" alt="" loading="eager" decoding="async" />
             <h3 class="h4 center" lang="en">Brokerage</h3>
             <h4 class="h6 center">{t('brokerage', $lang)}</h4>
           </div>
           <div class="box">
-            <img class="pz" src="/images/property-character_03.png" alt="" loading="eager" decoding="async" />
+            <img class="pz" src="/images/property-character_03.webp" alt="" loading="eager" decoding="async" />
             <h3 class="h4 center" lang="en">Management</h3>
             <h4 class="h6 center">{t('management', $lang)}</h4>
           </div>
@@ -195,7 +195,7 @@
       <div class="container" data-animate="fade-up">
         <h2 lang="en" class="h2 mb-5">Sydney</h2>
         <span class="h5">{t('sydney', $lang)}</span>
-        <img class="mt-20" src="/images/global_1.png" alt="" loading="eager" decoding="async" />     
+        <img class="mt-20" src="/images/global_1.webp" alt="" loading="eager" decoding="async" />     
         <h3 class="h4 mt-20 mb-5" lang="en">Core Long-Term Market</h3>
         <span class="h5">{t('market1', $lang)}</span>
         <p class="mt-10">{@html t('city1', $lang)}</p>
@@ -203,7 +203,7 @@
       <div class="container" data-animate="fade-up">
         <h2 lang="en" class="h2 mb-5">Perth</h2>
         <span class="h5">{t('perth', $lang)}</span>
-        <img class="mt-20" src="/images/global_2.jpg" alt="" loading="eager" decoding="async" />   
+        <img class="mt-20" src="/images/global_2.webp" alt="" loading="eager" decoding="async" />   
         <h3 class="h4 mt-20 mb-5" lang="en">Growth & Income Market</h3>
         <span class="h5">{t('market2', $lang)}</span>
         <p class="mt-10">{@html t('city2', $lang)}</p>

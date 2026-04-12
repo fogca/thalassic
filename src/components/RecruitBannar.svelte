@@ -5,7 +5,7 @@
 <div class="RecuritBannar">
 
     <section>
-        <img class="pz" src="/images/recruit_01.jpg" alt="" loading="eager" decoding="async" />
+        <img class="pz" src="/images/recruit_01.webp" alt="" loading="eager" decoding="async" />
     </section>
 
 </div>

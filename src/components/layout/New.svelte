@@ -89,7 +89,7 @@
     <div class="image-wrap" bind:this={imageWrapEl}>
       <img
         class="image-bg"
-        src="/images/top_02.jpg"
+        src="/images/top_02.webp"
         alt=""
         loading="eager"
         decoding="async"
