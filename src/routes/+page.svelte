@@ -15,16 +15,16 @@ import Orbit from "../components/snippets/Orbit.svelte"
   <Top />
 
   <section class="TopNumber my-80">
-    <div class="wrapper" data-animate="fade-stagger">
-      <div class="container">
+    <div class="wrapper">
+      <div class="container" data-animate="fade-up">
         <p class="body">{tNumber('item1Body', $lang)}</p>
         <span class="title sans" lang="en">120+</span>
       </div>
-      <div class="container">
+      <div class="container" data-animate="fade-up">
         <p class="body">{tNumber('item2Body', $lang)}</p>
         <span class="title sans" lang="en">48%</span>
       </div>
-      <div class="container">
+      <div class="container" data-animate="fade-up">
         <p class="body">{tNumber('item3Body', $lang)}</p>
         <span class="title sans" lang="en">¥1.3B+</span>
       </div>

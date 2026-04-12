@@ -21,7 +21,7 @@
 
     {#if !isAboutPage}
     <section class="navigation">
-        <div class="container">
+        <div class="container" data-animate="fade-up">
             <img src="/images/recruit_26a.jpg" alt="" class="pc">
             <img src="/images/recruit_26_sp.jpg" alt="" class="sp">
             <div class="contents">
@@ -30,7 +30,7 @@
                 <a href="/about#Recruitment" class=""><Link /></a>
             </div>
         </div>
-        <div class="container">
+        <div class="container" data-animate="fade-up">
             <div class="gradation-wrapper">
                 <Gradation />
             </div>
@@ -50,31 +50,31 @@
     <section class="footer">
 
     <div class="left">
-        <h2 class="h1" lang="en">Let’s build<br>what’s next,<br>together!</h2>
-        <p>{@html t('contactBody', $lang)}</p>
-        <a href="/contact" lang="en" class="h5">Contact Form</a>
+        <h2 class="h1" lang="en" data-animate="lines">Let’s build<br>what’s next,<br>together!</h2>
+        <p data-animate="lines">{@html t('contactBody', $lang)}</p>
+        <a href="/contact" lang="en" class="h5" data-animate="lines">Contact Form</a>
     </div>
     <div class="right">
         
         <div class="menu">
             <ul>
-                <li class="container"><a class="h2" href="/real-estate">{t('realestate', $lang)}</a></li>
-                <li class="container"><a class="h2" href="/hotel">{t('hotel', $lang)}</a></li>
+                <li class="container"><a class="h2" href="/real-estate" data-animate="lines">{t('realestate', $lang)}</a></li>
+                <li class="container"><a class="h2" href="/hotel" data-animate="lines">{t('hotel', $lang)}</a></li>
             </ul>
             <ul>
-                <li class="container"><a class="h2" href="/about">{t('about', $lang)}</a></li>
-                <li class="container"><a class="h2" href="/about#recruit">{t('recruit', $lang)}</a></li>
+                <li class="container"><a class="h2" href="/about" data-animate="lines">{t('about', $lang)}</a></li>
+                <li class="container"><a class="h2" href="/about#recruit" data-animate="lines">{t('recruit', $lang)}</a></li>
             </ul>
             <ul>
                 
-                <li class="container"><a class="h2" href="/contact">{t('contact', $lang)}</a></li>
+                <li class="container"><a class="h2" href="/contact" data-animate="lines">{t('contact', $lang)}</a></li>
             </ul>
         </div>
-        <div class="icons">
+        <div class="icons" data-animate="fade-up">
             <Icons />
         </div>
         <div class="bottom">
-            <div class="h6" lang="en">©Thalassic Capital, 2026</div>
+            <div class="h6" lang="en" data-animate="lines">©Thalassic Capital, 2026</div>
         </div>
         
     </div>

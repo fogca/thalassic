@@ -127,11 +127,11 @@ onMount(() => {
 
 <section class="Identity mt-160 mb-80">
   <div class="wrapper">
-    <div class="container" data-animate-children="lines">
-      <div class="h5 sans uppercase" lang="en">GROUP COMPANY</div>
-      <h2 class="h1 mb-10" lang="en">Three Identities,<br />One Collective Vision.</h2>
-      <p data-animate="line">{t('identityBody', $lang)}</p>
-      <a class="button white mt-40" href="/about" lang="en">About Us</a>
+    <div class="container">
+      <div class="h5 sans uppercase" lang="en" data-animate="lines">GROUP COMPANY</div>
+      <h2 class="h1 mb-10" lang="en" data-animate="lines">Three Identities,<br />One Collective Vision.</h2>
+      <p data-animate="fade-up">{t('identityBody', $lang)}</p>
+      <a class="button white mt-40" href="/about" lang="en" data-animate="fade-up" data-start="top 95%">About Us</a>
     </div>
     <div class="container" data-animate="fade-up">
       <Orbit />
@@ -144,7 +144,7 @@ onMount(() => {
 <section class="Business">
   <div class="wrapper">
     {#each cards as card}
-      <a class="container" href={card.link}>
+      <a class="container" href={card.link} data-animate="fade-up">
         <img src={card.image} alt={card.title} />
         <div class="overlay"></div>
         <div class="texts">

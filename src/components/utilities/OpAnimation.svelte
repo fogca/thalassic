@@ -67,7 +67,7 @@
   .op-overlay {
     position: fixed;
     inset: 0;
-    z-index: 9900;
+    z-index: 10000;
     pointer-events: none;
   }
 
@@ -83,6 +83,8 @@
     align-items: center;
     justify-content: center;
     z-index: 2;
+    opacity: 0; /* start hidden; GSAP animates in */
+    transform: translateY(12px);
   }
 
   .op-logo :global(svg) {

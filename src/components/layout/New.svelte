@@ -2,12 +2,16 @@
     import { onMount } from 'svelte';
     import { gsap } from 'gsap';
     import { ScrollTrigger } from 'gsap/ScrollTrigger';
+    import { CustomEase } from 'gsap/CustomEase';
     import { get } from 'svelte/store';
     import { opDone } from '$lib/stores/opDone';
     import { lang } from '$lib/utils/lang';
     import { t } from './New.dict';
 
-    gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger, CustomEase);
+
+    // Fast in (power1-like) → slow expo-style deceleration at the end
+    const imageRevealEase = CustomEase.create('imageReveal', 'M0,0 C0.4,0 0.2,1 1,1');
 
     let sectionEl  = $state<HTMLElement>();
     let imageWrapEl = $state<HTMLElement>();
@@ -24,18 +28,18 @@
         gsap.set(imageWrapEl!, { height: 0 });
         gsap.set(sectionEl!.querySelector('.image-bg'), { y: '18%' });
 
-        const tl = gsap.timeline({ delay: 0.3 });
+        const tl = gsap.timeline({ delay: 0.8 });
 
         tl.to(imageWrapEl!, {
-          height: '100vh',
+          height: '100%',
           duration: 1.6,
-          ease: 'expo.out',
+          ease: imageRevealEase,
         });
 
         tl.to(sectionEl!.querySelector('.image-bg'), {
           y: '0%',
           duration: 1.6,
-          ease: 'expo.out',
+          ease: imageRevealEase,
         }, '<');
 
         // ── Text chars ────────────────────────────────────────────
@@ -187,19 +191,19 @@
     .hero-section {
       position: relative;
       width: 100vw;
-      height: 100vh;
+      height: 100lvh;
       overflow: hidden;
       background: #fff;
     }
 
-    /* ── Image wrap: anchored to bottom, height animated 0→100vh ── */
+    /* ── Image wrap: anchored to bottom, height animated 0→100lvh ─ */
     /* overflow:hidden clips the img; img never changes size.         */
     .image-wrap {
       position: absolute;
       bottom: 0;
       left: 0;
       width: 100vw;
-      height: 0; /* GSAP animates this to 100vh */
+      height: 0; /* GSAP animates this to 100% */
       overflow: hidden;
       z-index: 1;
     }
@@ -209,11 +213,12 @@
       bottom: 0;
       left: 0;
       width: 100vw;
-      height: 120vh; /* extra 20vh gives parallax room */
+      height: 120lvh; /* extra 20dvh gives room for translate animation */
       object-fit: cover;
       object-position: center center;
       display: block;
       will-change: transform;
+      filter: contrast(1.15) brightness(0.9);
     }
 
     /* ── Text ───────────────────────────────────────────────────── */
@@ -272,6 +277,7 @@
     }
 
     @media screen and (max-width: 834px) {
+
       .hero-title {
         top: 20vh;
         padding: 0 var(--padding);

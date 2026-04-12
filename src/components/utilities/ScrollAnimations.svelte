@@ -17,7 +17,15 @@
 	// only handles GSAP tweens/ScrollTriggers; HTML restoration is done manually.
 	type SplitEntry = { el: HTMLElement; originalHTML: string };
 	let splitEntries: SplitEntry[] = [];
+
+	// Track fade/fade-up elements so cleanup can reset their inline styles.
+	let fadeEntries: HTMLElement[] = [];
+
 	let ctx: gsap.Context | null = null;
+
+	// Abort token: incremented on each initAnimations() call.
+	// After the async waitForFonts() gap, stale calls bail out early.
+	let initToken = 0;
 
 	// ─── Lenis ───────────────────────────────────────────────────────────────
 
@@ -42,6 +50,12 @@
 			el.innerHTML = originalHTML;
 		});
 		splitEntries = [];
+		// Reset inline styles set by gsap.set() on fade/fade-up elements
+		fadeEntries.forEach((el) => {
+			el.style.opacity = '';
+			el.style.transform = '';
+		});
+		fadeEntries = [];
 	}
 
 	// ─── Font loading ────────────────────────────────────────────────────────
@@ -132,6 +146,12 @@
 
 	// ─── Animation init ──────────────────────────────────────────────────────
 
+	/** Elements inside section.footer fire as soon as they enter the viewport bottom */
+	function resolveStart(el: HTMLElement, defaultStart: string): string {
+		if (el.closest('section.footer')) return 'top bottom';
+		return defaultStart;
+	}
+
 	type AnimEntry = {
 		lines: Element[];
 		trigger: HTMLElement;
@@ -145,10 +165,14 @@
 	};
 
 	async function initAnimations() {
+		const token = ++initToken;
 		cleanup();
 
 		// Fix B: wait for both CSS fonts and Fontplus fonts before measuring layout
 		await waitForFonts();
+
+		// Abort if a newer initAnimations() call has already started
+		if (token !== initToken) return;
 
 		const queue: AnimEntry[] = [];
 
@@ -172,7 +196,7 @@
 				trigger: el,
 				delay: parseFloat(el.dataset.delay ?? '0'),
 				scrollEnabled: el.dataset.scroll !== 'false',
-				start: el.dataset.start ?? 'top 75%',
+				start: resolveStart(el, el.dataset.start ?? 'top 75%'),
 				stagger: parseFloat(el.dataset.stagger ?? '0.1')
 			});
 		});
@@ -189,6 +213,8 @@
 		document.querySelectorAll<HTMLElement>('[data-animate-children="lines"]').forEach((container) => {
 			const allLines: Element[] = [];
 			Array.from(container.children).forEach((child) => {
+				// Skip children that declare their own data-animate — avoid double-processing
+				if ((child as HTMLElement).dataset.animate) return;
 				const lines = prepareElement(child as HTMLElement);
 				if (lines) allLines.push(...lines);
 			});
@@ -198,7 +224,7 @@
 				trigger: container,
 				delay: parseFloat(container.dataset.delay ?? '0'),
 				scrollEnabled: container.dataset.scroll !== 'false',
-				start: container.dataset.start ?? 'top 75%',
+				start: resolveStart(container, container.dataset.start ?? 'top 75%'),
 				stagger: parseFloat(container.dataset.stagger ?? '0.1')
 			});
 		});
@@ -217,12 +243,13 @@
 		//   <div data-animate="fade" data-delay="0.2">...</div>
 		//   <img data-animate="fade" data-scroll="false" />
 		document.querySelectorAll<HTMLElement>('[data-animate="fade"]').forEach((el) => {
+			fadeEntries.push(el);
 			queue.push({
 				lines: [el],
 				trigger: el,
 				delay: parseFloat(el.dataset.delay ?? '0'),
 				scrollEnabled: el.dataset.scroll !== 'false',
-				start: el.dataset.start ?? 'top 80%',
+				start: resolveStart(el, el.dataset.start ?? 'top 80%'),
 				stagger: 0,
 				type: 'fade',
 				duration: parseFloat(el.dataset.duration ?? '0.8')
@@ -243,12 +270,13 @@
 		//   <div data-animate="fade-up">...</div>
 		//   <img data-animate="fade-up" data-delay="0.3" data-y="40" src="..." />
 		document.querySelectorAll<HTMLElement>('[data-animate="fade-up"]').forEach((el) => {
+			fadeEntries.push(el);
 			queue.push({
 				lines: [el],
 				trigger: el,
 				delay: parseFloat(el.dataset.delay ?? '0'),
 				scrollEnabled: el.dataset.scroll !== 'false',
-				start: el.dataset.start ?? 'top 80%',
+				start: resolveStart(el, el.dataset.start ?? 'top 80%'),
 				stagger: 0,
 				type: 'fade-up',
 				duration: parseFloat(el.dataset.duration ?? '0.8'),
@@ -273,12 +301,13 @@
 		document.querySelectorAll<HTMLElement>('[data-animate-children="fade"]').forEach((container) => {
 			const children = Array.from(container.children) as HTMLElement[];
 			if (!children.length) return;
+			children.forEach((child) => fadeEntries.push(child));
 			queue.push({
 				lines: children,
 				trigger: container,
 				delay: parseFloat(container.dataset.delay ?? '0'),
 				scrollEnabled: container.dataset.scroll !== 'false',
-				start: container.dataset.start ?? 'top 80%',
+				start: resolveStart(container, container.dataset.start ?? 'top 80%'),
 				stagger: parseFloat(container.dataset.stagger ?? '0.08'),
 				type: 'fade',
 				duration: parseFloat(container.dataset.duration ?? '0.8')
