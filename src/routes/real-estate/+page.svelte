@@ -31,6 +31,14 @@
 
 </script>
 
+<svelte:head>
+  <title>Real Estate | Thalassic Capital</title>
+  <meta name="description" content="Discover Thalassic Capital's real estate business — our approach to investment, development, and long-term value creation across Japan and Australia." />
+  <meta property="og:title" content="Real Estate | Thalassic Capital" />
+  <meta property="og:description" content="Discover Thalassic Capital's real estate business — our approach to investment, development, and long-term value creation across Japan and Australia." />
+  <meta property="og:url" content="https://thalassiccapital.com/real-estate" />
+</svelte:head>
+
 
 <main>
 

@@ -162,7 +162,15 @@
       window.removeEventListener('scroll', onScroll);
     });
   </script>
-  
+
+<svelte:head>
+  <title>Hotel | Thalassic Capital</title>
+  <meta name="description" content="Explore Thalassic Capital's hospitality portfolio — thoughtfully curated hotel experiences rooted in local culture and design." />
+  <meta property="og:title" content="Hotel | Thalassic Capital" />
+  <meta property="og:description" content="Explore Thalassic Capital's hospitality portfolio — thoughtfully curated hotel experiences rooted in local culture and design." />
+  <meta property="og:url" content="https://thalassiccapital.com/hotel" />
+</svelte:head>
+
   <!-- ============================================================
        Markup
        ============================================================ -->

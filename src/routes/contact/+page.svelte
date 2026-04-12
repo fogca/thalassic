@@ -8,6 +8,14 @@
   let loading = false;
 </script>
 
+<svelte:head>
+  <title>Contact | Thalassic Capital</title>
+  <meta name="description" content="Get in touch with Thalassic Capital. We welcome inquiries about real estate, hospitality partnerships, and investment opportunities." />
+  <meta property="og:title" content="Contact | Thalassic Capital" />
+  <meta property="og:description" content="Get in touch with Thalassic Capital. We welcome inquiries about real estate, hospitality partnerships, and investment opportunities." />
+  <meta property="og:url" content="https://thalassiccapital.com/contact" />
+</svelte:head>
+
 <section class="Contact">
   <h1 class="h0" lang="en">Contact</h1>
   <div class="contact-container">

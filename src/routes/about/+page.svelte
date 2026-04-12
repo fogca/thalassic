@@ -12,6 +12,14 @@
 
 </script>
 
+<svelte:head>
+  <title>About | Thalassic Capital</title>
+  <meta name="description" content="Learn about Thalassic Capital — our philosophy, team, and commitment to responsible real estate and hospitality development across Japan and Australia." />
+  <meta property="og:title" content="About | Thalassic Capital" />
+  <meta property="og:description" content="Learn about Thalassic Capital — our philosophy, team, and commitment to responsible real estate and hospitality development across Japan and Australia." />
+  <meta property="og:url" content="https://thalassiccapital.com/about" />
+</svelte:head>
+
 
 <main id="About">
 

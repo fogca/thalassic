@@ -9,6 +9,14 @@ import Orbit from "../components/snippets/Orbit.svelte"
   import { lang } from '$lib/utils/lang';
 </script>
 
+<svelte:head>
+  <title>Thalassic Capital</title>
+  <meta name="description" content="Thalassic Capital is a real estate and hospitality group based in Japan and Australia, transforming potential into long-term value." />
+  <meta property="og:title" content="Thalassic Capital" />
+  <meta property="og:description" content="Thalassic Capital is a real estate and hospitality group based in Japan and Australia, transforming potential into long-term value." />
+  <meta property="og:url" content="https://thalassiccapital.com" />
+</svelte:head>
+
 <main>
 
   <New />
