@@ -199,37 +199,36 @@ transform: translateY(-3.5px) rotate(-30deg);
 
 /* --- overlay --- */
 .overlay {
-position: fixed;
-inset: 0;
-background: rgba(0, 0, 0, 0);
-opacity: 0;
-pointer-events: none;
-transition: all 0.3s ease;
-  width: 100vw;
-  height: calc(100vh - 50px);
+  position: fixed;
   top: 50px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
 }
 .overlay.open {
-background: rgba(0, 0, 0, 0.6);
-opacity: 1;
-pointer-events: auto;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 1;
+  pointer-events: auto;
 }
 
 /* --- menu --- */
 .menu {
-position: absolute;
-top: 0px;
-right: 0;
-width: 100vw;
-height: calc(100vh - 50px);
-height: calc(100dvh - 50px);
-background: white;
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-padding: 60px var(--padding) 45px;
-transform: translateX(100%);
-transition: transform 0.3s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 60px var(--padding) 45px;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
 }
 .overlay.open .menu {
 transform: translateX(0);

@@ -249,7 +249,7 @@
 				trigger: el,
 				delay: parseFloat(el.dataset.delay ?? '0'),
 				scrollEnabled: el.dataset.scroll !== 'false',
-				start: resolveStart(el, el.dataset.start ?? 'top 80%'),
+				start: resolveStart(el, el.dataset.start ?? 'top 90%'),
 				stagger: 0,
 				type: 'fade',
 				duration: parseFloat(el.dataset.duration ?? '0.8')
@@ -264,7 +264,7 @@
 		//   data-duration="1"         duration in seconds (default 0.8)
 		//   data-y="30"               translate distance in px (default 20)
 		//   data-scroll="false"       fire on page load instead of scroll
-		//   data-start="top 80%"      custom ScrollTrigger start
+		//   data-start="top 90%"      custom ScrollTrigger start
 		//
 		// Example:
 		//   <div data-animate="fade-up">...</div>
@@ -276,7 +276,7 @@
 				trigger: el,
 				delay: parseFloat(el.dataset.delay ?? '0'),
 				scrollEnabled: el.dataset.scroll !== 'false',
-				start: resolveStart(el, el.dataset.start ?? 'top 80%'),
+				start: resolveStart(el, el.dataset.start ?? 'top 90%'),
 				stagger: 0,
 				type: 'fade-up',
 				duration: parseFloat(el.dataset.duration ?? '0.8'),
