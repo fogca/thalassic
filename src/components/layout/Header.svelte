@@ -14,8 +14,8 @@ import { onMount } from 'svelte';
   import { lang } from '$lib/utils/lang'; // NEW path, not '$lib/lang'
   import { t } from './Header.dict';
 
-  // White header mode: top page only, before scrolling past 100vh
-  $: isHero = $page.url.pathname === '/' && y < (browser ? window.innerHeight : 800);
+  // White header mode: top and about pages, before scrolling past 100vh
+  $: isHero = ['/', '/about'].includes($page.url.pathname) && y < (browser ? window.innerHeight : 800);
 
 let opens = false;
 
@@ -91,7 +91,8 @@ function handleMenuLinkClick(e: MouseEvent) {
               </ul>
           </nav>
 
-          <a href="/about#recruitment" class="pc">
+          
+          <a href="/about#recruitment" class="pc" style="display: none;">
             <img src="/images/top-header_01.png" alt="" class="" loading="eager" decoding="async" />
           </a>
           
@@ -313,10 +314,12 @@ header.hero {
   background-color: transparent;
   border-bottom-color: transparent;
 }
-header.hero a,
-header.hero button,
-header.hero span {
-  color: #fff;
+header.hero :global(a),
+header.hero :global(a *),
+header.hero :global(button),
+header.hero :global(button *),
+header.hero :global(span) {
+  color: #fff !important;
 }
 header.hero .menu-btn span {
   background: #fff;

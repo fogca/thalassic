@@ -86,14 +86,14 @@
   }
 
   .op-logo :global(svg) {
-    width: 25vw;
+    width: 30vw;
     height: auto;
     filter: brightness(0) invert(1);
   }
 
   @media (max-width: 768px) {
     .op-logo :global(svg) {
-      width: 75vw;
+      width: 80vw;
     }
   }
 </style>

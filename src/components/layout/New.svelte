@@ -2,102 +2,94 @@
     import { onMount } from 'svelte';
     import { gsap } from 'gsap';
     import { ScrollTrigger } from 'gsap/ScrollTrigger';
-    import Lenis from 'lenis';
-    import Logo from '../snippets/Logo.svelte';
+    import { get } from 'svelte/store';
+    import { opDone } from '$lib/stores/opDone';
     import { lang } from '$lib/utils/lang';
     import { t } from './New.dict';
-    
+
     gsap.registerPlugin(ScrollTrigger);
-    
-    let showOP = $state(true);
-    let lenisInstance: Lenis;
-    
-    onMount(() => {
-      // ============================================================
-      // Lenis セットアップ
-      // ============================================================
-      lenisInstance = new Lenis({
-        duration: 2.5,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        orientation: 'vertical',
-        smoothWheel: true,
-        smoothTouch: false,
-      });
-      
-      function raf(time: number) {
-        lenisInstance.raf(time);
-        requestAnimationFrame(raf);
-      }
-      requestAnimationFrame(raf);
-      
-      lenisInstance.on('scroll', ScrollTrigger.update);
-      gsap.ticker.add((time) => {
-        lenisInstance.raf(time * 1000);
-      });
-      gsap.ticker.lagSmoothing(0);
-      
-      // ============================================================
-      // OPアニメーション
-      // ============================================================
-      const opTimeline = gsap.timeline({
-        onComplete: () => {
-          showOP = false;
-          // ✅ スクロールアニメーションは削除、固定表示のまま
-        }
-      });
-      
-      // ✅ 画像4分割タイルの初期設定
-      const tiles = document.querySelectorAll('.image-tile');
-      gsap.set(tiles, { y: '100%' }); // ✅ 最初は下に隠す
-      
-      // ✅ 画像4分割タイルがstaggerで下から上にスライドイン
-      tiles.forEach((tile, index) => {
-        opTimeline.to(tile, {
+
+    let sectionEl  = $state<HTMLElement>();
+    let imageWrapEl = $state<HTMLElement>();
+    let ctx: gsap.Context | null = null;
+
+    function runAnimation() {
+      if (!sectionEl || !imageWrapEl) return;
+      ctx?.revert();
+
+      ctx = gsap.context(() => {
+        // ── Image reveal: wrapper grows from bottom → 100vh ───────
+        // The image inside is always 100vw×100vh (object-fit:cover).
+        // Only the wrapper height clips it — so the image never scales.
+        gsap.set(imageWrapEl!, { height: 0 });
+        gsap.set(sectionEl!.querySelector('.image-bg'), { y: '18%' });
+
+        const tl = gsap.timeline({ delay: 0.3 });
+
+        tl.to(imageWrapEl!, {
+          height: '100vh',
+          duration: 1.6,
+          ease: 'expo.out',
+        });
+
+        tl.to(sectionEl!.querySelector('.image-bg'), {
           y: '0%',
-          duration: 1.5,
-          ease: 'expo.inOut',
-        }, index * 0.05); // ✅ すぐスタート
-      });
-      
-      // ✅ テキストアニメーション（行ごとにstagger）
-      const lines = document.querySelectorAll('.hero-title .line');
-      const textStartTime = opTimeline.duration() - 0.3;
-      
-      lines.forEach((line, lineIndex) => {
-        const lineChars = line.querySelectorAll('.char');
-        opTimeline.to(lineChars, {
-          y: '0%',
+          duration: 1.6,
+          ease: 'expo.out',
+        }, '<');
+
+        // ── Text chars ────────────────────────────────────────────
+        const lines = sectionEl!.querySelectorAll('.hero-title .line');
+        lines.forEach((line, i) => {
+          tl.to(line.querySelectorAll('.char'), {
+            y: '0%',
+            opacity: 1,
+            duration: 1.0,
+            ease: 'expo.out',
+            stagger: 0.012,
+          }, 0.8 + i * 0.08);
+        });
+
+        tl.to(sectionEl!.querySelector('.hero-title p'), {
           opacity: 1,
-          duration: 1.2,
-          ease: 'expo.inOut',
-          stagger: 0.015,
-        }, textStartTime + (lineIndex * 0.1));
-      });
-      
-      // ✅ サブタイトル
-      opTimeline.to('.hero-title p', {
-        opacity: 1,
-        y: 0,
-        duration: 1.0,
-        ease: 'power2.out',
-      }, '-=0.2');
-      
-      return () => {
-        ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-        lenisInstance.destroy();
-      };
+          y: 0,
+          duration: 0.8,
+          ease: 'power2.out',
+        }, '-=0.3');
+
+      }, sectionEl);
+    }
+
+    onMount(() => {
+      // Run immediately if OP already done (e.g. non-first visit)
+      if (get(opDone)) {
+        runAnimation();
+      } else {
+        // Wait for OpAnimation to complete, then run
+        const unsub = opDone.subscribe((done) => {
+          if (!done) return;
+          unsub();
+          runAnimation();
+        });
+      }
+
+      return () => ctx?.revert();
     });
   </script>
   
   <!-- ============================================================
        ヒーローセクション
        ============================================================ -->
-  <div class="hero-section">
-    <!-- ✅ 画像分割グリッド（横4分割） -->
-    <div class="image-grid">
-      {#each Array(4) as _, i}
-        <div class="image-tile" data-index={i}></div>
-      {/each}
+  <div class="hero-section" bind:this={sectionEl}>
+    <!-- Image: overflow:hidden on wrap, img is 120% tall for parallax room -->
+    <div class="image-wrap" bind:this={imageWrapEl}>
+      <img
+        class="image-bg"
+        src="/images/top_02.jpg"
+        alt=""
+        loading="eager"
+        decoding="async"
+      />
     </div>
     
     <div class="hero-title">
@@ -191,188 +183,57 @@
   </div>
   
   <style lang="css">
-    /* ============================================================
-       ヒーローセクション
-       ============================================================ */
+    /* ── Hero section ───────────────────────────────────────────── */
     .hero-section {
       position: relative;
-      width: 100vw;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: white;
-      overflow: hidden;
-    }
-    
-    /* ✅ 画像分割グリッド（横4分割） */
-    .image-grid {
-      position: absolute;
       width: 100vw;
       height: 100vh;
-      top: 0;
-      left: 0;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: 1fr;
-      z-index: 2;
+      overflow: hidden;
+      background: #fff;
     }
-    
-    .image-tile {
-      width: 100%;
-      height: 100%;
-      background-image: url('/images/top_02.jpg');
-      background-size: 400% 100%;
-      background-position: top center;
-    }
-    
-    /* 各タイルの背景位置 */
-    .image-tile[data-index="0"] { background-position: 0% 0%; }
-    .image-tile[data-index="1"] { background-position: 33.333% 0%; }
-    .image-tile[data-index="2"] { background-position: 66.666% 0%; }
-    .image-tile[data-index="3"] { background-position: 100% 0%; }
-    
-    /* ============================================================
-       テキスト
-       ============================================================ */
-    .hero-title {
+
+    /* ── Image wrap: anchored to bottom, height animated 0→100vh ── */
+    /* overflow:hidden clips the img; img never changes size.         */
+    .image-wrap {
       position: absolute;
-      text-align: center;
-      color: white;
-      z-index: 10;
+      bottom: 0;
+      left: 0;
+      width: 100vw;
+      height: 0; /* GSAP animates this to 100vh */
+      overflow: hidden;
+      z-index: 1;
     }
-    
-    .hero-title h1 {
-      font-size: clamp(1.5rem, 4vw, 3rem);
-      font-weight: 300;
-      letter-spacing: 0.1em;
-      margin-bottom: 1rem;
-      text-transform: uppercase;
-    }
-  
-    /* ✅ PC/モバイル切り替え */
-    .desktop-text {
+
+    .image-bg {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100vw;
+      height: 120vh; /* extra 20vh gives parallax room */
+      object-fit: cover;
+      object-position: center center;
       display: block;
-    }
-    
-    .mobile-text {
-      display: none;
-    }
-    
-    @media (max-width: 767px) {
-      .desktop-text {
-        display: none;
-      }
-      
-      .mobile-text {
-        display: block;
-      }
-    }
-    
-    .hero-title .line {
-      display: flex;
-      justify-content: center;
-      gap: 0.15em;
-      overflow: hidden;
-      padding-bottom: 0;
-    }
-    
-    .hero-title .word {
-      display: inline-block;
-      overflow: hidden;
-      padding-bottom: 0;
-    }
-    
-    .hero-title .char {
-      display: inline-block;
-      transform: translateY(100%);
-      opacity: 0;
-    }
-    
-    .hero-title p {
-        font-size: 16px;
-        letter-spacing: 0.05em;
-      opacity: 0;
-      transform: translateY(10px);
+      will-change: transform;
     }
 
-
-    /* ============================================================
-       OPオーバーレイ
-       ============================================================ */
-    .op-overlay {
-      position: fixed;
-      inset: 0;
-      background: #ffffff;
-      z-index: 9999;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    
-    .op-overlay :global(.op-logo) {
-      opacity: 0;
-    }
-    
-    /* ============================================================
-       ヒーローセクション
-       ============================================================ */
-    .hero-section {
-      position: relative;
-      width: 100vw;
-      min-height: 100vh; /* ✅ 固定表示、スクロールしない */
-      display: flex;
-      align-items: flex-start;
-      justify-content: flex-start;
-      background: white;
-      overflow: hidden;
-    }
-    
-    /* ✅ 画像分割グリッド（横4分割） */
-    .image-grid {
-      position: absolute;
-      width: 100vw;
-      height: 100vh; /* ✅ 100vhに変更（スクロールなし） */
-      top: 0;
-      left: 0;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: 1fr;
-      z-index: 2;
-    }
-    
-    .image-tile {
-      width: 100%;
-      height: 100%;
-      background-image: url('/images/top_02.jpg');
-      background-size: 400% 100%; /* ✅ 横4分割 */
-      background-position: top center;
-    }
-    
-    /* 各タイルの背景位置 */
-    .image-tile[data-index="0"] { background-position: 0% 0%; }
-    .image-tile[data-index="1"] { background-position: 33.333% 0%; }
-    .image-tile[data-index="2"] { background-position: 66.666% 0%; }
-    .image-tile[data-index="3"] { background-position: 100% 0%; }
-    
-    /* ============================================================
-       テキスト
-       ============================================================ */
+    /* ── Text ───────────────────────────────────────────────────── */
     .hero-title {
-      
-          padding: calc(var(--padding) * 2) var(--padding);
+      position: absolute;
+      top: 17.5vh;
+      left: 0;
+      padding: 0 var(--padding);
       color: white;
       z-index: 10;
     }
-    
+
     .hero-title h1,
     .hero-title h1 * {
       font-size: clamp(28px, 4vw, 64px);
       line-height: 1.0;
       color: white;
-        -webkit-text-stroke: calc(0.1px + 0.01em) white;
+      -webkit-text-stroke: calc(0.1px + 0.01em) white;
     }
-    
+
     .hero-title .line {
       display: flex;
       justify-content: flex-start;
@@ -380,17 +241,20 @@
       overflow: hidden;
       padding-bottom: 0.1em;
     }
-    
+
     .hero-title .word {
       display: inline-block;
       overflow: hidden;
-      
     }
-    
+
     .hero-title .char {
       display: inline-block;
       transform: translateY(100%);
       opacity: 0;
+    }
+
+    .hero-title h1 {
+      margin-bottom: 10px;
     }
 
     .hero-title p {
@@ -398,24 +262,25 @@
       transform: translateY(10px);
     }
 
+    /* ── PC/SP text switch ──────────────────────────────────────── */
+    .desktop-text { display: block; }
+    .mobile-text  { display: none; }
 
+    @media (max-width: 767px) {
+      .desktop-text { display: none; }
+      .mobile-text  { display: block; }
+    }
 
     @media screen and (max-width: 834px) {
-
-
-        .hero-title {
-          padding: 0 var(--padding);
-          top: calc(60px + 8vh);
-          padding-left: calc(.8 * var(--padding));
-          padding-left: var(--padding);
-        }
-
-        .hero-title h1 * {
-          line-height: 1.15;
-        }
-        .hero-title p {
-          font-size: 13.5px;
-        }
-
+      .hero-title {
+        top: 20vh;
+        padding: 0 var(--padding);
+      }
+      .hero-title h1 * {
+        line-height: 1.15;
+      }
+      .hero-title p {
+        font-size: 13.5px;
+      }
     }
   </style>
