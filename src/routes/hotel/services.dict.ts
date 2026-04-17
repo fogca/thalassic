@@ -4,7 +4,7 @@ export const dict = {
   heading: {
     ja: 'その土地が持つ文化と<br>物語を形にし、<br>「暮らすように泊まる」<br>滞在体験をお届けする。',
     zh: '将土地的文化<br>与故事具象化，<br>提供"像生活一样住宿"的<br>入住体验。',
-    en: 'Drive global expansion <br>through strategic investments that <br>open new fields of opportunity.'
+    en: 'HOSPITALITY ROOTED<br>IN PLACE AND SPIRIT.'
   },
   sub: {
     ja: '宿泊・オフィス事業',

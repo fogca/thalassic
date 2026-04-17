@@ -90,7 +90,7 @@
             <h4 class="h6 center">{t('management', $lang)}</h4>
           </div>
         </div>
-        <p data-animate="lines">{@html t('real1p', $lang)}</p>
+        <p class="sans" data-animate="lines">{@html t('real1p', $lang)}</p>
         <style>
 
         </style>

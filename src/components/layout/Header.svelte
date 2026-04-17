@@ -1,7 +1,7 @@
 <script lang="ts">
   import Logo from "../snippets/Logo.svelte";
   import { slide } from 'svelte/transition';
-import { onMount } from 'svelte';
+  import { onMount, onDestroy } from 'svelte';
   import { page } from '$app/stores';
   import { browser } from '$app/environment';
   import { afterNavigate } from '$app/navigation';
@@ -14,8 +14,27 @@ import { onMount } from 'svelte';
   import { lang } from '$lib/utils/lang'; // NEW path, not '$lib/lang'
   import { t } from './Header.dict';
 
-  // White header mode: top and about pages, before scrolling past 100vh
-  $: isHero = $page.url.pathname === '/contact' || (['/', '/about'].includes($page.url.pathname) && y < (browser ? window.innerHeight : 800));
+  let hotelHeroEndY = browser ? window.innerHeight : 800;
+
+  function updateHotelHeroEndY() {
+    if (!browser) return;
+    if ($page.url.pathname !== '/hotel') {
+      hotelHeroEndY = window.innerHeight;
+      return;
+    }
+
+    const accommodationSection = document.querySelector('section.accomodation') as HTMLElement | null;
+    hotelHeroEndY = accommodationSection
+      ? accommodationSection.getBoundingClientRect().top + window.scrollY
+      : window.innerHeight;
+  }
+
+  // White header mode on dark hero sections.
+  // For /hotel, keep white until the accommodation section starts.
+  $: isHero =
+    $page.url.pathname === '/contact' ||
+    ((['/', '/about'].includes($page.url.pathname) && y < (browser ? window.innerHeight : 800)) ||
+      ($page.url.pathname === '/hotel' && y < hotelHeroEndY));
 
 let opens = false;
 
@@ -39,6 +58,9 @@ const toggle = () => (open = !open);
 // Close SP menu after any navigation (cross-page)
 afterNavigate(() => {
   open = false;
+  if (browser) {
+    requestAnimationFrame(updateHotelHeroEndY);
+  }
 });
 
 // Close SP menu immediately when any link inside is clicked (handles same-page hash)
@@ -47,6 +69,17 @@ function handleMenuLinkClick(e: MouseEvent) {
     open = false;
   }
 }
+
+onMount(() => {
+  if (!browser) return;
+  updateHotelHeroEndY();
+  window.addEventListener('resize', updateHotelHeroEndY);
+});
+
+onDestroy(() => {
+  if (!browser) return;
+  window.removeEventListener('resize', updateHotelHeroEndY);
+});
 
 </script>
   

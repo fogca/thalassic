@@ -304,8 +304,10 @@
 
     .serif:lang(en) {
         font-size: 16.5px;
+        /*
         font-family: var(--text-font);
         font-family: var(--heading-font);
+        */
         text-transform: uppercase;
         -ms-writing-mode: horizontal-tb;
         writing-mode: horizontal-tb;
@@ -347,6 +349,12 @@
       text-align: center;
       width: 100%;
       font-size: 18px;
+    }
+
+    :global(html[lang='en']) :global(.topLayout) .texts-container h1 {
+      font-size: 28px;
+      top: 35%;
+      bottom: auto;
     }
 
     .serviceBody p {height: 60vh;}
