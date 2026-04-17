@@ -33,7 +33,8 @@
   // For /hotel, keep white until the accommodation section starts.
   $: isHero =
     $page.url.pathname === '/contact' ||
-    ((['/', '/about'].includes($page.url.pathname) && y < (browser ? window.innerHeight : 800)) ||
+    $page.url.pathname === '/about' ||
+    ((['/'].includes($page.url.pathname) && y < (browser ? window.innerHeight : 800)) ||
       ($page.url.pathname === '/hotel' && y < hotelHeroEndY));
 
 let opens = false;
