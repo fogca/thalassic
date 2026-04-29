@@ -71,15 +71,6 @@ import PageTransition from '../components/utilities/PageRouting.svelte';
 </svelte:head>
 
 
-<!--
-
-
-<ScrollAnimations />
-
-<Leave />
--->
-
-
 <OpAnimation />
 <div class="main">
 <LangFontManager />
