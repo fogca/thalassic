@@ -1,4 +1,3 @@
-<!-- src/lib/components/PageTransition.svelte -->
 <script lang="ts">
 	import { onMount, tick } from 'svelte';
 	import { afterNavigate, goto } from '$app/navigation';

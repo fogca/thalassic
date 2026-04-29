@@ -5,7 +5,7 @@
 	import { lenisStore } from '$lib/stores/lenis';
 	import Header from '../components/layout/Header.svelte';
 	import Footer from '../components/layout/Footer.svelte';
-import PageTransition from '../components/utilities/PageRouting.svelte';
+	import PageTransition from '../components/utilities/PageTransition.svelte';
 	import CustomCursor from '../components/snippets/CustomCursor.svelte';
 	import ScrollAnimations from '../components/utilities/ScrollAnimations.svelte';
 	import LangFontManager from '../components/utilities/LangFontManager.svelte';
