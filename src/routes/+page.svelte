@@ -24,15 +24,15 @@ import Orbit from "../components/snippets/Orbit.svelte"
 
   <section class="TopNumber my-80">
     <div class="wrapper">
-      <div class="container" data-animate="fade-up">
+      <div class="container">
         <p class="body">{tNumber('item1Body', $lang)}</p>
         <span class="title sans" lang="en">120+</span>
       </div>
-      <div class="container" data-animate="fade-up">
+      <div class="container">
         <p class="body">{tNumber('item2Body', $lang)}</p>
         <span class="title sans" lang="en">48%</span>
       </div>
-      <div class="container" data-animate="fade-up">
+      <div class="container">
         <p class="body">{tNumber('item3Body', $lang)}</p>
         <span class="title sans" lang="en">¥1.3B+</span>
       </div>
@@ -41,11 +41,11 @@ import Orbit from "../components/snippets/Orbit.svelte"
 
   <section class="TopBusiness mt-120">
     <div class="l-Contents">
-      <div class="heading" data-animate="fade-up">
+      <div class="heading">
         <h3 class="h1 mb-10" lang="en">Our Hotels</h3>
         <h5 class="h5 sans">{t('ourHotels', $lang)}</h5>
       </div>
-      <div class="wrapper" data-animate="fade-up">
+      <div class="wrapper">
         <Hotel />
       </div>
     </div>

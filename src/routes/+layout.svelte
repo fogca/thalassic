@@ -62,7 +62,7 @@
 	<meta name="twitter:image" content="https://thalassiccapital.com/images/OGP.png" />
 
 	<!-- Fonts & Styles -->
-	<link rel="stylesheet" href="../css/base.css?var=1.32">
+	<link rel="stylesheet" href="../css/base.css?var=1.33">
 	<link rel="stylesheet" href="../css/layout.css?var=1.17">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com">

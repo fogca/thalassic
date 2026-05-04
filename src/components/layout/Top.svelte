@@ -1,18 +1,8 @@
 <script lang="ts">
-import { onMount } from 'svelte';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { lang } from '$lib/utils/lang';
 import { t } from './New.dict';
 import { t as tTop } from './Top.dict';
-import Ball from '../snippets/Ball.svelte';
-import Identity from '../snippets/Identity.svelte';
 import Orbit from '../snippets/Orbit.svelte';
-
-gsap.registerPlugin(ScrollTrigger);
-
-/** Ball diameter in pixels (used in Identity section). */
-const ballSize = 1200;
 
 type BusinessCategoryKey = 'categoryHotel' | 'categoryRecruit' | 'categoryAbout' | 'categoryRealEstate';
 
@@ -22,101 +12,6 @@ const cards: { image: string; categoryKey: BusinessCategoryKey; title: string; l
   { image: '/images/top-about_01.webp', categoryKey: 'categoryAbout', title: 'ABOUT US', link: '/about' },
   { image: '/images/property-global_01.webp', categoryKey: 'categoryRealEstate', title: 'REAL ESTATE', link: '/real-estate' }
 ];
-
-// Hero title: word/char split for animation (from TopHead)
-interface CharData { char: string; globalIndex: number; }
-interface WordData { word: string; wordIndex: number; chars: CharData[]; }
-interface LineData { words: WordData[]; isWhitespace: boolean[]; }
-
-const rawLines = [
-  "Echoing the land's",
-  "essence, Shaping the next",
-  "century's form"
-];
-
-let heroTitleEl: HTMLElement | null = null;
-let charTotal = 0;
-let wordTotal = 0;
-const heroTitleLines: LineData[] = rawLines.map((line) => {
-  const wordStrings = line.split(' ');
-  const words: WordData[] = wordStrings.map((w) => {
-    const chars: CharData[] = w.split('').map((c) => ({ char: c, globalIndex: charTotal++ }));
-    return { word: w, wordIndex: wordTotal++, chars };
-  });
-  const isWhitespace = wordStrings.map((_, i) => i < wordStrings.length - 1);
-  return { words, isWhitespace };
-});
-
-onMount(() => {
-  const el = heroTitleEl as HTMLElement | null;
-  if (el) {
-    const chars = el.querySelectorAll('.char');
-    gsap.fromTo(
-      chars,
-      { opacity: 0, y: 5, rotateX: -90, transformPerspective: 1000 },
-      {
-        opacity: 1,
-        y: 0,
-        rotateX: 0,
-        transformPerspective: 1000,
-        duration: 0.8,
-        ease: 'power2.out',
-        stagger: 0.0025,
-        scrollTrigger: {
-          trigger: el,
-          start: 'top 80%',
-          toggleActions: 'play none none reverse',
-        }
-      }
-    );
-  }
-
-  gsap.to('.Marquee p', {
-    xPercent: -50,
-    ease: 'none',
-    scrollTrigger: {
-      trigger: '.TopSection',
-      start: 'top bottom',
-      end: 'bottom top',
-      scrub: 0.25,
-    }
-  });
-
-  gsap.from('.InlineText h1', {
-    opacity: 0,
-    y: 50,
-    duration: 1.2,
-    ease: 'power3.out',
-    scrollTrigger: {
-      trigger: '.InlineText',
-      start: 'top bottom',
-      toggleActions: 'play none none reverse',
-    }
-  });
-
-  const images = gsap.utils.toArray('.InlineText .image');
-  gsap.set(images, { width: 0, height: 0, scale: 0, opacity: 0, margin: 0 });
-  gsap.to(images, {
-    width: 140,
-    height: 80,
-    scale: 1,
-    opacity: 1,
-    margin: '-20px -25px 0',
-    duration: 1,
-    ease: 'power3.out',
-    stagger: 0.2,
-    delay: 0.5,
-    scrollTrigger: {
-      trigger: '.InlineText',
-      start: 'top bottom',
-      toggleActions: 'play none none reverse',
-    }
-  });
-
-  return () => {
-    ScrollTrigger.getAll().forEach(t => t.kill());
-  };
-});
 </script>
 
 
@@ -128,12 +23,12 @@ onMount(() => {
 <section class="Identity mt-160 mb-80">
   <div class="wrapper">
     <div class="container">
-      <div class="h5 sans uppercase" lang="en" data-animate="lines">GROUP COMPANY</div>
-      <h2 class="h1 mb-10" lang="en" data-animate="lines">Three Identities,<br />One Collective Vision.</h2>
-      <p data-animate="fade-up">{t('identityBody', $lang)}</p>
-      <a class="button white mt-40" href="/about" lang="en" data-animate="fade-up" data-start="top 95%">About Us</a>
+      <div class="h5 sans uppercase" lang="en">GROUP COMPANY</div>
+      <h2 class="h1 mb-10" lang="en">Three Identities,<br />One Collective Vision.</h2>
+      <p>{t('identityBody', $lang)}</p>
+      <a class="button white mt-40" href="/about" lang="en">About Us</a>
     </div>
-    <div class="container" data-animate="fade-up">
+    <div class="container">
       <Orbit />
       
       <!--<Ball size={ballSize} />-->
@@ -144,7 +39,7 @@ onMount(() => {
 <section class="Business">
   <div class="wrapper">
     {#each cards as card}
-      <a class="container" href={card.link} data-animate="fade-up">
+      <a class="container" href={card.link}>
         <img src={card.image} alt={card.title} />
         <div class="overlay"></div>
         <div class="texts">
@@ -189,10 +84,6 @@ onMount(() => {
     margin-top: 2rem;
   }
 
-  .Identity h3 {
-    margin: 2rem 0 1.5rem;
-  }
-
   @media screen and (max-width: 834px) {
     .Identity {
       margin-top: 100px;
@@ -223,15 +114,6 @@ onMount(() => {
 
 
 
-
-  @media screen and (max-width: 834px) {
-    .Hero { height: 150vh; }
-    .Hero .container { padding: 0 20px; }
-    .Hero .container .h1 { font-size: 32px; margin-bottom: 24px; line-height: 1.5; }
-    .Hero .container p { font-size: 14px; letter-spacing: 0.1em; }
-    .Hero .largeTextWrap { bottom: 40px; }
-    .Hero .largeText { font-size: 48px; letter-spacing: 0; }
-  }
 
   .Business .wrapper {
     display: grid;

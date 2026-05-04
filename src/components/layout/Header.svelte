@@ -100,11 +100,11 @@ onDestroy(() => {
           <nav class="pc">
               <ul>
               
-                  <li><a class="h5" data-animate="lines" data-scroll="false" data-delay="1" href="/real-estate">{t('realestate', $lang)}</a></li>
-                  <li><a class="h5" data-animate="lines" data-scroll="false" data-delay="1" href="/hotel"   >{t('hotel', $lang)}</a></li>
-                  <li><a class="h5" data-animate="lines" data-scroll="false" data-delay="1" href="/about"      >{t('about', $lang)}</a></li>
-                  <li><a class="h5" data-animate="lines" data-scroll="false" data-delay="1" href="/about#Recruitment">{t('recruit', $lang)}</a></li>
-                  <li><a class="h5" data-animate="lines" data-scroll="false" data-delay="1" href="/contact"    >{t('contact', $lang)}</a></li>
+                  <li><a class="h5" href="/real-estate">{t('realestate', $lang)}</a></li>
+                  <li><a class="h5" href="/hotel"   >{t('hotel', $lang)}</a></li>
+                  <li><a class="h5" href="/about"      >{t('about', $lang)}</a></li>
+                  <li><a class="h5" href="/about#Recruitment">{t('recruit', $lang)}</a></li>
+                  <li><a class="h5" href="/contact"    >{t('contact', $lang)}</a></li>
                   <li>
                       <div class="lang-switch">
                           <!-- toggle button -->
@@ -353,6 +353,7 @@ header.hero :global(button),
 header.hero :global(button *),
 header.hero :global(span) {
   color: #fff !important;
+  -webkit-text-stroke-color: #fff !important;
 }
 /* SP overlay menu has white background — keep text dark regardless of hero mode */
 header.hero .overlay :global(a),
@@ -361,6 +362,7 @@ header.hero .overlay :global(button),
 header.hero .overlay :global(button *),
 header.hero .overlay :global(span) {
   color: var(--textColor) !important;
+  -webkit-text-stroke-color: var(--textColor) !important;
 }
 header.hero .menu-btn span {
   background: #fff;
@@ -377,8 +379,11 @@ header.hero .current {
 header.hero .dropdown {
   background: #fff;
 }
-header.hero .dropdown button {
-  color: #000 !important;
+header.hero .dropdown button,
+header.hero .dropdown :global(button *),
+header.hero .dropdown :global(span) {
+  color: var(--textColor) !important;
+  -webkit-text-stroke-color: var(--textColor) !important;
 }
 
 @media screen and (min-width: 720px) {

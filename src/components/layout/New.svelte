@@ -1,92 +1,13 @@
 <script lang="ts">
-    import { onMount } from 'svelte';
-    import { gsap } from 'gsap';
-    import { ScrollTrigger } from 'gsap/ScrollTrigger';
-    import { CustomEase } from 'gsap/CustomEase';
-    import { get } from 'svelte/store';
-    import { opDone } from '$lib/stores/opDone';
     import { lang } from '$lib/utils/lang';
     import { t } from './New.dict';
-
-    gsap.registerPlugin(ScrollTrigger, CustomEase);
-
-    // Fast in (power1-like) → slow expo-style deceleration at the end
-    const imageRevealEase = CustomEase.create('imageReveal', 'M0,0 C0.4,0 0.2,1 1,1');
-
-    let sectionEl  = $state<HTMLElement>();
-    let imageWrapEl = $state<HTMLElement>();
-    let ctx: gsap.Context | null = null;
-
-    function runAnimation() {
-      if (!sectionEl || !imageWrapEl) return;
-      ctx?.revert();
-
-      ctx = gsap.context(() => {
-        // ── Image reveal: wrapper grows from bottom → 100vh ───────
-        // The image inside is always 100vw×100vh (object-fit:cover).
-        // Only the wrapper height clips it — so the image never scales.
-        gsap.set(imageWrapEl!, { height: 0 });
-        gsap.set(sectionEl!.querySelector('.image-bg'), { y: '18%' });
-
-        const tl = gsap.timeline({ delay: 0.8 });
-
-        tl.to(imageWrapEl!, {
-          height: '100%',
-          duration: 1.6,
-          ease: imageRevealEase,
-        });
-
-        tl.to(sectionEl!.querySelector('.image-bg'), {
-          y: '0%',
-          duration: 1.6,
-          ease: imageRevealEase,
-        }, '<');
-
-        // ── Text chars ────────────────────────────────────────────
-        const lines = sectionEl!.querySelectorAll('.hero-title .line');
-        lines.forEach((line, i) => {
-          tl.to(line.querySelectorAll('.char'), {
-            y: '0%',
-            opacity: 1,
-            duration: 1.0,
-            ease: 'expo.out',
-            stagger: 0.012,
-          }, 0.8 + i * 0.08);
-        });
-
-        tl.to(sectionEl!.querySelector('.hero-title p'), {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          ease: 'power2.out',
-        }, '-=0.3');
-
-      }, sectionEl);
-    }
-
-    onMount(() => {
-      // Run immediately if OP already done (e.g. non-first visit)
-      if (get(opDone)) {
-        runAnimation();
-      } else {
-        // Wait for OpAnimation to complete, then run
-        const unsub = opDone.subscribe((done) => {
-          if (!done) return;
-          unsub();
-          runAnimation();
-        });
-      }
-
-      return () => ctx?.revert();
-    });
   </script>
   
   <!-- ============================================================
        ヒーローセクション
        ============================================================ -->
-  <div class="hero-section" bind:this={sectionEl}>
-    <!-- Image: overflow:hidden on wrap, img is 120% tall for parallax room -->
-    <div class="image-wrap" bind:this={imageWrapEl}>
+  <div class="hero-section">
+    <div class="image-wrap">
       <img
         class="image-bg"
         src="/images/top_02.webp"
@@ -200,24 +121,21 @@
     /* overflow:hidden clips the img; img never changes size.         */
     .image-wrap {
       position: absolute;
-      bottom: 0;
-      left: 0;
+      inset: 0;
       width: 100vw;
-      height: 0; /* GSAP animates this to 100% */
+      height: 100lvh;
       overflow: hidden;
       z-index: 1;
     }
 
     .image-bg {
       position: absolute;
-      bottom: 0;
-      left: 0;
+      inset: 0;
       width: 100vw;
-      height: 120lvh; /* extra 20dvh gives room for translate animation */
+      height: 100lvh;
       object-fit: cover;
       object-position: center center;
       display: block;
-      will-change: transform;
       filter: contrast(1.15) brightness(0.9);
     }
 
@@ -243,28 +161,19 @@
       display: flex;
       justify-content: flex-start;
       gap: 0.3em;
-      overflow: hidden;
       padding-bottom: 0.1em;
     }
 
     .hero-title .word {
       display: inline-block;
-      overflow: hidden;
     }
 
     .hero-title .char {
       display: inline-block;
-      transform: translateY(100%);
-      opacity: 0;
     }
 
     .hero-title h1 {
       margin-bottom: 10px;
-    }
-
-    .hero-title p {
-      opacity: 0;
-      transform: translateY(10px);
     }
 
     /* ── PC/SP text switch ──────────────────────────────────────── */

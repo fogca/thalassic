@@ -31,7 +31,7 @@
   <section class="topLayout topLayoutPages" id="">
     <div class="texts-container">
       <div></div>
-      <div data-animate="fade-stagger">
+      <div>
         <h1 class="h5 white" lang="en">About Us</h1>
         <h2 class="h1 hero__title white mb-20 mt-40" lang="en">Creating Value<br>that Endures</h2>
         <h3 class="h5 hero__subtitle white mt-10">{@html t('heading', $lang)}</h3>
@@ -88,10 +88,10 @@
   </section>
 
   <section class="bodyLayout aboutCompany aboutList">
-    <h3 class="h1 white" lang="en" data-animate="fade-up">Company Profile</h3>
-    <h4 class="h5 white mt-10" data-animate="fade-up">{@html t('company_profile_heading', $lang)}</h4>
+    <h3 class="h1 white" lang="en">Company Profile</h3>
+    <h4 class="h5 white mt-10">{@html t('company_profile_heading', $lang)}</h4>
     <div class="wrapper">
-      <div class="wrap" data-animate="fade-stagger">
+      <div class="wrap">
         <div class="container">
           <div class="h6 white">{t('firm_heading', $lang)}</div>
           <div class="h5 white">{t('firm_main', $lang)}</div>
@@ -115,7 +115,7 @@
 
       </div>
 
-      <div class="wrap" data-animate="fade-stagger">
+      <div class="wrap">
         <h3 class="h5 white">{@html t('subsidiary1_heading', $lang)}</h3>
         <div class="container">
           <div class="h6 white">{t('firm_heading', $lang)}</div>
@@ -127,7 +127,7 @@
         </div>
       </div>
 
-      <div class="wrap" data-animate="fade-stagger">
+      <div class="wrap">
         <h3 class="h5 white">{@html t('subsidiary2_heading', $lang)}</h3>
         <div class="container">
           <div class="h6 white">{t('firm_heading', $lang)}</div>
@@ -140,9 +140,9 @@
       </div>
 
       <div class="mt-80">
-        <h3 class="h2 white mb-20" lang="en" data-animate="fade-up">Our Belief</h3>
-        <img src="/images/about-logo.webp" alt="" data-animate="fade-up">
-        <p class="white mt-20" data-animate="fade-up">{@html t('logo_belief', $lang)}</p>
+        <h3 class="h2 white mb-20" lang="en">Our Belief</h3>
+        <img src="/images/about-logo.webp" alt="">
+        <p class="white mt-20">{@html t('logo_belief', $lang)}</p>
       </div>
       
     </div>
@@ -151,16 +151,16 @@
 
   <section class="bodyLayout aboutRecruit" id="Recruitment">
     <hr class="sp mb-40">
-    <h3 class="h1 white" lang="en" data-animate="fade-up">Recruitment</h3>
-    <h4 class="h5 white mt-10" data-animate="fade-up">{@html t('recruit_heading', $lang)}</h4>
-    <div class="wrap" data-animate="fade-stagger">
+    <h3 class="h1 white" lang="en">Recruitment</h3>
+    <h4 class="h5 white mt-10">{@html t('recruit_heading', $lang)}</h4>
+    <div class="wrap">
       <h4 class="h0 white" lang="en">Join Our Team!
         <img src="/images/about-character_01.webp" class="" alt="">
         <img src="/images/about-character_02.webp" class="" alt="">
         <img src="/images/about-character_03.webp" class="" alt="">
         <img src="/images/about-character_04.webp" class="" alt="">
       </h4>
-      <p data-animate="fade-up">{@html t('recruit', $lang)}
+      <p>{@html t('recruit', $lang)}
         <img src="/images/about_recruit.webp" class="mt-40" alt="">
       </p>
       
@@ -239,7 +239,7 @@
       </div>
     </div>
 
-    <div class="contact container" data-animate="fade-up" >
+    <div class="contact container" >
       <p class="mt-40">{@html t('contact', $lang)}</p>
       <a href="/contact" class="button h5 mt-30 sans" lang="en">Contact Form</a>
     </div>
